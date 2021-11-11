@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="250dp"
+    android:layout_height="match_parent"
+    android:background="@drawable/mybordar"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/changePassLbl"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:text="@string/changePassHint"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#0000ff"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"/>
+
+    <EditText
+        android:id="@+id/newPass"
+        android:layout_width="190dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:color/holo_blue_dark"
+        android:hint="@string/newPassHint"
+        android:drawableEnd="@drawable/showpass"
+        android:inputType="textPassword"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:textSize="13sp"
+        tools:ignore="Autofill" />
+
+    <EditText
+        android:id="@+id/confirmPass"
+        android:layout_width="190dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="90dp"
+        android:background="@android:color/holo_blue_dark"
+        android:hint="@string/confirmPassHint"
+        android:drawableEnd="@drawable/showpass"
+        android:inputType="textPassword"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:textSize="13sp"
+        tools:ignore="Autofill" />
+
+
+    <Button
+        android:id="@+id/updatePass"
+        android:layout_width="100dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="130dp"
+        android:background="#0000ff"
+        android:hint="@string/updatePassHint"
+        android:textColorHint="@android:color/white"
+        android:textSize="11sp"
+        tools:ignore="SmallSp" />
+
+    <Button
+        android:id="@+id/cancelPass"
+        android:layout_width="100dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="130dp"
+        android:background="#0000ff"
+        android:hint="@string/cancel"
+        android:textColorHint="@android:color/white"
+        android:textSize="11sp"
+        tools:ignore="SmallSp" />
+
+
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Vehiculos">
+        <item>車両の種類を選択してください</item>
+        <item>オートバイ</item>
+        <item>車</item>
+        <item>ヴァン</item>
+        <item>トラック</item>
+    </string-array>
+    <string-array name="asuntos">
+        <item>問題を選択</item>
+        <item>壊れた窓</item>
+        <item>壊れたドアミラー</item>
+        <item>傷のある車両</item>
+        <item>塗装済み車両</item>
+        <item>車両上のツリー</item>
+        <item>その他の問題</item>
+    </string-array>
+    <string-array name="contactos_asuntos">
+        <item>件名を選択してください</item>
+        <item>脱落</item>
+        <item>サポート</item>
+        <item>その他</item>
+    </string-array>
+    <string-array name="languageSelected">
+        <item>日本語</item>
+        <item>スペイン語</item>
+        <item>英語</item>
+        <item>フランス語</item>
+        <item>ドイツ人</item>
+        <item>イタリア語</item>
+        <item>ポルトガル語</item>
+        <item>ロシア</item>
+        <item>中国語</item>
+        <item>オランダの</item>
+        <item>研磨</item>
+        <item>韓国語</item>
+        <item>スウェーデンの</item>
+        <item>アラブ</item>
+        <item>ウルドゥー語</item>
+        <item>ヒンドゥー</item>
+    </string-array>
+</resources>

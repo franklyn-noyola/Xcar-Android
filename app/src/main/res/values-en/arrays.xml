@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Vehiculos">
+        <item>Select type of Vehicle</item>
+        <item>Motorcycle</item>
+        <item>Car</item>
+        <item>Pickup</item>
+        <item>Truck</item>
+    </string-array>
+    <string-array name="asuntos">
+        <item>Select Issue</item>
+        <item>Broken Windows</item>
+        <item>Broken Wing Mirror</item>
+        <item>Scratched Vehicle</item>
+        <item>Painted Vehicle</item>
+        <item>Tree over Vehicle</item>
+        <item>Other issues</item>
+    </string-array>
+    <string-array name="contactos_asuntos">
+        <item>Select Issue</item>
+        <item>Unregister</item>
+        <item>Support</item>
+        <item>Others</item>
+    </string-array>
+    <string-array name="languageSelected">
+        <item>English</item>
+        <item>Spanish</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Italian</item>"German
+        <item>Portuguese</item>
+        <item>Russian</item>
+        <item>Chinese</item>
+        <item>Japanese</item>
+        <item>Dutch</item>
+        <item>Polish</item>
+        <item>Korean</item>
+        <item>Swedish</item>
+        <item>Arabic</item>
+        <item>Urdu</item>
+        <item>Hindi</item>
+    </string-array>
+</resources>

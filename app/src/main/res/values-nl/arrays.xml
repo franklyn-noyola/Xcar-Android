@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Vehiculos">
+        <item>Selecteer het type voertuig</item>
+        <item>Motorfiets</item>
+        <item>Auto</item>
+        <item>Van</item>
+        <item>Vrachtauto</item>
+    </string-array>
+    <string-array name="asuntos">
+        <item>Selecteer Probleem</item>
+        <item>Gebroken ramen</item>
+        <item>Gebroken zijspiegel</item>
+        <item>Bekrast voertuig</item>
+        <item>Geschilderd voertuig</item>
+        <item>Boom over voertuig</item>
+        <item>Andere problemen</item>
+    </string-array>
+    <string-array name="contactos_asuntos">
+        <item>Kies een onderwerp</item>
+        <item>Afvaller</item>
+        <item>Ondersteuning</item>
+        <item>Anderen</item>
+    </string-array>
+    <string-array name="languageSelected">
+        <item>Nederlands</item>
+        <item>Spaans</item>
+        <item>Engels</item>
+        <item>Frans</item>
+        <item>Duitse</item>
+        <item>Italiaans</item>
+        <item>Portugees</item>
+        <item>Russisch</item>
+        <item>Chinese</item>
+        <item>Japans</item>
+        <item>Pools</item>
+        <item>Koreaans</item>
+        <item>Zweeds</item>
+        <item>Arabier</item>
+        <item>Urdu</item>
+        <item>Hindi</item>
+    </string-array>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/action_Settings"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_baseline_settings_applications_24"
+        android:title="@string/action_settings"/>
+
+    <item
+        android:id="@+id/action_Contacts"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="@string/action_contacts"/>
+
+    <item
+        android:id="@+id/action_About"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="@string/action_about"/>
+
+    <item
+        android:id="@+id/action_HowitWorks"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="@string/action_howItWorks"/>
+
+    <item
+        android:id="@+id/action_Share"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="@string/shareWith"/>
+
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="@string/logout_menu"/>
+</menu>

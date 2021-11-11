@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Vehiculos">
+        <item>حدد نوع السيارة</item>
+        <item>دراجة نارية</item>
+        <item>السيارات</item>
+        <item>سيارة نقل</item>
+        <item>شاحنة</item>
+    </string-array>
+    <string-array name="asuntos">
+        <item>حدد المشكلة</item>
+        <item>نوافذ مكسورة</item>
+        <item>مرآة الجناح المكسور</item>
+        <item>سيارة مخدوشة</item>
+        <item>مركبة مطلية</item>
+        <item>الشجرة فوق السيارة</item>
+        <item>حالات أخرى</item>
+    </string-array>
+    <string-array name="contactos_asuntos">
+        <item>اختر موضوعا</item>
+        <item>أوقع</item>
+        <item>الدعم</item>
+        <item>آحرون</item>
+    </string-array>
+    <string-array name="languageSelected">
+        <item>عرب</item>
+        <item>الأسبانية</item>
+        <item>الإنجليزية</item>
+        <item>الفرنسية</item>
+        <item>ألمانية</item>
+        <item>إيطالي</item>
+        <item>البرتغالية</item>
+        <item>الروسية</item>
+        <item>صينى</item>
+        <item>اليابانية</item>
+        <item>اللغة الهولندية</item>
+        <item>تلميع</item>
+        <item>الكورية</item>
+        <item>السويدية</item>
+        <item>الأردية</item>
+        <item>هندي</item>
+    </string-array>
+</resources>

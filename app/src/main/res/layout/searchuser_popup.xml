@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/userInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="2dp"
+        android:gravity="start|left"
+        android:text="@string/infoUserLbl"
+        tools:ignore="RtlHardcoded" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="200dp"
+        android:layout_height="119dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/plate2"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/placaUserSearch"
+        android:layout_width="180dp"
+        android:layout_height="59dp"
+        android:textAlignment="center"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="47dp"/>
+
+    <TextView
+        android:id="@+id/carTypeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="95dp"
+        android:singleLine="false"
+        android:text="@string/infoUser"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/carTypeTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="95dp"
+        android:singleLine="false"
+        android:text="@string/infoUser"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/carBrandText"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/infoUser" />
+
+    <TextView
+        android:id="@+id/carBrandTextField"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:layout_marginStart="90dp"
+        android:text="@string/infoUser" />
+
+    <TextView
+        android:id="@+id/carModelText"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="165dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/infoUser" />
+
+    <TextView
+        android:id="@+id/carModelTextField"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="165dp"
+        android:layout_marginStart="90dp"
+        android:text="@string/infoUser" />
+
+    <TextView
+        android:id="@+id/carColorText"
+        android:layout_width="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/infoUser" />
+
+    <TextView
+        android:id="@+id/carColorTextField"
+        android:layout_width="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="90dp"
+        android:text="@string/infoUser" />
+
+    <TextView
+        android:id="@+id/carYearText"
+        android:layout_width="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="235dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/infoUser" />
+    <TextView
+        android:id="@+id/carYearTextField"
+        android:layout_width="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="235dp"
+        android:layout_marginStart="90dp"
+        android:text="@string/infoUser" />
+
+    <Button
+        android:id="@+id/buttonGoChat"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:textSize="12sp"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="280dp"
+        />
+
+    <Button
+        android:id="@+id/buttonSendNoti"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:textSize="12sp"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="280dp"
+        />
+
+    <Button
+        android:id="@+id/closebutton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:textSize="12sp"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_marginStart="255dp"
+        android:layout_marginTop="280dp"
+        />
+
+</RelativeLayout>

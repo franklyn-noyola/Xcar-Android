@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/contactlbl"
+    tools:context=".contacto">
+
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/subject"
+        android:layout_width="351dp"
+        android:layout_height="41dp"
+        android:layout_marginLeft="40dp"
+        android:entries="@array/contactos_asuntos"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.062" />
+
+    <EditText
+        android:id="@+id/contactMessage"
+        android:layout_width="match_parent"
+        android:layout_height="252dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:autofillHints="@string/targetUser"
+        android:background="@drawable/shape"
+        android:gravity="top"
+        android:hint="@string/targetMessageContacto"
+        android:inputType="textMultiLine"
+        android:paddingLeft="10dp"
+        android:singleLine="false"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="@+id/subject"
+        app:layout_constraintTop_toBottomOf="@+id/subject"
+        app:layout_constraintVertical_bias="0.013" />
+
+    <TextView
+        android:id="@+id/buttonSend"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/sendText"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintStart_toStartOf="@+id/contactMessage"
+        app:layout_constraintTop_toBottomOf="@+id/contactMessage"
+        app:layout_constraintVertical_bias="0.034"
+        app:drawableEndCompat="@drawable/ic_sendicon" />
+
+    <TextView
+        android:id="@+id/allConnectedlbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="260dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="70dp"
+        android:textStyle="bold"
+        android:text="allConnected"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="48dp"
+        android:inputType="textEmailAddress"
+        android:text="allconnected_support@epicdevelopers.app"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="HardcodedText,TextViewEdits" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

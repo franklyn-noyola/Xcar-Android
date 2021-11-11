@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Vehiculos">
+        <item>Sélectionnez le type de véhicule</item>
+        <item>Moto</item>
+        <item>Auto</item>
+        <item>Van</item>
+        <item>Camion</item>
+    </string-array>
+    <string-array name="asuntos">
+        <item>Sélectionnez un sujet</item>
+        <item>Fenêtres cassées</item>
+        <item>Rétroviseur cassé</item>
+        <item>Véhicule rayé</item>
+        <item>Véhicule peint</item>
+        <item>Arbre au-dessus du véhicule</item>
+        <item>Autres issues</item>
+    </string-array>
+    <string-array name="contactos_asuntos">
+        <item>Sélectionnez un sujet</item>
+        <item>Se désabonner</item>
+        <item>Soutien</item>
+        <item>Autres</item>
+    </string-array>
+    <string-array name="languageSelected">
+        <item>Français</item>
+        <item>Espagnol</item>
+        <item>Anglais</item>
+        <item>Allemand</item>
+        <item>Italien</item>
+        <item>Portugais</item>
+        <item>Russe</item>
+        <item>Chinois</item>
+        <item>Japonais</item>
+        <item>Néerlandais</item>
+        <item>Polonais</item>
+        <item>Coréen</item>
+        <item>Suédois</item>
+        <item>Arabe</item>
+        <item>Ourdou</item>
+        <item>Hindi</item>
+    </string-array>
+</resources>

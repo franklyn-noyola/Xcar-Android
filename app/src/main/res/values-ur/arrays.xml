@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Vehiculos">
+        <item>قسم کی گاڑی کا انتخاب کریں</item>
+        <item>موٹرسائیکل</item>
+        <item>گاڑی</item>
+        <item>وان</item>
+        <item>ٹرک</item>
+    </string-array>
+    <string-array name="asuntos">
+        <item>مسئلہ منتخب کریں</item>
+        <item>ٹوٹی کھڑکیاں</item>
+        <item>ٹوٹا ہوا ونگ آئینہ</item>
+        <item>سکریچڈ گاڑی</item>
+        <item>پینٹ گاڑی</item>
+        <item>گاڑی پر درخت</item>
+        <item>دیگر مسائل</item>
+    </string-array>
+    <string-array name="contactos_asuntos">
+        <item>ایک مضمون منتخب کریں</item>
+        <item>باہر چھوڑ</item>
+        <item>مدد کریں</item>
+        <item>دوسرے</item>
+    </string-array>
+    <string-array name="languageSelected">
+        <item>اردو</item>
+        <item>ہسپانوی</item>
+        <item>انگریزی</item>
+        <item>فرانسیسی</item>
+        <item>جرمن</item>
+        <item>اطالوی</item>
+        <item>پرتگالی</item>
+        <item>روسی</item>
+        <item>چینی</item>
+        <item>جاپانی</item>
+        <item>ڈچ</item>
+        <item>پولش</item>
+        <item>کورین</item>
+        <item>سویڈش</item>
+        <item>عربی</item>
+        <item>ہندی</item>
+    </string-array>
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Vehiculos">
+        <item>"Selecciona tipo de Vehículo"</item>
+        <item>Moto</item>
+        <item>Turismo</item>
+        <item>Furgoneta</item>
+        <item>Camión</item>
+    </string-array>
+    <string-array name="asuntos">
+        <item>"Seleccionar asunto"</item>
+        <item>Lunas rotas</item>
+        <item>Retrovisores rotos</item>
+        <item>Vehiculo rayado</item>
+        <item>Vehículo pintado</item>
+        <item>Arbol sobre vehículo</item>
+        <item>Otros</item>
+    </string-array>
+    <string-array name="contactos_asuntos">
+        <item>"Seleccionar asunto"</item>
+        <item>Dar de baja</item>
+        <item>Soporte</item>
+        <item>Otros</item>
+    </string-array>
+    <string-array name="languageSelected">
+        <item>Español</item>
+        <item>Inglés</item>
+        <item>Francés</item>
+        <item>Alemán</item>
+        <item>Italiano</item>
+        <item>Portugués</item>
+        <item>Ruso</item>
+        <item>Chino</item>
+        <item>Japonés</item>
+        <item>Holandés</item>
+        <item>Polaco</item>
+        <item>Coreano</item>
+        <item>Sueco</item>
+        <item>Arabe</item>
+        <item>Urdu</item>
+        <item>Hindi</item>
+    </string-array>
+
+
+</resources>

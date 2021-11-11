@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Vehiculos">
+        <item>Välj typ av fordon</item>
+        <item>Motorcykel</item>
+        <item>Bil</item>
+        <item>Skåpbil</item>
+        <item>Lastbil</item>
+    </string-array>
+    <string-array name="asuntos">
+        <item>Välj Utgåva</item>
+        <item>Trasiga fönster</item>
+        <item>Trasiga speglar</item>
+        <item>Repat fordon</item>
+        <item>Målat fordon</item>
+        <item>Träd över fordonet</item>
+        <item>Andra problem</item>
+    </string-array>
+    <string-array name="contactos_asuntos">
+        <item>Välj ett ämne</item>
+        <item>Hoppa av</item>
+        <item>Stöd</item>
+        <item>Andra</item>
+    </string-array>
+    <string-array name="languageSelected">
+        <item>Svenska</item>
+        <item>Spanska</item>
+        <item>Engelsk</item>
+        <item>Franska</item>
+        <item>Tysk</item>
+        <item>Italienska</item>
+        <item>Portugisiska</item>
+        <item>Ryska</item>
+        <item>Kinesiska</item>
+        <item>Japanska</item>
+        <item>Nederländska</item>
+        <item>Putsa</item>
+        <item>Koreanska</item>
+        <item>Arabiska</item>
+        <item>Urdu</item>
+        <item>Hindi</item>
+    </string-array>
+</resources>

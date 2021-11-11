@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Vehiculos">
+        <item>वाहन का प्रकार चुनें</item>
+        <item>मोटरसाइकिल</item>
+        <item>गाड़ी</item>
+        <item>वैन</item>
+        <item>ट्रक</item>
+    </string-array>
+    <string-array name="asuntos">
+        <item>समस्या का चयन करें</item>
+        <item>टूटी खिड़कियां</item>
+        <item>टूटा हुआ आईना</item>
+        <item>खरोंच वाहन</item>
+        <item>चित्रित वाहन</item>
+        <item>वाहन पर पेड़</item>
+        <item>दूसरे मामले</item>
+    </string-array>
+    <string-array name="contactos_asuntos">
+        <item>समस्या का चयन करें</item>
+        <item>ड्रॉप आउट</item>
+        <item>सहयोग</item>
+        <item>अन्य</item>
+    </string-array>
+    <string-array name="languageSelected">
+        <item>हिन्दी</item>
+        <item>स्पेनिश</item>
+        <item>अंग्रेज़ी</item>
+        <item>फ्रेंच</item>
+        <item>जर्मन</item>
+        <item>इतालवी</item>
+        <item>पुर्तगाली</item>
+        <item>रूसी</item>
+        <item>चीनी</item>
+        <item>जापानी</item>
+        <item>डच</item>
+        <item>पोलिश</item>
+        <item>कोरियाई</item>
+        <item>स्वीडिश</item>
+        <item>अरबी</item>
+        <item>उर्दू</item>
+    </string-array>
+</resources>

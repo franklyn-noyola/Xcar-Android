@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Vehiculos">
+        <item>차량 유형 선택</item>
+        <item>오토바이</item>
+        <item>차</item>
+        <item>봉고차</item>
+        <item>트럭</item>
+    </string-array>
+    <string-array name="asuntos">
+        <item>문제 선택</item>
+        <item>깨진 창문</item>
+        <item>브로큰 윙 미러</item>
+        <item>긁힌 차량</item>
+        <item>페인트 차량</item>
+        <item>차량 위에 나무</item>
+        <item>다른 문제</item>
+    </string-array>
+    <string-array name="contactos_asuntos">
+        <item>주제 선택</item>
+        <item>탈락</item>
+        <item>지원하다</item>
+        <item>기타</item>
+    </string-array>
+    <string-array name="languageSelected">
+        <item>한국어</item>
+        <item>스페인의</item>
+        <item>영어</item>
+        <item>프랑스 국민</item>
+        <item>독일 사람</item>
+        <item>이탈리아 사람</item>
+        <item>포르투갈 인</item>
+        <item>러시아인</item>
+        <item>중국말</item>
+        <item>일본어</item>
+        <item>네덜란드 사람</item>
+        <item>광택</item>
+        <item>스웨덴어</item>
+        <item>아라비아 사람</item>
+        <item>우르두어</item>
+        <item>힌두 인</item>
+    </string-array>
+</resources>

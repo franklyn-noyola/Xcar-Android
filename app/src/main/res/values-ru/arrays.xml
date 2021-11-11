@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Vehiculos">
+        <item>Выберите тип ТС</item>
+        <item>Мотоцикл</item>
+        <item>Машина</item>
+        <item>Ван</item>
+        <item>Грузовая машина</item>
+    </string-array>
+    <string-array name="asuntos">
+        <item>Выберите выпуск</item>
+        <item>Разбитые окна</item>
+        <item>Разбитое крыло зеркало</item>
+        <item>Поцарапанный автомобиль</item>
+        <item>Окрашенный Автомобиль</item>
+        <item>Дерево над машиной</item>
+        <item>Другие вопросы</item>
+    </string-array>
+    <string-array name="contactos_asuntos">
+        <item>Выберите тему</item>
+        <item>Выбывать</item>
+        <item>Служба поддержки</item>
+        <item>Другие</item>
+    </string-array>
+    <string-array name="languageSelected">
+        <item>русский</item>
+        <item>испанский</item>
+        <item>английский</item>
+        <item>Французский</item>
+        <item>Немецкий</item>
+        <item>Итальянский</item>
+        <item>португальский</item>
+        <item>Китайский</item>
+        <item>Японский</item>
+        <item>нидерландский язык</item>
+        <item>Польский</item>
+        <item>Корейский</item>
+        <item>Шведский</item>
+        <item>Араб</item>
+        <item>Урду</item>
+        <item>Индуистский</item>
+    </string-array>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Vehiculos">
+        <item>"Selecione o tipo de veículo"</item>
+        <item>Motocicleta</item>
+        <item>Carro</item>
+        <item>Furgão</item>
+        <item>Caminhão</item>
+    </string-array>
+    <string-array name="asuntos">
+        <item>"Selecione o assunto"</item>
+        <item>Luas quebradas</item>
+        <item>Espelhos quebrados</item>
+        <item>Veículo arranhado</item>
+        <item>Veículo pintado</item>
+        <item>Árvore sobre veículo</item>
+        <item>Outros</item>
+    </string-array>
+    <string-array name="contactos_asuntos">
+        <item>"Selecione o assunto"</item>
+        <item>Retirar-se</item>
+        <item>Suporte</item>
+        <item>Outros</item>
+    </string-array>
+    <string-array name="languageSelected">
+        <item>Português</item>
+        <item>Espanhol</item>
+        <item>Inglês</item>
+        <item>Francês</item>
+        <item>Alemão</item>
+        <item>Italiano</item>
+        <item>Russo</item>
+        <item>Chinês</item>
+        <item>Japonês</item>
+        <item>Holandês</item>
+        <item>Polonês</item>
+        <item>Coreano</item>
+        <item>Sueco</item>
+        <item>Arabe</item>
+        <item>Urdu</item>
+        <item>Hindi</item>
+    </string-array>
+</resources>

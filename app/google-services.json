@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1094819462505",
+    "firebase_url": "https://allconnected-e6e70-default-rtdb.firebaseio.com",
+    "project_id": "allconnected-e6e70",
+    "storage_bucket": "allconnected-e6e70.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094819462505:android:0f9fe1042804466a3651f8",
+        "android_client_info": {
+          "package_name": "com.epicdeveloper.allconnected"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1094819462505-fp2h97lsactgojnpc2d12gr70c5p9ehg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9_R4UKHHrgEchrx8bC5HgZlScfv4_PAM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1094819462505-fp2h97lsactgojnpc2d12gr70c5p9ehg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
