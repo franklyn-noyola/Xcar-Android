@@ -487,20 +487,6 @@ public class MainActivity extends AppCompatActivity {
                         if (!MainActivity.getInstance(getApplication()).isOnline(getApplication())) {
                             Toast.makeText(getApplication(), resources.getString(R.string.noConexion), Toast.LENGTH_LONG).show();
                         }
-                        /*if (fromNotifications == 1) {
-                            Intent intent = new Intent(getApplicationContext(), fragment_chat.class);
-                            startActivity(intent);
-
-                        }*/ else if(fromNotifications == 2) {
-
-                            Intent intent = new Intent(getApplicationContext(), viewNotification.class);
-                            startActivity(intent);
-                        } else {
-                        if (init == 1 && profileView == 1) {
-                            finish();
-                        }
-
-
                         if (getProfileView == 1 && getInit == 2) {
                             Intent intent = new Intent(getApplicationContext(), profile_activity.class);
                             startActivity(intent);
@@ -551,7 +537,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             });
                         }
-                      }
+
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
