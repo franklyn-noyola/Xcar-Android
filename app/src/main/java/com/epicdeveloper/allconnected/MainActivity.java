@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.epicdeveloper.allconnected.ui.Chat.fragment_chat;
 import com.epicdeveloper.allconnected.ui.receivedNotifications.viewNotification;
 import com.google.android.gms.ads.MobileAds;
+
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -178,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
                         mToken = task.getResult();
                     DatabaseReference getLanguage = FirebaseDatabase.getInstance().getReference("Users/userLanguage");
                     getLanguage.orderByChild("Users").equalTo(mToken).addListenerForSingleValueEvent(new ValueEventListener() {
+                        @SuppressLint("ClickableViewAccessibility")
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             if (snapshot.exists()) {
@@ -471,6 +474,7 @@ public class MainActivity extends AppCompatActivity {
                     mToken = task.getResult();
                 DatabaseReference getLanguage = FirebaseDatabase.getInstance().getReference("Users/userLanguage");
                 getLanguage.orderByChild("Users").equalTo(mToken).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @SuppressLint("ClickableViewAccessibility")
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()) {
@@ -680,6 +684,7 @@ public class MainActivity extends AppCompatActivity {
     public void getSessionActive(String mToken, String language){
         DatabaseReference sessionActive = FirebaseDatabase.getInstance().getReference("activeSession/"+mToken);
         sessionActive.orderByChild("active").equalTo("ON").addListenerForSingleValueEvent(new ValueEventListener() {
+            @SuppressLint("ClickableViewAccessibility")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
