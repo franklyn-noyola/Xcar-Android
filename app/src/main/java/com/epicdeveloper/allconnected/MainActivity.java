@@ -710,7 +710,6 @@ public class MainActivity extends AppCompatActivity {
                         welcomeTextView.setText(resources.getString(R.string.welcomeHomeText));
                         forgottenPass.setText(resources.getString(R.string.forgottenPass));
                         newUserLink.setText(resources.getString(R.string.newUser));
-                        //setFieldsLanguage(userlanguage);
                         mPassword.setOnTouchListener(new View.OnTouchListener() {
                             @Override
                             public boolean onTouch(View v, MotionEvent event) {
