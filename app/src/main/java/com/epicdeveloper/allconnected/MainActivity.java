@@ -4,8 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.epicdeveloper.allconnected.ui.Chat.fragment_chat;
-import com.epicdeveloper.allconnected.ui.receivedNotifications.viewNotification;
 import com.google.android.gms.ads.MobileAds;
 
 import android.annotation.SuppressLint;

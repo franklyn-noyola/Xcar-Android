@@ -1,5 +1,7 @@
 package com.epicdeveloper.allconnected;
 
+import static android.widget.RadioGroup.*;
+
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -9,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +39,8 @@ public class settings  extends AppCompatActivity {
     String selectedLang;
     Context context;
     Resources resources;
+    RadioGroup radioLan1;
+    RadioGroup radioLan2;
     public static String updateSelectLanguage="";
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,9 @@ public class settings  extends AppCompatActivity {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0099CC")));
         getSupportActionBar().setTitle(resources.getString(R.string.action_settings));
         languagechangeheader = (TextView) findViewById(R.id.languagechangeheader);
+        radioLan1 = findViewById(R.id.radioLan1);
+        radioLan2 = findViewById(R.id.radioLan2);
+
         selectLang = (TextView) findViewById(R.id.selectLang);
         warning = (TextView) findViewById(R.id.warning);
         changeLang = (Button) findViewById(R.id.changeLan);
@@ -67,42 +75,26 @@ public class settings  extends AppCompatActivity {
         arabic = (RadioButton) findViewById(R.id.arabic);
         hindi = (RadioButton) findViewById(R.id.hindi);
         urdu = (RadioButton) findViewById(R.id.urdu);
-        translatedLanguage();
-        switch (selectedLang){
-            case "ES" :     spanish.setChecked(true);
-                            break;
-            case "EN" :     english.setChecked(true);
-                            break;
-            case "FR" :     french.setChecked(true);
-                            break;
-            case "DE" :     german.setChecked(true);
-                            break;
-            case "IT" :     italian.setChecked(true);
-                            break;
-            case "PT" :     portuguese.setChecked(true);
-                            break;
-            case "RU" :     russian.setChecked(true);
-                            break;
-            case "ZH" :     chinese.setChecked(true);
-                            break;
-            case "JA" :     japanese.setChecked(true);
-                            break;
-            case "NL" :     dutch.setChecked(true);
-                            break;
-            case "PL" :     poland.setChecked(true);
-                            break;
-            case "KO" :     korean.setChecked(true);
-                            break;
-            case "SV" :     swedish.setChecked(true);
-                            break;
-            case "AR" :     arabic.setChecked(true);
-                            break;
-            case "HI" :     hindi.setChecked(true);
-                            break;
-            case "UR" :     urdu.setChecked(true);
-                            break;
-        }
 
+        translatedLanguage();
+        radioLan1.setOnCheckedChangeListener(new OnCheckedChangeListener()
+        {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId != -1) {
+                    getChanged2();
+                }
+            }
+        });
+
+        radioLan2.setOnCheckedChangeListener(new OnCheckedChangeListener()
+        {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId != -1) {
+                    getChanged1();
+                }
+            }
+        });
+        getSelectedLang();
         changeLang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,9 +120,18 @@ public class settings  extends AppCompatActivity {
                     cancel.setVisibility(View.VISIBLE);
                     warning.setVisibility(View.VISIBLE);
                 } else {
+
+
+                radioLan2.setOnCheckedChangeListener(new OnCheckedChangeListener()
+                    {
+                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+                    radioLan1.clearCheck();
+                    }
+                });
                     if (changeLang.getText().toString().equals(resources.getString(R.string.updateLanguage))) {
                         changeLang.setText(resources.getString(R.string.changeLanguage));
                         if (spanish.isChecked()) {
+
                             updateSelectLanguage = "ES";
                         }
                         if (english.isChecked()) {
@@ -207,6 +208,7 @@ public class settings  extends AppCompatActivity {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getSelectedLang();
                 changeLang.setText(resources.getString(R.string.changeLanguage));
                 selectLang.setText("");
                 spanish.setEnabled(false);
@@ -230,6 +232,65 @@ public class settings  extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void getSelectedLang() {
+        switch (selectedLang){
+            case "ES" :     spanish.setChecked(true);
+                break;
+            case "EN" :     english.setChecked(true);
+                break;
+            case "FR" :     french.setChecked(true);
+                break;
+            case "DE" :     german.setChecked(true);
+                break;
+            case "IT" :     italian.setChecked(true);
+                break;
+            case "PT" :     portuguese.setChecked(true);
+                break;
+            case "RU" :     russian.setChecked(true);
+                break;
+            case "ZH" :     chinese.setChecked(true);
+                break;
+            case "JA" :     japanese.setChecked(true);
+                break;
+            case "NL" :     dutch.setChecked(true);
+                break;
+            case "PL" :     poland.setChecked(true);
+                break;
+            case "KO" :     korean.setChecked(true);
+                break;
+            case "SV" :     swedish.setChecked(true);
+                break;
+            case "AR" :     arabic.setChecked(true);
+                break;
+            case "HI" :     hindi.setChecked(true);
+                break;
+            case "UR" :     urdu.setChecked(true);
+                break;
+        }
+    }
+
+    public void getChanged1()  {
+            radioLan1.setOnCheckedChangeListener(null);
+            radioLan1.clearCheck();
+            radioLan1.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                    getChanged2();
+                }
+            });
+        }
+
+    public void getChanged2()  {
+        radioLan2.setOnCheckedChangeListener(null);
+        radioLan2.clearCheck();
+        radioLan2.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                getChanged1();
+            }
+        });
     }
 
     private void translatedLanguage() {
