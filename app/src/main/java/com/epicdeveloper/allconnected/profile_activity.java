@@ -1,5 +1,4 @@
 package com.epicdeveloper.allconnected;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,10 +26,7 @@ import com.epicdeveloper.allconnected.ui.Chat.chatMainScreen;
 import com.epicdeveloper.allconnected.ui.Perfil.fragment_profile;
 import com.epicdeveloper.allconnected.ui.home.fragment_home;
 import com.epicdeveloper.allconnected.ui.receivedNotifications.receivedNotifications;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -38,10 +34,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
-
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
 
 
 public class profile_activity extends AppCompatActivity {
@@ -50,6 +46,16 @@ public class profile_activity extends AppCompatActivity {
     private int countNoRead;
     public static String selectedLanguage;
     private boolean noReadNoti=false;
+    final int homeMenu = R.id.Home_Menu;
+    final int chatMenu = R.id.Chat_Menu;
+    final int profileMenu = R.id.Profile_Menu;
+    final int notificationsMenu = R.id.Notifications_Menu;
+    final int contactsAction = R.id.action_Contacts;
+    final int aboutAction = R.id.action_About;
+    final int settingsAction = R.id.action_Settings;
+    final int howitWorksAction = R.id.action_HowitWorks;
+    final int shareAction = R.id.action_Share;
+    final int logoutAction = R.id.action_logout;
     Context context;
     Resources resources;
     Menu menu;
@@ -68,71 +74,67 @@ public class profile_activity extends AppCompatActivity {
         Locale locale = new Locale(selectedLanguage);
         Locale.setDefault(locale);
         Configuration config = new Configuration();
-        config.locale = locale;
+        config.setLocale(locale);
         getBaseContext().getResources().updateConfiguration(config,
                 getBaseContext().getResources().getDisplayMetrics());
         MainActivity.getInit = 1;
         MainActivity.getProfileView = 2;
         setContentView(R.layout.activity_profile);
-
-
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         barNavigation = bottomNavigationView.getMenu();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(resources.getString(R.string.home_menu));
+        Objects.requireNonNull(getSupportActionBar()).setTitle(resources.getString(R.string.home_menu));
         getNotifications();
 
 
-         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-               switch (item.getItemId()) {
-                    case R.id.Home_Menu:
-                        FragmentManager manager = getSupportFragmentManager();
-                        FragmentTransaction transaction = manager.beginTransaction();
-                        Fragment fm = new fragment_home();
-                        transaction.add(R.id.home_fragment, fm);
-                        transaction.commit();
-                        item.setTitle(resources.getString(R.string.home_menu));
-                        getSupportActionBar().setTitle(resources.getString(R.string.home_menu));
-                        return true;
 
-                    case R.id.Chat_Menu:
-                        manager = getSupportFragmentManager();
-                        transaction = manager.beginTransaction();
-                        fm = new chatMainScreen();
-                        transaction.replace(R.id.home_fragment, fm);
-                        transaction.commit();
-                        item.setTitle(resources.getString(R.string.chat_menu));
-                        getSupportActionBar().setTitle(resources.getString(R.string.chat_menu));
-                        return true;
+         bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case homeMenu:
+                     FragmentManager manager = getSupportFragmentManager();
+                     FragmentTransaction transaction = manager.beginTransaction();
+                     Fragment fm = new fragment_home();
+                     transaction.add(R.id.home_fragment, fm);
+                     transaction.commit();
+                     item.setTitle(resources.getString(R.string.home_menu));
+                     Objects.requireNonNull(getSupportActionBar()).setTitle(resources.getString(R.string.home_menu));
+                     return true;
 
-                    case R.id.Profile_Menu:
-                       manager = getSupportFragmentManager();
-                        transaction = manager.beginTransaction();
-                        fm = new fragment_profile();
-                        transaction.replace(R.id.home_fragment, fm);
-                        transaction.commit();
-                        item.setTitle(resources.getString(R.string.profile_menu));
-                        getSupportActionBar().setTitle(resources.getString(R.string.profile_menu));
-                        return true;
+                case chatMenu:
+                     manager = getSupportFragmentManager();
+                     transaction = manager.beginTransaction();
+                     fm = new chatMainScreen();
+                     transaction.replace(R.id.home_fragment, fm);
+                     transaction.commit();
+                     item.setTitle(resources.getString(R.string.chat_menu));
+                     Objects.requireNonNull(getSupportActionBar()).setTitle(resources.getString(R.string.chat_menu));
+                     return true;
 
-                    case R.id.Notifications_Menu:
-                        item.setTitle(resources.getString(R.string.receivedNotifications));
-                        getSupportActionBar().setTitle(resources.getString(R.string.receivedNotifications));
-                        manager = getSupportFragmentManager();
-                        transaction = manager.beginTransaction();
-                        fm = new receivedNotifications();
-                        transaction.replace(R.id.home_fragment, fm);
-                        transaction.commit();
-                        item.setTitle(resources.getString(R.string.receivedNotifications));
-                        return true;
+                 case profileMenu:
+                    manager = getSupportFragmentManager();
+                     transaction = manager.beginTransaction();
+                     fm = new fragment_profile();
+                     transaction.replace(R.id.home_fragment, fm);
+                     transaction.commit();
+                     item.setTitle(resources.getString(R.string.profile_menu));
+                     Objects.requireNonNull(getSupportActionBar()).setTitle(resources.getString(R.string.profile_menu));
+                     return true;
 
-                }
-                return true;
-            }
-        });
+                 case notificationsMenu:
+                     item.setTitle(resources.getString(R.string.receivedNotifications));
+                     Objects.requireNonNull(getSupportActionBar()).setTitle(resources.getString(R.string.receivedNotifications));
+                     manager = getSupportFragmentManager();
+                     transaction = manager.beginTransaction();
+                     fm = new receivedNotifications();
+                     transaction.replace(R.id.home_fragment, fm);
+                     transaction.commit();
+                     item.setTitle(resources.getString(R.string.receivedNotifications));
+                     return true;
+
+             }
+             return true;
+         });
 
     }
 
@@ -153,23 +155,23 @@ public class profile_activity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
 
         switch (item.getItemId()){
-            case R.id.action_Contacts:
+            case contactsAction:
                 Intent intent = new Intent(this, contacto.class);
                 startActivity(intent);
                 return true;
-            case R.id.action_About:
+            case aboutAction:
                 intent = new Intent(this, acercade.class);
                 startActivity(intent);
                 return true;
-            case R.id.action_Settings:
+            case settingsAction:
                 intent = new Intent(this, settings.class);
                 startActivity(intent);
                 return true;
-            case R.id.action_HowitWorks:
+            case howitWorksAction:
                 intent = new Intent(this, howItWorks.class);
                 startActivity(intent);
                 return true;
-            case R.id.action_Share:
+            case shareAction:
                 String shareLink = "https://play.google.com/store/apps/details?id=com.epicdeveloper.allconnected";
                 intent = new Intent();
                 intent.setAction(Intent.ACTION_SEND);
@@ -177,7 +179,7 @@ public class profile_activity extends AppCompatActivity {
                 intent.setType("text/plain");
                 startActivity(Intent.createChooser(intent, resources.getString(R.string.shareFriend)));
                 return true;
-            case R.id.action_logout:
+            case logoutAction:
                 logout();
                 return true;
         }
@@ -188,21 +190,18 @@ public class profile_activity extends AppCompatActivity {
         AlertDialog alert = new AlertDialog.Builder(this).create();
 
            alert.setMessage(resources.getString(R.string.logout));
-        alert.setButton(AlertDialog.BUTTON_POSITIVE,resources.getString(R.string.yes), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                getInterfaceID();
-                finish();
-                MainActivity.getInit=0;
-                MainActivity.getProfileView=1;
-                MainActivity.init = 0;
-                MainActivity.profileView=1;
-            }
+        alert.setButton(AlertDialog.BUTTON_POSITIVE,resources.getString(R.string.yes), (dialogInterface, i) -> {
+            getInterfaceID();
+            finish();
+            MainActivity.getInit=0;
+            MainActivity.getProfileView=1;
+            MainActivity.init = 0;
+            MainActivity.profileView=1;
         });
         alert.setButton(AlertDialog.BUTTON_NEGATIVE,resources.getString(R.string.No), (DialogInterface.OnClickListener) null);
         alert.show();
-        TextView alertMessage = (TextView) alert.findViewById(android.R.id.message);
-        TextView alertTitle = (TextView) alert.findViewById(android.R.id.title);
+        TextView alertMessage = alert.findViewById(android.R.id.message);
+        TextView alertTitle = alert.findViewById(android.R.id.title);
         if (alertTitle!=null) {
             alertTitle.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         }
@@ -224,7 +223,7 @@ public class profile_activity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
                     for (DataSnapshot dataSnapshot: snapshot.getChildren()){
-                        if (dataSnapshot.child("leido").getValue().toString().equals("No")) {
+                        if (Objects.requireNonNull(dataSnapshot.child("leido").getValue()).toString().equals("No")) {
                             countNoRead = countNoRead + 1;
                         }
                     }
@@ -268,27 +267,24 @@ public class profile_activity extends AppCompatActivity {
     }
 
     public void getInterfaceID() {
-        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
-            @Override
-            public void onComplete(@NonNull Task<String> task) {
-                if (!task.isSuccessful()){
-                    Log.w("TAG", "Not able to get token", task.getException());
-                    return;
-                }
-                mToken = task.getResult();
-                upDateSessionActive(mToken, "OFF", MainActivity.plateUser);
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
+            if (!task.isSuccessful()){
+                Log.w("TAG", "Not able to get token", task.getException());
+                return;
             }
+            mToken = task.getResult();
+            upDateSessionActive(mToken);
         });
     }
 
-    private void upDateSessionActive(String mToken, final String active, final String activeUser) {
+    private void upDateSessionActive(String mToken) {
         DatabaseReference sessionActiveDb = FirebaseDatabase.getInstance().getReference("activeSession/"+mToken);
         sessionActiveDb.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 if (snapshot.exists()){
-                    Map<String, Object> updates = new HashMap<String, Object>();
-                    for (DataSnapshot ds:snapshot.getChildren()){
+                    Map<String, Object> updates = new HashMap<>();
+                    for (DataSnapshot ignored :snapshot.getChildren()){
                         updates.put("active", "OFF");
                     }
 
