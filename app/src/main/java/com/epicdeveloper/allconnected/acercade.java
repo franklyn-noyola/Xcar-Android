@@ -10,14 +10,14 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
-import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.epicdeveloper.allconnected.ui.Chat.chatMainScreen;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+
+import java.util.Objects;
 
 public class acercade extends AppCompatActivity {
     public static String getVersion;
@@ -33,7 +33,7 @@ public class acercade extends AppCompatActivity {
         selectedLanguage = MainActivity.userlanguage;
         context = LocaleHelper.setLocale(getApplication(), selectedLanguage);
         resources = context.getResources();
-        getSupportActionBar().setTitle(resources.getString(R.string.action_about));
+        Objects.requireNonNull(getSupportActionBar()).setTitle(resources.getString(R.string.action_about));
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0099CC")));
         adview = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -53,12 +53,9 @@ public class acercade extends AppCompatActivity {
         linkButton.setTextColor(Color.BLUE);
         linkButton.setMovementMethod(LinkMovementMethod.getInstance());
         linkButton.setLinkTextColor(Color.BLUE);
-        linkButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.epicdevelopers.app"));
-                startActivity(intent);
-            }
+        linkButton.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.epicdevelopers.app"));
+            startActivity(intent);
         });
 
     }
