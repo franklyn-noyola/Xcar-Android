@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.w3c.dom.Text;
+import java.util.Objects;
 
 public class howItWorks extends AppCompatActivity {
     TextView profile,chat,sendText,receiveText,about,setting,contact;
@@ -26,7 +26,7 @@ public class howItWorks extends AppCompatActivity {
         selectedLanguage = MainActivity.userlanguage;
         context = LocaleHelper.setLocale(getApplication(), selectedLanguage);
         resources = context.getResources();
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0099CC")));
+        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0099CC")));
         getSupportActionBar().setTitle(resources.getString(R.string.action_howItWorks));
         profile = (TextView) findViewById(R.id.profile);
         chat = (TextView) findViewById(R.id.chat);
