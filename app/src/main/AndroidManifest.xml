@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.epicdeveloper.allconnected"
-    android:versionCode="1"
-    android:versionName="1.0.0">
+    package="com.epicdeveloper.allconnected">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -135,16 +133,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
+        !-activity
             android:name=".ui.receivedNotifications.receivedNotifications"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme.receivedNotification">
-            <intent-filter>
-                <action android:name="android.intent.action.CALL_BUTTON" />
+            --intent-filter>
+        --action android:name="android.intent.action.CALL_BUTTON" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+                --category android:name="android.intent.category.LAUNCHER" />
+            --intent-filter>
+        !-activity>
         <activity
             android:name=".ui.receivedNotifications.viewNotification"
             android:theme="@style/AppTheme.receivedNotification">
@@ -154,25 +152,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
+        !-activity
             android:name=".ui.Perfil.fragment_profile"
             android:theme="@style/AppTheme.profile">
-            <intent-filter>
-                <action android:name="android.intent.action.CALL_BUTTON" />
+            --intent-filter>
+                --action android:name="android.intent.action.CALL_BUTTON" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
+                --category android:name="android.intent.category.LAUNCHER" />
+            --intent-filter>
+        --activity>
+        !-activity
             android:name=".ui.Chat.chatMainScreen"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme.chat">
-            <intent-filter>
-                <action android:name="android.intent.action.CALL_BUTTON" />
+            --intent-filter>
+                --action android:name="android.intent.action.CALL_BUTTON" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+                --category android:name="android.intent.category.LAUNCHER" />
+            --intent-filter>
+        --activity>
         <activity
             android:name=".settings"
             android:launchMode="singleTask"
