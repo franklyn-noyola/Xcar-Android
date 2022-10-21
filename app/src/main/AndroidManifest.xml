@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.epicdeveloper.allconnected">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -43,7 +42,8 @@
 
         <activity
             android:name=".activity_changeresetpassword"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.CALL_BUTTON" />
 
@@ -52,7 +52,8 @@
         </activity>
         <activity
             android:name=".ui.Chat.fullViewImage"
-            android:theme="@style/Theme.Design.NoActionBar">
+            android:theme="@style/Theme.Design.NoActionBar"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.CALL_BUTTON" />
 
@@ -61,7 +62,8 @@
         </activity>
         <activity
             android:name=".ui.receivedNotifications.fullViewImageNoti"
-            android:theme="@style/Theme.Design.NoActionBar">
+            android:theme="@style/Theme.Design.NoActionBar"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.CALL_BUTTON" />
 
@@ -70,7 +72,8 @@
         </activity>
         <activity
             android:name=".newuser"
-            android:theme="@style/AppTheme.newuser">
+            android:theme="@style/AppTheme.newuser"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.CALL_BUTTON" />
 
@@ -79,7 +82,8 @@
         </activity>
         <activity
             android:name=".acercade"
-            android:theme="@style/AppTheme.contacts">
+            android:theme="@style/AppTheme.contacts"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.CALL_BUTTON" />
 
@@ -88,7 +92,8 @@
         </activity>
         <activity
             android:name=".contacto"
-            android:theme="@style/AppTheme.contacts">
+            android:theme="@style/AppTheme.contacts"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.CALL_BUTTON" />
 
@@ -98,7 +103,8 @@
         <activity
             android:name=".profile_activity"
             android:launchMode="singleTask"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.CALL_BUTTON" />
 
@@ -108,7 +114,8 @@
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask"
-            android:theme="@style/AppTheme.SplashTheme">
+            android:theme="@style/AppTheme.SplashTheme"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -117,7 +124,8 @@
         </activity>
         <activity
             android:name=".ResetPass"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.CALL_BUTTON" />
 
@@ -126,55 +134,61 @@
         </activity>
         <activity
             android:name=".ui.sendNotifications.sendNotification"
-            android:theme="@style/AppTheme.sendNotification">
+            android:theme="@style/AppTheme.sendNotification"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.CALL_BUTTON" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        !-activity
+        <activity
             android:name=".ui.receivedNotifications.receivedNotifications"
             android:launchMode="singleTask"
-            android:theme="@style/AppTheme.receivedNotification">
-            --intent-filter>
-        --action android:name="android.intent.action.CALL_BUTTON" />
+            android:theme="@style/AppTheme.receivedNotification"
+            android:exported="false">
+            <intent-filter>
+            <action android:name="android.intent.action.CALL_BUTTON" />
 
-                --category android:name="android.intent.category.LAUNCHER" />
-            --intent-filter>
-        !-activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.receivedNotifications.viewNotification"
-            android:theme="@style/AppTheme.receivedNotification">
+            android:theme="@style/AppTheme.receivedNotification"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.CALL_BUTTON" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        !-activity
+        <activity
             android:name=".ui.Perfil.fragment_profile"
-            android:theme="@style/AppTheme.profile">
-            --intent-filter>
-                --action android:name="android.intent.action.CALL_BUTTON" />
+            android:theme="@style/AppTheme.profile"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.CALL_BUTTON" />
 
-                --category android:name="android.intent.category.LAUNCHER" />
-            --intent-filter>
-        --activity>
-        !-activity
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".ui.Chat.chatMainScreen"
             android:launchMode="singleTask"
-            android:theme="@style/AppTheme.chat">
-            --intent-filter>
-                --action android:name="android.intent.action.CALL_BUTTON" />
+            android:theme="@style/AppTheme.chat"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.CALL_BUTTON" />
 
-                --category android:name="android.intent.category.LAUNCHER" />
-            --intent-filter>
-        --activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".settings"
             android:launchMode="singleTask"
-            android:theme="@style/AppTheme.settings">
+            android:theme="@style/AppTheme.settings"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.CALL_BUTTON" />
 
@@ -184,7 +198,8 @@
         <activity
             android:name=".howItWorks"
             android:launchMode="singleTask"
-            android:theme="@style/AppTheme.howItWorks">
+            android:theme="@style/AppTheme.howItWorks"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.CALL_BUTTON" />
 
@@ -193,7 +208,8 @@
         </activity>
         <activity
             android:name=".ui.Chat.fragment_chat"
-            android:theme="@style/AppTheme.chat">
+            android:theme="@style/AppTheme.chat"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.CALL_BUTTON" />
 
