@@ -18,6 +18,7 @@ import android.graphics.BitmapFactory;
 import android.media.AudioAttributes;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
+import android.os.Build;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
@@ -117,7 +118,16 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private PendingIntent clickOnNoti(Intent intent) {
         intent.putExtra("color", "rojo");
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        return PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+        PendingIntent pendingIntent;
+     /*   if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            pendingIntent = PendingIntent.getActivity(this,
+                    0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+        }else {
+            pendingIntent = PendingIntent.getActivity(this,
+                    0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        }*/
+        return  PendingIntent.getActivity(this,
+                0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
     }
 
     private void getNotificationData(String subject, String plateUser, String notiUser, final FirebaseCallBack firebaseCallBack) {
@@ -267,21 +277,19 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
                         NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                         NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), id);
-                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                            NotificationChannel nc = new NotificationChannel(id, "Nuevo", NotificationManager.IMPORTANCE_HIGH);
-                            nc.setShowBadge(true);
-                            AudioAttributes att = new AudioAttributes.Builder()
-                                    .setUsage(AudioAttributes.USAGE_NOTIFICATION)
-                                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                                    .build();
-                            nc.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION),att);
-                            Ringtone r = RingtoneManager.getRingtone(getApplicationContext(),RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
-                            r.play();
-                            assert nm != null;
-                            nm.createNotificationChannel(nc);
+                        NotificationChannel nc = new NotificationChannel(id, "Nuevo", NotificationManager.IMPORTANCE_HIGH);
+                        nc.setShowBadge(true);
+                        AudioAttributes att = new AudioAttributes.Builder()
+                                .setUsage(AudioAttributes.USAGE_NOTIFICATION)
+                                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                                .build();
+                        nc.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION),att);
+                        Ringtone r = RingtoneManager.getRingtone(getApplicationContext(),RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
+                        r.play();
+                        assert nm != null;
+                        nm.createNotificationChannel(nc);
 
-                        }
-                            builder.setAutoCancel(true)
+                        builder.setAutoCancel(true)
                                 .setWhen(System.currentTimeMillis())
                                 .setContentTitle(titulo)
 

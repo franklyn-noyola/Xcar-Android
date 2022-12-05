@@ -209,7 +209,7 @@
         <activity
             android:name=".ui.Chat.fragment_chat"
             android:theme="@style/AppTheme.chat"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.CALL_BUTTON" />
 
