@@ -237,7 +237,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                             } catch (ClassNotFoundException e) {
                                 e.printStackTrace();
                             }
-
                         }
 
                         MainActivity.chatUser = chatMainScreen.userToChat;

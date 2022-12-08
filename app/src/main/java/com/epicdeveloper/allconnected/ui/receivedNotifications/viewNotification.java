@@ -13,6 +13,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -65,6 +66,7 @@ public class viewNotification extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.viewnotification);
         MainActivity.chatScreen = 3;
+
         selectedLanguage = MainActivity.userlanguage;
         context = LocaleHelper.setLocale(viewNotification.this, selectedLanguage);
         resources = context.getResources();
@@ -74,6 +76,7 @@ public class viewNotification extends AppCompatActivity {
         notiBody = findViewById(R.id.bodyNoti);
         imageName = findViewById(R.id.imageView);
         btnReply = findViewById(R.id.replyButton);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0099CC")));
         getSupportActionBar().setTitle(receivedNotifications.readTargetUser+"-"+receivedNotifications.readSubject);
         String userText = resources.getString(R.string.from)+" " + "<br><b>" + receivedNotifications.readTargetUser + "<\b>";
@@ -115,6 +118,7 @@ public class viewNotification extends AppCompatActivity {
             }
         });
 
+
         btnReply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -140,6 +144,16 @@ public class viewNotification extends AppCompatActivity {
                 }
             });
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     public void deleteNotification(){

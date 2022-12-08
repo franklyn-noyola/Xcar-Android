@@ -2,6 +2,7 @@ package com.epicdeveloper.allconnected.ui.Chat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -41,11 +42,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContract;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -59,7 +55,6 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.epicdeveloper.allconnected.LocaleHelper;
 import com.epicdeveloper.allconnected.MainActivity;
-import com.epicdeveloper.allconnected.MyFirebaseMessagingService;
 import com.epicdeveloper.allconnected.R;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseListOptions;
@@ -134,7 +129,7 @@ public class fragment_chat extends AppCompatActivity {
         }
     }
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint({"ClickableViewAccessibility", "ObsoleteSdkInt"})
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EmojiCompat.init(new BundledEmojiCompatConfig(getApplicationContext()));
@@ -145,7 +140,7 @@ public class fragment_chat extends AppCompatActivity {
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
         setContentView(fragment_chat_fragment);
-        if (Build.VERSION.SDK_INT>=23){
+        if (Build.VERSION.SDK_INT>=29){
             requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE},2);
         }
         inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -158,7 +153,7 @@ public class fragment_chat extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if (snapshot.exists()) {
-                        Objects.requireNonNull(getSupportActionBar()).setTitle(MainActivity.chatUser+" - "+resources.getString(R.string.locked));
+                        Objects.requireNonNull(getSupportActionBar()).setTitle(MainActivity.chatUser+" - "+resources.getString(string.locked));
                     }else{
                         Objects.requireNonNull(getSupportActionBar()).setTitle(MainActivity.chatUser);
                     }
@@ -174,13 +169,16 @@ public class fragment_chat extends AppCompatActivity {
             getValidUsertoChat();
             Objects.requireNonNull(getSupportActionBar()).setTitle(chatMainScreen.userToChat);
         }
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0099CC")));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0099CC")));
+
         sendMessage = findViewById(id.input);
         displayChatMessages();
         sendMessage.setVerticalScrollBarEnabled(true);
         sendMessage.setMovementMethod(new ScrollingMovementMethod());
         sendMessage.computeScroll();
         sendMessage.isVerticalScrollBarEnabled();
+
         sendMessage.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -198,13 +196,14 @@ public class fragment_chat extends AppCompatActivity {
             }
         });
 
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        fab.setOnClickListener(new OnClickListener() {
                                    @Override
                                    public void onClick(View view) {
                                        userBlockedTitle = getSupportActionBar().getTitle().toString();
                                        if (userBlockedTitle.contains(resources.getString(string.locked))) {
-                                           Toast.makeText(getApplicationContext(), resources.getString(R.string.NoMessageSendLockUser), Toast.LENGTH_SHORT).show();
+                                           Toast.makeText(getApplicationContext(), resources.getString(string.NoMessageSendLockUser), Toast.LENGTH_SHORT).show();
                                            sendMessage.setText("");
                                        } else {
                                            getUserBlocked(MainActivity.plateUser, new FirebaseSuccessListener() {
@@ -240,14 +239,14 @@ public class fragment_chat extends AppCompatActivity {
                                    }
                                });
 
-        ImageButton buttonSend = findViewById(R.id.buttonImage);
-        buttonSend.setOnClickListener(new View.OnClickListener() {
+        ImageButton buttonSend = findViewById(id.buttonImage);
+        buttonSend.setOnClickListener(new OnClickListener() {
                                           @Override
                                           public void onClick(View v) {
                                               checker = "image";
                                               userBlockedTitle = getSupportActionBar().getTitle().toString();
                                               if (userBlockedTitle.contains(resources.getString(string.locked))) {
-                                                  Toast.makeText(getApplicationContext(), resources.getString(R.string.NoMessageSendLockUser), Toast.LENGTH_SHORT).show();
+                                                  Toast.makeText(getApplicationContext(), resources.getString(string.NoMessageSendLockUser), Toast.LENGTH_SHORT).show();
                                               } else {
                                                   getUserBlocked(MainActivity.plateUser, new FirebaseSuccessListener() {
                                                       @Override
@@ -258,12 +257,12 @@ public class fragment_chat extends AppCompatActivity {
                                                               intent = new Intent();
                                                               intent.setAction(Intent.ACTION_GET_CONTENT);
                                                               intent.setType("image/*");
-                                                              startActivityForResult(Intent.createChooser(intent, resources.getString(R.string.selectImage)), 438);
+                                                              startActivityForResult(Intent.createChooser(intent, resources.getString(string.selectImage)), 438);
                                                               setListChatUsers(messageSent, "text");
                                                           } else {
                                                               intent.setAction(Intent.ACTION_GET_CONTENT);
                                                               intent.setType("image/*");
-                                                              startActivityForResult(Intent.createChooser(intent, resources.getString(R.string.selectImage)), 438);
+                                                              startActivityForResult(Intent.createChooser(intent, resources.getString(string.selectImage)), 438);
                                                           }
                                                           onStart();
                                                       }
@@ -272,27 +271,27 @@ public class fragment_chat extends AppCompatActivity {
                                           }
                                       });
         ImageButton buttonCamera = findViewById(id.buttonCamera);
-        buttonCamera.setOnClickListener(new View.OnClickListener() {
+        buttonCamera.setOnClickListener(new OnClickListener() {
                                             @Override
                                             public void onClick(View v) {
                                                 checker = "image";
                                                 userBlockedTitle = getSupportActionBar().getTitle().toString();
                                                 System.out.println("locked: " + userBlockedTitle);
                                                 if (userBlockedTitle.contains(resources.getString(string.locked))) {
-                                                    Toast.makeText(getApplicationContext(), resources.getString(R.string.NoMessageSendLockUser), Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(getApplicationContext(), resources.getString(string.NoMessageSendLockUser), Toast.LENGTH_SHORT).show();
                                                 } else {
                                                     getUserBlocked(MainActivity.plateUser, new FirebaseSuccessListener() {
                                                         @Override
                                                         public void onCallBack(boolean isDataFetched) {
                                                             if (isDataFetched) {
                                                                 blocked1 = "blocked";
-                                                                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                                                                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                                                                 File file = getFile();
                                                                 cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
                                                                 startActivityForResult(cameraIntent, CAMERA_REQUEST);
                                                                 setListChatUsers(messageSent, "text");
                                                             } else {
-                                                                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                                                                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                                                                 if (cameraIntent.resolveActivity(getPackageManager()) != null) {
                                                                     File pictureFile = null;
                                                                     pictureFile = getFile();
@@ -528,6 +527,9 @@ public class fragment_chat extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(final MenuItem item){
             switch (item.getItemId()){
+                case android.R.id.home:
+                    this.finish();
+                      return true;
             case id.deleteChat:
                 deleteAllChat();
                 return true;

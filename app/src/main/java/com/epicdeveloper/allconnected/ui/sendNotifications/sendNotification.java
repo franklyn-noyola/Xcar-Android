@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -99,6 +100,7 @@ public class sendNotification extends AppCompatActivity {
         message = findViewById(R.id.notificationMessage);
         imageUriName = null;
         imageSel.setText(null);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if (MainActivity.chatScreen == 1) {
             selectedSubject.setVisibility(View.INVISIBLE);
             selectSubject.setVisibility(View.VISIBLE);
@@ -139,6 +141,17 @@ public class sendNotification extends AppCompatActivity {
         if (requestCode==438 && resultCode==RESULT_OK && data!=null && data.getData()!=null) {
             imageUri = data.getData();
             imageSel.setText(imageName);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 
@@ -254,6 +267,8 @@ public class sendNotification extends AppCompatActivity {
         });
 
     }
+
+
 
     private void sendMesage(){
         userTarget = targetUser.getText().toString();
