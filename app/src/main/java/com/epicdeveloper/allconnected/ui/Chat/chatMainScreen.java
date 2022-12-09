@@ -58,7 +58,6 @@ public class chatMainScreen extends Fragment {
     String selectedLanguage;
     private LayoutInflater inflaterView;
     private DatabaseReference Users;
-    private Button buttonSearch;
     public static  String userToChat;
     Context context;
     Resources resources;
@@ -83,31 +82,17 @@ public class chatMainScreen extends Fragment {
         AdRequest adRequest = new AdRequest.Builder().build();
         adview.loadAd(adRequest);
         searchView = root.findViewById(R.id.searchView);
-        buttonSearch = root.findViewById(R.id.searchButton);
-        buttonSearch.setText(resources.getString(R.string.Search));
-
         inflaterView = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                 @Override
                 public boolean onQueryTextSubmit(final String query) {
                     getUserData(query);
-                    return false;
+                    return true;
                 }
 
                 @Override
                 public boolean onQueryTextChange(String newText) {
                     return false;
-                }
-            });
-
-            buttonSearch.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (TextUtils.isEmpty(searchView.getQuery())){
-                        return;
-                    }else{
-                        getUserData(searchView.getQuery().toString());
-                    }
                 }
             });
 

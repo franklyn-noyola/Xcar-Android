@@ -2,17 +2,22 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="-259dp">
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchView"
-            android:layout_width="170dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="20dp"
+            android:imeOptions="actionSearch"
+            android:layout_width="271dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="60dp"
             android:iconifiedByDefault="true"
             android:queryHint="Search... "
@@ -21,27 +26,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:layout_width="130dp"
-            android:layout_height="30dp"
-            android:id="@+id/searchButton"
-            android:textSize="13sp"
-            android:textColor="@android:color/white"
-            android:hint="@string/Search"
-            android:textStyle="bold"
-            android:background="@android:color/holo_blue_dark"
-            android:layout_marginStart="200dp"
-            android:layout_marginEnd="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="60dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
         <ListView
             android:id="@+id/messageList"
-            android:layout_width="628dp"
-            android:layout_height="600dp"
+            android:layout_width="wrap_content"
+            android:layout_height="459dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="130dp"
             android:layout_marginEnd="20dp"
@@ -60,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/messageList"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="-55dp"
             app:adSize="BANNER"
             app:adUnitId="@string/banner_ad_unit_id"
             app:layout_constraintBottom_toBottomOf="parent"

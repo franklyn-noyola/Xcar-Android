@@ -50,7 +50,6 @@ public class fragment_home extends Fragment {
     public TextView user;
     AdView adview;
     Context context;
-    Button searchButtonUser;
     Resources resources;
     String selectedLanguage;
     SearchView searchViewField;
@@ -84,9 +83,7 @@ public class fragment_home extends Fragment {
 
         AdRequest adRequest = new AdRequest.Builder().build();
         adview.loadAd(adRequest);
-        searchButtonUser = root.findViewById(R.id.searchUserButton);
         searchViewField = root.findViewById(R.id.search_View);
-        searchButtonUser.setText(resources.getString(R.string.Search));
 
 
         MainActivity.screens=1;
@@ -103,8 +100,12 @@ public class fragment_home extends Fragment {
         searchViewField.setOnQueryTextListener(new SearchView.OnQueryTextListener()  {
             @Override
             public boolean onQueryTextSubmit(final String query) {
-                getInfoData(query);
-                return false;
+                if (TextUtils.isEmpty(searchViewField.getQuery())){
+                    Toast.makeText(context, resources.getString(R.string.noExists), Toast.LENGTH_SHORT).show();
+                }else{
+                    getInfoData(searchViewField.getQuery().toString().toUpperCase());
+                }
+                return true;
             }
 
             @Override
@@ -113,7 +114,7 @@ public class fragment_home extends Fragment {
             }
         });
 
-        searchButtonUser.setOnClickListener(new View.OnClickListener() {
+    /*    searchButtonUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (TextUtils.isEmpty(searchViewField.getQuery())){
@@ -122,7 +123,7 @@ public class fragment_home extends Fragment {
                     getInfoData(searchViewField.getQuery().toString().toUpperCase());
                 }
             }
-        });
+        });*/
 
         return root;
     }
