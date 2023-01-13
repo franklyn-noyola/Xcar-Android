@@ -27,20 +27,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.epicdeveloper.allconnected.ui.LoginErrorsValidation;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.iid.*;
-import com.google.firebase.iid.*;
 import com.google.firebase.messaging.FirebaseMessaging;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 
 public class newuser extends AppCompatActivity {

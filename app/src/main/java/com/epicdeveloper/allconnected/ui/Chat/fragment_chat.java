@@ -464,7 +464,7 @@ public class fragment_chat extends AppCompatActivity {
                 }
             }else{
                 Toast.makeText(this,resources.getString(R.string.noSelectedImage), Toast.LENGTH_SHORT).show();
-
+                return;
             }
         }
     }

@@ -68,13 +68,11 @@
         android:id="@+id/search_View"
         android:layout_width="336dp"
         android:layout_height="48dp"
-        android:background="@drawable/rounded_corners"
+        android:background="@drawable/searchshape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.106" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

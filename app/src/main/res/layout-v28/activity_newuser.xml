@@ -32,7 +32,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.021"
-        app:srcCompat="@drawable/logocochenuevo"
+        app:srcCompat="@drawable/logoconected"
         tools:ignore="ContentDescription" />
 
     <Spinner
@@ -145,18 +145,18 @@
 
     <Button
         android:id="@+id/registerButton"
-        android:layout_width="match_parent"
+        android:layout_width="372dp"
         android:layout_height="57dp"
         android:background="@drawable/loginframe"
-        android:textColorHint="@android:color/white"
         android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintVertical_bias="0.899" />
 
     <CheckBox
         android:id="@+id/checkBox"

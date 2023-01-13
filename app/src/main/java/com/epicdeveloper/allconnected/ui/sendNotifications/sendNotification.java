@@ -13,7 +13,6 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -30,10 +29,6 @@ import com.android.volley.toolbox.Volley;
 import com.epicdeveloper.allconnected.LocaleHelper;
 import com.epicdeveloper.allconnected.MainActivity;
 import com.epicdeveloper.allconnected.R;
-import com.epicdeveloper.allconnected.profile_activity;
-import com.epicdeveloper.allconnected.ui.Chat.chatMainScreen;
-import com.epicdeveloper.allconnected.ui.Chat.chatMessage;
-import com.epicdeveloper.allconnected.ui.Chat.fragment_chat;
 import com.epicdeveloper.allconnected.ui.receivedNotifications.receivedNotifications;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -50,7 +45,7 @@ import com.google.firebase.storage.StorageTask;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
+
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -69,15 +64,11 @@ public class sendNotification extends AppCompatActivity {
     public static String userTarget;
     public static String userToSend;
     public static Uri imageUri;
-    public static String dateName;
     public static String imageName;
-    public static Long dateShow;
     public static String  messageSend;
     String selectedLanguage;
     Context context;
     Resources resources;
-    ArrayAdapter<CharSequence> adapter;
-
     DatabaseReference userValidation;
     DatabaseReference sendMessageUser;
     DatabaseReference receiveMessageUser;

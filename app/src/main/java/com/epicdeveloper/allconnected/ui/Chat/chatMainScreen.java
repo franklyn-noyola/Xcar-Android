@@ -83,6 +83,22 @@ public class chatMainScreen extends Fragment {
         adview.loadAd(adRequest);
         searchView = root.findViewById(R.id.searchView);
         inflaterView = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        searchView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchView.onActionViewExpanded();
+            }
+        });
+
+        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+                                          @Override
+                                          public boolean onClose() {
+                                              searchView.setQuery("", false);
+                                              searchView.onActionViewCollapsed();
+                                              searchView.clearFocus();                                              return false;
+                                          }
+        });
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                 @Override
                 public boolean onQueryTextSubmit(final String query) {

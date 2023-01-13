@@ -85,6 +85,8 @@ public class fragment_home extends Fragment {
         adview.loadAd(adRequest);
         searchViewField = root.findViewById(R.id.search_View);
 
+        //searchViewField.setIconified(false);
+        //searchViewField.clearFocus();
 
         MainActivity.screens=1;
         userPlate().setText(MainActivity.userSelected);
@@ -97,6 +99,21 @@ public class fragment_home extends Fragment {
         if (MainActivity.userSelected.length()==10){
             userPlate().setTextSize(40);
         }
+
+        searchViewField.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchViewField.onActionViewExpanded();
+
+             }
+        });
+
+        searchViewField.setOnCloseListener(() -> {
+            searchViewField.onActionViewCollapsed();
+            searchViewField.clearFocus();
+            return false;
+        });
+
         searchViewField.setOnQueryTextListener(new SearchView.OnQueryTextListener()  {
             @Override
             public boolean onQueryTextSubmit(final String query) {
@@ -112,9 +129,11 @@ public class fragment_home extends Fragment {
             public boolean onQueryTextChange(String newText) {
                 return false;
             }
+
+
         });
 
-    /*    searchButtonUser.setOnClickListener(new View.OnClickListener() {
+     /*    searchButtonUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (TextUtils.isEmpty(searchViewField.getQuery())){
