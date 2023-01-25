@@ -11,10 +11,24 @@
         android:title="@string/action_settings"/>
 
     <item
+        android:id="@+id/action_HowitWorks"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="@string/action_howItWorks"/>
+
+    <item
         android:id="@+id/action_Contacts"
         android:orderInCategory="100"
         app:showAsAction="never"
         android:title="@string/action_contacts"/>
+
+    <item
+        android:id="@+id/action_Share"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="@string/shareWith"/>
+
+
 
     <item
         android:id="@+id/action_About"
@@ -22,17 +36,9 @@
         app:showAsAction="never"
         android:title="@string/action_about"/>
 
-    <item
-        android:id="@+id/action_HowitWorks"
-        android:orderInCategory="100"
-        app:showAsAction="never"
-        android:title="@string/action_howItWorks"/>
 
-    <item
-        android:id="@+id/action_Share"
-        android:orderInCategory="100"
-        app:showAsAction="never"
-        android:title="@string/shareWith"/>
+
+
 
     <item
         android:id="@+id/action_logout"
