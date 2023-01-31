@@ -66,7 +66,7 @@
 
     <SearchView
         android:id="@+id/search_View"
-        android:layout_width="336dp"
+        android:layout_width="271dp"
         android:layout_height="48dp"
         android:background="@drawable/searchshape"
         app:layout_constraintBottom_toBottomOf="parent"

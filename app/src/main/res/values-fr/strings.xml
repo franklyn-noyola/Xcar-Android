@@ -36,7 +36,7 @@
     <string name="password_name" >Mot de passe</string>
     <string name="confirm_password" >Confirmer le mot de passe</string>
     <string name="register" >REGISTRE</string>
-    <string name="accept_terms">J\'ai lu et accepté le</string>
+    <string name="accept_terms">J\'ai lu et accepté le Conditions générales et politique de confidentialité</string>
     <string name="plateHint"> Numéro de plaque</string>
     <string name="passHint">Mot de passe</string>
     <string name="welcomeHomeText">Bienvenue à allConnected</string>
