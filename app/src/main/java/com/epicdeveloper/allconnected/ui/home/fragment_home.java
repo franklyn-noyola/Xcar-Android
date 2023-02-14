@@ -2,8 +2,6 @@ package com.epicdeveloper.allconnected.ui.home;
 
 
 import static com.epicdeveloper.allconnected.R.layout.searchuser_popup;
-import static com.epicdeveloper.allconnected.R.layout.userinfo_popup;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -29,13 +27,8 @@ import com.epicdeveloper.allconnected.LocaleHelper;
 import com.epicdeveloper.allconnected.MainActivity;
 import com.epicdeveloper.allconnected.R;
 import com.epicdeveloper.allconnected.ui.Chat.fragment_chat;
-import com.epicdeveloper.allconnected.ui.sendNotifications.sendNotification;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.RequestConfiguration;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -131,17 +124,6 @@ public class fragment_home extends Fragment {
 
 
         });
-
-     /*    searchButtonUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (TextUtils.isEmpty(searchViewField.getQuery())){
-                    Toast.makeText(context, resources.getString(R.string.noExists), Toast.LENGTH_SHORT).show();
-                }else{
-                    getInfoData(searchViewField.getQuery().toString().toUpperCase());
-                }
-            }
-        });*/
 
         return root;
     }

@@ -31,7 +31,7 @@
         <ListView
             android:id="@+id/messageList"
             android:layout_width="wrap_content"
-            android:layout_height="355dp"
+            android:layout_height="398dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="130dp"
             android:layout_marginEnd="20dp"
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/messageList"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="-55dp"
+            android:layout_marginBottom="-86dp"
             app:adSize="BANNER"
             app:adUnitId="@string/banner_ad_unit_id"
             app:layout_constraintBottom_toBottomOf="parent"
