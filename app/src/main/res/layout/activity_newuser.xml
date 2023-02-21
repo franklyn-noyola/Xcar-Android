@@ -189,7 +189,7 @@
         android:text="@string/terms_privacy"
         android:textColor="#0277BD"
         android:textSize="9sp"
-        tools:ignore="SmallSp,UnusedAttribute"
+        tools:ignore="MissingConstraints,SmallSp,UnusedAttribute"
         tools:layout_editor_absoluteX="121dp"
         tools:layout_editor_absoluteY="692dp" />
 
