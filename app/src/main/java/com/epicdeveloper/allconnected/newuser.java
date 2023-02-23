@@ -605,8 +605,8 @@ public class newuser extends AppCompatActivity {
         if (selectedLang.equals("ES")){
             acceptButton.setTextSize(9);
             linkButton.setTextSize(9);
-            linkButton.setY(1670);
-            linkButton.setX(450);
+           // linkButton.setY(1670);
+            //linkButton.setX(450);
             termsLink = "https://sites.google.com/view/epicdevelopers-spanish";
         }
         if (selectedLang.equals("EN")){
