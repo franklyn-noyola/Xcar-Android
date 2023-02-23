@@ -315,6 +315,7 @@ public class newuser extends AppCompatActivity {
                             }
                             if (selectedLang.equals("EN")){
                                 sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageEN());
+
                             }
                             if (selectedLang.equals("FR")){
                                 sendEmail.sendEmailMessage(email_user.getText().toString(),resources.getString(R.string.welcomeHomeText), sendWelcomeMessageFR());
@@ -340,6 +341,7 @@ public class newuser extends AppCompatActivity {
                             if (selectedLang.equals("NL")){
                                 sendEmail.sendEmailMessage(email_user.getText().toString(),resources.getString(R.string.welcomeHomeText), sendWelcomeMessageNL());
                             }
+
                             if (selectedLang.equals("PL")){
                                 sendEmail.sendEmailMessage(email_user.getText().toString(),resources.getString(R.string.welcomeHomeText), sendWelcomeMessagePL());
                             }
@@ -446,6 +448,7 @@ public class newuser extends AppCompatActivity {
         linkButton.setTextColor(Color.BLUE);
         linkButton.setMovementMethod(LinkMovementMethod.getInstance());
         linkButton.setLinkTextColor(Color.BLUE);
+
         linkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -602,17 +605,21 @@ public class newuser extends AppCompatActivity {
         if (selectedLang.equals("ES")){
             acceptButton.setTextSize(9);
             linkButton.setTextSize(9);
-            termsLink = "https://www.epicdevelopers.app/2020/11/allconect.html";
+            linkButton.setY(1670);
+            linkButton.setX(450);
+            termsLink = "https://sites.google.com/view/epicdevelopers-spanish";
         }
         if (selectedLang.equals("EN")){
             acceptButton.setTextSize(9);
-            linkButton.setTextSize(12);
-            termsLink = "https://www.epicdevelopers.app/2021/04/terms-and-conditions-of-use-relevant.html";
+            linkButton.setTextSize(10);
+            linkButton.setY(1670);
+            linkButton.setX(460);
+            termsLink = "https://www.epicdevelopers.app/";
         }
         if (selectedLang.equals("FR")){
             acceptButton.setTextSize(12);
             linkButton.setTextSize(9);
-            termsLink = "https://www.epicdevelopers.app/2021/04/termes-et-conditions-dutilisation-de.html";
+            termsLink = "https://www.epicdevelopers.app";
         }
         if (selectedLang.equals("DE")){
             acceptButton.setTextSize(7);
