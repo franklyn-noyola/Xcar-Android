@@ -607,14 +607,14 @@ public class newuser extends AppCompatActivity {
             linkButton.setTextSize(9);
            // linkButton.setY(1670);
             //linkButton.setX(450);
-            termsLink = "https://sites.google.com/view/epicdevelopers-spanish";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/spanish";
         }
         if (selectedLang.equals("EN")){
             acceptButton.setTextSize(9);
             linkButton.setTextSize(10);
             linkButton.setY(1670);
             linkButton.setX(460);
-            termsLink = "https://www.epicdevelopers.app/";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/englsih";
         }
         if (selectedLang.equals("FR")){
             acceptButton.setTextSize(12);
