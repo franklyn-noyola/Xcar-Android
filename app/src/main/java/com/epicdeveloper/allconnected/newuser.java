@@ -22,6 +22,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -605,6 +606,10 @@ public class newuser extends AppCompatActivity {
         if (selectedLang.equals("ES")){
             acceptButton.setTextSize(9);
             linkButton.setTextSize(9);
+            RelativeLayout.LayoutParams p = (RelativeLayout.LayoutParams)linkButton.getLayoutParams();
+            p.leftMargin = 300;
+            p.topMargin = 800;
+            linkButton.setLayoutParams(p);
            // linkButton.setY(1670);
             //linkButton.setX(450);
             termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/spanish";
