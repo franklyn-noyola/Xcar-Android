@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
+    android:id="@+id/newUserParent"
     tools:context=".newuser">
 
     <TextView
@@ -187,10 +188,9 @@
         android:text="@string/terms_privacy"
         android:textColor="#0277BD"
         android:textSize="9sp"
-
-        tools:ignore="MissingConstraints,SmallSp,UnusedAttribute"
-        tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="563dp" />
+        app:layout_constraintRight_toRightOf="@+id/checkBox"
+        app:layout_constraintTop_toTopOf="@+id/checkBox"
+        tools:ignore="MissingConstraints,SmallSp,UnusedAttribute"/>
 
     <TextView
         android:id="@+id/textView2"

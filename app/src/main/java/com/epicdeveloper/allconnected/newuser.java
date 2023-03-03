@@ -2,6 +2,10 @@ package com.epicdeveloper.allconnected;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
+
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 
@@ -22,7 +26,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -606,20 +609,16 @@ public class newuser extends AppCompatActivity {
         if (selectedLang.equals("ES")){
             acceptButton.setTextSize(9);
             linkButton.setTextSize(9);
-            RelativeLayout.LayoutParams p = (RelativeLayout.LayoutParams)linkButton.getLayoutParams();
-            p.leftMargin = 300;
-            p.topMargin = 800;
-            linkButton.setLayoutParams(p);
-           // linkButton.setY(1670);
+             // linkButton.setY(1670);
             //linkButton.setX(450);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/spanish";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/spanish";
         }
         if (selectedLang.equals("EN")){
             acceptButton.setTextSize(9);
             linkButton.setTextSize(10);
             linkButton.setY(1670);
             linkButton.setX(460);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/englsih";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/english";
         }
         if (selectedLang.equals("FR")){
             acceptButton.setTextSize(12);

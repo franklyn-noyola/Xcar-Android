@@ -163,12 +163,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="22dp"
         android:buttonTint="@android:color/black"
-        android:lineHeight="10dp"
         android:text="@string/accept_terms"
         android:textColor="@android:color/black"
         android:textSize="9sp"
         app:layout_constraintTop_toBottomOf="@id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SmallSp" />
@@ -182,12 +180,14 @@
         android:text="@string/terms_privacy"
         android:textColor="#0277BD"
         android:textSize="6sp"
-        app:layout_constraintTop_toBottomOf="@id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/checkBox"
+        app:layout_constraintRight_toRightOf="@+id/checkBox"
+        app:layout_constraintStart_toStartOf="@+id/checkBox"
+        app:layout_constraintTop_toTopOf="@id/checkBox"
         android:layout_marginStart="150dp"
-        android:layout_marginBottom="22dp"
-        app:layout_constraintHorizontal_bias="0.040"
+        android:layout_marginBottom="1000dp"
+        app:layout_constraintHorizontal_bias="0.40"
+        app:layout_constraintVertical_bias="0.60"
         tools:ignore="SmallSp,UnusedAttribute"/>
 
     <TextView
