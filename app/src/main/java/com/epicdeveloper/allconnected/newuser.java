@@ -608,76 +608,74 @@ public class newuser extends AppCompatActivity {
 
         if (selectedLang.equals("ES")){
             acceptButton.setTextSize(9);
-            linkButton.setTextSize(9);
-             // linkButton.setY(1670);
-            //linkButton.setX(450);
+            linkButton.setTextSize(10);
+        //    linkButton.setY(1670);
+         //   linkButton.setX(450);
             termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/spanish";
         }
         if (selectedLang.equals("EN")){
             acceptButton.setTextSize(9);
-            linkButton.setTextSize(10);
-            linkButton.setY(1670);
-            linkButton.setX(460);
+            linkButton.setTextSize(12);
             termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/english";
         }
         if (selectedLang.equals("FR")){
             acceptButton.setTextSize(12);
             linkButton.setTextSize(9);
-            termsLink = "https://www.epicdevelopers.app";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/frances";
         }
         if (selectedLang.equals("DE")){
             acceptButton.setTextSize(7);
             linkButton.setTextSize(7);
-            termsLink = "https://www.epicdevelopers.app/2021/04/allconnected-nutzungsbedingungen.html";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/aleman";
         }
         if (selectedLang.equals("IT")){
             acceptButton.setTextSize(12);
             linkButton.setTextSize(10);
-            termsLink = "https://www.epicdevelopers.app/2021/04/termini-e-condizioni-duso-di.html";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/italiano";
         }
         if (selectedLang.equals("PT")){
             acceptButton.setTextSize(12);
             linkButton.setTextSize(9);
-            termsLink = "https://www.epicdevelopers.app/2021/04/termos-e-condicoes-de-uso-de.html";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/portugues";
         }
         if (selectedLang.equals("RU")){
             acceptButton.setTextSize(13);
             linkButton.setTextSize(9);
-            termsLink = "https://www.epicdevelopers.app/2021/04/allconnected_15.html";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/ruso";
         }
         if (selectedLang.equals("ZH")){
             acceptButton.setTextSize(13);
             linkButton.setTextSize(14);
-            termsLink = "https://www.epicdevelopers.app/2021/04/blog-post.html";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/chino";
         }
         if (selectedLang.equals("JA")){
             acceptButton.setTextSize(14);
             linkButton.setTextSize(12);
-            termsLink = "https://www.epicdevelopers.app/2021/04/allconnected-japones.html";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/japones";
         }
         if (selectedLang.equals("NL")){
             acceptButton.setTextSize(19);
             linkButton.setTextSize(11);
-            termsLink = "https://www.epicdevelopers.app/2021/04/gebruiksvoorwaarden-allconnected.html";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/holandes";
         }
 
         if (selectedLang.equals("KO")) {
-            termsLink= "https://www.epicdevelopers.app/2021/04/allconnected_77.html";
+            termsLink= "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/coreano";
         }
         if (selectedLang.equals("PL")) {
-            termsLink = "https://www.epicdevelopers.app/2021/04/warunki-uzytkowania-allconnected-polaco.html";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/polaco";
         }
         if (selectedLang.equals("SV")) {
-            termsLink = "https://www.epicdevelopers.app/2021/04/allconnected-anvandarvillkor-sueco.html";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/sueco";
         }
         if (selectedLang.equals("AR")) {
-            termsLink = "https://www.epicdevelopers.app/2021/04/allconnected.html";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/arabe";
         }
         if (selectedLang.equals("UR")) {
-            termsLink = "https://www.epicdevelopers.app/2021/04/urdu.html";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/urdu";
         }
         if (selectedLang.equals("HI")) {
-            termsLink = "https://www.epicdevelopers.app/2021/04/blog-post_15.html";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/hindi";
         }
 
         languageSelection.setAdapter(new ArrayAdapter<String>(newuser.this, R.layout.spinner_items,resources.getStringArray(R.array.languageSelected)));
