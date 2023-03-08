@@ -28,7 +28,7 @@
     <string name="gotChat" >Перейти в чат</string>
     <string name="sendText" >ОТПРАВИТЬ  </string>
     <string name="reply">Отвечать</string>
-    <string name="terms_privacy">Положения и условия и Политика конфиденциальности</string>
+    <string name="terms_privacy">Условия и положения</string>
     <string name="delete_chat" >Удалить чат</string>
     <string name="password_strong">Минимум 8 символов: 1 строчная буква, 1 заглавная буква и 1 цифра.</string>
     <string name="new_user">Регистрация нового пользователя</string>

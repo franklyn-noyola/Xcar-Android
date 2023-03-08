@@ -27,7 +27,7 @@
     <string name="targetUserSend">लक्ष्य उपयोगकर्ता प्लेट</string>
     <string name="gotChat">चैट पर जाएं</string>
     <string name="sendText">भेजने</string>
-    <string name= "terms_privacy">नियम और शर्तें और गोपनीयता नीति </string>
+    <string name= "terms_privacy">नियम और शर्तें </string>
     <string name="delete_chat">चैट हटाएँ</string>
     <string name="password_strong">न्यूनतम 8 वर्ण: 1 छोटा अक्षर, 1 कैपिटल अक्षर और 1 नंबर</string>
     <string name="new_user">नया उपयोगकर्ता रजिस्टर</string>

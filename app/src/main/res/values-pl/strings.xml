@@ -26,7 +26,7 @@
     <string name ="targetUserSend">Tablica rejestracyjna odbiorcy</string>
     <string name ="gotChat">Przejdź do czatu</string>
     <string name="sendText" >WYSŁAĆ  </string>
-    <string name="terms_privacy">Regulamin i Polityka prywatności</string>
+    <string name="terms_privacy">Regulamin</string>
     <string name="delete_chat" >Usuń czat</string>
     <string name="password_strong">Co najmniej 8 znaków: 1 mała litera, 1 duża litera i cyfra</string>
     <string name="new_user">Rejestracja nowego użytkownika</string>
