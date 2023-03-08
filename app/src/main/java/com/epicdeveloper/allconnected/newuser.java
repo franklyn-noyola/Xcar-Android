@@ -619,7 +619,7 @@ public class newuser extends AppCompatActivity {
             termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/english";
         }
         if (selectedLang.equals("FR")){
-            acceptButton.setTextSize(12);
+            acceptButton.setTextSize(9);
             linkButton.setTextSize(9);
             termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/frances";
         }

@@ -26,7 +26,7 @@
     <string name="targetUserSend">Numéro de plaque utilisateur final</string>
     <string name="gotChat" >Aller au chat</string>
     <string name="sendText" >Envoyer  </string>
-    <string name="terms_privacy">Conditions générales et politique de confidentialité</string>
+    <string name="terms_privacy">Conditions générales</string>
     <string name="delete_chat" >Supprimer le chat</string>
     <string name="password_strong">Minimum 8 caractères: 1 minuscule, 1 majuscase et un numéro</string>
     <string name="new_user">Nouvel enregistrement des utilisateurs</string>

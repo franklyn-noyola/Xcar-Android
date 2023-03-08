@@ -28,7 +28,7 @@
     <string name="targetUserSend">Registrazione del destinatario</string>
     <string name="gotChat">Vai a Chat</string>
     <string name="sendText">SPEDIRE</string>
-    <string name="terms_privacy">Termini e condizioni e informativa sulla privacy</string>
+    <string name="terms_privacy">Termini e condizioni</string>
     <string name="delete_chat">Elimina chat</string>
     <string name="password_strong">Minimo 8 caratteri: 1 minuscolo, 1 maiuscolo e un numero</string>
     <string name="new_user">Nuova registrazione utente</string>
