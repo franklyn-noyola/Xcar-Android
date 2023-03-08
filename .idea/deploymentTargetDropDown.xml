@@ -6,23 +6,12 @@
         <type value="RUNNING_DEVICE_TARGET" />
         <deviceKey>
           <Key>
-            <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\franklyn.noyola\.android\avd\Pixel_4_XL_API_32.avd" />
+            <type value="SERIAL_NUMBER" />
+            <value value="MUN0218929009713" />
           </Key>
         </deviceKey>
       </Target>
     </runningDeviceTargetSelectedWithDropDown>
-    <targetSelectedWithDropDown>
-      <Target>
-        <type value="QUICK_BOOT_TARGET" />
-        <deviceKey>
-          <Key>
-            <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\franklyn.noyola\.android\avd\Pixel_4_XL_API_32.avd" />
-          </Key>
-        </deviceKey>
-      </Target>
-    </targetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2023-03-04T15:05:35.784525900Z" />
+    <timeTargetWasSelectedWithDropDown value="2023-03-08T22:36:34.092541Z" />
   </component>
 </project>

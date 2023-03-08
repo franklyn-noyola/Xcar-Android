@@ -26,7 +26,7 @@
     <string name="targetUserSend">تسجيل المستلم</string>
     <string name="gotChat" >اذهب إلى الدردشة</string>
     <string name="sendText" >إرسال  </string>
-    <string name="terms_privacy">الشروط والأحكام وسياسة الخصوصية</string>
+    <string name="terms_privacy">الأحكام والشروط</string>
     <string name="delete_chat" >حذف الدردشة</string>
     <string name="password_strong">8 أحرف كحد أدنى: حرف صغير واحد وحرف كبير ورقم</string>
     <string name="new_user">تسجيل مستخدم جديد</string>
