@@ -4,11 +4,7 @@
         android:id="@+id/Home_Menu"
         android:icon="@drawable/inicio"
         android:title="@string/home_menu" />
-    <item
-        android:id="@+id/Profile_Menu"
-        android:icon="@drawable/perfil1"
-        android:title="@string/profile_menu" />
-    <item
+      <item
         android:id="@+id/Chat_Menu"
         android:icon="@drawable/chat"
         android:title="@string/chat_menu" />
@@ -16,4 +12,9 @@
         android:id="@+id/Notifications_Menu"
         android:icon="@android:drawable/ic_dialog_email"
         android:title="@string/receivedNotifications" />
+
+    <item
+        android:id="@+id/Profile_Menu"
+        android:icon="@drawable/perfil1"
+        android:title="@string/profile_menu" />
 </menu>
