@@ -175,18 +175,19 @@
 
     <TextView
         android:id="@+id/terminos"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
+        android:layout_width="184dp"
+        android:layout_height="13dp"
+        android:gravity="center_vertical"
         android:buttonTint="@android:color/holo_blue_dark"
         android:text="@string/terms_privacy"
         android:textColor="#0277BD"
         android:textSize="6sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/checkBox"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.789"
+        app:layout_constraintVertical_bias="0.785"
         tools:ignore="SmallSp,UnusedAttribute" />
 
     <TextView
