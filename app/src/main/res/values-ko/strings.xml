@@ -26,7 +26,7 @@
     <string name ="targetUserSend">수신자 번호판</string>
     <string name ="gotChat">채팅으로 이동</string>
     <string name ="sendText">보내다</string>
-    <string name ="terms_privacy">이용약관</string>
+    <string name ="terms_privacy"> 이용약관</string>
     <string name ="delete_chat">채팅 삭제</string>
     <string name ="password_strong">최소 8 자 : 소문자 1 개, 대문자 1 개 및 숫자</string>
     <string name ="new_user">신규 사용자 등록</string>

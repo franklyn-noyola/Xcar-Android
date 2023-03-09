@@ -28,7 +28,7 @@
     <string name="targetUserSend">ターゲットユーザープレート</string>
     <string name="gotChat" >チャットに移動</string>
     <string name="sendText" >送信  </string>
-    <string name="terms_privacy">規約と条件</string>
+    <string name="terms_privacy"> 規約と条件</string>
     <string name="delete_chat" >チャットを削除する</string>
     <string name="password_strong">最小8文字::小文字1文字、大文字1文字、数字1文字</string>
     <string name="new_user">新規ユーザー登録</string>

@@ -30,7 +30,7 @@
     <string name="gotChat">Gehe zum Chat</string>
     <string name="sendText">SENDEN </string>
     <string name="delete_chat">Chat löschen</string>
-    <string name="terms_privacy">Allgemeine Geschäftsbedingungen</string>
+    <string name="terms_privacy"> Allgemeine Geschäftsbedingungen</string>
     <string name="password_strong">Mindestens 8 Zeichen: 1 Kleinbuchstabe, 1 Großbuchstabe und eine Zahl</string>
     <string name="new_user">Neue Benutzerregistrierung</string>
     <string name="name">Name</string>

@@ -26,7 +26,7 @@
     <string name ="targetUserSend">Mottagarens registreringsskylt</string>
     <string name ="gotChat">Gå till chatt</string>
     <string name ="sendText">SKICKA</string>
-    <string name ="terms_privacy">Villkor</string>
+    <string name ="terms_privacy"> Villkor</string>
     <string name ="delete_chat">Radera chatt</string>
     <string name ="password_strong">Minst 8 tecken: 1 gemener, 1 versaler och ett nummer</string>
     <string name ="new_user">Ny användarregistrering</string>

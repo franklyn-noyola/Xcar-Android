@@ -29,7 +29,7 @@
     <string name="targetUserSend">Registro de Destinatário</string>
     <string name="gotChat">Vá para o bate-papo</string>
     <string name="sendText">ENVIAR </string>
-    <string name="terms_privacy">Termos e Condições</string>
+    <string name="terms_privacy"> Termos e Condições</string>
     <string name="delete_chat">Excluir bate-papo</string>
     <string name="password_strong">Mínimo 8 caracteres: 1 minúsculo, 1 maiúsculo e um número</string>
     <string name="new_user">Registo de novo utilizador</string>

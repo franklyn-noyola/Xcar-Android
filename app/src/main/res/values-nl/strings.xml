@@ -28,7 +28,7 @@
     <string name="targetUserSend">Target gebruiker plaat</string>
     <string name="gotChat" >Ga naar Chat</string>
     <string name="sendText" >STUREN  </string>
-    <string name="terms_privacy">Voorwaarden</string>
+    <string name="terms_privacy"> Voorwaarden</string>
     <string name="delete_chat" >Chat verwijderen</string>
     <string name="password_strong">Minimaal 8 karakters: 1 kleine letter, 1 hoofdletter en 1 cijfer</string>
     <string name="new_user">Nieuwe gebruikersregistratie</string>
