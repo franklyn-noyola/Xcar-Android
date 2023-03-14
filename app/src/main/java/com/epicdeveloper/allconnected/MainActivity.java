@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
                             newUserLink = findViewById(R.id.newUser);
                             plateUser = mUser.getText().toString();
                             btnLogin =  findViewById(R.id.loginButton);
-                            //setFieldsLanguage(userlanguage);
+                            //setFieldsLanguage(userlanguage);ññ
                             mPassword.setOnTouchListener(new View.OnTouchListener() {
                                 @Override
                                 public boolean onTouch(View v, MotionEvent event) {
