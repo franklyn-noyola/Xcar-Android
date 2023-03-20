@@ -5,36 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_blue_dark"
-        android:text="@string/profile_menu"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.01"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01" />
-    <TextView
-        android:id="@+id/profileText"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:text="@string/profileText"
-        android:textColor="@android:color/black"
-        android:textSize="11sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/profile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04"
-        tools:ignore="SmallSp" />
+
     <TextView
         android:id="@+id/chat"
         android:layout_width="wrap_content"
@@ -49,7 +20,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.12" />
+        app:layout_constraintVertical_bias="0.01" />
     <TextView
         android:id="@+id/chatText"
         android:layout_width="350dp"
@@ -64,24 +35,25 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16"
+        app:layout_constraintVertical_bias="0.04"
         tools:ignore="SmallSp" />
 
     <TextView
         android:id="@+id/sendText"
-        android:text="@string/sendNoti"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/sendNoti"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.01"
-        app:layout_constraintStart_toStartOf="@+id/chat"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/chat"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.29" />
+        app:layout_constraintVertical_bias="0.258" />
+
     <TextView
         android:id="@+id/sendTextLbl"
         android:layout_width="350dp"
@@ -90,29 +62,31 @@
         android:textColor="@android:color/black"
         android:textSize="11sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/sendText"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sendText"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.33"
+        app:layout_constraintVertical_bias="0.300"
         tools:ignore="SmallSp" />
+
     <TextView
         android:id="@+id/receiveText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/receiveNotification"
-        app:layout_constraintStart_toStartOf="@+id/chat"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/chat"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42" />
+        app:layout_constraintVertical_bias="0.472" />
+
     <TextView
         android:id="@+id/receiveTextLbl"
         android:layout_width="350dp"
@@ -122,60 +96,30 @@
         android:textSize="11sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.098"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47"
+        app:layout_constraintVertical_bias="0.536"
         tools:ignore="SmallSp" />
-    <TextView
-        android:id="@+id/about"
-        android:layout_width="wrap_content"
-        android:text="@string/action_about"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/chat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.01"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55" />
 
-    <TextView
-        android:id="@+id/aboutText"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:text="@string/aboutText"
-        android:textColor="@android:color/black"
-        android:textSize="11sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.60"
-        tools:ignore="SmallSp" />
 
     <TextView
         android:id="@+id/setting"
         android:layout_width="wrap_content"
-        android:text="@string/action_settings"
-        app:layout_constraintStart_toStartOf="@+id/chat"
         android:layout_height="wrap_content"
+        android:text="@string/action_settings"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/aboutText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/chat"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.68" />
+        app:layout_constraintVertical_bias="0.734" />
+
     <TextView
         android:id="@+id/settingText"
         android:layout_width="350dp"
@@ -184,45 +128,14 @@
         android:textColor="@android:color/black"
         android:textSize="11sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/setting"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73"
+        app:layout_constraintVertical_bias="0.79"
         tools:ignore="SmallSp" />
 
-    <TextView
-        android:id="@+id/contact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/action_contacts"
-        app:layout_constraintStart_toStartOf="@+id/chat"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.01"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78" />
-
-    <TextView
-        android:id="@+id/contactText"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:text="@string/contactText"
-        android:textColor="@android:color/black"
-        android:textSize="11sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.91"
-        tools:ignore="SmallSp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
