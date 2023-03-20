@@ -23,13 +23,13 @@ public class sendEmail {
      static String support;
 
     public static void sendEmailMessage(String recipient, String subject, String messageSent){
-        mailSession="allconnected@epicdevelopers.es";
+        mailSession="allconnected@epicdevelopers.app";
         selectedLang = newuser.selectedLang;
         passwordSession= "Drcr1989@";
         final Properties prop=new Properties();
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-        prop.put("mail.smtp.host", "smtp.ionos.es");
+        prop.put("mail.smtp.host", "smtp.gmail.com");
         prop.put("mail.smtp.port", "587");
         prop.put("mail.smtp.auth", "true");
         prop.put("mail.smtp.starttls.enabled", true);
