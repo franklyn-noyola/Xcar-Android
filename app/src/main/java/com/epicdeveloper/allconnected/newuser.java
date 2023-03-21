@@ -62,6 +62,7 @@ public class newuser extends AppCompatActivity {
 
     private DatabaseReference Users;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,6 +86,7 @@ public class newuser extends AppCompatActivity {
         pass_user.setEnabled(true);
         confirm_pass.setEnabled(true);
         name_user.setEnabled(true);
+
 
 
         languageSelection.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -150,6 +152,7 @@ public class newuser extends AppCompatActivity {
         });
         translanguage();
         setupLinkButton();
+
 
         pass_user.setOnTouchListener(new View.OnTouchListener() {
             @Override

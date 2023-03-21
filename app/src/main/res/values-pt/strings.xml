@@ -159,9 +159,9 @@
     <string name="warningLanguage">AVISO: Se você for alterar o idioma, reinicie o aplicativo para que tenha efeito.</string>
     <string name="profileText">Ao clicar no menu principal e depois na opção Perfil, entra na secção Perfil e aqui pode actualizar as suas informações sobre o seu veículo, bem como alterar a sua palavra-passe.</string>
     <string name="chatText">Fazendo no menu principal e depois na opção Bate-papo, você entra na seção de bate-papo, onde encontrará uma lista das conversas anteriores que você fez com outros usuários e também poderá iniciar uma nova conversão com outro usuário inserindo a placa do veículo de um veículo já cadastrado no aplicativo, assim como você pode deletar o chat, bloquear o usuário, etc.</string>
-    <string name="sendNotiText">Ao clicar no botão +, você entra na seção Enviar Notificação e aqui tem a possibilidade de notificar ou notificar um usuário existente no aplicativo, bem como anexar uma imagem à notificação.</string>
+    <string name="sendNotiText">Ao clicar no botão Notificações em forma de envelope, você clica no botão +, entra na seção Enviar Notificação e aqui você tem a possibilidade de notificar ou avisar um usuário existente no aplicativo, bem como anexar uma imagem para a notificação.</string>
     <string name="sendNoti">Enviar Notificação</string>
-    <string name="receiveText">Ao clicar no botão em forma de envelope, você entra na seção Notificações recebidas, onde verá uma lista das mensagens que outros usuários lhe enviaram, bem como imagens anexadas se houver na notificação enviada anteriormente.</string>
+    <string name="receiveText">Ao clicar no botão Notificações em forma de envelope, você entra na seção de Notificações recebidas, onde verá uma lista de mensagens que outros usuários lhe enviaram, bem como imagens anexadas, se houver alguma na notificação enviada anteriormente.</string>
     <string name="receiveNotification">Receber notificações</string>
     <string name="aboutText">Ao clicar no menu auxiliar e depois na opção Sobre, entra-se na seção Sobre, onde é possível visualizar a versão do aplicativo, bem como o site dos desenvolvedores.</string>
     <string name="settingText">Ao clicar no menu auxiliar e, em seguida, na opção Configurações, você entra na seção Configurações, onde pode alterar para o idioma que deseja que o aplicativo exiba.</string>

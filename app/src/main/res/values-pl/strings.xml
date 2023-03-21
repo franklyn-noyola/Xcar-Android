@@ -158,9 +158,9 @@
     <string name="warningLanguage">UWAGA: Jeśli zamierzasz zmienić język, uruchom ponownie aplikację, aby odniosła skutek.</string>
     <string name="profileText">Klikając w menu główne, a następnie w opcję Profil, wchodzisz do sekcji Profil i tutaj możesz zaktualizować swoje dane o swoim pojeździe, a także zmienić hasło.</string>
     <string name="chatText">Robiąc w menu głównym, a następnie w opcji Czat, wchodzisz do sekcji czatu, gdzie znajdziesz listę wcześniejszych rozmów, które przeprowadziłeś z innymi użytkownikami, a także możesz rozpocząć nową konwersję z innym użytkownikiem wpisując numer rejestracyjny pojazdu już zarejestrowanego w aplikacji, a także możesz usunąć czat, zablokować użytkownika itp.</string>
-    <string name="sendNotiText">Klikając przycisk + wchodzisz do sekcji Wyślij powiadomienie i tutaj masz możliwość powiadomienia lub powiadomienia istniejącego użytkownika w aplikacji, a także dołączenia obrazu do powiadomienia.</string>
+    <string name="sendNotiText">Klikając w przycisk Powiadomienia w formie koperty, klikasz w przycisk +, wchodzisz w sekcję Wyślij powiadomienie i tutaj masz możliwość powiadomienia lub ostrzeżenia istniejącego użytkownika w aplikacji, a także załączenia obrazu do powiadomienie.</string>
     <string name="sendNoti">Wyślij powiadomienie</string>
-    <string name="receiveText">Klikając w przycisk w formie koperty, wchodzisz do sekcji Powiadomienia otrzymane, gdzie zobaczysz listę wiadomości, które przesłali Ci inni użytkownicy, a także załączone obrazy, jeśli były w wysłanym wcześniej powiadomieniu.</string>
+    <string name="receiveText">Klikając na przycisk Powiadomienia w formie koperty wchodzisz do sekcji Powiadomienia odebrane, gdzie zobaczysz listę wiadomości, które wysłali Ci inni użytkownicy, a także załączone obrazki, jeśli takie występują w wysłanym wcześniej powiadomieniu .</string>
     <string name="receiveNotification">Otrzymywać powiadomienia</string>
     <string name="aboutText">Klikając w menu pomocnicze, a następnie w opcję Informacje, przechodzisz do sekcji Informacje, w której możesz zobaczyć wersję aplikacji, a także stronę internetową deweloperów.</string>
     <string name="settingText">Klikając menu pomocnicze, a następnie opcję Ustawienia, przechodzisz do sekcji Ustawienia, w której możesz zmienić język, w jakim ma być wyświetlana aplikacja.</string>

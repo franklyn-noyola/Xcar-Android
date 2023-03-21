@@ -155,9 +155,9 @@
     <string name="warningLanguage">警告：如果更改语言，请重新启动该应用程序以使其生效</string>
     <string name="profileText">通过单击主菜单，然后单击“配置文件”选项，您可以进入“配置文件”部分，在这里您可以更新有关车辆的数据以及更改密码</string>
     <string name="chatText">在主菜单中进行操作，然后在“聊天”选项中，进入“聊天”部分，您将在其中找到您与其他用户进行的先前对话的列表，也可以通过输入车牌开始与其他用户的新转换应用程序中已注册车辆的状态，以及您可以删除聊天，阻止用户等。</string>
-    <string name="sendNotiText">通过单击+按钮，可以进入“发送通知”部分，在这里您可以通知或通知应用程序中的现有用户，以及将图像附加到通知中。</string>
+    <string name="sendNotiText">通过单击信封形式的通知按钮，单击 + 按钮，进入发送通知部分，在这里您可以通知或警告应用程序中的现有用户，以及将图像附加到通知。</string>
     <string name="sendNoti">发送通知</string>
-    <string name="receiveText">通过单击信封形式的按钮，您可以进入“收到的通知”部分，在这里您将看到其他用户发送给您的消息的列表，以及先前发送的通知中包含的图像。</string>
+    <string name="receiveText">通过单击信封形式的“通知”按钮，您将进入“收到的通知”部分，您将在其中看到其他用户发送给您的消息列表，以及附加图像（如果之前发送的通知中有任何图像） .</string>
     <string name="receiveNotification">接收通知</string>
     <string name="aboutText">通过单击辅助菜单，然后单击“关于”选项，您将进入“关于”部分，您可以在其中查看应用程序的版本以及开发人员的网站。</string>
     <string name="settingText">通过单击辅助菜单，然后单击“设置”选项，您可以进入“设置”部分，在其中可以更改为希望应用程序显示的语言。</string>
