@@ -23,13 +23,13 @@ public class sendEmail {
      static String support;
 
     public static void sendEmailMessage(String recipient, String subject, String messageSent){
-        mailSession="allconnected@epicdevelopers.app";
+        mailSession="allconnected@epicdevelopers.es";
         selectedLang = newuser.selectedLang;
         passwordSession= "Drcr1989@";
-        final Properties prop=new Properties();
+        Properties prop=new Properties();
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-        prop.put("mail.smtp.host", "smtp.gmail.com");
+        prop.put("mail.smtp.host", "smtp.ionos.es");
         prop.put("mail.smtp.port", "587");
         prop.put("mail.smtp.auth", "true");
         prop.put("mail.smtp.starttls.enabled", true);
@@ -43,16 +43,12 @@ public class sendEmail {
                 }
             });
 
-            if(session!=null){
-                Message message = new MimeMessage(session);
-                message.setFrom(new InternetAddress(getSupport(selectedLang)+"<allconnected_support@epicdevelopers.app>"));
-                message.setSubject(subject);
-                message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipient));
-                message.setContent(messageSent,"text/html; charset=UTF-8");
-                Transport.send(message);
-            }
-        }catch (AddressException e) {
-            e.printStackTrace();
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(getSupport(selectedLang)+"<allconnected_support@epicdevelopers.app>"));
+            message.setSubject(subject);
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipient));
+            message.setContent(messageSent,"text/html; charset=UTF-8");
+            Transport.send(message);
         } catch (MessagingException e) {
             e.printStackTrace();
         }
