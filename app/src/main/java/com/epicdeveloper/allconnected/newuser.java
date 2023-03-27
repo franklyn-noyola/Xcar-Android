@@ -470,7 +470,7 @@ public class newuser extends AppCompatActivity {
     public String sendWelcomeMessageES(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">Bienvenido/a a allConnected!!!</font></b><br><br>";
         headerMessage="Estimado Sr./Sra "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Gracias por registrarse en el mundo de allConnected. Para activar el usuario, haga click en este link: <a href=http://epicdevelopers.es?ES"+plate_user.toString().toUpperCase()+">Activar usuario</a> <br><br>";
+        bodyMessage="Gracias por registrarse en el mundo de allConnected. Para activar el usuario, haga click en este link: <a href=epicdevelopers.app?ES"+plate_user.getText().toString().toUpperCase()+">Activar usuario</a> <br><br>";
         farewellMessage="Un saludo cordial,<br>El equipo de allConnected.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
@@ -549,7 +549,7 @@ public class newuser extends AppCompatActivity {
     public String sendWelcomeMessagePL(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">Witamy w allConnected!!!</font></b><br><br>";
         headerMessage="Szanowny Panie/Pani.. "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Bedankt voor uw aanmelding bij allConnected world. Om uw account te activren, kliknij ten link: <a href=http://epicdevelopers.es?PL"+plate_user.toString().toUpperCase()+">Activeer gebruiker</a> <br><br>";
+        bodyMessage="Bedankt voor uw aanmelding bij allConnected world. Om uw account te activren, kliknij ten link: <a href=http://epicdevelopers.es?PL"+plate_user.getText().toString().toUpperCase()+">Activeer gebruiker</a> <br><br>";
         farewellMessage="Z poważaniem,<br>Zespół allConnected.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
@@ -557,7 +557,7 @@ public class newuser extends AppCompatActivity {
     public String sendWelcomeMessageKO(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">allConnected에 오신 것을 환영합니다!!!</font></b><br><br>";
         headerMessage="친애하는 Mr./Ms. "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="allConnected의 세계에 등록 해 주셔서 감사합니다. 계정을 활성화하려면이 링크를 클릭하십시오.: <a href= http://epicdevelopers.es?KO"+plate_user.toString().toUpperCase()+"> 사용자 활성화</a> <br><br>";
+        bodyMessage="allConnected의 세계에 등록 해 주셔서 감사합니다. 계정을 활성화하려면이 링크를 클릭하십시오.: <a href= http://epicdevelopers.es?KO"+plate_user.getText().toString().toUpperCase()+"> 사용자 활성화</a> <br><br>";
         farewellMessage="진정으로,<br>allConnected 팀.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
@@ -565,7 +565,7 @@ public class newuser extends AppCompatActivity {
     public String sendWelcomeMessageSV(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">Välkommen till allConnected!!!</font></b><br><br>";
         headerMessage="Kära herr/fru. "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Tack för att du registrerade dig i allConnected-världen. För att aktivera användaren, klicka på den här länken: <a href=http://epicdevelopers.es?SV"+plate_user.toString().toUpperCase()+"> Aktivera användare</a> <br><br>";
+        bodyMessage="Tack för att du registrerade dig i allConnected-världen. För att aktivera användaren, klicka på den här länken: <a href=http://epicdevelopers.es?SV"+plate_user.getText().toString().toUpperCase()+"> Aktivera användare</a> <br><br>";
         farewellMessage="vänliga hälsningar,<br>AllConnected-teamet.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
@@ -573,7 +573,7 @@ public class newuser extends AppCompatActivity {
     public String sendWelcomeMessageHI(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">allConnected में आपका स्वागत है!!!</font></b><br><br>";
         headerMessage="प्रिय श्री / एम। एस। "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="allConnected दुनिया के लिए regisgtering के लिए धन्यवाद। अपने खाते को सक्रिय करने के लिए, इस लिंक पर क्लिक करें: <a href=http://epicdevelopers.es?HI"+plate_user.toString().toUpperCase()+"> उपयोगकर्ता को सक्रिय करें</a> <br><br>";
+        bodyMessage="allConnected दुनिया के लिए regisgtering के लिए धन्यवाद। अपने खाते को सक्रिय करने के लिए, इस लिंक पर क्लिक करें: <a href=http://epicdevelopers.es?HI"+plate_user.getText().toString().toUpperCase()+"> उपयोगकर्ता को सक्रिय करें</a> <br><br>";
         farewellMessage="ईमानदारी से,<br>allConnected टीम.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }

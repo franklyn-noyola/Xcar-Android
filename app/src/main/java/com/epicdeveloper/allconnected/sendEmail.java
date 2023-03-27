@@ -44,7 +44,7 @@ public class sendEmail {
             });
 
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(getSupport(selectedLang)+"<allconnected_support@epicdevelopers.app>"));
+            message.setFrom(new InternetAddress(getSupport(selectedLang)+"<Support@epicdevelopers.app>"));
             message.setSubject(subject);
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipient));
             message.setContent(messageSent,"text/html; charset=UTF-8");
