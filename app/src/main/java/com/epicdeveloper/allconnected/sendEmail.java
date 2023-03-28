@@ -32,7 +32,7 @@ public class sendEmail {
         prop.put("mail.smtp.host", "smtp.ionos.es");
         prop.put("mail.smtp.port", "587");
         prop.put("mail.smtp.auth", "true");
-        prop.put("mail.smtp.starttls.enabled", true);
+        prop.put("mail.smtp.starttls.enabled", "true");
         prop.put("mail.smtp.socketFactory.port", "587");
 
         try{
