@@ -25,15 +25,16 @@ public class sendEmail {
     public static void sendEmailMessage(String recipient, String subject, String messageSent){
         mailSession="allconnected@epicdevelopers.es";
         selectedLang = newuser.selectedLang;
-        passwordSession= "Drcr1989@";
-        Properties prop=new Properties();
+        passwordSession= "Drcr1989@@";
+        final Properties prop=new Properties();
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         prop.put("mail.smtp.host", "smtp.ionos.es");
         prop.put("mail.smtp.port", "587");
         prop.put("mail.smtp.auth", "true");
-        prop.put("mail.smtp.starttls.enabled", "true");
+        prop.put("mail.smtp.starttls.enabled", true);
         prop.put("mail.smtp.socketFactory.port", "587");
+
 
         try{
             session=Session.getInstance(prop, new Authenticator() {
