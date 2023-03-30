@@ -9,7 +9,7 @@ android {
         minSdkVersion 29
         //noinspection OldTargetApi
         targetSdkVersion 31
-        versionCode 3
+        versionCode 4
         versionName "3.0.0"
         setProperty("archivesBaseName", "allConnected")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
