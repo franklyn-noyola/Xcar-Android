@@ -376,52 +376,52 @@ public class newuser extends AppCompatActivity {
 
                         }else{
                             if (selectedLang.equals("ES")) {
-                                Toast.makeText(getApplicationContext(), "La mátricula " + plate_user.getText().toString().toUpperCase() + " ya está registrada", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "La mátricula " + plate_user.getText().toString().toUpperCase() + " ya está registrada", Toast.LENGTH_LONG).show();
                             }
                             if (selectedLang.equals("EN")){
-                                Toast.makeText(getApplicationContext(), "Plate number " + plate_user.getText().toString().toUpperCase() + " is already registered", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Plate number " + plate_user.getText().toString().toUpperCase() + " is already registered", Toast.LENGTH_LONG).show();
                             }
                             if (selectedLang.equals("FR")){
-                                Toast.makeText(getApplicationContext(), "Numéro de plaque " + plate_user.getText().toString().toUpperCase() + " est déjà enregistré", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Numéro de plaque " + plate_user.getText().toString().toUpperCase() + " est déjà enregistré", Toast.LENGTH_LONG).show();
                             }
                             if (selectedLang.equals("DE")){
-                                Toast.makeText(getApplicationContext(), "Kennzeichen "+ plate_user.getText ().toString().toUpperCase() + " ist bereits registriert", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Kennzeichen "+ plate_user.getText ().toString().toUpperCase() + " ist bereits registriert", Toast.LENGTH_LONG).show();
                             }
                             if (selectedLang.equals("IT")){
-                                Toast.makeText(getApplicationContext(), "Numero di targa " + plate_user.getText ().toString ().toUpperCase() + " è già registrato", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Numero di targa " + plate_user.getText ().toString ().toUpperCase() + " è già registrato", Toast.LENGTH_LONG).show();
                             }
                             if (selectedLang.equals("PT")){
-                                Toast.makeText(getApplicationContext(), "Número da placa " + plate_user.getText ().toString ().toUpperCase() + " já foi cadastrado", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Número da placa " + plate_user.getText ().toString ().toUpperCase() + " já foi cadastrado", Toast.LENGTH_LONG).show();
                             }
                             if (selectedLang.equals("RU")){
-                                Toast.makeText(getApplicationContext(), "Табличный номер "+ plate_user.getText ().toString ().toUpperCase() +" уже зарегистрирован.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Табличный номер "+ plate_user.getText ().toString ().toUpperCase() +" уже зарегистрирован.", Toast.LENGTH_LONG).show();
                             }
                             if (selectedLang.equals("ZH")){
-                                Toast.makeText(getApplicationContext(), "车牌号 " + plate_user.getText().toString().toUpperCase()+" 已经注册", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "车牌号 " + plate_user.getText().toString().toUpperCase()+" 已经注册", Toast.LENGTH_LONG).show();
                             }
                             if (selectedLang.equals("JA")){
-                                Toast.makeText(getApplicationContext(), "プレート番号 "+ plate_user.getText().toString().toUpperCase()+" はすでに登録されています", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "プレート番号 "+ plate_user.getText().toString().toUpperCase()+" はすでに登録されています", Toast.LENGTH_LONG).show();
                             }
                             if (selectedLang.equals("NL")){
-                                Toast.makeText(getApplicationContext(), "Kenteken "+ plate_user.getText ().toString().toUpperCase() +" is al geregistreerd", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Kenteken "+ plate_user.getText ().toString().toUpperCase() +" is al geregistreerd", Toast.LENGTH_LONG).show();
                             }
                             if (selectedLang.equals("PL")){
-                                Toast.makeText(getApplicationContext(), "Tabliczka "+ plate_user.getText().toString().toUpperCase() +" jest już zarejestrowana", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Tabliczka "+ plate_user.getText().toString().toUpperCase() +" jest już zarejestrowana", Toast.LENGTH_LONG).show();
                             }
                             if (selectedLang.equals("KO")){
-                                Toast.makeText(getApplicationContext(), "플레이트 "+ plate_user.getText().toString().toUpperCase() +"가 이미 등록되었습니다.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "플레이트 "+ plate_user.getText().toString().toUpperCase() +"가 이미 등록되었습니다.", Toast.LENGTH_LONG).show();
                             }
                             if (selectedLang.equals("SV")){
-                                Toast.makeText(getApplicationContext(), "Plattan "+ plate_user.getText().toString().toUpperCase() +" är redan registrerad", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Plattan "+ plate_user.getText().toString().toUpperCase() +" är redan registrerad", Toast.LENGTH_LONG).show();
                             }
                             if (selectedLang.equals("AR")){
                                 Toast.makeText(getApplicationContext()," اللوحة "+ plate_user.getText().toString().toUpperCase() +"\" مسجلة بالفعل,," ,  Toast.LENGTH_LONG).show();
                             }
                             if (selectedLang.equals("HI")){
-                                Toast.makeText(getApplicationContext(), "प्लेट "+ plate_user.getText().toString().toUpperCase() +" पंजीकृत नहीं है", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "प्लेट "+ plate_user.getText().toString().toUpperCase() +" पंजीकृत नहीं है", Toast.LENGTH_LONG).show();
                             }
                             if (selectedLang.equals("UR")){
-                                Toast.makeText(getApplicationContext(), "پلیٹ "+ plate_user.getText ().toString ().toUpperCase() +" پہلے ہی رجسٹرڈ ہے", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "پلیٹ "+ plate_user.getText ().toString ().toUpperCase() +" پہلے ہی رجسٹرڈ ہے", Toast.LENGTH_LONG).show();
                             }
                             return;
                         }
