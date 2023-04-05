@@ -23,7 +23,7 @@ public class sendEmail {
      static String support;
 
     public static void sendEmailMessage(String recipient, String subject, String messageSent){
-        mailSession="allconnected@epicdevelopers.es";
+        mailSession="allconnected.app@epicdevelopers.es";
         selectedLang = newuser.selectedLang;
         passwordSession= "Drcr1989@@";
         final Properties prop=new Properties();
