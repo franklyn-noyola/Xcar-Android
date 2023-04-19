@@ -79,7 +79,7 @@
         android:layout_marginEnd="88dp"
         android:layout_marginBottom="48dp"
         android:inputType="textEmailAddress"
-        android:text="allconnected_support@epicdevelopers.app"
+        android:text="support@epicdevelopers.app"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
