@@ -3,6 +3,7 @@
     <string name="wrong_plate_format">Nieprawidłowy format rejestracji użytkownika</string>
     <string name="wrong_user">Nieprawidłowy użytkownik i/lub hasło</string>
     <string name ="Search">Szukaj</string>
+    <string name="plate_enter"><font size="8">Wprowadź numer rejestracyjny</font></string>
     <string name ="nonExist_user">Użytkownik nie istnieje i/lub nieprawidłowe hasło</string>
     <string name ="profile_menu">Profil</string>
     <string name ="chat_menu">Czat</string>

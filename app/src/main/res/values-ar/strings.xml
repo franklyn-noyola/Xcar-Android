@@ -3,6 +3,7 @@
     <string name="wrong_plate_format">تنسيق تسجيل المستخدم غير صالح</string>
     <string name="wrong_user">مستخدم و / أو كلمة مرور غير صالحة</string>
     <string name="Search">بحث</string>
+    <string name="plate_enter"><font size="8">أدخل التسجيل</font></string>
     <string name="nonExist_user">المستخدم غير موجود و / أو كلمة مرور غير صحيحة</string>
     <string name="profile_menu">الملف الشخصي</string>
     <string name="chat_menu">محادثة</string>

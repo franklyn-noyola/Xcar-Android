@@ -2,6 +2,7 @@
 <resources>
     <string name="loginLbl">Login</string>
     <string name="welcome" >Welcome</string>
+    <string name="plate_enter"><font size="8">Introduzca Matricula</font></string>
     <string name="banner_ad_unit_id" >ca-app-pub-7506110687995747/7372926087</string>
     <string name="wrong_plate_format">Formato de Matrícula del Usuario inválida</string>
     <string name="wrong_user">Usuario y/o Password Inválido</string>

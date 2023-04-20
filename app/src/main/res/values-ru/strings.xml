@@ -6,6 +6,7 @@
     <string name="wrong_plate_format">Неверный формат пользовательской таблички</string>
     <string name="wrong_user">Неверный пользователь и/или пароль</string>
     <string name="Search">Поиск</string>
+    <string name="plate_enter"><font size="8">Введите номерной знак!</font></string>
     <string name="nonExist_user">Пользователь не существует и / или неверный пароль</string>
     <string name="profile_menu">Профиль</string>
     <string name="chat_menu">Чат</string>

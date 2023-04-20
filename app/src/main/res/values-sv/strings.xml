@@ -3,6 +3,7 @@
     <string name ="wrong_plate_format">Ogiltigt format för användarlicensskylt</string>
     <string name ="wrong_user">Ogiltigt användarnamn och/eller lösenord</string>
     <string name="Search">Sök</string>
+    <string name="plate_enter"><font size="8">Ange skyltnummer</font></string>
     <string name ="nonExist_user">Användaren finns inte och/eller fel lösenord</string>
     <string name ="profile_menu">Profil</string>
     <string name ="chat_menu">Chatt</string>

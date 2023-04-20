@@ -76,6 +76,7 @@ public class fragment_home extends Fragment {
         AdRequest adRequest = new AdRequest.Builder().build();
         adview.loadAd(adRequest);
         searchViewField = root.findViewById(R.id.search_View);
+        searchViewField.setQueryHint(resources.getString((R.string.plate_enter)));
 
         //searchViewField.setIconified(false);
         //searchViewField.clearFocus();

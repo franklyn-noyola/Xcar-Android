@@ -4,6 +4,7 @@
     <string name="wrong_plate_format">Ungültiges Benutzerregistrierungsformat</string>
     <string name="wrong_user">Ungültiger Benutzer und / oder ungültiges Passwort</string>
     <string name="Search">Suchen</string>
+    <string name="plate_enter"><font size="8">Geben Sie die Registrierung ein</font></string>
     <string name="nonExist_user">Benutzer existiert nicht und / oder falsches Passwort</string>
     <string name="profile_menu">Profil</string>
     <string name="chat_menu">Plaudern</string>

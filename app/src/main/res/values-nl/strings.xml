@@ -6,6 +6,7 @@
     <string name="wrong_plate_format">Ongeldig formaat gebruikersplaat</string>
     <string name="wrong_user">Ongeldige gebruiker en/of wachtwoord</string>
     <string name="Search">Zoeken</string>
+    <string name="plate_enter"><font size="8">Voer plaatnummer in</font></string>
     <string name="nonExist_user">Gebruiker bestaat niet en/of ongeldig wachtwoord</string>
     <string name="profile_menu">Profiel</string>
     <string name="chat_menu">Chat</string>

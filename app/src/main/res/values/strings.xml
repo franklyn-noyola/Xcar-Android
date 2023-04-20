@@ -2,6 +2,7 @@
     <string name="app_name" translatable="false">allConnected</string>
     <string name="wrong_plate_format">Formato de Matrícula del Usuario inválida</string>
     <string name="wrong_user">Usuario y/o Password Inválido</string>
+    <string name="plate_enter"><font size="8">Introduzca Matricula</font></string>
     <string name="Search">Buscar</string>
     <string name="sameUserSearch">No se puede realizar una búsqueda a tu propio usuario</string>
     <string name="nonExist_user">Usuario no Existe y/o Contraseña Incorrecta</string>

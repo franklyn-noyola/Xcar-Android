@@ -3,6 +3,7 @@
     <string name = "wrong_plate_format">유효하지 않은 사용자 번호판 형식</string>
     <string name = "wrong_user">잘못된 사용자 이름 및 / 또는 비밀번호</string>
     <string name = "Search">검색</string>
+    <string name="plate_enter"><font size="8">등록 입력</font></string>
     <string name = "nonExist_user">사용자가 존재하지 않음 및 / 또는 잘못된 암호</string>
     <string name = "profile_menu">프로필</string>
     <string name = "chat_menu">채팅</string>

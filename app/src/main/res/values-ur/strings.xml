@@ -6,6 +6,7 @@
     <string name="wrong_plate_format">غلط پلیٹ فارمیٹ</string>
     <string name="wrong_user">غلط صارف اور / یا پاس ورڈ</string>
     <string name="Search">تلاش کریں</string>
+    <string name="plate_enter"><font size="8">پلیٹ نمبر درج کریں۔</font></string>
     <string name="nonExist_user">صارف موجود نہیں ہے اور / یا غلط پاس ورڈ</string>
     <string name="profile_menu">پروفائل</string>
     <string name="chat_menu">چیٹ</string>

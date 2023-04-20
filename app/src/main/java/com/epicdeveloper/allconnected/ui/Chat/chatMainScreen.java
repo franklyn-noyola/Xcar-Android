@@ -82,7 +82,8 @@ public class chatMainScreen extends Fragment {
         AdRequest adRequest = new AdRequest.Builder().build();
         adview.loadAd(adRequest);
         searchView = root.findViewById(R.id.searchView);
-        inflaterView = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        searchView.setQueryHint(resources.getString((R.string.plate_enter)));
+         inflaterView = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         searchView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

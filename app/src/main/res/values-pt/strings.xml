@@ -4,6 +4,7 @@
     <string name="wrong_plate_format">Formato de registro de usuário inválido</string>
     <string name="wrong_user">Usuário e/ou senha inválidos</string>
     <string name="Search">Procurar</string>
+    <string name="plate_enter"><font size="8">Insira o número da placa</font></string>
     <string name="nonExist_user">Usuário não existe e / ou senha incorreta</string>
     <string name="profile_menu">Perfil</string>
     <string name="chat_menu">Bate-papo</string>
