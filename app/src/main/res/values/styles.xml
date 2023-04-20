@@ -14,6 +14,9 @@
             <item name="android:windowBackground">@drawable/splashscreen</item>
         </style>
 
+    <style name="searchView" parent="Widget.AppCompat.SearchView" >
+        <item name="android:textSize">15sp</item>
+    </style>
 
 
     <style name="AppTheme.NoActionBar">

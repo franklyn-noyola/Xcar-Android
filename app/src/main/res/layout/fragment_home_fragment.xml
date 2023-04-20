@@ -70,6 +70,7 @@
         android:layout_height="40dp"
         android:textSize="12sp"
         android:hint="@string/plate_enter"
+        app:theme="@style/searchView"
         android:queryHint="Introduzca Matricula"
         app:queryHint="Introduzca Matricula"
         android:iconifiedByDefault="false"
