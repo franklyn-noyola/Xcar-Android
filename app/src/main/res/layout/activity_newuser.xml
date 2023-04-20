@@ -151,7 +151,7 @@
 
     <Button
         android:id="@+id/registerButton"
-        android:layout_width="280dp"
+        android:layout_width="300dp"
         android:layout_height="57dp"
         android:background="@drawable/loginframe"
         android:textColor="@android:color/white"
