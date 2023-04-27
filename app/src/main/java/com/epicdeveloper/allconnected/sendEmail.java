@@ -16,27 +16,26 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class sendEmail {
-    static String mailSession;
-     static String passwordSession;
+    //static String mailSession;
+     //static String passwordSession;
      static Session session;
      static String selectedLang;
      static String support;
 
     public static void sendEmailMessage(String recipient, String subject, String messageSent){
-        mailSession="allconnected@epicdevelopers.app";
+        final String mailSession="allconnected@epicdevelopers.app";
         selectedLang = newuser.selectedLang;
-        passwordSession= "Drcr1989@";
-        final Properties prop=new Properties();
+        final String passwordSession= "Drcr1989@";
+        Properties prop=new Properties();
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+        prop.put("mail.smtp.auth", "true");
         prop.put("mail.smtp.host", "smtp.gmail.com");
         prop.put("mail.smtp.port", "587");
-        prop.put("mail.smtp.auth", "true");
-        prop.put("mail.smtp.starttls.enabled", true);
-        prop.put("mail.smtp.socketFactory.port", "587");
+        prop.put("mail.smtp.starttls.enable", "true");
 
         try{
-            session=Session.getInstance(prop, new Authenticator() {
+            session=Session.getInstance(prop, new javax.mail.Authenticator() {
                 @Override
                 protected PasswordAuthentication getPasswordAuthentication() {
                     return new PasswordAuthentication(mailSession, passwordSession);
