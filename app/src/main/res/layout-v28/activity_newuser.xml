@@ -201,7 +201,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.785"
+        app:layout_constraintVertical_bias="0.760"
         tools:ignore="SmallSp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
