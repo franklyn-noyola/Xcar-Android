@@ -28,7 +28,7 @@
     <string name="targetUserSend">Matricula Destinatario</string>
     <string name="gotChat">Ir al Chat</string>
     <string name="sendText">ENVIAR  </string>
-    <string name="terms_privacy"> Términos y condiciones y Política de privacidad</string>
+    <string name="terms_privacy">   Términos y condiciones y Política de privacidad</string>
     <string name="delete_chat">Eliminar Chat</string>
     <string name="password_strong">Mínimo 8 caracteres: 1 minúscula, 1 mayúscula y un número</string>
     <string name="new_user">Registro Nuevo Usuario</string>
@@ -38,7 +38,7 @@
     <string name="password_name">Contraseña</string>
     <string name="confirm_password">Confirmar Contraseña</string>
     <string name="register">REGISTRARSE</string>
-    <string name="accept_terms">He leido y aceptado los</string>
+    <string name="accept_terms">He leido y aceptado los </string>
     <string name="welcome">Welcome</string>
     <string name="banner_ad_unit_id">ca-app-pub-7506110687995747/7372926087</string>
     <string name="plateHint">" Matrícula"</string>
