@@ -2,6 +2,7 @@ package com.epicdeveloper.allconnected;
 
 import android.os.StrictMode;
 
+import java.util.Locale;
 import java.util.Properties;
 
 
@@ -22,7 +23,7 @@ public class sendEmail {
 
     public static void sendEmailMessage(String recipient, String subject, String messageSent){
         final String mailSession="allconnected@epicdevelopers.app";
-        selectedLang = newuser.selectedLang;
+        selectedLang= Locale.getDefault().getLanguage().toUpperCase();
         final String passwordSession= "Drcr1989@";
         Properties prop=new Properties();
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
