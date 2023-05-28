@@ -27,7 +27,7 @@
     <string name="targetUserSend">Matricula Destinatario</string>
     <string name="gotChat" >Ir al Chat</string>
     <string name="sendText" >ENVIAR  </string>
-    <string name="terms_privacy">   Términos y condiciones</string>
+    <string name="terms_privacy"> Términos y condiciones</string>
     <string name="delete_chat" >Eliminar Chat</string>
     <string name="password_strong">Mínimo 8 caracteres: 1 minúscula, 1 mayúscula y un número</string>
     <string name="new_user">Registro Nuevo Usuario</string>
