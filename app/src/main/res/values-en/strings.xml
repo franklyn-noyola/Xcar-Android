@@ -28,7 +28,7 @@
     <string name="targetUserSend">Target User Plate</string>
     <string name="gotChat" >Go to Chat</string>
     <string name="sendText" >SEND  </string>
-    <string name="terms_privacy"> Terms and conditions</string>
+    <string name="terms_privacy">&#32; Terms and conditions</string>
     <string name="delete_chat" >Delete Chat</string>
     <string name="password_strong">Minimum 8 characters: 1 small letter, 1 capital letter and 1 number</string>
     <string name="new_user">New User Register</string>
