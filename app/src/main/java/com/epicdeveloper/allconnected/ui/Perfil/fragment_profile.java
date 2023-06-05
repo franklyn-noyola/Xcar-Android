@@ -337,6 +337,7 @@ public class fragment_profile extends Fragment {
                 modelCarField.setEnabled(false);
                 colorCarField.setEnabled(false);
                 yearCarField.setEnabled(false);
+                btnCancelModInfo.setVisibility(View.INVISIBLE);
                 Toast.makeText(context, resources.getString(R.string.infoUpdated), Toast.LENGTH_SHORT).show();
                 btnchangePassButton.setEnabled(true);
         }
