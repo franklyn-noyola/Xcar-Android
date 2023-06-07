@@ -45,7 +45,7 @@
     <string name="loginLbl">Logga in</string>
     <string name="welcomeHomeText">Välkommen till allConected</string>
     <string name="forgottenPass">Har du glömt ditt lösenord?</string>
-    <string name="newUser">Ny användare? Klicka här</string>
+    <string name="newUser">Ny användare? <b>Klicka här</b>b</string>
     <string name="brandHint">Varumärke</string>
     <string name="modelHint">Modell</string>
     <string name="colorHint" >Färg</string>

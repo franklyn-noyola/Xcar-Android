@@ -44,7 +44,7 @@
     <string name="passHint"> Wachtwoord</string>
     <string name="welcomeHomeText">Welkom bij allConected</string>
     <string name="forgottenPass">Ben je je wachtwoord vergeten?</string>
-    <string name="newUser">Nieuwe gebruiker? Klik hier</string>
+    <string name="newUser">Nieuwe gebruiker? <b>Klik hier</b></string>
     <string name="brandHint">Merk</string>
     <string name="modelHint">Model</string>
     <string name="yearHint">Jaar</string>

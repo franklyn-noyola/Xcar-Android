@@ -46,7 +46,7 @@
     <string name="loginLbl">Login</string>
     <string name="welcomeHomeText">Bienvenidos a allConected"</string>
     <string name="forgottenPass">¿Has olvidado tu contraseña?</string>
-    <string name="newUser">¿Nuevo usuario? Haz click aquí</string>
+    <string name="newUser">¿Nuevo usuario?<b>Haz click aquí</b></string>
     <string name="brandHint">Marca</string>
     <string name="modelHint">Modelo</string>
     <string name="colorHint">Color</string>

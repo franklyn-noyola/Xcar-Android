@@ -42,7 +42,7 @@
     <string name="passHint">Mot de passe</string>
     <string name="welcomeHomeText">Bienvenue à allConnected</string>
     <string name="forgottenPass">Vous avez oublié votre mot de passe ?</string>
-    <string name="newUser">Nouvel utilisateur? Cliquez ici</string>
+    <string name="newUser">Nouvel utilisateur? <b>Cliquez ici</b></string>
     <string name="brandHint">Marque</string>
     <string name="modelHint">Modèle</string>
     <string name="yearHint">Année</string>

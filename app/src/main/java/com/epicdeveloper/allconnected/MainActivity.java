@@ -10,14 +10,18 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.os.Build;
 import android.os.Handler;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -200,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
                             newUserLink = findViewById(R.id.newUser);
                             plateUser = mUser.getText().toString();
                             btnLogin =  findViewById(R.id.loginButton);
-                            //setFieldsLanguage(userlanguage);ññ
+                            //setFieldsLanguage(userlanguage);
                             mPassword.setOnTouchListener(new View.OnTouchListener() {
                                 @Override
                                 public boolean onTouch(View v, MotionEvent event) {
@@ -712,7 +716,9 @@ public class MainActivity extends AppCompatActivity {
                         mPassword.setHint(resources.getString(R.string.passHint));
                         welcomeTextView.setText(resources.getString(R.string.welcomeHomeText));
                         forgottenPass.setText(resources.getString(R.string.forgottenPass));
-                        newUserLink.setText(resources.getString(R.string.newUser));
+                        SpannableStringBuilder newLinkBlueText = new SpannableStringBuilder(resources.getString(R.string.newUser));
+                        newLinkBlueText.setSpan(new ForegroundColorSpan(Color.RED),0,15, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                        newUserLink.setText(newLinkBlueText);
                         mPassword.setOnTouchListener(new View.OnTouchListener() {
                             @Override
                             public boolean onTouch(View v, MotionEvent event) {

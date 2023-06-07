@@ -43,7 +43,7 @@
     <string name="passHint"> कुंजिका</string>
     <string name="welcomeHomeText">allConected में आपका स्वागत है</string>
     <string name="forgottenPass">क्या आप अपना कूटशब्द भूल गये हैं</string>
-    <string name="newUser">नए उपयोगकर्ता? यहां क्लिक करें</string>
+    <string name="newUser"><b>नए उपयोगकर्ता? यहां क्लिक करें</b></string>
     <string name="brandHint">ब्रांड</string>
     <string name="modelHint">नमूना</string>
     <string name="yearHint">साल</string>

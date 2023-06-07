@@ -44,7 +44,7 @@
     <string name="passHint">" 密码</string>
     <string name="welcomeHomeText">欢迎来到 allConected</string>
     <string name="forgottenPass">你忘了你的密码？</string>
-    <string name="newUser">新用户? 点击这里</string>
+    <string name="newUser"><b>新用户? 点击这里</b></string>
     <string name="brandHint">品牌</string>
     <string name="modelHint">模型</string>
     <string name="yearHint">年</string>

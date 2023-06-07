@@ -27,7 +27,7 @@
     <string name="targetUserSend">Matricula Destinatario</string>
     <string name="gotChat" >Ir al Chat</string>
     <string name="sendText" >ENVIAR  </string>
-    <string name="terms_privacy" >Términos y condiciones</string>
+    <string name="terms_privacy">Terminos y Condiciones</string>
     <string name="delete_chat" >Eliminar Chat</string>
     <string name="password_strong">Mínimo 8 caracteres: 1 minúscula, 1 mayúscula y un número</string>
     <string name="new_user">Registro Nuevo Usuario</string>
@@ -41,8 +41,8 @@
     <string name="plateHint"> Matricula</string>
     <string name="passHint"> Contraseña</string>
     <string name="welcomeHomeText">Bienvenidos a allConnected</string>
-    <string name="forgottenPass">¿Has olvidado tu contraseña?</string>
-    <string name="newUser">¿Nuevo usuario? Haz click aquí</string>
+    <string name="forgottenPass"><b>¿Has olvidado tu contraseña?</b></string>
+    <string name="newUser">¿Nuevo usuario?<b> Haz click aquí</b></string>
     <string name="brandHint">Marca</string>
     <string name="modelHint">Modelo</string>
     <string name="yearHint">Año</string>

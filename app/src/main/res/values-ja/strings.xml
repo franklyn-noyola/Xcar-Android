@@ -44,7 +44,7 @@
     <string name="passHint"> パスワード</string>
     <string name="welcomeHomeText">allConectedへようこそ</string>
     <string name="forgottenPass">パスワードを忘れましたか？</string>
-    <string name="newUser">新しいユーザー？ここをクリック</string>
+    <string name="newUser"><b>新しいユーザー？ここをクリック</b></string>
     <string name="brandHint">ブランド</string>
     <string name="modelHint">モデル</string>
     <string name="yearHint">年</string>

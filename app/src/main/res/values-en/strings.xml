@@ -40,7 +40,7 @@
     <string name="password_name" >Password</string>
     <string name="confirm_password" >Confirm Password</string>
     <string name="register" >REGISTER</string>
-    <string name="accept_terms">I\'ve read and accepted the</string>
+    <string name="accept_terms"><b>I\'ve read and accepted the</b></string>
     <string name="plateHint"> Plate Number</string>
     <string name="passHint">" Password"</string>
     <string name="welcomeHomeText">Welcome to allConected"</string>
