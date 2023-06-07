@@ -43,8 +43,8 @@
     <string name="plateHint"> Номерной знак</string>
     <string name="passHint"> Пароль</string>
     <string name="welcomeHomeText">Добро пожаловать в allConected</string>
-    <string name="forgottenPass">Вы забыли свой пароль?</string>
-    <string name="newUser">Новый пользователь? <b>кликните сюда</b>b</string>
+    <string name="forgottenPass"><b> <font color="blue">Вы забыли свой пароль?</font></b></string>
+    <string name="newUser">Новый пользователь? <b> <font color="blue">кликните сюда</font></b>b</string>
     <string name="brandHint">Марка</string>
     <string name="modelHint">Модель</string>
     <string name="yearHint">Год</string>
