@@ -43,8 +43,8 @@
     <string name="plateHint"> Plaat nummer</string>
     <string name="passHint"> Wachtwoord</string>
     <string name="welcomeHomeText">Welkom bij allConected</string>
-    <string name="forgottenPass">Ben je je wachtwoord vergeten?</string>
-    <string name="newUser">Nieuwe gebruiker? <b>Klik hier</b></string>
+    <string name="forgottenPass"><b> <font color="blue">Ben je je wachtwoord vergeten?</font></b></string>
+    <string name="newUser">Nieuwe gebruiker? <b> <font color="blue">Klik hier</font></b></string>
     <string name="brandHint">Merk</string>
     <string name="modelHint">Model</string>
     <string name="yearHint">Jaar</string>

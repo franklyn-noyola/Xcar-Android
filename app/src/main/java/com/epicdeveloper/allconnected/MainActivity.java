@@ -50,6 +50,8 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     public static String userSelected;
     public static String UserSel;
+
+    SpannableStringBuilder newLinkBlueText;
     public static int screens;
     public static int fromNotifications;
     public static String userlanguage;
@@ -154,6 +156,8 @@ public class MainActivity extends AppCompatActivity {
                     return (nc.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) || nc.hasTransport(NetworkCapabilities.TRANSPORT_WIFI));
                 }
             }
+
+
         return false;
     }
 
@@ -716,8 +720,10 @@ public class MainActivity extends AppCompatActivity {
                         mPassword.setHint(resources.getString(R.string.passHint));
                         welcomeTextView.setText(resources.getString(R.string.welcomeHomeText));
                         forgottenPass.setText(resources.getString(R.string.forgottenPass));
-                        SpannableStringBuilder newLinkBlueText = new SpannableStringBuilder(resources.getString(R.string.newUser));
-                        newLinkBlueText.setSpan(new ForegroundColorSpan(Color.RED),0,15, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                        newLinkBlueText = new SpannableStringBuilder(resources.getString(R.string.newUser));
+                        int colorBlue = getResources().getColor(R.color.purple_700);
+                        ForegroundColorSpan blueLink = new ForegroundColorSpan(colorBlue);
+                        newLinkBlueText.setSpan(blueLink,2,10, 0);
                         newUserLink.setText(newLinkBlueText);
                         mPassword.setOnTouchListener(new View.OnTouchListener() {
                             @Override
@@ -841,7 +847,11 @@ public class MainActivity extends AppCompatActivity {
         mPassword.setHint(resources.getString(R.string.passHint));
         welcomeTextView.setText(resources.getString(R.string.welcomeHomeText));
         forgottenPass.setText(resources.getString(R.string.forgottenPass));
-        newUserLink.setText(resources.getString(R.string.newUser));
+        newLinkBlueText = new SpannableStringBuilder(resources.getString(R.string.newUser));
+        int colorBlue = getResources().getColor(R.color.purple_700);
+        ForegroundColorSpan blueLink = new ForegroundColorSpan(colorBlue);
+        newLinkBlueText.setSpan(blueLink,2,10, 0);
+        newUserLink.setText("Mamaguevo");
     }
 
     public static void getDataUserSession(String plateUser) {

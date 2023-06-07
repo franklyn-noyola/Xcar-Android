@@ -44,8 +44,8 @@
     <string name="passHint"> Lösenord</string>
     <string name="loginLbl">Logga in</string>
     <string name="welcomeHomeText">Välkommen till allConected</string>
-    <string name="forgottenPass">Har du glömt ditt lösenord?</string>
-    <string name="newUser">Ny användare? <b>Klicka här</b>b</string>
+    <string name="forgottenPass"><b> <font color="blue">Har du glömt ditt lösenord?</font></b></string>
+    <string name="newUser">Ny användare? <b> <font color="blue">Klicka här</font></b>b</string>
     <string name="brandHint">Varumärke</string>
     <string name="modelHint">Modell</string>
     <string name="colorHint" >Färg</string>

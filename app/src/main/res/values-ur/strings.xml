@@ -42,8 +42,8 @@
     <string name="plateHint"> پلیٹ نمبر</string>
     <string name="passHint"> پاس ورڈ</string>
     <string name="welcomeHomeText">allConected میں خوش آمدید</string>
-    <string name="forgottenPass">کیا آپ اپنا پاس ورڈ بھول گئے ہیں؟</string>
-    <string name="newUser"><b>نیا صارف؟ یہاں کلک کریں</b></string>
+    <string name="forgottenPass"><b> <font color="blue">کیا آپ اپنا پاس ورڈ بھول گئے ہیں؟</font></b></string>
+    <string name="newUser"><b> <font color="blue">نیا صارف؟ یہاں کلک کریں</font></b></string>
     <string name="brandHint">برانڈ</string>
     <string name="modelHint">ماڈل</string>
     <string name="yearHint">سال</string>

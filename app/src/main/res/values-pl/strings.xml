@@ -44,8 +44,8 @@
     <string name="passHint"> Hasło</string>
     <string name="loginLbl">Zaloguj sie</string>
     <string name="welcomeHomeText">Witamy w allConected</string>
-    <string name="forgottenPass">Zapomniałeś hasła?</string>
-    <string name="newUser">Nowy użytkownik? <b>Kliknij tutaj</b></string>
+    <string name="forgottenPass"><b> <font color="blue">Zapomniałeś hasła?</font></b></string>
+    <string name="newUser">Nowy użytkownik? <b> <font color="blue">Kliknij tutaj</font></b></string>
     <string name="brandHint">Marka</string>
     <string name="modelHint">Model</string>
     <string name="colorHint" >Kolor</string>

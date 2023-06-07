@@ -44,8 +44,8 @@
     <string name="plateHint"> Plate Number</string>
     <string name="passHint">" Password"</string>
     <string name="welcomeHomeText">Welcome to allConected"</string>
-    <string name="forgottenPass">Have you forgotten your Password</string>
-    <string name="newUser">New User? Click here</string>
+    <string name="forgottenPass"><b> <font color="blue">Have you forgotten your Password</font></b></string>
+    <string name="newUser">New User?<b> <font color="blue"> Click here</font></b></string>
     <string name="brandHint">Brand</string>
     <string name="modelHint">Model</string>
     <string name="yearHint">Year</string>

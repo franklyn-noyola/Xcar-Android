@@ -45,8 +45,8 @@
     <string name="passHint">" كلمة المرور"</string>
     <string name="loginLbl" >تسجيل الدخول</string>
     <string name="welcomeHomeText">مرحبًا بك في allConected"</string>
-    <string name="forgottenPass">هل نسيت كلمة المرور؟</string>
-    <string name="newUser"><b>مستخدم جديد؟ انقر هنا</b></string>
+    <string name="forgottenPass"><b> <font color="blue">هل نسيت كلمة المرور؟</font></b></string>
+    <string name="newUser"><b><font color="blue">مستخدم جديد؟ انقر هنا</font></b></string>
     <string name="brandHint">ماركة</string>
     <string name="modelHint">نموذج</string>
     <string name="colorHint">لون</string>

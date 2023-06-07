@@ -44,8 +44,8 @@
     <string name="passHint">암호"</string>
     <string name="loginLbl">로그인</string>
     <string name ="welcomeHomeText">allConected에 오신 것을 환영합니다.</string>
-    <string name ="forgottenPass">비밀번호를 잊으셨습니까?</string>
-    <string name ="newUser"><b>신규 사용자입니까? 여기를 클릭하십시오</b></string>
+    <string name ="forgottenPass"><b> <font color="blue">비밀번호를 잊으셨습니까?</font></b></string>
+    <string name ="newUser"><b> <font color="blue">신규 사용자입니까? 여기를 클릭하십시오</font></b></string>
     <string name ="brandHint">브랜드</string>
     <string name ="modelHint">모델</string>
     <string name ="colorHint">색상</string>
