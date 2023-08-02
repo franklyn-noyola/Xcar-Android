@@ -10,14 +10,12 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.os.Build;
 import android.os.Handler;
 import android.text.SpannableStringBuilder;
-import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -52,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     public static String UserSel;
 
     SpannableStringBuilder newLinkBlueText;
+    SpannableStringBuilder newforgottenPass;
     public static int screens;
     public static int fromNotifications;
     public static String userlanguage;
@@ -147,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @SuppressLint("ObsoleteSdkInt")
     public boolean isOnline(Context context){
             final ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService((Context.CONNECTIVITY_SERVICE));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -212,11 +212,7 @@ public class MainActivity extends AppCompatActivity {
                             mPassword.setOnTouchListener(new View.OnTouchListener() {
                                 @Override
                                 public boolean onTouch(View v, MotionEvent event) {
-                                    final int DRAWABLE_LEFT = 0;
-                                    final int DRAWABLE_TOP = 1;
                                     final int DRAWABLE_RIGHT = 2;
-                                    final int DRAWABLE_BOTTOM = 3;
-
                                     if(event.getAction() == MotionEvent.ACTION_UP) {
                                         if(event.getRawX() >= (mPassword.getRight() - mPassword.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
                                             if (mPassword.getTransformationMethod() == HideReturnsTransformationMethod.getInstance()){
@@ -846,12 +842,12 @@ public class MainActivity extends AppCompatActivity {
         mUser.setHint(resources.getString(R.string.plateHint));
         mPassword.setHint(resources.getString(R.string.passHint));
         welcomeTextView.setText(resources.getString(R.string.welcomeHomeText));
-        forgottenPass.setText(resources.getString(R.string.forgottenPass));
-        newLinkBlueText = new SpannableStringBuilder(resources.getString(R.string.newUser));
         int colorBlue = getResources().getColor(R.color.purple_700);
+        newforgottenPass = new SpannableStringBuilder (resources.getString(R.string.forgottenPass));
         ForegroundColorSpan blueLink = new ForegroundColorSpan(colorBlue);
+        newforgottenPass.setSpan(blueLink, 2, 10,0);
+        newLinkBlueText = new SpannableStringBuilder(resources.getString(R.string.newUser));
         newLinkBlueText.setSpan(blueLink,2,10, 0);
-        newUserLink.setText("Mamaguevo");
     }
 
     public static void getDataUserSession(String plateUser) {
