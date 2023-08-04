@@ -41,7 +41,7 @@
     <string name="accept_terms">मैंने पढ़ा है और स्वीकार किया है</string>
     <string name="plateHint"> थाली संख्या</string>
     <string name="passHint"> कुंजिका</string>
-    <string name="welcomeHomeText">allConected में आपका स्वागत है</string>
+    <string name="welcomeHomeText">XCar में आपका स्वागत है</string>
     <string name="forgottenPass"><b> <font color="blue">क्या आप अपना कूटशब्द भूल गये हैं</font></b></string>
     <string name="newUser"><b> <font color="blue">नए उपयोगकर्ता? यहां क्लिक करें</font></b></string>
     <string name="brandHint">ब्रांड</string>
@@ -55,7 +55,7 @@
     <string name="updateInfo">जानकारी अद्यतन</string>
     <string name="allfieldFilled">सभी क्षेत्रों को भरा जाना चाहिए</string>
     <string name="wrong_password">पासवर्ड में कम से कम 8 अक्षर, 1 छोटा अक्षर, 1 कैपिटल लेटर और 1 नंबर होना चाहिए</string>
-    <string name="welcomeMessage">allConnected में आपका स्वागत है</string>
+    <string name="welcomeMessage">XCar में आपका स्वागत है</string>
     <string name="noTermsAccepted">नियम और शर्तें और गोपनीयता नीति की जाँच नहीं की गई ह</string>
     <string name="backLogin">लॉगिन पर वापस जाएं</string>
     <string name="noPassMatch">सांकेतिक शब्द मेल नहीं खाते</string>
@@ -117,7 +117,7 @@
     <string name="noExists">उपयोगकर्ता मौजूद नहीं है</string>
     <string name="deletedChat">डिलीट कर दिया</string>
     <string name="version">संस्करण</string>
-    <string name="support">allConnected समर्थन</string>
+    <string name="support">XCar समर्थन</string>
     <string name="noNotifications">सूचनाएं नहीं हैं</string>
     <string name="infoUpdated">जानकारी को सफलतापूर्वक अपडेट किया गया है</string>
     <string name="noPassEmpty">पासवर्ड फ़ील्ड खाली नहीं हो सकता</string>
@@ -162,6 +162,6 @@
     <string name="receiveNotification">Receive Notification</string>
     <string name="aboutText">सहायक मेनू पर और फिर अबाउट ऑप्शन पर क्लिक करके, आप अबाउट सेक्शन में प्रवेश करें, जहाँ आप एप्लिकेशन के संस्करण और साथ ही डेवलपर्स की वेबसाइट देख सकते हैं।</string>
     <string name="settingText">सहायक मेनू पर और फिर सेटिंग्स विकल्प पर क्लिक करके, आप सेटिंग अनुभाग में प्रवेश करते हैं जहां आप उस भाषा में बदल सकते हैं जिसे आप प्रदर्शित करना चाहते हैं।</string>
-    <string name="contactText">सहायक मेनू पर और फिर संपर्क विकल्प पर क्लिक करके, आप संपर्क अनुभाग में प्रवेश करते हैं जहां आप allConnected सहायता टीम को एक ईमेल भेज सकते हैं जो आपके संदेश का कारण बताता है, इसलिए इस अनुभाग में भी आप एक मित्र के साथ साझा कर सकते हैं या परिवार के सदस्य आपकी पसंद के सामाजिक नेटवर्क में हैं ताकि allConnected ऐप इंस्टॉल हो जाए अगर यह पहले नहीं किया गया है।</string>
+    <string name="contactText">सहायक मेनू पर और फिर संपर्क विकल्प पर क्लिक करके, आप संपर्क अनुभाग में प्रवेश करते हैं जहां आप XCar सहायता टीम को एक ईमेल भेज सकते हैं जो आपके संदेश का कारण बताता है, इसलिए इस अनुभाग में भी आप एक मित्र के साथ साझा कर सकते हैं या परिवार के सदस्य आपकी पसंद के सामाजिक नेटवर्क में हैं ताकि allConnected ऐप इंस्टॉल हो जाए अगर यह पहले नहीं किया गया है।</string>
 
 </resources>

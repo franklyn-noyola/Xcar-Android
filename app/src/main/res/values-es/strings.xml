@@ -40,7 +40,7 @@
     <string name="accept_terms">He leído y acepto los</string>
     <string name="plateHint"> Matricula</string>
     <string name="passHint"> Contraseña</string>
-    <string name="welcomeHomeText">Bienvenidos a allConnected</string>
+    <string name="welcomeHomeText">Bienvenidos a XCar</string>
     <string name="forgottenPass"><b> <font color="blue">¿Has olvidado tu contraseña?</font></b></string>
     <string name="newUser">¿Nuevo usuario?<b> <font color="blue"> Haz click aquí</font></b></string>
     <string name="brandHint">Marca</string>
@@ -54,7 +54,7 @@
     <string name="updateInfo">Actualizar Info</string>
     <string name="allfieldFilled">"Deben llenarse todos los campos"</string>
     <string name="wrong_password">La contraseña debe contener mínimo 8 caracteres, 1 letra minúscula, 1 mayúscula y un número</string>
-    <string name="welcomeMessage">Bienvenidos a allConnected</string>
+    <string name="welcomeMessage">Bienvenidos a XCar</string>
     <string name="backLogin">Regresar al Login</string>
     <string name="noTermsAccepted">No se ha aceptado los terminos y condiciones y poítica de privacidad</string>
     <string name="noPassMatch">Las contraseñas no coinciden</string>
@@ -99,7 +99,7 @@
     <string name="deleteChatMenu">Eliminar Chat</string>
     <string name="lockUser">Bloquear Usuario</string>
     <string name="userInfo">Info. Usuario</string>
-    <string name="support">Soporte allConnected</string>
+    <string name="support">Soporte XCar</string>
     <string name="addMob">ca-app-pub-7506110687995747~3078457854</string>
     <string name="yes">Si</string>
     <string name="logout">¿Deseas salir de la aplicación?</string>
@@ -162,7 +162,7 @@
     <string name="receiveNotification">Recibir Notificaciones</string>
     <string name="aboutText">Haciendo click en el menú auxiliar y luego en la opción Acerca de, entras a la sección Acerca de, donde puedes visualizar la versión de la aplicación, asi como la página web de los desarrolladores.</string>
     <string name="settingText">Haciendo click en el menú auxiliar y luego en la opción Configuración, entras a la sección Configuración donde en ella  puedes cambiar al idioma que deseas que la aplicación se muestre.</string>
-    <string name="contactText">Haciendo click en el menú auxiliar y luego en la opción Contacto, entras a la secciónde Contacto donde puedes enviar un email al equipo de Soporte de allConnected indicando el motivo de tu mensaje, así también en esta sección puedes compartir con un amigo o familiar en una de las redes sociales de tu preferencia para que se instale la app de allConnected si no lo ha hecho anteriormente.</string>
+    <string name="contactText">Haciendo click en el menú auxiliar y luego en la opción Contacto, entras a la secciónde Contacto donde puedes enviar un email al equipo de Soporte de XCar indicando el motivo de tu mensaje, así también en esta sección puedes compartir con un amigo o familiar en una de las redes sociales de tu preferencia para que se instale la app de XCar si no lo ha hecho anteriormente.</string>
 
 
 </resources>

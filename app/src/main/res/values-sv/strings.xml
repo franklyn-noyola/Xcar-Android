@@ -1,5 +1,5 @@
 <resources xmlns:app_name="http://schemas.android.com/apk/res-auto">
-    <string name="app_name" translatable="false">allConnected</string>
+    <string name="app_name" translatable="false">XCar</string>
     <string name ="wrong_plate_format">Ogiltigt format för användarlicensskylt</string>
     <string name ="wrong_user">Ogiltigt användarnamn och/eller lösenord</string>
     <string name="Search">Sök</string>
@@ -43,7 +43,7 @@
     <string name="plateHint"> Registreringsnummer</string>
     <string name="passHint"> Lösenord</string>
     <string name="loginLbl">Logga in</string>
-    <string name="welcomeHomeText">Välkommen till allConected</string>
+    <string name="welcomeHomeText">Välkommen till XCar</string>
     <string name="forgottenPass"><b> <font color="blue">Har du glömt ditt lösenord?</font></b></string>
     <string name="newUser">Ny användare? <b> <font color="blue">Klicka här</font></b>b</string>
     <string name="brandHint">Varumärke</string>
@@ -57,7 +57,7 @@
     <string name="modifyInfo">Ändra Info</string>
     <string name="updateInfo">Uppdatera information</string>
     <string name = "allfieldFilled">Alla fält måste fyllas</string>
-    <string name = "welcomeMessage">Välkommen till allConnected</string>
+    <string name = "welcomeMessage">Välkommen till XCar</string>
     <string name ="wrong_password">Lösenordet måste innehålla minst åtta tecken, 1 gemener, 1 stor bokstav och ett nummer</string>
     <string name ="backLogin">Återgå till inloggning</string>
     <string name ="noTermsAccepted">Villkor och sekretesspolicy har inte accepterats</string>
@@ -127,7 +127,7 @@
     <string name="sucessfully">framgångsrikt</string>
     <string name="recently">nyligen</string>
     <string name ="cancel">Avbryt</string>
-    <string name="support">allConnected Support</string>
+    <string name="support">XCar Support</string>
     <string name ="shareWith">Dela med en vän</string>
     <string name ="shareFriend">Dela med</string>
     <string name ="imageSelectLbl">Välj en bild</string>
@@ -165,5 +165,5 @@
     <string name="receiveNotification">Ta emot aviseringar</string>
     <string name="aboutText">Genom att klicka på hjälpmenyn och sedan på alternativet Om, går du in i avsnittet Om, där du kan se versionen av applikationen, liksom utvecklarens webbplats.</string>
     <string name="settingText">Genom att klicka på hjälpmenyn och sedan på alternativet Inställningar öppnar du avsnittet Inställningar där du kan ändra till det språk du vill att programmet ska visas.</string>
-    <string name="contactText">Genom att klicka på hjälpmenyn och sedan på kontaktalternativet går du in i kontaktavsnittet där du kan skicka ett e-postmeddelande till allConnected Support-teamet som anger anledningen till ditt meddelande, så även i det här avsnittet kan du dela med en vän eller familjemedlem i ett av de sociala nätverk som du föredrar så att allConnected-appen installeras om den inte har gjorts tidigare.</string>
+    <string name="contactText">Genom att klicka på hjälpmenyn och sedan på kontaktalternativet går du in i kontaktavsnittet där du kan skicka ett e-postmeddelande till XCar Support-teamet som anger anledningen till ditt meddelande, så även i det här avsnittet kan du dela med en vän eller familjemedlem i ett av de sociala nätverk som du föredrar så att XCar-appen installeras om den inte har gjorts tidigare.</string>
 </resources>

@@ -40,7 +40,7 @@
     <string name="accept_terms">J\'ai lu et accept le</string>
     <string name="plateHint"> Numéro de plaque</string>
     <string name="passHint">Mot de passe</string>
-    <string name="welcomeHomeText">Bienvenue à allConnected</string>
+    <string name="welcomeHomeText">Bienvenue à XCar</string>
     <string name="forgottenPass"><b> <font color="blue">Vous avez oublié votre mot de passe?</font></b></string>
     <string name="newUser">Nouvel utilisateur? <b> <font color="blue">Cliquez ici</font></b></string>
     <string name="brandHint">Marque</string>
@@ -54,7 +54,7 @@
     <string name="updateInfo">Mise à jour des informations</string>
     <string name="allfieldFilled">Tous les champs doivent être remplis</string>
     <string name="wrong_password">Le mot de passe doit contenir au moins 8 caractères, 1 lettre minuscule, 1 majuscule et un numéro</string>
-    <string name="welcomeMessage">Bienvenue à allConnected</string>
+    <string name="welcomeMessage">Bienvenue à XCar</string>
     <string name="backLogin">Retour à la connexion</string>
     <string name="noTermsAccepted">Les modalités et la politique de confidentialité n’ont pas été acceptées</string>
     <string name="noPassMatch">Les mots de passe ne correspondent pas</string>
@@ -97,7 +97,7 @@
     <string name="emptyTargetUser">Le destinataire ne doit pas être vide</string>
     <string name="deletedNotification">Notification supprimée</string>
     <string name="delete">Supprimer</string>
-    <string name="support">Support allConnected</string>
+    <string name="support">Support XCar</string>
     <string name="addMob">ca-app-pub-7506110687995747~3078457854</string>
     <string name="deleteChatMenu">Supprimer Chat</string>
     <string name="lockUser">Utilisateur de bloc</string>
@@ -162,6 +162,6 @@
     <string name="receiveNotification">Recevoir des notifications</string>
     <string name="aboutText">En cliquant sur le menu auxiliaire puis sur l\'option À propos, vous entrez dans la section À propos, où vous pouvez voir la version de l\'application, ainsi que le site Web des développeurs.</string>
     <string name="settingText">En cliquant sur le menu auxiliaire puis sur l\'option Paramètres, vous entrez dans la section Paramètres où vous pouvez changer la langue dans laquelle vous souhaitez que l\'application s\'affiche.</string>
-    <string name="contactText">En cliquant sur le menu auxiliaire puis sur l\'option Contact, vous entrez dans la section Contact où vous pouvez envoyer un e-mail à l\'équipe d\'assistance allConnected en indiquant la raison de votre message, donc également dans cette section, vous pouvez partager avec un ami ou un membre de la famille dans l\'un des réseaux sociaux de votre choix afin que l\'application allConnected soit installée si vous ne l\'avez pas déjà fait.</string>
+    <string name="contactText">En cliquant sur le menu auxiliaire puis sur l\'option Contact, vous entrez dans la section Contact où vous pouvez envoyer un e-mail à l\'équipe d\'assistance XCar en indiquant la raison de votre message, donc également dans cette section, vous pouvez partager avec un ami ou un membre de la famille dans l\'un des réseaux sociaux de votre choix afin que l\'application allConnected soit installée si vous ne l\'avez pas déjà fait.</string>
 
 </resources>

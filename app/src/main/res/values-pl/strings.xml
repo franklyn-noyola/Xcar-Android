@@ -1,5 +1,5 @@
 <resources xmlns:app_name="http://schemas.android.com/apk/res-auto">
-    <string name="app_name" translatable="false">allConnected</string>
+    <string name="app_name" translatable="false">XCar</string>
     <string name="wrong_plate_format">Nieprawidłowy format rejestracji użytkownika</string>
     <string name="wrong_user">Nieprawidłowy użytkownik i/lub hasło</string>
     <string name ="Search">Szukaj</string>
@@ -43,7 +43,7 @@
     <string name="plateHint"> Numer rejestracyjny</string>
     <string name="passHint"> Hasło</string>
     <string name="loginLbl">Zaloguj sie</string>
-    <string name="welcomeHomeText">Witamy w allConected</string>
+    <string name="welcomeHomeText">Witamy w XCar</string>
     <string name="forgottenPass"><b> <font color="blue">Zapomniałeś hasła?</font></b></string>
     <string name="newUser">Nowy użytkownik? <b> <font color="blue">Kliknij tutaj</font></b></string>
     <string name="brandHint">Marka</string>
@@ -57,7 +57,7 @@
     <string name="modifyInfo">Zmodyfikuj informacje</string>
     <string name="updateInfo">Zaktualizuj informacje</string>
     <string name="allfieldFilled">Wszystkie pola muszą być wypełnione</string>
-    <string name="welcomeMessage">Witamy w allConnected</string>
+    <string name="welcomeMessage">Witamy w XCar</string>
     <string name="wrong_password">Hasło musi zawierać co najmniej 8 znaków, 1 małą literę, 1 wielką literę i cyfrę</string>
     <string name="backLogin">Wróć do logowania</string>
     <string name="noTermsAccepted">Wróć do wpisów</string>
@@ -126,7 +126,7 @@
     <string name="noPassEmpty">Pola haseł nie mogą być puste</string>
     <string name="sucessfully">z powodzeniem</string>
     <string name="recently">Niedawno</string>
-    <string name="support">allConnected wsparcie</string>
+    <string name="support">XCar wsparcie</string>
     <string name="cancel">Anuluj</string>
     <string name="shareWith">Udostępnij znajomemu</string>
     <string name="shareFriend">Udostępnij</string>
@@ -165,5 +165,5 @@
     <string name="receiveNotification">Otrzymywać powiadomienia</string>
     <string name="aboutText">Klikając w menu pomocnicze, a następnie w opcję Informacje, przechodzisz do sekcji Informacje, w której możesz zobaczyć wersję aplikacji, a także stronę internetową deweloperów.</string>
     <string name="settingText">Klikając menu pomocnicze, a następnie opcję Ustawienia, przechodzisz do sekcji Ustawienia, w której możesz zmienić język, w jakim ma być wyświetlana aplikacja.</string>
-    <string name="contactText">Klikając menu pomocnicze, a następnie opcję Kontakt, przechodzisz do sekcji Kontakt, w której możesz wysłać wiadomość e-mail do zespołu wsparcia allConnected, wskazując powód swojej wiadomości, więc również w tej sekcji możesz podzielić się z przyjacielem lub członkiem rodziny w jednej z preferowanych sieci społecznościowych, aby aplikacja allConnected została zainstalowana, jeśli nie została wcześniej zainstalowana.</string>
+    <string name="contactText">Klikając menu pomocnicze, a następnie opcję Kontakt, przechodzisz do sekcji Kontakt, w której możesz wysłać wiadomość e-mail do zespołu wsparcia XCar, wskazując powód swojej wiadomości, więc również w tej sekcji możesz podzielić się z przyjacielem lub członkiem rodziny w jednej z preferowanych sieci społecznościowych, aby aplikacja XCar została zainstalowana, jeśli nie została wcześniej zainstalowana.</string>
 </resources>

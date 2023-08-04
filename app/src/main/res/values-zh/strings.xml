@@ -12,7 +12,7 @@
     <string name="chat_menu">聊天</string>
     <string name="logout_menu">离开</string>
     <string name="home_menu">开始</string>
-    <string name="support">allConnected支持</string>
+    <string name="support">XCar支持</string>
     <string name="addMob">ca-app-pub-7506110687995747~3078457854</string>
     <string name="action_settings">设定值</string>
     <string name="action_about">关于</string>
@@ -42,7 +42,7 @@
     <string name="accept_terms">我已阅读并接受</string>
     <string name="plateHint"> 车牌号码</string>
     <string name="passHint">" 密码</string>
-    <string name="welcomeHomeText">欢迎来到 allConected</string>
+    <string name="welcomeHomeText">欢迎来到 XCar</string>
     <string name="forgottenPass"><b> <font color="blue">你忘了你的密码？</font></b></string>
     <string name="newUser"><b> <font color="blue">新用户? 点击这里</font></b></string>
     <string name="brandHint">品牌</string>
@@ -162,6 +162,6 @@
     <string name="receiveNotification">接收通知</string>
     <string name="aboutText">通过单击辅助菜单，然后单击“关于”选项，您将进入“关于”部分，您可以在其中查看应用程序的版本以及开发人员的网站。</string>
     <string name="settingText">通过单击辅助菜单，然后单击“设置”选项，您可以进入“设置”部分，在其中可以更改为希望应用程序显示的语言。</string>
-    <string name="contactText">通过单击辅助菜单，然后在“联系人”选项上，您可以进入“联系人”部分，您可以在其中向“ allConnected”支持团队发送电子邮件，以指示消息的原因，因此您也可以在此部分中与朋友或您偏好的社交网络中的家庭成员，以便安装“ allConnected”应用程序（如果之前未完成）。</string>
+    <string name="contactText">通过单击辅助菜单，然后在“联系人”选项上，您可以进入“联系人”部分，您可以在其中向“ XCar”支持团队发送电子邮件，以指示消息的原因，因此您也可以在此部分中与朋友或您偏好的社交网络中的家庭成员，以便安装“ XCar”应用程序（如果之前未完成）。</string>
 
 </resources>

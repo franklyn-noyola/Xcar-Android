@@ -1,4 +1,4 @@
-package com.epicdeveloper.allconnected;
+package com.epicdeveloper.xcar;
 
 import android.content.Context;
 

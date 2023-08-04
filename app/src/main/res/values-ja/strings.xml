@@ -13,7 +13,7 @@
     <string name="logout_menu">サリル</string>
     <string name="home_menu">イニシオ</string>
     <string name="action_settings">設定</string>
-    <string name="support">allConnectedサポート</string>
+    <string name="support">XCarサポート</string>
     <string name="addMob">ca-app-pub-7506110687995747~3078457854</string>
     <string name="action_about">約</string>
     <string name="reply">返事</string>
@@ -42,7 +42,7 @@
     <string name="accept_terms">私は読んで、</string>
     <string name="plateHint"> プレートナンバー</string>
     <string name="passHint"> パスワード</string>
-    <string name="welcomeHomeText">allConectedへようこそ</string>
+    <string name="welcomeHomeText">XCar へようこそ</string>
     <string name="forgottenPass"><b> <font color="blue">パスワードを忘れましたか？</font></b></string>
     <string name="newUser"><b> <font color="blue">新しいユーザー？ここをクリック</font></b></string>
     <string name="brandHint">ブランド</string>
@@ -56,7 +56,7 @@
     <string name="updateInfo">更新情報</string>
     <string name="allfieldFilled">すべてのフィールドに入力する必要があります</string>
     <string name="wrong_password">パスワードは8文字以上、小文字1文字、大文字1文字、数字1文字である必要があります</string>
-    <string name="welcomeMessage">allConnectedへようこそ</string>
+    <string name="welcomeMessage">XCarへようこそ</string>
     <string name="noTermsAccepted">利用規約とプライバシーポリシーはチェックされていません</string>
     <string name="backLogin">ログインに戻る</string>
     <string name="noPassMatch">パスワードが一致していません</string>
@@ -162,6 +162,6 @@
     <string name="receiveNotification">通知を受け取る</string>
     <string name="aboutText">補助メニューをクリックしてから[バージョン情報]オプションをクリックすると、[バージョン情報]セクションに入り、アプリケーションのバージョンと開発者のWebサイトを表示できます。</string>
     <string name="settingText">補助メニューをクリックしてから[設定]オプションをクリックすると、[設定]セクションに入り、アプリケーションで表示する言語に変更できます。</string>
-    <string name="contactText">補助メニューをクリックしてから[連絡先]オプションをクリックすると、[連絡先]セクションに入り、メッセージの理由を示すメールを「allConnected」サポートチームに送信できます。このセクションでも、友達と共有したり、 「allConnected」アプリが以前にインストールされていない場合にインストールされるように、好みのソーシャルネットワークのいずれかの家族。</string>
+    <string name="contactText">補助メニューをクリックしてから[連絡先]オプションをクリックすると、[連絡先]セクションに入り、メッセージの理由を示すメールを「XCar」サポートチームに送信できます。このセクションでも、友達と共有したり、 「XCar」アプリが以前にインストールされていない場合にインストールされるように、好みのソーシャルネットワークのいずれかの家族。</string>
 
 </resources>

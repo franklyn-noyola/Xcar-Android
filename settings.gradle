@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "allConnected"
+rootProject.name = "XCar"

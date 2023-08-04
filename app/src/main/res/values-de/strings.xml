@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <resources xmlns:app_name="http://schemas.android.com/apk/res-auto">
-    <string translatable="false" name="app_name">allConnected</string>
+    <string translatable="false" name="app_name">XCar</string>
     <string name="wrong_plate_format">Ungültiges Benutzerregistrierungsformat</string>
     <string name="wrong_user">Ungültiger Benutzer und / oder ungültiges Passwort</string>
     <string name="Search">Suchen</string>
@@ -9,7 +9,7 @@
     <string name="profile_menu">Profil</string>
     <string name="chat_menu">Plaudern</string>
     <string name="addMob">ca-app-pub-7506110687995747~3078457854</string>
-    <string name="support">allConnected-Unterstützung</string>
+    <string name="support">XCar-Unterstützung</string>
     <string name="logout_menu">Verlassen</string>
     <string name="home_menu">Start</string>
     <string name="action_settings">Rahmen</string>
@@ -46,7 +46,7 @@
     <string name="plateHint">" Kennzeichen"</string>
     <string name="passHint">" Passwort"</string>
     <string name="loginLbl">Anmeldung</string>
-    <string name="welcomeHomeText">Willkommen bei allConnected"</string>
+    <string name="welcomeHomeText">Willkommen bei XCar"</string>
     <string name="forgottenPass"><b> <font color="blue">Hast du dein Passwort vergessen?</font></b></string>
     <string name="newUser">Neuer Benutzer?<b> <font color="blue">Klicke hier</font></b></string>
     <string name="brandHint">Marke</string>
@@ -60,7 +60,7 @@
     <string name="modifyInfo">Info ändern</string>
     <string name="updateInfo">Updateinformation</string>
     <string name="allfieldFilled">"Alle Felder müssen ausgefüllt sein"</string>
-    <string name="welcomeMessage">"Willkommen bei allConnected"</string>
+    <string name="welcomeMessage">"Willkommen bei XCar"</string>
     <string name="wrong_password">"Das Passwort muss mindestens 8 Zeichen, 1 Kleinbuchstaben, 1 Großbuchstaben und eine Zahl enthalten"</string>
     <string name="backLogin">"Zurück zum Login"</string>
     <string name="noTermsAccepted">"Die Allgemeinen Geschäftsbedingungen und Datenschutzbestimmungen wurden nicht akzeptiert"</string>
@@ -166,6 +166,6 @@
     <string name="receiveNotification">Benachrichtigungen erhalten</string>
     <string name="aboutText">Durch Klicken auf das Zusatzmenü und dann auf die Option Info gelangen Sie in den Abschnitt Info, in dem Sie die Version der Anwendung sowie die Website der Entwickler anzeigen können.</string>
     <string name="settingText">Durch Klicken auf das Zusatzmenü und dann auf die Option Einstellungen gelangen Sie in den Bereich Einstellungen, in dem Sie zu der Sprache wechseln können, die die Anwendung anzeigen soll.</string>
-    <string name="contactText">Durch Klicken auf das Zusatzmenü und dann auf die Option Kontakt gelangen Sie in den Bereich Kontakt, in dem Sie eine E-Mail an das allConnected Support-Team senden können, in der der Grund für Ihre Nachricht angegeben ist. In diesem Bereich können Sie diese auch an einen Freund oder ein Familienmitglied weitergeben in einem der von Ihnen bevorzugten sozialen Netzwerke, sodass die allConnected-App installiert wird, falls Sie dies noch nicht getan haben.</string>
+    <string name="contactText">Durch Klicken auf das Zusatzmenü und dann auf die Option Kontakt gelangen Sie in den Bereich Kontakt, in dem Sie eine E-Mail an das XCar Support-Team senden können, in der der Grund für Ihre Nachricht angegeben ist. In diesem Bereich können Sie diese auch an einen Freund oder ein Familienmitglied weitergeben in einem der von Ihnen bevorzugten sozialen Netzwerke, sodass die allConnected-App installiert wird, falls Sie dies noch nicht getan haben.</string>
 
 </resources>

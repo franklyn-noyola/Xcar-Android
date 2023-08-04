@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string translatable="false" name="app_name">allConnected</string>
+    <string translatable="false" name="app_name">XCar</string>
     <string name="wrong_plate_format">Formato de registro de usuário inválido</string>
     <string name="wrong_user">Usuário e/ou senha inválidos</string>
     <string name="Search">Procurar</string>
@@ -12,7 +12,7 @@
     <string name="home_menu">Começar</string>
     <string name="action_settings">Contexto</string>
     <string name="action_about">Sobre</string>
-    <string name="support">Suporte allConnected</string>
+    <string name="support">Suporte XCar</string>
     <string name="action_contacts">Contato</string>
     <string name="addMob">ca-app-pub-7506110687995747~3078457854</string>
     <string name="profile_subtitle">Perfil de usuário</string>
@@ -46,7 +46,7 @@
     <string name="plateHint">" Inscrição"</string>
     <string name="passHint">" Senha"</string>
     <string name="loginLbl">Conecte-se</string>
-    <string name="welcomeHomeText">Bem-vindo a allConected"</string>
+    <string name="welcomeHomeText">Bem-vindo a XCar"</string>
     <string name="forgottenPass"><b> <font color="blue">Esqueceu sua senha?</font></b></string>
     <string name="newUser">Novo usuário? <b> <font color="blue">Clique aqui</font></b></string>
     <string name="brandHint">Marca</string>
@@ -60,7 +60,7 @@
     <string name="modifyInfo">Modificar Informação</string>
     <string name="updateInfo">Informação de atualização</string>
     <string name="allfieldFilled">Todos os campos devem ser preenchidos</string>
-    <string name="welcomeMessage">"Bem-vindo a allConnected"</string>
+    <string name="welcomeMessage">"Bem-vindo a XCar"</string>
     <string name="wrong_password">"A senha deve conter pelo menos 8 caracteres, 1 letra minúscula, 1 letra maiúscula e um número"</string>
     <string name="backLogin">"Retornar ao Login"</string>
     <string name="noTermsAccepted">Os termos e condições e política de privacidade não foram aceitos</string>
@@ -166,6 +166,6 @@
     <string name="receiveNotification">Receber notificações</string>
     <string name="aboutText">Ao clicar no menu auxiliar e depois na opção Sobre, entra-se na seção Sobre, onde é possível visualizar a versão do aplicativo, bem como o site dos desenvolvedores.</string>
     <string name="settingText">Ao clicar no menu auxiliar e, em seguida, na opção Configurações, você entra na seção Configurações, onde pode alterar para o idioma que deseja que o aplicativo exiba.</string>
-    <string name="contactText">Ao clicar no menu auxiliar e depois na opção Contato, você entra na seção Contato onde pode enviar um e-mail para a equipe de suporte "allConnected" indicando o motivo da sua mensagem, portanto também nesta seção você pode compartilhar com um amigo ou membro da família em uma das redes sociais de sua preferência para que o app "allConnected" seja instalado caso ainda não tenha sido feito.</string>
+    <string name="contactText">Ao clicar no menu auxiliar e depois na opção Contato, você entra na seção Contato onde pode enviar um e-mail para a equipe de suporte "XCar" indicando o motivo da sua mensagem, portanto também nesta seção você pode compartilhar com um amigo ou membro da família em uma das redes sociais de sua preferência para que o app "XCar" seja instalado caso ainda não tenha sido feito.</string>
 
 </resources>
