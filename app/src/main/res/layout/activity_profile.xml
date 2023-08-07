@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@android:color/holo_blue_dark"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+                app:popupTheme="@style/AppTheme.NoActionBar" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -44,6 +44,10 @@
             app:itemBackground="@android:color/holo_blue_dark"
             app:itemTextColor="@android:color/white"
             app:menu="@menu/bottom_navigation_menu"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             />
 
 
