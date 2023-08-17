@@ -64,11 +64,10 @@
         android:id="@+id/allConnectedlbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="260dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="264dp"
+        android:layout_marginBottom="48dp"
+        android:text="XCar_"
         android:textStyle="bold"
-        android:text="allConnected"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
