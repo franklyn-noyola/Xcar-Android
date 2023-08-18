@@ -54,9 +54,9 @@ public class sendEmail {
 
     public static String getSupport(String lang){
         if (lang.equals("ES")){
-            support = "Soporte allConnected";
+            support = "Soporte XCar";
         }else{
-            support = "allConnected Support";
+            support = "XCar Support";
         }
         return support;
     }

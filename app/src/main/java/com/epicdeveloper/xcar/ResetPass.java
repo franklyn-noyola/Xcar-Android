@@ -322,150 +322,150 @@ public class ResetPass extends AppCompatActivity  {
 
     public static String  messagetoBeSentES(){
         messageHeader = "Estimado Sr./Sra. "+userPlate.toString()+"<br><br>";
-        messabeBody1="Su contraseña <strong>"+passwordGen+"</strong> ha sido generada automáticamente. Ir a la app allConnected y una vez en el inicio introducir la matrícula y la contraseña generada, " +
+        messabeBody1="Su contraseña <strong>"+passwordGen+"</strong> ha sido generada automáticamente. Ir a la app XCar y una vez en el inicio introducir la matrícula y la contraseña generada, " +
                 "y hacer clic al botón LOGIN. Luego aparecerá una pantalla para que introduzca su nueva contraseña, ya que la contraseña generada es temporal.<br> Una vez en la pantalla de cambio de contraseña, " +
                 "cambie a una contraseña que elijas y una vez cambiada vaya al inicio de la aplicación y loguese con su nueva contraseña.<br><br> Para cualquier duda o consulta, no dude en contactarnos vía soporte<br><br>";
-        messageFarawell="Un saludo cordial,<br>El equipo de allConnected.";
+        messageFarawell="Un saludo cordial,<br>El equipo de XCar.";
 
         return allMessages = messageHeader+messabeBody1+messageFarawell;
     }
 
     public static String  messagetoBeSentEN(){
         messageHeader = "Dear Mr./Mrs. "+userPlate.toString()+"<br><br>";
-        messabeBody1="Your password <strong>"+passwordGen+"</strong> has been generated automatically. Please, go to allConnected app and type the plate number (your account) and the generated password, " +
+        messabeBody1="Your password <strong>"+passwordGen+"</strong> has been generated automatically. Please, go to XCar app and type the plate number (your account) and the generated password, " +
                 "and click on LOGIN button. Afterwards, another screen will be displayed so you can enter your new password, this is why the generated password is for temporal use.<br> Once, in the Change Password screen, " +
-                "change your password for another password you select and once it has been changed you can enter in allConnected app.<br><br> For any doubt or comment, don't hesitate to contact with Support Team.<br><br>";
-        messageFarawell="Truly yours,<br>allConnected Team.";
+                "change your password for another password you select and once it has been changed you can enter in XCar app.<br><br> For any doubt or comment, don't hesitate to contact with Support Team.<br><br>";
+        messageFarawell="Truly yours,<br>XCar Team.";
 
         return allMessages = messageHeader+messabeBody1+messageFarawell;
     }
 
     public static String  messagetoBeSentFR(){
         messageHeader = "Cher Monsieur/Madame "+userPlate.toString()+"<br><br>";
-        messabeBody1="Votre mot de passe <strong>"+passwordGen+"</strong> a été généré automatiquement. S'il vous plaît, allez sur l'application allConnected et tapez le numéro de plaque (votre compte) et le mot de passe généré " +
+        messabeBody1="Votre mot de passe <strong>"+passwordGen+"</strong> a été généré automatiquement. S'il vous plaît, allez sur l'application XCar et tapez le numéro de plaque (votre compte) et le mot de passe généré " +
                 "et cliquez sur le bouton LOGIN. Ensuite, un autre écran s'affichera pour que vous puissiez saisir votre nouveau mot de passe, c'est pourquoi le mot de passe généré est à usage temporaire.<br> Une fois, dans l'écran Modifier le mot de passe, " +
-                "changez votre mot de passe pour un autre mot de passe que vous sélectionnez et une fois qu'il a été changé, vous pouvez entrer dans l'application allConnected.<br><br> Pour tout doute ou commentaire, n'hésitez pas à contacter l'équipe de support.<br><br>";
+                "changez votre mot de passe pour un autre mot de passe que vous sélectionnez et une fois qu'il a été changé, vous pouvez entrer dans l'application XCar.<br><br> Pour tout doute ou commentaire, n'hésitez pas à contacter l'équipe de support.<br><br>";
 
-        messageFarawell="Cordialement,<br>L'équipe allConnected.";
+        messageFarawell="Cordialement,<br>L'équipe XCar.";
 
         return allMessages = messageHeader+messabeBody1+messageFarawell;
     }
 
     public static String  messagetoBeSentDE(){
         messageHeader = "Sehr geehrter Herr/Frau "+userPlate.toString()+"<br><br>";
-        messabeBody1="Ihr Passwort <strong>"+passwordGen+"</strong> wurde automatisch generiert. Bitte gehen Sie zur allConnected App und geben Sie die Kennzeichen (Ihr Konto) und das generierte Passwort ein " +
+        messabeBody1="Ihr Passwort <strong>"+passwordGen+"</strong> wurde automatisch generiert. Bitte gehen Sie zur XCar App und geben Sie die Kennzeichen (Ihr Konto) und das generierte Passwort ein " +
                 "und klicken Sie auf die Schaltfläche LOGIN. Anschließend wird ein weiterer Bildschirm angezeigt, in dem Sie Ihr neues Passwort eingeben können. Aus diesem Grund ist das generierte Passwort für die vorübergehende Verwendung vorgesehen.<br> Einmal im Bildschirm Passwort ändern, " +
-                "Ändern Sie Ihr Passwort für ein anderes Passwort, das Sie auswählen. Sobald es geändert wurde, können Sie es in die allConnected-App eingeben.<br><br> Bei Zweifeln oder Kommentaren wenden Sie sich bitte an das Support-Team.<br><br>";
-        messageFarawell="Mit freundlichen Grüßen,<br>Das allConnected-Team.";
+                "Ändern Sie Ihr Passwort für ein anderes Passwort, das Sie auswählen. Sobald es geändert wurde, können Sie es in die XCar-App eingeben.<br><br> Bei Zweifeln oder Kommentaren wenden Sie sich bitte an das Support-Team.<br><br>";
+        messageFarawell="Mit freundlichen Grüßen,<br>Das XCar-Team.";
 
         return allMessages = messageHeader+messabeBody1+messageFarawell;
     }
 
     public static String  messagetoBeSentIT(){
         messageHeader = "Caro signor/signora "+userPlate.toString()+"<br><br>";
-        messabeBody1="La tua password <strong>"+passwordGen+"</strong> è stato generato automaticamente. Per favore, vai all'app allConnected e digita il numero di targa (il tuo account) e la password generata, " +
+        messabeBody1="La tua password <strong>"+passwordGen+"</strong> è stato generato automaticamente. Per favore, vai all'app XCar e digita il numero di targa (il tuo account) e la password generata, " +
                 "e fare clic sul pulsante LOGIN. Successivamente, verrà visualizzata un'altra schermata in cui puoi inserire la tua nuova password, questo è il motivo per cui la password generata è per uso temporaneo.<br> Una volta, nella schermata Cambia password, " +
-                "cambia la tua password per un'altra password che hai selezionato e una volta che è stata cambiata puoi entrare nell'app allConnected.<br><br> Per qualsiasi dubbio o commento, non esitare a contattare il team di supporto.<br><br>";
-        messageFarawell="Cordiali saluti,<br>Il team allConnected.";
+                "cambia la tua password per un'altra password che hai selezionato e una volta che è stata cambiata puoi entrare nell'app XCar.<br><br> Per qualsiasi dubbio o commento, non esitare a contattare il team di supporto.<br><br>";
+        messageFarawell="Cordiali saluti,<br>Il team XCar.";
 
         return allMessages = messageHeader+messabeBody1+messageFarawell;
     }
     public static String  messagetoBeSentPT(){
         messageHeader = "Prezado Sr./Sra. "+userPlate.toString()+"<br><br>";
-        messabeBody1="Sua senha <strong>"+passwordGen+"</strong> foi gerado automaticamente. Vá para o aplicativo allConnected e, uma vez no início, insira a placa do carro e a senha gerada, " +
+        messabeBody1="Sua senha <strong>"+passwordGen+"</strong> foi gerado automaticamente. Vá para o aplicativo XCar e, uma vez no início, insira a placa do carro e a senha gerada, " +
                 "e clique no botão LOGIN. Em seguida, aparecerá uma tela para você inserir sua nova senha, pois a senha gerada é temporária. <br> Uma vez na tela de alteração de senha, " +
                 "mude para uma senha de sua escolha e uma vez alterada vá para o início do aplicativo e faça o login com sua nova senha. <br> <br> Em caso de dúvidas ou consultas, não hesite em nos contatar através do suporte.<br><br>";
-        messageFarawell="Atenciosamente, <br> Equipe allConnected.";
+        messageFarawell="Atenciosamente, <br> Equipe XCar.";
 
         return allMessages = messageHeader+messabeBody1+messageFarawell;
     }
 
     public static String  messagetoBeSentNL(){
         messageHeader = "Beste meneer/mevrouw "+userPlate.toString()+"<br><br>";
-        messabeBody1="Uw wachtwoord <strong>"+passwordGen+"</strong> is automatisch gegenereerd. Ga alsjeblieft naar de app allConnected en typ het kenteken (je account) en het gegenereerde wachtwoord, " +
+        messabeBody1="Uw wachtwoord <strong>"+passwordGen+"</strong> is automatisch gegenereerd. Ga alsjeblieft naar de app XCar en typ het kenteken (je account) en het gegenereerde wachtwoord, " +
                 "en klik op LOGIN. Daarna wordt een ander scherm weergegeven zodat u uw nieuwe wachtwoord kunt invoeren, daarom is het gegenereerde wachtwoord voor tijdelijk gebruik. <br> Eenmaal, in het scherm Wachtwoord wijzigen, " +
-                "verander uw wachtwoord voor een ander wachtwoord dat u selecteert en zodra het is gewijzigd, kunt u dit invoeren in de allConnected-app. <br> <br> Aarzel niet om contact op te nemen met het ondersteuningsteam bij twijfel of opmerkingen.<br><br>";
-        messageFarawell="oprecht,<br>Het allConnected-team.";
+                "verander uw wachtwoord voor een ander wachtwoord dat u selecteert en zodra het is gewijzigd, kunt u dit invoeren in de XCar-app. <br> <br> Aarzel niet om contact op te nemen met het ondersteuningsteam bij twijfel of opmerkingen.<br><br>";
+        messageFarawell="oprecht,<br>Het XCar-team.";
 
         return allMessages = messageHeader+messabeBody1+messageFarawell;
     }
 
     public static String  messagetoBeSentRU(){
         messageHeader = "Уважаемый господин /госпожа. "+userPlate.toString()+"<br><br>";
-        messabeBody1="Ваш пароль <strong> "+passwordGen+" </strong> был создан автоматически. Пожалуйста, зайдите в приложение allConnected и введите номер телефона (ваш аккаунт) и сгенерированный пароль., " +
+        messabeBody1="Ваш пароль <strong> "+passwordGen+" </strong> был создан автоматически. Пожалуйста, зайдите в приложение XCar и введите номер телефона (ваш аккаунт) и сгенерированный пароль., " +
                 "и нажмите кнопку ВХОД. После этого появится другой экран, на котором вы сможете ввести свой новый пароль, поэтому сгенерированный пароль предназначен для временного использования. <br> Один раз на экране «Изменить пароль», " +
-                "измените свой пароль на другой выбранный вами пароль, и как только он будет изменен, вы сможете ввести его в приложении allConnected. <br> <br> Если у вас возникнут сомнения или комментарии, не стесняйтесь обращаться в службу поддержки.<br><br>";
-        messageFarawell="Искренне,<br>Команда allConnected.";
+                "измените свой пароль на другой выбранный вами пароль, и как только он будет изменен, вы сможете ввести его в приложении XCar. <br> <br> Если у вас возникнут сомнения или комментарии, не стесняйтесь обращаться в службу поддержки.<br><br>";
+        messageFarawell="Искренне,<br>Команда XCar.";
 
         return allMessages = messageHeader+messabeBody1+messageFarawell;
     }
 
     public static String  messagetoBeSentZH(){
         messageHeader = "尊敬的先生/夫人： "+userPlate.toString()+"<br><br>";
-        messabeBody1="您的密码<strong>" +passwordGen+" </strong>已自动生成。请转到allConnected应用并输入车牌号（您的帐户）和生成的密码, " +
+        messabeBody1="您的密码<strong>" +passwordGen+" </strong>已自动生成。请转到XCar应用并输入车牌号（您的帐户）和生成的密码, " +
                 "然后单击“登录”按钮。之后，将显示另一个屏幕，以便您输入新密码，这就是为什么生成的密码仅供临时使用的原因。一次，在“更改密码”屏幕中。, " +
-                "将您的密码更改为您选择的另一个密码，更改后即可输入allConnected应用程序。<br> <br>如有任何疑问或意见，请随时与支持团队联系。.<br><br>";
-        messageFarawell="Truly yours,<br>allConnected Team.";
+                "将您的密码更改为您选择的另一个密码，更改后即可输入XCar应用程序。<br> <br>如有任何疑问或意见，请随时与支持团队联系。.<br><br>";
+        messageFarawell="Truly yours,<br>XCar Team.";
 
         return allMessages = messageHeader+messabeBody1+messageFarawell;
     }
 
     public static String  messagetoBeSentJA(){
         messageHeader = "親愛なるサー/マダム "+userPlate.toString()+"<br><br>";
-        messabeBody1="パスワード<strong>" +passwordGen+ "</strong>は自動的に生成されました。 allConnectedアプリに移動し、プレート番号（アカウント）と生成されたパスワードを入力してください, " +
+        messabeBody1="パスワード<strong>" +passwordGen+ "</strong>は自動的に生成されました。 XCarアプリに移動し、プレート番号（アカウント）と生成されたパスワードを入力してください, " +
                 "ログインボタンをクリックします。その後、別の画面が表示され、新しいパスワードを入力できます。これが、生成されたパスワードが一時的に使用される理由です。一度、パスワードの変更画面で, " +
-                "選択した別のパスワードにパスワードを変更すると、allConnectedアプリに入力できます。<br> <br>疑問やコメントがある場合は、遠慮なくサポートチームに連絡してください。.<br><br>";
-        messageFarawell="心から,<br>allConnectedチーム。";
+                "選択した別のパスワードにパスワードを変更すると、XCarアプリに入力できます。<br> <br>疑問やコメントがある場合は、遠慮なくサポートチームに連絡してください。.<br><br>";
+        messageFarawell="心から,<br>XCarチーム。";
 
         return allMessages = messageHeader+messabeBody1+messageFarawell;
     }
 
     public static String  messagetoBeSentPL(){
         messageHeader = "Szanowny Panie /Pani. "+userPlate.toString()+"<br><br>";
-        messabeBody1="Twoje hasło <strong> "+ passwordGen +" </strong> zostało wygenerowane automatycznie. Przejdź do aplikacji allConnected i od razu na początku wprowadź numer rejestracyjny oraz wygenerowane hasło, " +
+        messabeBody1="Twoje hasło <strong> "+ passwordGen +" </strong> zostało wygenerowane automatycznie. Przejdź do aplikacji XCar i od razu na początku wprowadź numer rejestracyjny oraz wygenerowane hasło, " +
                 "i kliknij przycisk LOGIN. Następnie pojawi się ekran, na którym należy wprowadzić nowe hasło, ponieważ wygenerowane hasło jest tymczasowe.<br> Na ekranie zmiany hasła " +
                 "zmień na wybrane przez siebie hasło, a po zmianie przejdź na początek aplikacji i zaloguj się przy użyciu nowego hasła. <br> <br> W przypadku jakichkolwiek pytań lub pytań prosimy o kontakt poprzez support<br><br>";
-        messageFarawell="Z poważaniem,<br>Zespół allConnected.";
+        messageFarawell="Z poważaniem,<br>Zespół XCar.";
 
         return allMessages = messageHeader+messabeBody1+messageFarawell;
     }
 
     public static String  messagetoBeSentKO(){
         messageHeader = "친애하는 Mr./Mrs. "+userPlate.toString()+"<br><br>";
-        messabeBody1="비밀번호 <strong> "+ passwordGen +"</strong>이 자동으로 생성되었습니다. allConnected 앱으로 이동하여 처음에 번호판과 생성 된 비밀번호를 입력합니다 " +
+        messabeBody1="비밀번호 <strong> "+ passwordGen +"</strong>이 자동으로 생성되었습니다. XCar 앱으로 이동하여 처음에 번호판과 생성 된 비밀번호를 입력합니다 " +
                 "로그인 버튼을 클릭합니다. 생성 된 비밀번호는 임시이므로 새 비밀번호를 입력하는 화면이 나타납니다. <br> 비밀번호 변경 화면에서 " +
                 "원하는 암호로 변경하고 변경 한 후에는 응용 프로그램 시작으로 이동하여 새 암호로 로그인하십시오. <br> <br> 질문이나 질문이 있으시면 언제든지 지원을 통해 저희에게 연락하십시오.<br><br>";
-        messageFarawell="진정으로<br>allConnected 팀";
+        messageFarawell="진정으로<br>XCar 팀";
 
         return allMessages = messageHeader+messabeBody1+messageFarawell;
     }
 
     public static String  messagetoBeSentSV(){
         messageHeader = "Kära herr/fru "+userPlate.toString()+"<br><br>";
-        messabeBody1="Ditt lösenord <strong> "+ passwordGen +" </strong> har genererats automatiskt. Gå till allConnected-appen och ange registreringsskylten och det genererade lösenordet en gång i början, " +
+        messabeBody1="Ditt lösenord <strong> "+ passwordGen +" </strong> har genererats automatiskt. Gå till XCar-appen och ange registreringsskylten och det genererade lösenordet en gång i början, " +
                 "och klicka på LOGGA IN-knappen. Då visas en skärm där du kan ange ditt nya lösenord, eftersom det genererade lösenordet är tillfälligt. <br> En gång på skärmen för lösenordsbyte, " +
                 "byt till ett lösenord som du väljer och när det har ändrats går du till applikationens start och loggar in med ditt nya lösenord. <br> <br> För frågor eller frågor, tveka inte att kontakta oss via support.<br><br>";
-        messageFarawell="Vänliga hälsningar,<br>allConnected-teamet.";
+        messageFarawell="Vänliga hälsningar,<br>XCar-teamet.";
 
         return allMessages = messageHeader+messabeBody1+messageFarawell;
     }
 
     public static String  messagetoBeSentHI(){
         messageHeader = "प्रिय श्री/श्रीमती। "+userPlate.toString()+"<br><br>";
-        messabeBody1="आपका पासवर्ड <strong> "+ passwordGen +" </strong> अपने आप उत्पन्न हो गया है। AllConnected ऐप पर जाएं और शुरुआत में एक बार लाइसेंस प्लेट और जनरेट किए गए पासवर्ड को दर्ज करें " +
+        messabeBody1="आपका पासवर्ड <strong> "+ passwordGen +" </strong> अपने आप उत्पन्न हो गया है। XCar ऐप पर जाएं और शुरुआत में एक बार लाइसेंस प्लेट और जनरेट किए गए पासवर्ड को दर्ज करें " +
                 "और LOGIN बटन पर क्लिक करें। तब आपके लिए अपना नया पासवर्ड दर्ज करने के लिए एक स्क्रीन दिखाई देगी, क्योंकि उत्पन्न पासवर्ड अस्थायी है। पासवर्ड परिवर्तन स्क्रीन में एक बार " +
                 "अपनी पसंद के पासवर्ड को बदलने और एक बार बदले जाने के बाद एप्लिकेशन की शुरुआत में जाएं और अपने नए पासवर्ड के साथ लॉग इन करें। <br> <br> किसी भी प्रश्न या प्रश्न के लिए, समर्थन के माध्यम से हमसे संपर्क करने में संकोच न करें।<br><br>";
-        messageFarawell="ईमानदारी से<br>allConnected टीम";
+        messageFarawell="ईमानदारी से<br>XCar टीम";
 
         return allMessages = messageHeader+messabeBody1+messageFarawell;
     }
 
     public static String  messagetoBeSentAR(){
         messageHeader = "عزيزي السيد / السيدة. "+userPlate.toString()+"<br><br>";
-        messabeBody1="كلمة السر خاصتك "+"<strong>"+passwordGen+"</strong>"+" تم إنشاؤه تلقائيًا. انتقل إلى تطبيق allConnected ومرة \u200B\u200Bواحدة في البداية أدخل لوحة الترخيص وكلمة المرور التي تم إنشاؤها " +
+        messabeBody1="كلمة السر خاصتك "+"<strong>"+passwordGen+"</strong>"+" تم إنشاؤه تلقائيًا. انتقل إلى تطبيق XCar ومرة \u200B\u200Bواحدة في البداية أدخل لوحة الترخيص وكلمة المرور التي تم إنشاؤها " +
                 "وانقر على زر تسجيل الدخول. ثم ستظهر لك شاشة لإدخال كلمة المرور الجديدة ، لأن كلمة المرور التي تم إنشاؤها مؤقتة. "+"<br>"+" بمجرد ظهور شاشة تغيير كلمة المرور ، " +
                 "قم بالتغيير إلى كلمة مرور من اختيارك وبمجرد تغييرها ، انتقل إلى بدء التطبيق وقم بتسجيل الدخول باستخدام كلمة المرور الجديدة."+"<br><br>"+"لأية أسئلة أو استفسارات ، لا تتردد في الاتصال بنا عبر الدعم<br><br>";
-        messageFarawell="بإخلاص"+"<br>"+"فريق allConnected";
+        messageFarawell="بإخلاص"+"<br>"+"فريق XCar";
 
         return allMessages = messageHeader+messabeBody1+messageFarawell;
     }
@@ -475,7 +475,7 @@ public class ResetPass extends AppCompatActivity  {
         messabeBody1="آپ کا پاس ورڈ "+"<strong>"+passwordGen+"</strong>"+" یہ خود بخود تیار ہوچکا ہے۔ آل سے منسلک ایپ پر جائیں اور شروع میں ایک بار لائسنس پلیٹ اور تیار کردہ پاس ورڈ درج کریں ، " +
                 "اور لاگ ان بٹن پر کلک کریں۔ تب آپ کے پاس اپنا نیا پاس ورڈ داخل کرنے کے لئے ایک اسکرین ظاہر ہوگی ، کیوں کہ پیدا کردہ پاس ورڈ عارضی ہے۔"+"<br>"+" ایک بار پاس ورڈ کی تبدیلی کی سکرین پر ، " +
                 "اپنی پسند کے پاس ورڈ میں تبدیلی کریں اور ایک بار تبدیل ہونے کے بعد درخواست شروع کریں اور اپنے نئے پاس ورڈ کے ساتھ لاگ ان کریں۔"+"<br><br>"+"کسی بھی سوال یا سوالات کے ل support ، مدد کے ذریعہ ہم سے رابطہ کرنے میں سنکوچ نہ کریں<br><br>";
-        messageFarawell="مخلص"+"<br>"+"allConnected ٹیم.";
+        messageFarawell="مخلص"+"<br>"+"XCar ٹیم.";
 
         return allMessages = messageHeader+messabeBody1+messageFarawell;
     }

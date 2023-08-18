@@ -296,7 +296,7 @@ public class fragment_chat extends AppCompatActivity {
                                                                     pictureFile = getFile();
                                                                     if (pictureFile != null) {
                                                                         pathFile = pictureFile.getAbsolutePath();
-                                                                        pictureUri = FileProvider.getUriForFile(fragment_chat.this, "com.epicdeveloper.allconnected.provider", pictureFile);
+                                                                        pictureUri = FileProvider.getUriForFile(fragment_chat.this, "com.epicdeveloper.XCar.provider", pictureFile);
                                                                         cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, pictureUri);
                                                                         startActivityForResult(cameraIntent, CAMERA_REQUEST);
                                                                     }

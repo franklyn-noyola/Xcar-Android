@@ -394,130 +394,130 @@ public class newuser extends AppCompatActivity {
     }
 
     public String sendWelcomeMessageES(){
-        welcomeMessage="<b><font size=\"20\" color=\"blue\">Bienvenido/a a allConnected!!!</font></b><br><br>";
+        welcomeMessage="<b><font size=\"20\" color=\"blue\">Bienvenido/a a XCar!!!</font></b><br><br>";
         headerMessage="Estimado Sr./Sra "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Gracias por registrarse en el mundo de allConnected. Para activar el usuario, haga click en este link: <a href=epicdevelopers.app?ES"+plate_user.getText().toString().toUpperCase()+">Activar usuario</a> <br><br>";
-        farewellMessage="Un saludo cordial,<br>El equipo de allConnected.";
+        bodyMessage="Gracias por registrarse en el mundo de XCar. Para activar el usuario, haga click en este link: <a href=epicdevelopers.app?ES"+plate_user.getText().toString().toUpperCase()+">Activar usuario</a> <br><br>";
+        farewellMessage="Un saludo cordial,<br>El equipo de XCar.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
 
     public String sendWelcomeMessageEN(){
-        welcomeMessage="<b><font size=\"20\" color=\"blue\">Welcome to allConnected!!!</font></b><br><br>";
+        welcomeMessage="<b><font size=\"20\" color=\"blue\">Welcome to XCar!!!</font></b><br><br>";
         headerMessage="Dear Mr/Mrs. "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Thanks for regisgtering to allConnected world. To activate your account, click on this link: <a href=epicdevelopers.app?EN"+plate_user.getText().toString().toUpperCase()+">Activate account</a> <br><br>";
-        farewellMessage="Truly yours,<br>allConnected Team.";
+        bodyMessage="Thanks for regisgtering to XCar world. To activate your account, click on this link: <a href=epicdevelopers.app?EN"+plate_user.getText().toString().toUpperCase()+">Activate account</a> <br><br>";
+        farewellMessage="Truly yours,<br>XCar Team.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
 
     public String sendWelcomeMessageFR(){
-        welcomeMessage="<b><font size=\"20\" color=\"blue\">Bienvenue à allConnected!!!</font></b><br><br>";
+        welcomeMessage="<b><font size=\"20\" color=\"blue\">Bienvenue à XCar!!!</font></b><br><br>";
         headerMessage="Cher Monsieur / Madame. "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Merci de vous enregistrer dans le monde allConnected. Pour activer votre utilisateur, cliquez sur ce lien: <a href=epicdevelopers.app?FR"+plate_user.getText().toString().toUpperCase()+">Activer l'utilisateur</a> <br><br>";
-        farewellMessage="Cordialement,<br>L'équipe allConnected.";
+        bodyMessage="Merci de vous enregistrer dans le monde XCar. Pour activer votre utilisateur, cliquez sur ce lien: <a href=epicdevelopers.app?FR"+plate_user.getText().toString().toUpperCase()+">Activer l'utilisateur</a> <br><br>";
+        farewellMessage="Cordialement,<br>L'équipe XCar.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
 
     public String sendWelcomeMessageIT(){
-        welcomeMessage="<b><font size=\"20\" color=\"blue\">Benvenuto in allConnected!!!</font></b><br><br>";
+        welcomeMessage="<b><font size=\"20\" color=\"blue\">Benvenuto in XCar!!!</font></b><br><br>";
         headerMessage="Caro signor/signora "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Grazie per esserti registrato a allConnected world. Per attivare il tuo utente, fare clic su questo collegamento: <a href=epicdevelopers.app?IT"+plate_user.getText().toString().toUpperCase()+">Attiva utente</a> <br><br>";
-        farewellMessage="Cordiali saluti,<br>Il team allConnected.";
+        bodyMessage="Grazie per esserti registrato a XCar world. Per attivare il tuo utente, fare clic su questo collegamento: <a href=epicdevelopers.app?IT"+plate_user.getText().toString().toUpperCase()+">Attiva utente</a> <br><br>";
+        farewellMessage="Cordiali saluti,<br>Il team XCar.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
 
     public String sendWelcomeMessageDE(){
-        welcomeMessage="<b><font size=\"20\" color=\"blue\">Willkommen bei allConnected!!!</font></b><br><br>";
+        welcomeMessage="<b><font size=\"20\" color=\"blue\">Willkommen bei XCar!!!</font></b><br><br>";
         headerMessage="Sehr geehrter Herr/Frau "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Vielen Dank, dass Sie sich bei allConnected world registriert haben. Kopieren Sie diesen Aktivierungscode, klicken Sie auf diesen Link: <a href=epicdevelopers.app?DE"+plate_user.getText().toString().toUpperCase()+">Benutzer aktivieren</a> <br><br>";
-        farewellMessage="Mit freundlichen Grüßen,<br>Das allConnected-Team.";
+        bodyMessage="Vielen Dank, dass Sie sich bei XCar world registriert haben. Kopieren Sie diesen Aktivierungscode, klicken Sie auf diesen Link: <a href=epicdevelopers.app?DE"+plate_user.getText().toString().toUpperCase()+">Benutzer aktivieren</a> <br><br>";
+        farewellMessage="Mit freundlichen Grüßen,<br>Das XCar-Team.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
 
     public String sendWelcomeMessagePT(){
-        welcomeMessage="<b><font size=\"20\" color=\"blue\">Bem-vindo a allConnected!!!</font></b><br><br>";
+        welcomeMessage="<b><font size=\"20\" color=\"blue\">Bem-vindo a XCar!!!</font></b><br><br>";
         headerMessage="Prezado Sr./Sra. "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Obrigado por se registrar no mundo de allConnected. Para ativar o usuário, clique neste link: <a href=epicdevelopers.app?PT"+plate_user.getText().toString().toUpperCase()+">Ativar usuário</a> <br><br>";
-        farewellMessage="Sinceramente,<br>A equipe allConnected.";
+        bodyMessage="Obrigado por se registrar no mundo de XCar. Para ativar o usuário, clique neste link: <a href=epicdevelopers.app?PT"+plate_user.getText().toString().toUpperCase()+">Ativar usuário</a> <br><br>";
+        farewellMessage="Sinceramente,<br>A equipe XCar.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
 
     public String sendWelcomeMessageRU(){
-        welcomeMessage="<b><font size=\"20\" color=\"blue\">Добро пожаловать в allConnected!!!</font></b><br><br>";
+        welcomeMessage="<b><font size=\"20\" color=\"blue\">Добро пожаловать в XCar!!!</font></b><br><br>";
         headerMessage="Уважаемый господин/госпожа "+ name_user.getText (). toString ()+"<br><br>";
-        bodyMessage="Спасибо за регистрацию в мире allConnected. Чтобы активировать свою учетную запись, нажмите на эту ссылку: <a href=epicdevelopers.app?RU"+plate_user.getText().toString().toUpperCase()+">Активировать пользователя</a> <br><br>";
-        farewellMessage="Искренне,<br>Команда allConnected.";
+        bodyMessage="Спасибо за регистрацию в мире XCar. Чтобы активировать свою учетную запись, нажмите на эту ссылку: <a href=epicdevelopers.app?RU"+plate_user.getText().toString().toUpperCase()+">Активировать пользователя</a> <br><br>";
+        farewellMessage="Искренне,<br>Команда XCar.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
 
     public String sendWelcomeMessageZH(){
-        welcomeMessage="<b><font size=\"20\" color=\"blue\">欢迎来到allConnected!!!</font></b><br><br>";
+        welcomeMessage="<b><font size=\"20\" color=\"blue\">欢迎来到XCar!!!</font></b><br><br>";
         headerMessage="亲爱的先生/夫人： " + name_user.getText().toString()+"<br><br>";
         bodyMessage="感谢您注册到所有连接的世界。要激活您的帐户，点击此链接:<a href=epicdevelopers.app?ZH"+plate_user.getText().toString().toUpperCase()+">激活帐户</a> <br><br>";
-        farewellMessage="亲切的问候,<br>该团队的 allConnected。";
+        farewellMessage="亲切的问候,<br>该团队的 XCar。";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
 
     public String sendWelcomeMessageJA(){
-        welcomeMessage="<b><font size=\"20\" color=\"blue\">allConnectedへようこそ!!!</font></b><br><br>";
+        welcomeMessage="<b><font size=\"20\" color=\"blue\">XCarへようこそ!!!</font></b><br><br>";
         headerMessage="親愛なるミスター/ミセス"+ name_user.getText().toString()+"<br><br>";
-        bodyMessage="allConnectedworldに登録していただきありがとうございます。アカウントをアクティブ化するには、このリンクをクリックしてください：<a href=epicdevelopers.app/?JA"+plate_user.getText().toString().toUpperCase()+">ユーザーのアクティブ化</a> <br><br>";
-        farewellMessage="心から,<br>allConnectedチーム。";
+        bodyMessage="XCarworldに登録していただきありがとうございます。アカウントをアクティブ化するには、このリンクをクリックしてください：<a href=epicdevelopers.app/?JA"+plate_user.getText().toString().toUpperCase()+">ユーザーのアクティブ化</a> <br><br>";
+        farewellMessage="心から,<br>XCarチーム。";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
 
     public String sendWelcomeMessageNL(){
-        welcomeMessage="<b><font size=\"20\" color=\"blue\">Welkom bij allConnected!!!</font></b><br><br>";
+        welcomeMessage="<b><font size=\"20\" color=\"blue\">Welkom bij XCar!!!</font></b><br><br>";
         headerMessage="Beste meneer/mevrouw. "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Bedankt voor uw aanmelding bij allConnected world. Om uw account te activeren, klikt u op deze link: <a href=epicdevelopers.app?NL"+plate_user.getText().toString().toUpperCase()+"> Activeer gebruiker</a> <br><br>";
-        farewellMessage="Oprecht,<br>Het allConnected -team.";
+        bodyMessage="Bedankt voor uw aanmelding bij XCar world. Om uw account te activeren, klikt u op deze link: <a href=epicdevelopers.app?NL"+plate_user.getText().toString().toUpperCase()+"> Activeer gebruiker</a> <br><br>";
+        farewellMessage="Oprecht,<br>Het XCar -team.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
     public String sendWelcomeMessagePL(){
-        welcomeMessage="<b><font size=\"20\" color=\"blue\">Witamy w allConnected!!!</font></b><br><br>";
+        welcomeMessage="<b><font size=\"20\" color=\"blue\">Witamy w XCar!!!</font></b><br><br>";
         headerMessage="Szanowny Panie/Pani.. "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Bedankt voor uw aanmelding bij allConnected world. Om uw account te activren, kliknij ten link: <a href=epicdevelopers.app?PL"+plate_user.getText().toString().toUpperCase()+">Activeer gebruiker</a> <br><br>";
-        farewellMessage="Z poważaniem,<br>Zespół allConnected.";
+        bodyMessage="Bedankt voor uw aanmelding bij XCar world. Om uw account te activren, kliknij ten link: <a href=epicdevelopers.app?PL"+plate_user.getText().toString().toUpperCase()+">Activeer gebruiker</a> <br><br>";
+        farewellMessage="Z poważaniem,<br>Zespół XCar.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
 
     public String sendWelcomeMessageKO(){
-        welcomeMessage="<b><font size=\"20\" color=\"blue\">allConnected에 오신 것을 환영합니다!!!</font></b><br><br>";
+        welcomeMessage="<b><font size=\"20\" color=\"blue\">XCar에 오신 것을 환영합니다!!!</font></b><br><br>";
         headerMessage="친애하는 Mr./Ms. "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="allConnected의 세계에 등록 해 주셔서 감사합니다. 계정을 활성화하려면이 링크를 클릭하십시오.: <a href=epicdevelopers.app?KO"+plate_user.getText().toString().toUpperCase()+"> 사용자 활성화</a> <br><br>";
-        farewellMessage="진정으로,<br>allConnected 팀.";
+        bodyMessage="XCar의 세계에 등록 해 주셔서 감사합니다. 계정을 활성화하려면이 링크를 클릭하십시오.: <a href=epicdevelopers.app?KO"+plate_user.getText().toString().toUpperCase()+"> 사용자 활성화</a> <br><br>";
+        farewellMessage="진정으로,<br>XCar 팀.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
 
     public String sendWelcomeMessageSV(){
-        welcomeMessage="<b><font size=\"20\" color=\"blue\">Välkommen till allConnected!!!</font></b><br><br>";
+        welcomeMessage="<b><font size=\"20\" color=\"blue\">Välkommen till XCar!!!</font></b><br><br>";
         headerMessage="Kära herr/fru. "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Tack för att du registrerade dig i allConnected-världen. För att aktivera användaren, klicka på den här länken: <a href=epicdevelopers.app?SV"+plate_user.getText().toString().toUpperCase()+"> Aktivera användare</a> <br><br>";
-        farewellMessage="vänliga hälsningar,<br>AllConnected-teamet.";
+        bodyMessage="Tack för att du registrerade dig i XCar-världen. För att aktivera användaren, klicka på den här länken: <a href=epicdevelopers.app?SV"+plate_user.getText().toString().toUpperCase()+"> Aktivera användare</a> <br><br>";
+        farewellMessage="vänliga hälsningar,<br>XCar-teamet.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
 
     public String sendWelcomeMessageHI(){
-        welcomeMessage="<b><font size=\"20\" color=\"blue\">allConnected में आपका स्वागत है!!!</font></b><br><br>";
+        welcomeMessage="<b><font size=\"20\" color=\"blue\">XCar में आपका स्वागत है!!!</font></b><br><br>";
         headerMessage="प्रिय श्री / एम। एस। "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="allConnected दुनिया के लिए regisgtering के लिए धन्यवाद। अपने खाते को सक्रिय करने के लिए, इस लिंक पर क्लिक करें: <a href=epicdevelopers.app?HI"+plate_user.getText().toString().toUpperCase()+"> उपयोगकर्ता को सक्रिय करें</a> <br><br>";
-        farewellMessage="ईमानदारी से,<br>allConnected टीम.";
+        bodyMessage="XCar दुनिया के लिए regisgtering के लिए धन्यवाद। अपने खाते को सक्रिय करने के लिए, इस लिंक पर क्लिक करें: <a href=epicdevelopers.app?HI"+plate_user.getText().toString().toUpperCase()+"> उपयोगकर्ता को सक्रिय करें</a> <br><br>";
+        farewellMessage="ईमानदारी से,<br>XCar टीम.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
     public String sendWelcomeMessageAR(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">" +
-                "مرحبًا بك في allConnected"+"!!!</font></b><br><br>";
+                "مرحبًا بك في XCar"+"!!!</font></b><br><br>";
         headerMessage="" +
                 "عزيزي السيد / السيدة."
                 +name_user.getText().toString()+"<br><br>";
-        bodyMessage= "نشكرك على التسجيل في allConnected world. لتنشيط حسابك ، انقر فوق هذا الارتباط"+
+        bodyMessage= "نشكرك على التسجيل في XCar world. لتنشيط حسابك ، انقر فوق هذا الارتباط"+
                 "<a href=epicdevelopers.app?AR"+plate_user.toString().toUpperCase()+">"+  "تنشيط المستخدم" +"</a> <br><br>" ;
-        farewellMessage="بإخلاص"+"<br"+"فريق allConnected";
+        farewellMessage="بإخلاص"+"<br"+"فريق XCar";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
     public String sendWelcomeMessageUR(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">"+"allCnnected میں خوش آمدید"+"</font></b><br><br>";
         headerMessage=" محترم جناب / محترمہ "+name_user.getText().toString()+"<br><br>";
-        bodyMessage = "allConnected دنیا میں اندراج کرنے کا شکریہ۔ اپنے اکاؤنٹ کو چالو کرنے کے لئے ، اس لنک پر کلک کریں"+"<a href=epicdevelopers.app?UR"+plate_user.toString().toUpperCase()+">"+"صارف کو چالو کریں"+"</a> <br><br>";
+        bodyMessage = "XCar دنیا میں اندراج کرنے کا شکریہ۔ اپنے اکاؤنٹ کو چالو کرنے کے لئے ، اس لنک پر کلک کریں"+"<a href=epicdevelopers.app?UR"+plate_user.toString().toUpperCase()+">"+"صارف کو چالو کریں"+"</a> <br><br>";
         farewellMessage="مخلص,"+"<br>"+"آل سے منسلک ٹیم۔";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
