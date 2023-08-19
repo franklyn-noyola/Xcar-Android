@@ -117,16 +117,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        //setTheme(R.style.AppTheme_SplashTheme);
         MobileAds.initialize(this, initializationStatus -> {}
                 );
         profileView=0;
         init=0;
 
+
         if (!MainActivity.getInstance(this).isOnline(this)){
             context = LocaleHelper.setLocale(this, Locale.getDefault().getLanguage().toUpperCase());
             resources = context.getResources();
-            setTheme(R.style.AppTheme_SplashTheme);
+
             Toast.makeText(this,resources.getString(R.string.noConexion), Toast.LENGTH_LONG).show();
 
         }else{
@@ -137,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), profile_activity.class);
                 startActivity(intent);
             }else{
-                setTheme(R.style.AppTheme_SplashTheme);
+                //setTheme(R.style.AppTheme_SplashTheme);
                 onStart();
             }
         }
@@ -877,7 +878,7 @@ public class MainActivity extends AppCompatActivity {
         getBackGround = 2;
      if (!MainActivity.getInstance(this).isOnline(this)){
             Toast.makeText(this,resources.getString(R.string.noConexion), Toast.LENGTH_LONG).show();
-            setTheme(R.style.AppTheme_SplashTheme);
+            //setTheme(R.style.AppTheme_SplashTheme);
         }else{
             MobileAds.initialize(this, initializationStatus ->  {});
 
@@ -886,7 +887,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }else{
 
-                setTheme(R.style.AppTheme_SplashTheme);
+                //setTheme(R.style.AppTheme_SplashTheme);
                 onStart();
             }
         }
