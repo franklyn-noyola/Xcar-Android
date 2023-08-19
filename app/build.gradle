@@ -6,9 +6,9 @@ android {
 
     defaultConfig {
         applicationId "com.epicdeveloper.xcar"
-        minSdkVersion 29
+        minSdkVersion 32
         //noinspection OldTargetApi
-        targetSdkVersion 31
+        targetSdkVersion 32
         versionCode 13
         versionName "4.0.0"
         setProperty("archivesBaseName", "XCar")
@@ -44,13 +44,11 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics:21.3.0'
     implementation 'com.google.firebase:firebase-firestore:24.7.0'
     implementation 'com.google.firebase:firebase-storage:20.2.1'
-    implementation 'com.google.firebase:firebase-messaging:23.2.0'
+    implementation 'com.google.firebase:firebase-messaging:23.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.navigation:navigation-fragment:2.5.3'
-    implementation 'com.google.firebase:firebase-inappmessaging-display:20.3.2'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
-    implementation 'com.android.car.ui:car-ui-lib:2.5.0'
+    implementation 'com.google.firebase:firebase-inappmessaging-display:20.3.3'
+    implementation 'com.android.car.ui:car-ui-lib:2.5.1'
     implementation 'com.google.android.gms:play-services-ads-lite:22.2.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     implementation 'androidx.navigation:navigation-ui:2.5.3'

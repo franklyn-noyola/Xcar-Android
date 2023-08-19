@@ -27,7 +27,7 @@ import java.util.Map;
 import java.util.Random;
 
 import static com.epicdeveloper.xcar.sendEmail.*;
-import static java.security.SecureRandom.getInstance;
+
 
 public class ResetPass extends AppCompatActivity  {
 
@@ -56,10 +56,10 @@ public class ResetPass extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resetpassword);
         selectedLanguage = MainActivity.userlanguage;
-        plate_user = (EditText) findViewById(R.id.plate_reset_user);
-        resetLabel = (TextView) findViewById(R.id.resetLabel);
-        email_user = (EditText) findViewById(R.id.email_reset_user);
-        btnReset = (Button) findViewById(R.id.resetButton);
+        plate_user = findViewById(R.id.plate_reset_user);
+        resetLabel = findViewById(R.id.resetLabel);
+        email_user = findViewById(R.id.email_reset_user);
+        btnReset = findViewById(R.id.resetButton);
         translateField(selectedLanguage);
 
         btnReset.setOnClickListener(new View.OnClickListener() {
@@ -93,7 +93,6 @@ public class ResetPass extends AppCompatActivity  {
             return;
         }
 
-        final String emailUser = email_user.getText().toString();
         resetPass = FirebaseDatabase.getInstance().getReference("Users");
         resetPass.orderByChild("plate_user").equalTo(plate_user.getText().toString().toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
