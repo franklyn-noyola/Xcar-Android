@@ -22,7 +22,7 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/logoconected"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
+        android:theme="@style/AppTheme.SplashTheme"
         tools:ignore="AllowBackup">
 
         <meta-data
