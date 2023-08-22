@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
@@ -23,8 +24,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="40dp"
-        android:textStyle="bold">
+        android:textSize="40sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText">
     </TextView>
     <TextView
         android:layout_width="wrap_content"
@@ -38,7 +40,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:textStyle="bold">
     </TextView>
 
@@ -51,7 +53,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.468" />
+        app:layout_constraintVertical_bias="0.468"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -66,8 +69,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="15dp"
-        android:textStyle="bold">
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText">
     </TextView>
 
     <TextView
@@ -84,8 +88,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="15dp"
-        android:textStyle="bold">
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText,UseCompatTextViewDrawableXml">
     </TextView>
     <TextView
         android:layout_width="wrap_content"
@@ -101,7 +106,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="13dp">
+        android:textSize="13sp"
+        tools:ignore="HardcodedText">
     </TextView>
 
     <com.google.android.gms.ads.AdView
