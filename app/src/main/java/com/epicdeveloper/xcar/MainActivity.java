@@ -123,7 +123,6 @@ public class MainActivity extends AppCompatActivity {
         profileView=0;
         init=0;
 
-
         if (!MainActivity.getInstance(this).isOnline(this)){
             context = LocaleHelper.setLocale(this, Locale.getDefault().getLanguage().toUpperCase());
             resources = context.getResources();
