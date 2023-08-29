@@ -47,7 +47,7 @@ public class contacto extends AppCompatActivity {
             else if (TextUtils.isEmpty(message.getText().toString())){
                 Toast.makeText(getApplicationContext(), resources.getString(R.string.emptyMessage), Toast.LENGTH_SHORT).show();
             }else{
-                sendEmailMessage("xcar_support@epicdevelopers.app",MainActivity.plateUser+"-"+selectSubject.getSelectedItem().toString(), message.getText().toString());
+                sendEmailMessage("support@epicdevelopers.app",MainActivity.plateUser+"-"+selectSubject.getSelectedItem().toString(), message.getText().toString());
                 Toast.makeText(getApplicationContext(), resources.getString(R.string.sentMessage), Toast.LENGTH_SHORT).show();
                 finish();
                 Intent intent = new Intent(getApplicationContext(), profile_activity.class);
