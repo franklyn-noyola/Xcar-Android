@@ -172,7 +172,7 @@ public class profile_activity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case shareAction:
-                String shareLink = "https://play.google.com/store/apps/details?id=com.epicdeveloper.XCar";
+                String shareLink = "https://play.google.com/store/apps/details?id=com.epicdeveloper.allconnected";
                 intent = new Intent();
                 intent.setAction(Intent.ACTION_SEND);
                 intent.putExtra(Intent.EXTRA_TEXT, shareLink);
