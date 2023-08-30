@@ -54,7 +54,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="LabelFor,UnusedAttribute,SpeakableTextPresentCheck" />
+        tools:ignore="LabelFor,UnusedAttribute,SpeakableTextPresentCheck, TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/newUserPlateField"
@@ -90,7 +90,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="UnusedAttribute" />
+        tools:ignore="UnusedAttribute, TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/newUserPassField"
@@ -128,7 +128,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="UnusedAttribute" />
+        tools:ignore="UnusedAttribute, TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/registerButton"
@@ -158,7 +158,7 @@
         app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints,SmallSp,UnusedAttribute" />
+        tools:ignore="ExtraText,MissingConstraints,SmallSp,UnusedAttribute, TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/terminos"
@@ -175,7 +175,7 @@
         app:layout_constraintLeft_toRightOf="@id/checkBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints,SmallSp,UnusedAttribute" />
+        tools:ignore="MissingConstraints,RtlHardcoded,RtlSymmetry,SmallSp,UnusedAttribute" />
 
     <TextView
         android:id="@+id/textView2"

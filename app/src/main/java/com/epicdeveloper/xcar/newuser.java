@@ -45,7 +45,10 @@ public class newuser extends AppCompatActivity {
     String welcomeMessage;
     String headerMessage;
     String bodyMessage;
-    public String codeActivated;
+
+    boolean email_noExist = false;
+
+    boolean plate_noExist = false;
     String farewellMessage;
     String allMessage;
     public String userPlate;
@@ -65,16 +68,16 @@ public class newuser extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_newuser);
-        name_user = (EditText) findViewById(R.id.newUserNameField);
-        plate_user =  (EditText) findViewById(R.id.newUserPlateField);
-        email_user = (EditText)  findViewById(R.id.newUserEmailField);
-        pass_user = (EditText)   findViewById(R.id.newUserPassField);
-        confirm_pass = (EditText) findViewById(R.id.newUserPassConField);
-        btnRegister = (Button) findViewById(R.id.registerButton);
-        acceptButton = (CheckBox) findViewById(R.id.checkBox);
-        linkButton = (TextView) findViewById(R.id.terminos);
-        newUserLabel = (TextView) findViewById(R.id.newUserlbl);
-        textView2 = (TextView) findViewById(R.id.textView2);
+        name_user = findViewById(R.id.newUserNameField);
+        plate_user =  findViewById(R.id.newUserPlateField);
+        email_user = findViewById(R.id.newUserEmailField);
+        pass_user = findViewById(R.id.newUserPassField);
+        confirm_pass = findViewById(R.id.newUserPassConField);
+        btnRegister = findViewById(R.id.registerButton);
+        acceptButton = findViewById(R.id.checkBox);
+        linkButton = findViewById(R.id.terminos);
+        newUserLabel =  findViewById(R.id.newUserlbl);
+        textView2 =  findViewById(R.id.textView2);
         acceptButton.setEnabled(true);
         email_user.setEnabled(true);
         plate_user.setEnabled(true);
@@ -85,54 +88,48 @@ public class newuser extends AppCompatActivity {
         translanguage();
         setupLinkButton();
 
-        pass_user.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                final int DRAWABLE_LEFT = 0;
-                final int DRAWABLE_TOP = 1;
-                final int DRAWABLE_RIGHT = 2;
-                final int DRAWABLE_BOTTOM = 3;
+        pass_user.setOnTouchListener((v, event) -> {
+           // final int DRAWABLE_LEFT = 0;
+           // final int DRAWABLE_TOP = 1;
+            final int DRAWABLE_RIGHT = 2;
+           // final int DRAWABLE_BOTTOM = 3;
 
-                if(event.getAction() == MotionEvent.ACTION_UP) {
-                    if(event.getRawX() >= (pass_user.getRight() - pass_user.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
-                        if (pass_user.getTransformationMethod() == HideReturnsTransformationMethod.getInstance()){
-                            pass_user.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                            pass_user.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.showpass, 0);
-                        }else{
-                            pass_user.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                            pass_user.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.hidepass, 0);
-                        }
-                        return true;
+            if(event.getAction() == MotionEvent.ACTION_UP) {
+                if(event.getRawX() >= (pass_user.getRight() - pass_user.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                    if (pass_user.getTransformationMethod() == HideReturnsTransformationMethod.getInstance()){
+                        pass_user.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                        pass_user.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.showpass, 0);
+                    }else{
+                        pass_user.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        pass_user.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.hidepass, 0);
                     }
+                    return true;
                 }
-
-                return false;
             }
+
+            return false;
         });
 
-        confirm_pass.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                final int DRAWABLE_LEFT = 0;
-                final int DRAWABLE_TOP = 1;
-                final int DRAWABLE_RIGHT = 2;
-                final int DRAWABLE_BOTTOM = 3;
+        confirm_pass.setOnTouchListener((v, event) -> {
+            //final int DRAWABLE_LEFT = 0;
+            //final int DRAWABLE_TOP = 1;
+            final int DRAWABLE_RIGHT = 2;
+            //final int DRAWABLE_BOTTOM = 3;
 
-                if(event.getAction() == MotionEvent.ACTION_UP) {
-                    if(event.getRawX() >= (confirm_pass.getRight() - confirm_pass.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
-                        if (confirm_pass.getTransformationMethod() == HideReturnsTransformationMethod.getInstance()){
-                            confirm_pass.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                            confirm_pass.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.showpass, 0);
-                        }else{
-                            confirm_pass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                            confirm_pass.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.hidepass, 0);
-                        }
-                        return true;
+            if(event.getAction() == MotionEvent.ACTION_UP) {
+                if(event.getRawX() >= (confirm_pass.getRight() - confirm_pass.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                    if (confirm_pass.getTransformationMethod() == HideReturnsTransformationMethod.getInstance()){
+                        confirm_pass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                        confirm_pass.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.showpass, 0);
+                    }else{
+                        confirm_pass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        confirm_pass.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.hidepass, 0);
                     }
+                    return true;
                 }
-
-                return false;
             }
+
+            return false;
         });
 
 
@@ -181,178 +178,158 @@ public class newuser extends AppCompatActivity {
                 Users.orderByChild("plate_user").equalTo(plate_user.getText().toString().toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        plate_noExist = false;
                         if(!dataSnapshot.exists()){
-                            userPlate = plate_user.getText().toString().toUpperCase();
-                            String id2 = userActivated.push().getKey();
-                            String id = Users.push().getKey();
-                            Users.child(id).setValue(user);
-                            userActivated.child(id2).setValue(activated);
-                            if (userLanguage.equals("ES")){
-                                Toast.makeText(getApplicationContext(),"El usuario "+plate_user.getText().toString().toUpperCase()+" ha sido registrado, por favor revise su correo electrónico (Bandeja de entrada o SPAM) para activarlo.", Toast.LENGTH_LONG).show();
+                            plate_noExist = true;
+                            Users.orderByChild("user_email").equalTo(email_user.getText().toString()).addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    if (!dataSnapshot.exists()) {
+                                        email_noExist = true;
+                                    }else {
+                                        email_noExist = false;
+
+                                    }
+
+                                }
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+                            if (email_noExist==false ){
+                                errorMessage();
+                                return;
                             }
-                            if (userLanguage.equals("EN")){
-                                Toast.makeText(getApplicationContext(),"Account "+plate_user.getText().toString().toUpperCase()+" has been registered, pleasae check your email (Inbox or SPAM) to activate it.", Toast.LENGTH_LONG).show();
+                            if (plate_noExist == false) {
+                                errorMessage();
+                                return;
                             }
-                            if (userLanguage.equals("FR")){
-                                Toast.makeText(getApplicationContext(),"L'utilisateur "+ plate_user.getText().toString().toUpperCase() + "a été enregistré, vérifiez votre Email (Boîte de réception ou SPAM) pour l'activer.", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("DE")){
-                                Toast.makeText(getApplicationContext(),"Der Benutzer "+plate_user.getText().toString().toUpperCase() +" wurde registriert. Überprüfen Sie Ihre E-Mails (Posteingang oder SPAM), um sie zu aktivieren.", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("IT")){
-                                Toast.makeText(getApplicationContext(),"L'utente "+ plate_user.getText().toString().toUpperCase() +" è stato registrato, controlla la tua Email (Posta in arrivo o SPAM) per attivarlo.", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("PT")){
-                                Toast.makeText(getApplicationContext(),"O usuário "+ plate_user.getText ().toString().toUpperCase() +" foi registrado, por favor, revisar seu correio eletrônico (Bandeja de entrada o SPAM) para ativar.", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("RU")){
-                                Toast.makeText(getApplicationContext(),"Пользователь "+ plate_user.getText ().toString ().toUpperCase() +" был зарегистрирован, пожалуйста, проверьте свою электронную почту (Входящие или СПАМ), чтобы активировать его.", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("ZH")){
-                                Toast.makeText(getApplicationContext(),"用户 " + plate_user.getText().toString().toUpperCase()+" 已注册，请检查您的电子邮件（收件箱或垃圾邮件）以将其激活.", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("JA")){
-                                Toast.makeText(getApplicationContext(),"ユーザー "+ plate_user.getText().toString().toUpperCase()+" が登録されました。メール（受信トレイまたはスパム）をチェックしてアクティブにしてください。", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("NL")){
-                                Toast.makeText(getApplicationContext(),"Gebruiker "+ plate_user.getText ().toString().toUpperCase() +" is geregistreerd, controleer uw e-mail (Inbox of SPAM) om deze te activeren.", Toast.LENGTH_LONG).show();
+                            if (plate_noExist && email_noExist) {
+                                userPlate = plate_user.getText().toString().toUpperCase();
+                                String id2 = userActivated.push().getKey();
+                                String id = Users.push().getKey();
+                                Users.child(id).setValue(user);
+                                userActivated.child(id2).setValue(activated);
+                                if (userLanguage.equals("ES")) {
+                                    Toast.makeText(getApplicationContext(), "El usuario ha sido registrado, por favor revise su correo electrónico (Bandeja de entrada o SPAM) para activarlo.", Toast.LENGTH_LONG).show();
+                                }
+                                if (userLanguage.equals("EN")) {
+                                    Toast.makeText(getApplicationContext(), "Account has been registered, pleasae check your email (Inbox or SPAM) to activate it.", Toast.LENGTH_LONG).show();
+                                }
+                                if (userLanguage.equals("FR")) {
+                                    Toast.makeText(getApplicationContext(), "L'utilisateur a été enregistré, vérifiez votre Email (Boîte de réception ou SPAM) pour l'activer.", Toast.LENGTH_LONG).show();
+                                }
+                                if (userLanguage.equals("DE")) {
+                                    Toast.makeText(getApplicationContext(), "Der Benutzer wurde registriert. Überprüfen Sie Ihre E-Mails (Posteingang oder SPAM), um sie zu aktivieren.", Toast.LENGTH_LONG).show();
+                                }
+                                if (userLanguage.equals("IT")) {
+                                    Toast.makeText(getApplicationContext(), "L'utente è stato registrato, controlla la tua Email (Posta in arrivo o SPAM) per attivarlo.", Toast.LENGTH_LONG).show();
+                                }
+                                if (userLanguage.equals("PT")) {
+                                    Toast.makeText(getApplicationContext(), "O usuário foi registrado, por favor, revisar seu correio eletrônico (Bandeja de entrada o SPAM) para ativar.", Toast.LENGTH_LONG).show();
+                                }
+                                if (userLanguage.equals("RU")) {
+                                    Toast.makeText(getApplicationContext(), "Пользователь был зарегистрирован, пожалуйста, проверьте свою электронную почту (Входящие или СПАМ), чтобы активировать его.", Toast.LENGTH_LONG).show();
+                                }
+                                if (userLanguage.equals("ZH")) {
+                                    Toast.makeText(getApplicationContext(), "用户 已注册，请检查您的电子邮件（收件箱或垃圾邮件）以将其激活.", Toast.LENGTH_LONG).show();
+                                }
+                                if (userLanguage.equals("JA")) {
+                                    Toast.makeText(getApplicationContext(), "ユーザー が登録されました。メール（受信トレイまたはスパム）をチェックしてアクティブにしてください。", Toast.LENGTH_LONG).show();
+                                }
+                                if (userLanguage.equals("NL")) {
+                                    Toast.makeText(getApplicationContext(), "Gebruiker is geregistreerd, controleer uw e-mail (Inbox of SPAM) om deze te activeren.", Toast.LENGTH_LONG).show();
+                                }
+
+                                if (userLanguage.equals("PL")) {
+                                    Toast.makeText(getApplicationContext(), "Użytkownik został zarejestrowany, sprawdź swój adres e-mail (skrzynkę odbiorczą lub SPAM), aby go aktywować.", Toast.LENGTH_LONG).show();
+                                }
+
+                                if (userLanguage.equals("KO")) {
+                                    Toast.makeText(getApplicationContext(), "사용자 가 등록되었습니다. 활성화하려면 이메일 (받은 편지함 또는 스팸)을 확인하십시오.", Toast.LENGTH_LONG).show();
+                                }
+                                if (userLanguage.equals("SV")) {
+                                    Toast.makeText(getApplicationContext(), "Användaren har registrerats, kontrollera din e-post (Inkorgen eller SPAM) för att aktivera den.", Toast.LENGTH_LONG).show();
+                                }
+                                if (userLanguage.equals("AR")) {
+                                    Toast.makeText(getApplicationContext(),  " ، يرجى التحقق من بريدك الإلكتروني (صندوق الوارد أو الرسائل الاقتحامية) لتنشيطه.", Toast.LENGTH_LONG).show();
+                                }
+                                if (userLanguage.equals("HI")) {
+                                    Toast.makeText(getApplicationContext(), "उपयोगकर्ता पंजीकृत किया गया है, कृपया इसे सक्रिय करने के लिए अपना ईमेल (इनबॉक्स या स्पैम) देखें।", Toast.LENGTH_LONG).show();
+                                }
+                                if (userLanguage.equals("UR")) {
+                                    Toast.makeText(getApplicationContext(),  " رجسٹرڈ ہوچکا ہے ، براہ کرم اسے فعال کرنے کے لئے اپنا ای میل (ان باکس یا اسپیم) چیک کریں۔", Toast.LENGTH_LONG).show();
+                                }
+
+                                btnRegister.setHint(resources.getString(R.string.backLogin));
+                                email_user.setEnabled(false);
+                                plate_user.setEnabled(false);
+                                pass_user.setEnabled(false);
+                                confirm_pass.setEnabled(false);
+                                name_user.setEnabled(false);
+                                acceptButton.setEnabled(false);
+                                if (userLanguage.equals("ES")) {
+                                    sendEmail.sendEmailMessage(email_user.getText().toString(), "Bienvenido/a a XCar", sendWelcomeMessageES());
+                                }
+                                if (userLanguage.equals("EN")) {
+                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageEN());
+
+                                }
+                                if (userLanguage.equals("FR")) {
+                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageFR());
+                                }
+                                if (userLanguage.equals("DE")) {
+                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageDE());
+                                }
+                                if (userLanguage.equals("IT")) {
+                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageIT());
+                                }
+                                if (userLanguage.equals("PT")) {
+                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessagePT());
+                                }
+                                if (userLanguage.equals("RU")) {
+                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageRU());
+                                }
+                                if (userLanguage.equals("ZH")) {
+                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageZH());
+                                }
+                                if (userLanguage.equals("JA")) {
+                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageJA());
+                                }
+                                if (userLanguage.equals("NL")) {
+                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageNL());
+                                }
+
+                                if (userLanguage.equals("PL")) {
+                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessagePL());
+                                }
+                                if (userLanguage.equals("KO")) {
+                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageKO());
+                                }
+                                if (userLanguage.equals("SV")) {
+                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageSV());
+                                }
+                                if (userLanguage.equals("AR")) {
+                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageAR());
+                                }
+                                if (userLanguage.equals("HI")) {
+                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageHI());
+                                }
+                                if (userLanguage.equals("UR")) {
+                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageUR());
+                                }
+                                createLanguageUser();
+                                finish();
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
                             }
 
-                            if (userLanguage.equals("PL")){
-                                Toast.makeText(getApplicationContext(),"Użytkownik "+ plate_user.getText().toString().toUpperCase() +" został zarejestrowany, sprawdź swój adres e-mail (skrzynkę odbiorczą lub SPAM), aby go aktywować.", Toast.LENGTH_LONG).show();
-                            }
 
-                            if (userLanguage.equals("KO")){
-                                Toast.makeText(getApplicationContext(),"사용자 "+ plate_user.getText().toString().toUpperCase() +"가 등록되었습니다. 활성화하려면 이메일 (받은 편지함 또는 스팸)을 확인하십시오.", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("SV")){
-                                Toast.makeText(getApplicationContext(),"Användaren "+ plate_user.getText().toString().toUpperCase() +" har registrerats, kontrollera din e-post (Inkorgen eller SPAM) för att aktivera den.", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("AR")){
-                                 Toast.makeText(getApplicationContext(),plate_user.getText().toString().toUpperCase() +" ، يرجى التحقق من بريدك الإلكتروني (صندوق الوارد أو الرسائل الاقتحامية) لتنشيطه.",Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("HI")){
-                                Toast.makeText(getApplicationContext(),"उपयोगकर्ता "+ plate_user.getText().toString().toUpperCase() +" पंजीकृत किया गया है, कृपया इसे सक्रिय करने के लिए अपना ईमेल (इनबॉक्स या स्पैम) देखें।", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("UR")){
-                                Toast.makeText(getApplicationContext(), plate_user.getText().toString().toUpperCase() +" رجسٹرڈ ہوچکا ہے ، براہ کرم اسے فعال کرنے کے لئے اپنا ای میل (ان باکس یا اسپیم) چیک کریں۔", Toast.LENGTH_LONG).show();
-                            }
-
-                            btnRegister.setHint(resources.getString(R.string.backLogin));
-                            email_user.setEnabled(false);
-                            plate_user.setEnabled(false);
-                            pass_user.setEnabled(false);
-                            confirm_pass.setEnabled(false);
-                            name_user.setEnabled(false);
-                            acceptButton.setEnabled(false);
-                            if (userLanguage.equals("ES")){
-                                sendEmail.sendEmailMessage(email_user.getText().toString(),"Bienvenido/a a XCar", sendWelcomeMessageES());
-                            }
-                            if (userLanguage.equals("EN")){
-                                sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageEN());
-
-                            }
-                            if (userLanguage.equals("FR")){
-                                sendEmail.sendEmailMessage(email_user.getText().toString(),resources.getString(R.string.welcomeHomeText), sendWelcomeMessageFR());
-                            }
-                            if (userLanguage.equals("DE")){
-                                sendEmail.sendEmailMessage(email_user.getText().toString(),resources.getString(R.string.welcomeHomeText), sendWelcomeMessageDE());
-                            }
-                            if (userLanguage.equals("IT")){
-                                sendEmail.sendEmailMessage(email_user.getText().toString(),resources.getString(R.string.welcomeHomeText), sendWelcomeMessageIT());
-                            }
-                            if (userLanguage.equals("PT")){
-                                sendEmail.sendEmailMessage(email_user.getText().toString(),resources.getString(R.string.welcomeHomeText), sendWelcomeMessagePT());
-                            }
-                            if (userLanguage.equals("RU")){
-                                sendEmail.sendEmailMessage(email_user.getText().toString(),resources.getString(R.string.welcomeHomeText), sendWelcomeMessageRU());
-                            }
-                            if (userLanguage.equals("ZH")){
-                                sendEmail.sendEmailMessage(email_user.getText().toString(),resources.getString(R.string.welcomeHomeText), sendWelcomeMessageZH());
-                            }
-                            if (userLanguage.equals("JA")){
-                                sendEmail.sendEmailMessage(email_user.getText().toString(),resources.getString(R.string.welcomeHomeText), sendWelcomeMessageJA());
-                            }
-                            if (userLanguage.equals("NL")){
-                                sendEmail.sendEmailMessage(email_user.getText().toString(),resources.getString(R.string.welcomeHomeText), sendWelcomeMessageNL());
-                            }
-
-                            if (userLanguage.equals("PL")){
-                                sendEmail.sendEmailMessage(email_user.getText().toString(),resources.getString(R.string.welcomeHomeText), sendWelcomeMessagePL());
-                            }
-                            if (userLanguage.equals("KO")){
-                                sendEmail.sendEmailMessage(email_user.getText().toString(),resources.getString(R.string.welcomeHomeText), sendWelcomeMessageKO());
-                            }
-                            if (userLanguage.equals("SV")){
-                                sendEmail.sendEmailMessage(email_user.getText().toString(),resources.getString(R.string.welcomeHomeText), sendWelcomeMessageSV());
-                            }
-                            if (userLanguage.equals("AR")){
-                                sendEmail.sendEmailMessage(email_user.getText().toString(),resources.getString(R.string.welcomeHomeText), sendWelcomeMessageAR());
-                            }
-                            if (userLanguage.equals("HI")){
-                                sendEmail.sendEmailMessage(email_user.getText().toString(),resources.getString(R.string.welcomeHomeText), sendWelcomeMessageHI());
-                            }
-                            if (userLanguage.equals("UR")){
-                                sendEmail.sendEmailMessage(email_user.getText().toString(),resources.getString(R.string.welcomeHomeText), sendWelcomeMessageUR());
-                            }
-                            createLanguageUser();
-                            finish();
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                            startActivity(intent);
-
-                        }else{
-                            if (userLanguage.equals("ES")) {
-                                Toast.makeText(getApplicationContext(), "La mátricula " + plate_user.getText().toString().toUpperCase() + " ya está registrada", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("EN")){
-                                Toast.makeText(getApplicationContext(), "Plate number " + plate_user.getText().toString().toUpperCase() + " is already registered", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("FR")){
-                                Toast.makeText(getApplicationContext(), "Numéro de plaque " + plate_user.getText().toString().toUpperCase() + " est déjà enregistré", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("DE")){
-                                Toast.makeText(getApplicationContext(), "Kennzeichen "+ plate_user.getText ().toString().toUpperCase() + " ist bereits registriert", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("IT")){
-                                Toast.makeText(getApplicationContext(), "Numero di targa " + plate_user.getText ().toString ().toUpperCase() + " è già registrato", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("PT")){
-                                Toast.makeText(getApplicationContext(), "Número da placa " + plate_user.getText ().toString ().toUpperCase() + " já foi cadastrado", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("RU")){
-                                Toast.makeText(getApplicationContext(), "Табличный номер "+ plate_user.getText ().toString ().toUpperCase() +" уже зарегистрирован.", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("ZH")){
-                                Toast.makeText(getApplicationContext(), "车牌号 " + plate_user.getText().toString().toUpperCase()+" 已经注册", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("JA")){
-                                Toast.makeText(getApplicationContext(), "プレート番号 "+ plate_user.getText().toString().toUpperCase()+" はすでに登録されています", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("NL")){
-                                Toast.makeText(getApplicationContext(), "Kenteken "+ plate_user.getText ().toString().toUpperCase() +" is al geregistreerd", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("PL")){
-                                Toast.makeText(getApplicationContext(), "Tabliczka "+ plate_user.getText().toString().toUpperCase() +" jest już zarejestrowana", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("KO")){
-                                Toast.makeText(getApplicationContext(), "플레이트 "+ plate_user.getText().toString().toUpperCase() +"가 이미 등록되었습니다.", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("SV")){
-                                Toast.makeText(getApplicationContext(), "Plattan "+ plate_user.getText().toString().toUpperCase() +" är redan registrerad", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("AR")){
-                                Toast.makeText(getApplicationContext()," اللوحة "+ plate_user.getText().toString().toUpperCase() +"\" مسجلة بالفعل,," ,  Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("HI")){
-                                Toast.makeText(getApplicationContext(), "प्लेट "+ plate_user.getText().toString().toUpperCase() +" पंजीकृत नहीं है", Toast.LENGTH_LONG).show();
-                            }
-                            if (userLanguage.equals("UR")){
-                                Toast.makeText(getApplicationContext(), "پلیٹ "+ plate_user.getText ().toString ().toUpperCase() +" پہلے ہی رجسٹرڈ ہے", Toast.LENGTH_LONG).show();
-                            }
-
+                        }else if (plate_noExist == false) {
+                            errorMessage();
                         }
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
 
@@ -362,20 +339,67 @@ public class newuser extends AppCompatActivity {
         });
 
     }
+public void errorMessage() {
+    if (userLanguage.equals("ES")) {
+        Toast.makeText(getApplicationContext(), "El usuario ya está registrado", Toast.LENGTH_LONG).show();
+    }
+    if (userLanguage.equals("EN")) {
+        Toast.makeText(getApplicationContext(), "The user is already registered", Toast.LENGTH_LONG).show();
+    }
+    if (userLanguage.equals("FR")) {
+        Toast.makeText(getApplicationContext(), "L'utilisateur est déjà enregistré", Toast.LENGTH_LONG).show();
+    }
+    if (userLanguage.equals("DE")) {
+        Toast.makeText(getApplicationContext(), "Der Benutzer ist bereits registriert", Toast.LENGTH_LONG).show();
+    }
+    if (userLanguage.equals("IT")) {
+        Toast.makeText(getApplicationContext(), "L'utente è già registrato", Toast.LENGTH_LONG).show();
+    }
+    if (userLanguage.equals("PT")) {
+        Toast.makeText(getApplicationContext(), "O usuário já está cadastrado", Toast.LENGTH_LONG).show();
+    }
+    if (userLanguage.equals("RU")) {
+        Toast.makeText(getApplicationContext(), "Пользователь уже зарегистрирован", Toast.LENGTH_LONG).show();
+    }
+    if (userLanguage.equals("ZH")) {
+        Toast.makeText(getApplicationContext(), "该用户已经注册", Toast.LENGTH_LONG).show();
+    }
+    if (userLanguage.equals("JA")) {
+        Toast.makeText(getApplicationContext(), "ユーザーはすでに登録されています", Toast.LENGTH_LONG).show();
+    }
+    if (userLanguage.equals("NL")) {
+        Toast.makeText(getApplicationContext(), "De gebruiker is al geregistreerd", Toast.LENGTH_LONG).show();
+    }
+    if (userLanguage.equals("PL")) {
+        Toast.makeText(getApplicationContext(), "Użytkownik jest już zarejestrowany", Toast.LENGTH_LONG).show();
+    }
+    if (userLanguage.equals("KO")) {
+        Toast.makeText(getApplicationContext(), "사용자가 이미 등록되어 있습니다", Toast.LENGTH_LONG).show();
+    }
+    if (userLanguage.equals("SV")) {
+        Toast.makeText(getApplicationContext(), "Användaren är redan registrerad", Toast.LENGTH_LONG).show();
+    }
+    if (userLanguage.equals("AR")) {
+        Toast.makeText(getApplicationContext(), " اللوحة تم تسجيل المستخدم بالفعل مسجلة بالفعل,,", Toast.LENGTH_LONG).show();
+    }
+    if (userLanguage.equals("HI")) {
+        Toast.makeText(getApplicationContext(), "पउपयोगकर्ता पहले से ही पंजीकृत है", Toast.LENGTH_LONG).show();
+    }
+    if (userLanguage.equals("UR")) {
+        Toast.makeText(getApplicationContext(), "صارف پہلے ہی رجسٹرڈ ہے۔", Toast.LENGTH_LONG).show();
+    }
+}
 
     private void createLanguageUser() {
-            FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
-                @Override
-                public void onComplete(@NonNull Task<String> task) {
-                    if (!task.isSuccessful()){
-                        Log.w("TAG", "Not able to get token", task.getException());
-                        return;
-                    }
-                    String mToken = task.getResult();
-                    final languageUserData createUserLanguage = new languageUserData(mToken,userLanguage);
-                    DatabaseReference createLanguageUser =  FirebaseDatabase.getInstance().getReference("Users/userLanguage");
-                    createLanguageUser.push().setValue(createUserLanguage);
-            }
+            FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
+                if (!task.isSuccessful()){
+                    Log.w("TAG", "Not able to get token", task.getException());
+                    return;
+                }
+                String mToken = task.getResult();
+                final languageUserData createUserLanguage = new languageUserData(mToken,userLanguage);
+                DatabaseReference createLanguageUser =  FirebaseDatabase.getInstance().getReference("Users/userLanguage");
+                createLanguageUser.push().setValue(createUserLanguage);
         });
     }
 
@@ -384,12 +408,9 @@ public class newuser extends AppCompatActivity {
         linkButton.setMovementMethod(LinkMovementMethod.getInstance());
         linkButton.setLinkTextColor(Color.BLUE);
 
-        linkButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(termsLink));
-                startActivity(intent);
-            }
+        linkButton.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(termsLink));
+            startActivity(intent);
         });
     }
 
