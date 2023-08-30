@@ -5,7 +5,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.epicdeveloper.allConnected"
+        applicationId "com.epicdeveloper.allconnected"
         minSdkVersion 33
         //noinspection OldTargetApi
         targetSdkVersion 33
