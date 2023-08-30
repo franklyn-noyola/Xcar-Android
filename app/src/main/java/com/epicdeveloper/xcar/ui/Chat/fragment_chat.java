@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -86,6 +87,7 @@ import static com.epicdeveloper.xcar.R.drawable.*;
 import static com.epicdeveloper.xcar.R.layout.*;
 
 public class fragment_chat extends AppCompatActivity {
+
     static String messageSent;
     private static final int CAMERA_REQUEST = 1;
     TextView userInfo;
@@ -141,7 +143,11 @@ public class fragment_chat extends AppCompatActivity {
         setContentView(fragment_chat_fragment);
         if (Build.VERSION.SDK_INT>=29){
             requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE},2);
+            if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[] {Manifest.permission.CAMERA}, 1);
+            }
         }
+
         inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (MainActivity.chatScreen == 1 || MainActivity.chatScreen == 3) {
             userFragmentToChat = MainActivity.chatUser;
@@ -282,6 +288,7 @@ public class fragment_chat extends AppCompatActivity {
                                                     getUserBlocked(MainActivity.plateUser, new FirebaseSuccessListener() {
                                                         @Override
                                                         public void onCallBack(boolean isDataFetched) {
+
                                                             if (isDataFetched) {
                                                                 blocked1 = "blocked";
                                                                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -290,13 +297,13 @@ public class fragment_chat extends AppCompatActivity {
                                                                 startActivityForResult(cameraIntent, CAMERA_REQUEST);
                                                                 setListChatUsers(messageSent, "text");
                                                             } else {
+                                                                System.out.println("ESto no funciona");
                                                                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                                                                 if (cameraIntent.resolveActivity(getPackageManager()) != null) {
-                                                                    File pictureFile = null;
-                                                                    pictureFile = getFile();
+                                                                    File pictureFile = getFile();
                                                                     if (pictureFile != null) {
                                                                         pathFile = pictureFile.getAbsolutePath();
-                                                                        pictureUri = FileProvider.getUriForFile(fragment_chat.this, "com.epicdeveloper.XCar.provider", pictureFile);
+                                                                        pictureUri = FileProvider.getUriForFile(fragment_chat.this, "com.epicdeveloper.allconnected.provider", pictureFile);
                                                                         cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, pictureUri);
                                                                         startActivityForResult(cameraIntent, CAMERA_REQUEST);
                                                                     }
@@ -354,7 +361,7 @@ public class fragment_chat extends AppCompatActivity {
             image = File.createTempFile(FileImage, ".jpg", storageDir);
 
         }catch (Exception e){
-            Log.d("TAG", "Exception: "+e.toString());
+            Log.d("TAG", "Exception: "+e);
         }
         return image;
     }
@@ -463,7 +470,7 @@ public class fragment_chat extends AppCompatActivity {
                 }
             }else{
                 Toast.makeText(this,resources.getString(R.string.noSelectedImage), Toast.LENGTH_SHORT).show();
-                return;
+
             }
         }
     }
@@ -564,14 +571,14 @@ public class fragment_chat extends AppCompatActivity {
                             blockUser();
                             setBlockListChatUsers("No", "Si");
                             Toast.makeText(getApplicationContext(), resources.getString(R.string.blockedUser), Toast.LENGTH_SHORT).show();
-                            getSupportActionBar().setTitle(userFragmentToChat + " - " + resources.getString(string.locked));;
+                            getSupportActionBar().setTitle(userFragmentToChat + " - " + resources.getString(string.locked));
                         }
                     }
                 });
                 alert.setButton(AlertDialog.BUTTON_NEGATIVE,resources.getString(R.string.No), (DialogInterface.OnClickListener) null);
                 alert.show();
-                TextView alertMessage = (TextView) alert.findViewById(android.R.id.message);
-                TextView alertTitle = (TextView) alert.findViewById(android.R.id.title);
+                TextView alertMessage = alert.findViewById(android.R.id.message);
+                TextView alertTitle = alert.findViewById(android.R.id.title);
                 if (alertTitle!=null) {
                     alertTitle.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 }
@@ -654,7 +661,7 @@ public class fragment_chat extends AppCompatActivity {
     }
 
     private void displayChatMessages() {
-        messageList= (ListView) findViewById(id.list_of_messages);
+        messageList= findViewById(id.list_of_messages);
         Query query = FirebaseDatabase.getInstance().getReference("Chat/" + MainActivity.plateUser + "/" + userFragmentToChat);
         FirebaseListOptions<chatMessage> options = new FirebaseListOptions.Builder<chatMessage>()
                 .setQuery(query, chatMessage.class)
@@ -665,9 +672,9 @@ public class fragment_chat extends AppCompatActivity {
         adapter = new FirebaseListAdapter<chatMessage>(options) {
             @Override
             protected void populateView(View v, chatMessage model, int position) {
-                TextView messageText = (TextView) v.findViewById(id.messageText);
-                TextView messageTime = (TextView) v.findViewById(id.messageTime);
-                ImageView messageImage = (ImageView) v.findViewById(id.viewImage);
+                TextView messageText = v.findViewById(id.messageText);
+                TextView messageTime = v.findViewById(id.messageTime);
+                ImageView messageImage = v.findViewById(id.viewImage);
                 LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) messageText.getLayoutParams();
                 LinearLayout.LayoutParams vi = (LinearLayout.LayoutParams) messageImage.getLayoutParams();
                 if (model.getMessageType().equals("text")) {
@@ -833,8 +840,8 @@ public class fragment_chat extends AppCompatActivity {
         });
         alert.setButton(AlertDialog.BUTTON_NEGATIVE,resources.getString(R.string.No), (DialogInterface.OnClickListener) null);
         alert.show();
-        TextView alertMessage = (TextView) alert.findViewById(android.R.id.message);
-        TextView alertTitle = (TextView) alert.findViewById(android.R.id.title);
+        TextView alertMessage = alert.findViewById(android.R.id.message);
+        TextView alertTitle = alert.findViewById(android.R.id.title);
         if (alertTitle!=null) {
             alertTitle.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         }
@@ -1062,12 +1069,7 @@ public class fragment_chat extends AppCompatActivity {
                         carYear.setText(resources.getString(R.string.yearHint)+": "+resources.getString(R.string.noData));
                 }
                 pw.showAtLocation(relative, Gravity.NO_GRAVITY, 150, 300);
-                closeButton.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        pw.dismiss();
-                    }
-                });
+                closeButton.setOnClickListener(v -> pw.dismiss());
 
             }
             @Override
