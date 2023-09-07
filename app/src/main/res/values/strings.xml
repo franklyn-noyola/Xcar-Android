@@ -4,6 +4,8 @@
     <string name="wrong_user">Usuario y/o Password Inválido</string>
     <string name="plate_enter"><font size="8">Introduzca Matricula</font></string>
     <string name="Search">Buscar</string>
+    <string name="action_location">Ubicación</string>
+    <string name="action_additionalPlate">Matricula Adicional</string>
     <string name="sameUserSearch">No se puede realizar una búsqueda a tu propio usuario</string>
     <string name="nonExist_user">Usuario no Existe y/o Contraseña Incorrecta</string>
     <string name="profile_menu">Perfil</string>
@@ -33,7 +35,7 @@
     <string name="password_strong">Mínimo 8 caracteres: 1 minúscula, 1 mayúscula y un número</string>
     <string name="new_user">Registro Nuevo Usuario</string>
     <string name="name">Nombre</string>
-    <string name="plate_name" translatable="true">Matricula</string>
+    <string name="plate_name" translatable="true">Matricula y/o Email</string>
     <string name="email_name">Email</string>
     <string name="password_name">Contraseña</string>
     <string name="confirm_password">Confirmar Contraseña</string>

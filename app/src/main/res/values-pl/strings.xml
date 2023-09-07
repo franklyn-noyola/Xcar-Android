@@ -8,6 +8,8 @@
     <string name ="profile_menu">Profil</string>
     <string name ="chat_menu">Czat</string>
     <string name ="logout_menu">Zakończ</string>
+    <string name="action_location">Ustaw lokalizację</string>
+    <string name="action_additionalPlate">Dodatkowy numer rejestracyjny</string>
     <string name ="home_menu">Strona główna</string>
     <string name ="action_settings">Ustawienia</string>
     <string name ="action_about">Informacje</string>

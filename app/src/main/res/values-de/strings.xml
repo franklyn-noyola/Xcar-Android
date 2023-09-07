@@ -7,6 +7,8 @@
     <string name="plate_enter"><font size="8">Geben Sie die Registrierung ein</font></string>
     <string name="nonExist_user">Benutzer existiert nicht und / oder falsches Passwort</string>
     <string name="profile_menu">Profil</string>
+    <string name="action_location">Ort festlegen</string>
+    <string name="action_additionalPlate">Zusätzliche Registrierung</string>
     <string name="chat_menu">Plaudern</string>
     <string name="addMob">ca-app-pub-7506110687995747~3078457854</string>
     <string name="support">XCar-Unterstützung</string>

@@ -6,6 +6,8 @@
     <string name="wrong_plate_format">अमान्य उपयोगकर्ता प्लेट प्रारूप </string>
     <string name="wrong_user">अमान्य उपयोगकर्ता और / या पासवर्ड </string>
     <string name="Search">खोज</string>
+    <string name="action_additionalPlate">अतिरिक्त प्लेट नंबर</string>
+    <string name="action_location">स्थान तय करें</string>
     <string name="plate_enter"><font size="8">नामांकन दर्ज करे</font>ं</string>
     <string name="nonExist_user">उपयोगकर्ता मौजूद नहीं है और / या अमान्य पासवर्ड </string>
     <string name="profile_menu">प्रोफाइल</string>

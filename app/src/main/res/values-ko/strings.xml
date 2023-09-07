@@ -9,6 +9,8 @@
     <string name = "chat_menu">채팅</string>
     <string name = "logout_menu">종료</string>
     <string name = "home_menu">홈</string>
+    <string name="action_location">위치 설정</string>
+    <string name="action_additionalPlate">추가 플레이트 번호</string>
     <string name = "action_settings">설정</string>
     <string name = "action_about">정보</string>
     <string name = "action_contacts">연락처</string>

@@ -10,6 +10,8 @@
     <string name="nonExist_user">Gebruiker bestaat niet en/of ongeldig wachtwoord</string>
     <string name="profile_menu">Profiel</string>
     <string name="chat_menu">Chat</string>
+    <string name="action_location">locatie instellen</string>
+    <string name="action_additionalPlate">Extra kenteken</string>
     <string name="support">XCar-ondersteuning</string>
     <string name="logout_menu">Eruit</string>
     <string name="home_menu">Begin</string>

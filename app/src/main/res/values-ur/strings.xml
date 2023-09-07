@@ -10,6 +10,8 @@
     <string name="nonExist_user">صارف موجود نہیں ہے اور / یا غلط پاس ورڈ</string>
     <string name="profile_menu">پروفائل</string>
     <string name="chat_menu">چیٹ</string>
+    <string name="action_additionalPlate">اضافی پلیٹ نمبر</string>
+    <string name="action_location">مقام مقرر کریں</string>
     <string name="colorHint" >رنگ</string>
     <string name="logout_menu">لاگ آوٹ</string>
     <string name="home_menu">شروع کریں</string>

@@ -6,6 +6,8 @@
     <string name="wrong_plate_format">Format d\'inscription utilisateur non valide</string>
     <string name="wrong_user">Utilisateur invalide et/ou mot de passe</string>
     <string name="Search">Trouver</string>
+    <string name="action_location">Définir l\'emplacement</string>
+    <string name="action_additionalPlate">Numéro de plaque supplémentaire</string>
     <string name="plate_enter"><font size="8">Entrez l\'inscription</font></string>
     <string name="nonExist_user">L\'utilisateur n\'existe pas et/ou mot de passe incorrect</string>
     <string name="profile_menu">Profil</string>

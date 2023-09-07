@@ -10,6 +10,8 @@
     <string name="nonExist_user">Пользователь не существует и / или неверный пароль</string>
     <string name="profile_menu">Профиль</string>
     <string name="chat_menu">Чат</string>
+    <string name="action_location">установить местоположение</string>
+    <string name="action_additionalPlate">Дополнительный номерной знак</string>
     <string name="logout_menu">Покинуть</string>
     <string name="home_menu">Начинать</string>
     <string name="support">XCar поддержка</string>

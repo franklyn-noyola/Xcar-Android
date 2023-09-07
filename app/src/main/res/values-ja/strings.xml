@@ -9,6 +9,8 @@
     <string name="plate_enter"><font size="8">登録を入力してください</font></string>
     <string name="nonExist_user">ユーザーが存在しないか、パスワードが無効です</string>
     <string name="profile_menu">プロフィール</string>
+    <string name="action_location">場所を設定する</string>
+    <string name="action_additionalPlate">追加のプレート番号</string>
     <string name="chat_menu">チャット</string>
     <string name="logout_menu">サリル</string>
     <string name="home_menu">イニシオ</string>

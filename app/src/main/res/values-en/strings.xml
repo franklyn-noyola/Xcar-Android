@@ -6,6 +6,8 @@
     <string name="wrong_plate_format">Invalid User Plate Format</string>
     <string name="wrong_user">Invalid User and/or Password</string>
     <string name="Search">Search</string>
+    <string name="action_location">Set Location</string>
+    <string name="action_additionalPlate">Additional Plate Number</string>
     <string name="plate_enter"><font size="8">Enter Plate Number</font></string>
     <string name="nonExist_user">User does not exist and/or Invalid Password</string>
     <string name="profile_menu">Profile</string>

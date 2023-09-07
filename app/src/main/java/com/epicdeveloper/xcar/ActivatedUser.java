@@ -1,16 +1,18 @@
 package com.epicdeveloper.xcar;
 
 public class ActivatedUser {
-    String activated, userActivated;
+    String activated, userActivated, emailActivated;
     String activationCode;
 
     public ActivatedUser(){
 
     }
 
-    public ActivatedUser(String activated, String userActivated){
+    public ActivatedUser(String activated, String userActivated,String  emailActivated){
         this.activated=activated;
         this.userActivated=userActivated;
+        this.emailActivated=emailActivated;
+
 
     }
 
@@ -28,6 +30,12 @@ public class ActivatedUser {
 
     public void setUserActivated(String userActivated) {
         this.userActivated = userActivated;
+    }
+
+    public String getEmailActivated() {return emailActivated;}
+
+    public void setEmailActivated(String emailActivated) {
+        this.emailActivated = emailActivated;
     }
 
 

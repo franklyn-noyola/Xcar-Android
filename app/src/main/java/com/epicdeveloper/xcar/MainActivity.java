@@ -270,6 +270,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             userSelected=plateUser;
             Users = FirebaseDatabase.getInstance().getReference("Users");
+
             Users.orderByChild("plate_user").equalTo(plateUser.toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

@@ -171,14 +171,14 @@ public class newuser extends AppCompatActivity {
                     return;
                 }
                 final UsersConnected user = new UsersConnected(name_user.getText().toString(), plate_user.getText().toString().toUpperCase(),  email_user.getText().toString(),  pass_user.getText().toString(), cartype, carBrand,carColor,carModel,yearCar, resetPass);
-
-                final ActivatedUser activated = new ActivatedUser("OFF", plate_user.getText().toString().toUpperCase());
+                final UsersConnected addPlate = new UsersConnected(name_user.getText().toString(), plate_user.getText().toString().toUpperCase(),  email_user.getText().toString(),  pass_user.getText().toString(), cartype, carBrand,carColor,carModel,yearCar, resetPass);
+                final ActivatedUser activated = new ActivatedUser("OFF", plate_user.getText().toString().toUpperCase(), email_user.getText().toString());
                 DatabaseReference userActivated = FirebaseDatabase.getInstance().getReference("Users/ActivatedUser");
+                DatabaseReference  additionalPlate = FirebaseDatabase.getInstance().getReference("Users/AdditionalPlate");
                 Users = FirebaseDatabase.getInstance().getReference("Users");
                 Users.orderByChild("plate_user").equalTo(plate_user.getText().toString().toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        plate_noExist = false;
                         if(!dataSnapshot.exists()){
                             plate_noExist = true;
                             Users.orderByChild("user_email").equalTo(email_user.getText().toString()).addValueEventListener(new ValueEventListener() {
@@ -186,9 +186,6 @@ public class newuser extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if (!dataSnapshot.exists()) {
                                         email_noExist = true;
-                                    }else {
-                                        email_noExist = false;
-
                                     }
 
                                 }
@@ -208,9 +205,12 @@ public class newuser extends AppCompatActivity {
                             if (plate_noExist && email_noExist) {
                                 userPlate = plate_user.getText().toString().toUpperCase();
                                 String id2 = userActivated.push().getKey();
+                                String id3 = additionalPlate.push().getKey();
                                 String id = Users.push().getKey();
                                 Users.child(id).setValue(user);
                                 userActivated.child(id2).setValue(activated);
+                                additionalPlate.child(id3).setValue(addPlate);
+
                                 if (userLanguage.equals("ES")) {
                                     Toast.makeText(getApplicationContext(), "El usuario ha sido registrado, por favor revise su correo electrónico (Bandeja de entrada o SPAM) para activarlo.", Toast.LENGTH_LONG).show();
                                 }
@@ -241,11 +241,9 @@ public class newuser extends AppCompatActivity {
                                 if (userLanguage.equals("NL")) {
                                     Toast.makeText(getApplicationContext(), "Gebruiker is geregistreerd, controleer uw e-mail (Inbox of SPAM) om deze te activeren.", Toast.LENGTH_LONG).show();
                                 }
-
                                 if (userLanguage.equals("PL")) {
                                     Toast.makeText(getApplicationContext(), "Użytkownik został zarejestrowany, sprawdź swój adres e-mail (skrzynkę odbiorczą lub SPAM), aby go aktywować.", Toast.LENGTH_LONG).show();
                                 }
-
                                 if (userLanguage.equals("KO")) {
                                     Toast.makeText(getApplicationContext(), "사용자 가 등록되었습니다. 활성화하려면 이메일 (받은 편지함 또는 스팸)을 확인하십시오.", Toast.LENGTH_LONG).show();
                                 }
@@ -261,7 +259,6 @@ public class newuser extends AppCompatActivity {
                                 if (userLanguage.equals("UR")) {
                                     Toast.makeText(getApplicationContext(),  " رجسٹرڈ ہوچکا ہے ، براہ کرم اسے فعال کرنے کے لئے اپنا ای میل (ان باکس یا اسپیم) چیک کریں۔", Toast.LENGTH_LONG).show();
                                 }
-
                                 btnRegister.setHint(resources.getString(R.string.backLogin));
                                 email_user.setEnabled(false);
                                 plate_user.setEnabled(false);
@@ -274,7 +271,6 @@ public class newuser extends AppCompatActivity {
                                 }
                                 if (userLanguage.equals("EN")) {
                                     sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageEN());
-
                                 }
                                 if (userLanguage.equals("FR")) {
                                     sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageFR());
@@ -300,7 +296,6 @@ public class newuser extends AppCompatActivity {
                                 if (userLanguage.equals("NL")) {
                                     sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageNL());
                                 }
-
                                 if (userLanguage.equals("PL")) {
                                     sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessagePL());
                                 }
@@ -324,20 +319,16 @@ public class newuser extends AppCompatActivity {
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                 startActivity(intent);
                             }
-
-
                         }else if (plate_noExist == false) {
                             errorMessage();
                         }
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
                     }
                 });
             }
         });
-
     }
 public void errorMessage() {
     if (userLanguage.equals("ES")) {
@@ -389,8 +380,7 @@ public void errorMessage() {
         Toast.makeText(getApplicationContext(), "صارف پہلے ہی رجسٹرڈ ہے۔", Toast.LENGTH_LONG).show();
     }
 }
-
-    private void createLanguageUser() {
+   private void createLanguageUser() {
             FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
                 if (!task.isSuccessful()){
                     Log.w("TAG", "Not able to get token", task.getException());
@@ -402,12 +392,10 @@ public void errorMessage() {
                 createLanguageUser.push().setValue(createUserLanguage);
         });
     }
-
     private void setupLinkButton() {
         linkButton.setTextColor(Color.BLUE);
         linkButton.setMovementMethod(LinkMovementMethod.getInstance());
         linkButton.setLinkTextColor(Color.BLUE);
-
         linkButton.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(termsLink));
             startActivity(intent);

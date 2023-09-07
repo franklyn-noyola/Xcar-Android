@@ -11,6 +11,8 @@
     <string name="profile_menu">轮廓</string>
     <string name="chat_menu">聊天</string>
     <string name="logout_menu">离开</string>
+    <string name="action_additionalPlate">附加车牌号</string>
+    <string name="action_location">设置位置</string>
     <string name="home_menu">开始</string>
     <string name="support">XCar支持</string>
     <string name="addMob">ca-app-pub-7506110687995747~3078457854</string>

@@ -18,7 +18,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062" />
+        app:layout_constraintVertical_bias="0.062"
+        tools:ignore="RtlHardcoded" />
 
     <EditText
         android:id="@+id/contactMessage"
@@ -40,7 +41,8 @@
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="@+id/subject"
         app:layout_constraintTop_toBottomOf="@+id/subject"
-        app:layout_constraintVertical_bias="0.013" />
+        app:layout_constraintVertical_bias="0.013"
+        tools:ignore="RtlHardcoded,RtlSymmetry" />
 
     <TextView
         android:id="@+id/buttonSend"
@@ -58,7 +60,8 @@
         app:layout_constraintStart_toStartOf="@+id/contactMessage"
         app:layout_constraintTop_toBottomOf="@+id/contactMessage"
         app:layout_constraintVertical_bias="0.034"
-        app:drawableEndCompat="@drawable/ic_sendicon" />
+        app:drawableEndCompat="@drawable/ic_sendicon"
+        tools:ignore="RtlHardcoded" />
 
     <TextView
         android:id="@+id/allConnectedlbl"

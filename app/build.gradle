@@ -6,11 +6,11 @@ android {
 
     defaultConfig {
         applicationId "com.epicdeveloper.allconnected"
-        minSdkVersion 33
+        minSdkVersion 29
         //noinspection OldTargetApi
         targetSdkVersion 33
-        versionCode 13
-        versionName "4.0.0"
+        versionCode 16
+        versionName "4.1.0"
         setProperty("archivesBaseName", "XCar")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

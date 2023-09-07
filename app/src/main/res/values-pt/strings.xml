@@ -9,6 +9,8 @@
     <string name="profile_menu">Perfil</string>
     <string name="chat_menu">Bate-papo</string>
     <string name="logout_menu">Sair</string>
+    <string name="action_location">Defina localização</string>
+    <string name="action_additionalPlate">Número de Placa Adicional</string>
     <string name="home_menu">Começar</string>
     <string name="action_settings">Contexto</string>
     <string name="action_about">Sobre</string>

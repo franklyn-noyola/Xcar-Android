@@ -7,6 +7,8 @@
     <string name="wrong_plate_format">Formato de Matrícula del Usuario inválida</string>
     <string name="wrong_user">Usuario y/o Password Inválido</string>
     <string name="Search">Buscar</string>
+    <string name="action_location">Ubicación</string>
+    <string name="action_additionalPlate">Matricula Adicional</string>
     <string name="nonExist_user">Usuario no Existe y/o Contraseña Incorrecta</string>
     <string name="profile_menu">Perfil</string>
     <string name="chat_menu">Chat</string>
