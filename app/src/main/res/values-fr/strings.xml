@@ -34,7 +34,8 @@
     <string name="password_strong">Minimum 8 caractères: 1 minuscule, 1 majuscase et un numéro</string>
     <string name="new_user">Nouvel enregistrement des utilisateurs</string>
     <string name="name">Nombre</string>
-    <string name="plate_name" >Numéro de plaque</string>
+    <string name="plate_name" >Email ou numéro de plaque</string>
+    <string name="addPlate">Ajouter un numéro de plaque supplémentaire</string>
     <string name="email_name" >Email</string>
     <string name="password_name" >Mot de passe</string>
     <string name="confirm_password" >Confirmer le mot de passe</string>
@@ -58,6 +59,8 @@
     <string name="wrong_password">Le mot de passe doit contenir au moins 8 caractères, 1 lettre minuscule, 1 majuscule et un numéro</string>
     <string name="welcomeMessage">Bienvenue à XCar</string>
     <string name="backLogin">Retour à la connexion</string>
+    <string name="addPlateButton">Ajouter un numéro de plaque</string>
+    <string name="verify">Vérifier</string>
     <string name="noTermsAccepted">Les modalités et la politique de confidentialité n’ont pas été acceptées</string>
     <string name="noPassMatch">Les mots de passe ne correspondent pas</string>
     <string name="wrongEmailFormat">Format d\'e-mail invalide</string>

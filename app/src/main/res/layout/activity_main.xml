@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="41dp"
         android:drawableStart="@drawable/ic_account_box_24"
-        android:hint="@string/plateHint"
+        android:hint="@string/plate_name"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"

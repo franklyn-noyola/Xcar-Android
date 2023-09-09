@@ -1,14 +1,14 @@
 package com.epicdeveloper.xcar;
 
 public class UsersConnected {
-    String user_name, user_email,plate_user,  user_password, phone, cartype, carbrand, carmodel,carcolor, year, resetPass;
+    String user_name, user_email,plate_user,  user_password, phone, cartype, carbrand, carmodel,carcolor, year, resetPass, type;
 
     public UsersConnected(){
 
     }
 
     public UsersConnected(String user_name, String plate_user, String user_email, String user_password, String cartype, String carbrand,
-                          String carmodel, String carcolor, String year, String resetPass){
+                          String carmodel, String carcolor, String year, String resetPass, String type){
 
         this.user_name=user_name;
         this.plate_user=plate_user;
@@ -20,6 +20,7 @@ public class UsersConnected {
         this.carcolor=carcolor;
         this.year=year;
         this.resetPass=resetPass;
+        this.type=type;
 
     }
 
@@ -63,7 +64,8 @@ public class UsersConnected {
         return resetPass;
     }
 
-
-
+    public String getType() {
+        return type;
+    }
 
 }

@@ -34,11 +34,14 @@
     <string name="password_strong">Co najmniej 8 znaków: 1 mała litera, 1 duża litera i cyfra</string>
     <string name="new_user">Rejestracja nowego użytkownika</string>
     <string name="name">Nazwa</string>
-    <string name="plate_name" >Numer rejestracyjny</string>
+    <string name="plate_name" >Adres e-mail lub numer rejestracyjny</string>
     <string name="email_name" >E-mail</string>
     <string name="password_name" >Hasło</string>
     <string name="confirm_password" >Potwierdź hasło</string>
     <string name="register" >ZAMELDOWAĆ SIĘ</string>
+    <string name="addPlate">Dodaj dodatkowy numer rejestracyjny</string>
+    <string name="addPlateButton">Dodaj numer rejestracyjny</string>
+    <string name="verify">Zweryfikować</string>
     <string name="accept_terms">Przeczytałem i zaakceptowałem</string>
     <string name="welcome" >Welcome</string>
     <string name="banner_ad_unit_id" >ca-app-pub-7506110687995747/7372926087</string>

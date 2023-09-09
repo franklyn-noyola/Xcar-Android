@@ -34,7 +34,7 @@
     <string name ="password_strong">Minst 8 tecken: 1 gemener, 1 versaler och ett nummer</string>
     <string name ="new_user">Ny användarregistrering</string>
     <string name="name">Namn</string>
-    <string name="plate_name">Registreringsnummer</string>
+    <string name="plate_name">E-post eller skyltnummer</string>
     <string name="email_name">E-post</string>
     <string name="password_name">Lösenord</string>
     <string name="confirm_password">Bekräfta lösenord</string>
@@ -43,6 +43,9 @@
     <string name="welcome" >Welcome</string>
     <string name="banner_ad_unit_id" >ca-app-pub-7506110687995747/7372926087</string>
     <string name="plateHint"> Registreringsnummer</string>
+    <string name="addPlate">Lägg till ytterligare skyltnummer</string>
+    <string name="addPlateButton">Lägg till skyltnummer</string>
+    <string name="verify">Kontrolleraь</string>
     <string name="passHint"> Lösenord</string>
     <string name="loginLbl">Logga in</string>
     <string name="welcomeHomeText">Välkommen till XCar</string>

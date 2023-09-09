@@ -37,8 +37,11 @@
     <string name="password_strong">Mindestens 8 Zeichen: 1 Kleinbuchstabe, 1 Großbuchstabe und eine Zahl</string>
     <string name="new_user">Neue Benutzerregistrierung</string>
     <string name="name">Name</string>
-    <string translatable="true" name="plate_name">Einschreibung</string>
+    <string translatable="true" name="plate_name">E-Mail oder Kennzeichen</string>
     <string name="email_name">Email</string>
+    <string name="addPlate">Fügen Sie ein zusätzliches Kennzeichen hinzu</string>
+    <string name="addPlateButton">Kennzeichen hinzufügen</string>
+    <string name="verify">Verifizieren</string>
     <string name="password_name">Passwort</string>
     <string name="confirm_password">Kennwort bestätigen</string>
     <string name="register">Einchecken</string>

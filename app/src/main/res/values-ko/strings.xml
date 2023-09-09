@@ -34,11 +34,14 @@
     <string name ="password_strong">최소 8 자 : 소문자 1 개, 대문자 1 개 및 숫자</string>
     <string name ="new_user">신규 사용자 등록</string>
     <string name ="name">이름</string>
-    <string name ="plate_name">번호판</string>
+    <string name ="plate_name">이메일 또는 번호판 번호</string>
     <string name ="email_name">이메일</string>
     <string name ="password_name">비밀번호</string>
     <string name ="confirm_password">비밀번호 확인</string>
     <string name ="register">레지스터</string>
+    <string name="addPlate">추가 번호판 추가</string>
+    <string name="addPlateButton">번호판 추가</string>
+    <string name="verify">확인하다</string>
     <string name="accept_terms">나는 읽고 동의했습니다</string>
     <string name="welcome" >Welcome</string>
     <string name="banner_ad_unit_id" >ca-app-pub-7506110687995747/7372926087</string>

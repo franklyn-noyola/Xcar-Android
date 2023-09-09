@@ -37,12 +37,15 @@
     <string name="password_strong">Mínimo 8 caracteres: 1 minúsculo, 1 maiúsculo e um número</string>
     <string name="new_user">Registo de novo utilizador</string>
     <string name="name">Nome</string>
-    <string translatable="true" name="plate_name">Inscrição</string>
+    <string translatable="true" name="plate_name">E-mail ou Número da Placa</string>
     <string name="email_name">O email</string>
     <string name="password_name">Senha</string>
     <string name="confirm_password">Confirmar senha</string>
     <string name="register">Check-in</string>
     <string name="accept_terms">Eu li e aceitei o</string>
+    <string name="addPlate">Adicionar número de placa adicional</string>
+    <string name="addPlateButton">Adicionar número da placa</string>
+    <string name="verify">Verificar</string>
     <string translatable="false" name="welcome">Welcome</string>
     <string translatable="false" name="banner_ad_unit_id">ca-app-pub-7506110687995747/7372926087</string>
     <string name="plateHint">" Inscrição"</string>

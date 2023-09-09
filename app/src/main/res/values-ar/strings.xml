@@ -35,9 +35,12 @@
     <string name="new_user">تسجيل مستخدم جديد</string>
     <string name="name">اسم</string>
     <string name="sameUserSearch">لا يمكن إجراء بحث على اسم المستخدم الخاص بك</string>
-    <string name="plate_name" >التسجيل</string>
+    <string name="plate_name" >البريد الإلكتروني أو رقم اللوحة</string>
     <string name="email_name" >بريد إلكتروني</string>
     <string name="password_name" >كلمة المرور</string>
+    <string name="addPlate">إضافة رقم لوحة إضافي</string>
+    <string name="addPlateButton">إضافة رقم اللوحة</string>
+    <string name="verify">يؤكد</string>
     <string name="confirm_password" >تأكيد كلمة المرور</string>
     <string name="register" >تحقق في</string>
     <string name="accept_terms">لقد قرأت وقبلت</string>

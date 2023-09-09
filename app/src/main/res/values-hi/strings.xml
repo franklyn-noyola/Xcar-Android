@@ -35,8 +35,11 @@
     <string name="password_strong">न्यूनतम 8 वर्ण: 1 छोटा अक्षर, 1 कैपिटल अक्षर और 1 नंबर</string>
     <string name="new_user">नया उपयोगकर्ता रजिस्टर</string>
     <string name="name">नाम</string>
-    <string name="plate_name">प्लेट</string>
+    <string name="plate_name">ईमेल या प्लेट नंबर</string>
     <string name="email_name">ईमेल</string>
+    <string name="addPlate">अतिरिक्त प्लेट नंबर जोड़ें</string>
+    <string name="addPlateButton">प्लेट नंबर जोड़ें</string>
+    <string name="verify">सत्यापित करें</string>
     <string name="password_name">पासवर्ड</string>
     <string name="confirm_password">पासवर्ड की पुष्टि करें</string>
     <string name="register" >रजिस्टर करें</string>

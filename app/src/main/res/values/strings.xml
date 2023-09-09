@@ -4,6 +4,7 @@
     <string name="wrong_user">Usuario y/o Password Inválido</string>
     <string name="plate_enter"><font size="8">Introduzca Matricula</font></string>
     <string name="Search">Buscar</string>
+    <string name="verify">Verificar</string>
     <string name="action_location">Ubicación</string>
     <string name="action_additionalPlate">Matricula Adicional</string>
     <string name="sameUserSearch">No se puede realizar una búsqueda a tu propio usuario</string>
@@ -21,6 +22,8 @@
     <string name="profile_header">PERFIL</string>
     <string name="infoLbl">Información Adicional</string>
     <string name="reply">Responder</string>
+    <string name="addPlate">Agregar matrícula adicional</string>
+    <string name="addPlateButton">Agregar matrícula</string>
     <string name="wrong_format_plate">Formato Matricula Errónea</string>
     <string name="unregistered_user">El usuario no esta registrado</string>
     <string name="targetMessage">Introduzca un mensaje al destinatario</string>

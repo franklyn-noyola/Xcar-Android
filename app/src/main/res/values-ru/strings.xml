@@ -36,7 +36,7 @@
     <string name="password_strong">Минимум 8 символов: 1 строчная буква, 1 заглавная буква и 1 цифра.</string>
     <string name="new_user">Регистрация нового пользователя</string>
     <string name="name">Регистрация нового пользователя</string>
-    <string name="plate_name" >Номерной знак</string>
+    <string name="plate_name" >Электронная почта или номерной знак</string>
     <string name="email_name" >Электронная почта</string>
     <string name="password_name" >Пароль</string>
     <string name="confirm_password" >Подтвердите Пароль</string>
@@ -44,6 +44,9 @@
     <string name="accept_terms">Я прочитал и принял</string>
     <string name="plateHint"> Номерной знак</string>
     <string name="passHint"> Пароль</string>
+    <string name="addPlate">Добавить дополнительный номерной знак</string>
+    <string name="addPlateButton">Добавить номерной знак</string>
+    <string name="verify">Проверять</string>
     <string name="welcomeHomeText">Добро пожаловать в XCar</string>
     <string name="forgottenPass"><b> <font color="blue">Вы забыли свой пароль?</font></b></string>
     <string name="newUser">Новый пользователь? <b> <font color="blue">кликните сюда</font></b>b</string>

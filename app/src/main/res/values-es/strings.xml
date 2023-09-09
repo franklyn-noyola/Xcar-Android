@@ -34,8 +34,11 @@
     <string name="password_strong">Mínimo 8 caracteres: 1 minúscula, 1 mayúscula y un número</string>
     <string name="new_user">Registro Nuevo Usuario</string>
     <string name="name">Nombre</string>
-    <string name="plate_name" >Matricula</string>
+    <string name="plate_name" >Email o Matricula</string>
     <string name="email_name" >Email</string>
+    <string name="addPlate">Agregar matrícula adicional</string>
+    <string name="addPlateButton">Agregar matrícula</string>
+    <string name="verify">Verificar</string>
     <string name="password_name" >Contraseña</string>
     <string name="confirm_password" >Confirmar Contraseña</string>
     <string name="register" >REGISTRARSE</string>

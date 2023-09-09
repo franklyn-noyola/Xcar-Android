@@ -36,11 +36,14 @@
     <string name="password_strong">至少8个字符:: 1个小写字母，1个大写字母和1个数字</string>
     <string name="new_user">新用户注册</string>
     <string name="name">芋头</string>
-    <string name="plate_name" >车牌号码</string>
+    <string name="plate_name" >电子邮件或车牌号码</string>
     <string name="email_name" >电子邮件</string>
     <string name="password_name" >密码</string>
     <string name="confirm_password" >确认密码</string>
     <string name="register" >登记</string>
+    <string name="addPlate">添加额外的车牌号</string>
+    <string name="addPlateButton">添加车牌号</string>
+    <string name="verify">核实</string>
     <string name="accept_terms">我已阅读并接受</string>
     <string name="plateHint"> 车牌号码</string>
     <string name="passHint">" 密码</string>

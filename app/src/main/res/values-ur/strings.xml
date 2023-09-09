@@ -35,7 +35,7 @@
     <string name="password_strong">کم از کم 8 حروف: 1 چھوٹا خط ، 1 بڑے حرف اور 1 نمبر</string>
     <string name="new_user">نیا صارف رجسٹر</string>
     <string name="name">یام</string>
-    <string name="plate_name" >پلیٹ نمبر</string>
+    <string name="plate_name" >ای میل یا پلیٹ نمبر</string>
     <string name="email_name" >ای میل</string>
     <string name="password_name" >پاس ورڈ</string>
     <string name="confirm_password" >پاس ورڈ کی تصدیق کریں</string>
@@ -43,6 +43,9 @@
     <string name="accept_terms">میں نے پڑھا اور قبول کیا ہے</string>
     <string name="plateHint"> پلیٹ نمبر</string>
     <string name="passHint"> پاس ورڈ</string>
+    <string name="addPlate">اضافی پلیٹ نمبر شامل کریں۔</string>
+    <string name="addPlateButton">پلیٹ نمبر شامل کریں۔</string>
+    <string name="verify">تصدیق کریں۔</string>
     <string name="welcomeHomeText">XCar میں خوش آمدید</string>
     <string name="forgottenPass"><b> <font color="blue">کیا آپ اپنا پاس ورڈ بھول گئے ہیں؟</font></b></string>
     <string name="newUser"><b> <font color="blue">نیا صارف؟ یہاں کلک کریں</font></b></string>

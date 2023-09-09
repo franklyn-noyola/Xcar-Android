@@ -37,9 +37,12 @@
     <string name="name">Name</string>
     <string name="support">XCar Support</string>
     <string name="addMob">ca-app-pub-7506110687995747~3078457854</string>
-    <string name="plate_name" >Plate</string>
+    <string name="plate_name" >Email or Plate Number</string>
     <string name="email_name" >Email</string>
     <string name="password_name" >Password</string>
+    <string name="addPlate">Add additional plate number</string>
+    <string name="addPlateButton">Add plate number</string>
+    <string name="verify">Verify</string>
     <string name="confirm_password" >Confirm Password</string>
     <string name="register" >REGISTER</string>
     <string name="accept_terms"><b>I\'ve read and accept the</b></string>

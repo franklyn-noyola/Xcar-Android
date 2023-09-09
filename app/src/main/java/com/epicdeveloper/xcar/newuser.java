@@ -170,8 +170,7 @@ public class newuser extends AppCompatActivity {
                     finish();
                     return;
                 }
-                final UsersConnected user = new UsersConnected(name_user.getText().toString(), plate_user.getText().toString().toUpperCase(),  email_user.getText().toString(),  pass_user.getText().toString(), cartype, carBrand,carColor,carModel,yearCar, resetPass);
-                final UsersConnected addPlate = new UsersConnected(name_user.getText().toString(), plate_user.getText().toString().toUpperCase(),  email_user.getText().toString(),  pass_user.getText().toString(), cartype, carBrand,carColor,carModel,yearCar, resetPass);
+                final UsersConnected user = new UsersConnected(name_user.getText().toString(), plate_user.getText().toString().toUpperCase(),  email_user.getText().toString(),  pass_user.getText().toString(), cartype, carBrand,carColor,carModel,yearCar, resetPass, "M");
                 final ActivatedUser activated = new ActivatedUser("OFF", plate_user.getText().toString().toUpperCase(), email_user.getText().toString());
                 DatabaseReference userActivated = FirebaseDatabase.getInstance().getReference("Users/ActivatedUser");
                 DatabaseReference  additionalPlate = FirebaseDatabase.getInstance().getReference("Users/AdditionalPlate");
@@ -209,7 +208,6 @@ public class newuser extends AppCompatActivity {
                                 String id = Users.push().getKey();
                                 Users.child(id).setValue(user);
                                 userActivated.child(id2).setValue(activated);
-                                additionalPlate.child(id3).setValue(addPlate);
 
                                 if (userLanguage.equals("ES")) {
                                     Toast.makeText(getApplicationContext(), "El usuario ha sido registrado, por favor revise su correo electrónico (Bandeja de entrada o SPAM) para activarlo.", Toast.LENGTH_LONG).show();
@@ -536,7 +534,7 @@ public void errorMessage() {
         context = LocaleHelper.setLocale(newuser.this, userLanguage);
         resources = context.getResources();
         name_user.setHint(resources.getString(R.string.name));
-        plate_user.setHint(resources.getString(R.string.plate_name));
+        plate_user.setHint(resources.getString(R.string.plateHint));
         email_user.setHint(resources.getString(R.string.email_name));
         pass_user.setHint(resources.getString(R.string.password_name));
         confirm_pass.setHint(resources.getString(R.string.confirm_password));

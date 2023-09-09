@@ -36,8 +36,11 @@
     <string name="password_strong">Minimo 8 caratteri: 1 minuscolo, 1 maiuscolo e un numero</string>
     <string name="new_user">Nuova registrazione utente</string>
     <string name="name">Nome</string>
-    <string translatable="true" name="plate_name">Iscrizione</string>
+    <string translatable="true" name="plate_name">E-mail o numero di targa</string>
     <string name="email_name">E-mail</string>
+    <string name="addPlate">Aggiungi un ulteriore numero di targa</string>
+    <string name="addPlateButton">Aggiungi il numero di targa</string>
+    <string name="verify">Verificare</string>
     <string name="password_name">Parola d\'ordine</string>
     <string name="confirm_password">Conferma password</string>
     <string name="register">Registrare</string>
