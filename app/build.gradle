@@ -11,7 +11,7 @@ android {
         targetSdkVersion 33
         versionCode 16
         versionName "4.1.0"
-        setProperty("archivesBaseName", "XCar")
+        setProperty("archivesBaseName", "Xcar")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

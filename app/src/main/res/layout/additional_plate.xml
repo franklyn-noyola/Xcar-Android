@@ -20,7 +20,7 @@
         tools:layout_editor_absoluteY="33dp" />
 
     <TextView
-        android:id="@+id/userDataLbl"
+        android:id="@+id/additionalPlate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/addPlate"
@@ -32,7 +32,8 @@
         app:layout_constraintHorizontal_bias="0.313"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.083" />
+        app:layout_constraintVertical_bias="0.083"
+        tools:ignore="SmallSp" />
 
     <EditText
         android:id="@+id/addPlateField"
@@ -49,7 +50,7 @@
         tools:layout_editor_absoluteY="133dp" />
 
     <TextView
-        android:id="@+id/infoLbl"
+        android:id="@+id/infoLblAdd"
         android:layout_width="328dp"
         android:layout_height="53dp"
         android:text="@string/additionalInfor"
@@ -62,8 +63,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.292" />
 
-    <Spinner
-        android:id="@+id/vehicleType"
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/vehiclePlate"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:background="@drawable/spinner_background"
@@ -80,10 +81,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.408"
-        tools:ignore="SmallSp" />
+        tools:ignore="DuplicateIds,SmallSp" />
 
     <EditText
-        android:id="@+id/vehicleTypeLbl"
+        android:id="@+id/vehicleTypeAdd"
         android:layout_width="160dp"
         android:layout_height="40dp"
         android:background="@drawable/rounded2"
@@ -105,7 +106,7 @@
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 
     <EditText
-        android:id="@+id/carBrand"
+        android:id="@+id/carBrandAdd"
         android:layout_width="160dp"
         android:layout_height="40dp"
         android:background="@drawable/rounded2"
@@ -126,7 +127,7 @@
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 
     <EditText
-        android:id="@+id/carModel"
+        android:id="@+id/carModelAdd"
         android:layout_width="160dp"
         android:layout_height="40dp"
         android:background="@drawable/rounded2"
@@ -147,7 +148,7 @@
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 
     <EditText
-        android:id="@+id/carColor"
+        android:id="@+id/carColorAdd"
         android:layout_width="160dp"
         android:layout_height="40dp"
         android:background="@drawable/rounded2"
@@ -168,7 +169,7 @@
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 
     <EditText
-        android:id="@+id/carYear"
+        android:id="@+id/carYearAdd"
         android:layout_width="160dp"
         android:layout_height="40dp"
         android:background="@drawable/rounded2"
@@ -220,7 +221,7 @@
         app:layout_constraintVertical_bias="0.818" />
 
     <Button
-        android:id="@+id/cancelInfo"
+        android:id="@+id/cancelButtonAdd"
         android:layout_width="132dp"
         android:layout_height="41dp"
         android:background="@drawable/rounded_corners"
@@ -237,7 +238,7 @@
         app:layout_constraintVertical_bias="0.818" />
 
     <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
+        android:id="@+id/adViewAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
