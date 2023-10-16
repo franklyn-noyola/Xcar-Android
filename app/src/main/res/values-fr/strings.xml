@@ -43,7 +43,7 @@
     <string name="accept_terms">J\'ai lu et accept le</string>
     <string name="plateHint"> Numéro de plaque</string>
     <string name="passHint">Mot de passe</string>
-    <string name="welcomeHomeText">Bienvenue à XCar</string>
+    <string name="welcomeHomeText">Bienvenue à Xcar</string>
     <string name="forgottenPass"><b> <font color="blue">Vous avez oublié votre mot de passe?</font></b></string>
     <string name="newUser">Nouvel utilisateur? <b> <font color="blue">Cliquez ici</font></b></string>
     <string name="brandHint">Marque</string>

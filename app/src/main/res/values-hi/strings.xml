@@ -46,7 +46,7 @@
     <string name="accept_terms">मैंने पढ़ा है और स्वीकार किया है</string>
     <string name="plateHint"> थाली संख्या</string>
     <string name="passHint"> कुंजिका</string>
-    <string name="welcomeHomeText">XCar में आपका स्वागत है</string>
+    <string name="welcomeHomeText">Xcar में आपका स्वागत है</string>
     <string name="forgottenPass"><b> <font color="blue">क्या आप अपना कूटशब्द भूल गये हैं</font></b></string>
     <string name="newUser"><b> <font color="blue">नए उपयोगकर्ता? यहां क्लिक करें</font></b></string>
     <string name="brandHint">ब्रांड</string>

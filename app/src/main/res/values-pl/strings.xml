@@ -48,7 +48,7 @@
     <string name="plateHint"> Numer rejestracyjny</string>
     <string name="passHint"> Hasło</string>
     <string name="loginLbl">Zaloguj sie</string>
-    <string name="welcomeHomeText">Witamy w XCar</string>
+    <string name="welcomeHomeText">Witamy w Xcar</string>
     <string name="forgottenPass"><b> <font color="blue">Zapomniałeś hasła?</font></b></string>
     <string name="newUser">Nowy użytkownik? <b> <font color="blue">Kliknij tutaj</font></b></string>
     <string name="brandHint">Marka</string>

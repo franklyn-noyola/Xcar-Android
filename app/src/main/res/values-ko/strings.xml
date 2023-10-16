@@ -48,7 +48,7 @@
     <string name="plateHint">번호판</string>
     <string name="passHint">암호"</string>
     <string name="loginLbl">로그인</string>
-    <string name ="welcomeHomeText">XCar 에 오신 것을 환영합니다.</string>
+    <string name ="welcomeHomeText">Xcar 에 오신 것을 환영합니다.</string>
     <string name ="forgottenPass"><b> <font color="blue">비밀번호를 잊으셨습니까?</font></b></string>
     <string name ="newUser"><b> <font color="blue">신규 사용자입니까? 여기를 클릭하십시오</font></b></string>
     <string name ="brandHint">브랜드</string>

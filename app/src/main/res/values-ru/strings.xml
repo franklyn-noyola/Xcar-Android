@@ -47,7 +47,7 @@
     <string name="addPlate">Добавить дополнительный номерной знак</string>
     <string name="addPlateButton">Добавить номерной знак</string>
     <string name="verify">Проверять</string>
-    <string name="welcomeHomeText">Добро пожаловать в XCar</string>
+    <string name="welcomeHomeText">Добро пожаловать в Xcar</string>
     <string name="forgottenPass"><b> <font color="blue">Вы забыли свой пароль?</font></b></string>
     <string name="newUser">Новый пользователь? <b> <font color="blue">кликните сюда</font></b>b</string>
     <string name="brandHint">Марка</string>

@@ -47,7 +47,7 @@
     <string name="accept_terms">我已阅读并接受</string>
     <string name="plateHint"> 车牌号码</string>
     <string name="passHint">" 密码</string>
-    <string name="welcomeHomeText">欢迎来到 XCar</string>
+    <string name="welcomeHomeText">欢迎来到 Xcar</string>
     <string name="forgottenPass"><b> <font color="blue">你忘了你的密码？</font></b></string>
     <string name="newUser"><b> <font color="blue">新用户? 点击这里</font></b></string>
     <string name="brandHint">品牌</string>

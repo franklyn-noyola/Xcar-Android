@@ -45,7 +45,7 @@
     <string name="accept_terms">He leído y acepto los</string>
     <string name="plateHint"> Matricula</string>
     <string name="passHint"> Contraseña</string>
-    <string name="welcomeHomeText">Bienvenidos a XCar</string>
+    <string name="welcomeHomeText">Bienvenidos a Xcar</string>
     <string name="forgottenPass"><b> <font color="blue">¿Has olvidado tu contraseña?</font></b></string>
     <string name="newUser">¿Nuevo usuario?<b> <font color="blue"> Haz click aquí</font></b></string>
     <string name="brandHint">Marca</string>

@@ -51,7 +51,7 @@
     <string name="plateHint">" Inscrição"</string>
     <string name="passHint">" Senha"</string>
     <string name="loginLbl">Conecte-se</string>
-    <string name="welcomeHomeText">Bem-vindo a XCar"</string>
+    <string name="welcomeHomeText">Bem-vindo a Xcar"</string>
     <string name="forgottenPass"><b> <font color="blue">Esqueceu sua senha?</font></b></string>
     <string name="newUser">Novo usuário? <b> <font color="blue">Clique aqui</font></b></string>
     <string name="brandHint">Marca</string>

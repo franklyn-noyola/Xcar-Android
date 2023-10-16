@@ -12,20 +12,27 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.epicdeveloper.xcar.ui.Chat.chatMainScreen;
 import com.epicdeveloper.xcar.ui.Perfil.fragment_profile;
 import com.epicdeveloper.xcar.ui.home.fragment_home;
 import com.epicdeveloper.xcar.ui.receivedNotifications.receivedNotifications;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -51,7 +58,12 @@ public class profile_activity extends AppCompatActivity {
     final int profileMenu = R.id.Profile_Menu;
     final int notificationsMenu = R.id.Notifications_Menu;
     final int contactsAction = R.id.action_Contacts;
+
+    final int location = R.id.location;
     final int aboutAction = R.id.action_About;
+
+    final int addPlate = R.id.add_newPlate;
+    final int addPlateAction = R.id.add_newPlate;
     final int settingsAction = R.id.action_Settings;
     final int howitWorksAction = R.id.action_HowitWorks;
     final int shareAction = R.id.action_Share;
@@ -62,6 +74,17 @@ public class profile_activity extends AppCompatActivity {
     Menu barNavigation;
     public static String mToken;
     BottomNavigationView bottomNavigationView;
+
+        EditText brandCarField, modelCarField, colorCarField, yearCarField, additionalPlate;
+
+    Spinner carSelected;
+
+    TextView addPlateLabel, infoLbl;
+
+    AdView adview;
+
+    private DatabaseReference addPlateDB;
+    Button verifyButton, addPlateButton, cancelButton;
 
 
     @Override
@@ -148,6 +171,9 @@ public class profile_activity extends AppCompatActivity {
         menu.findItem(R.id.action_HowitWorks).setTitle(resources.getString(R.string.action_howItWorks));
         menu.findItem(R.id.action_About).setTitle(resources.getString(R.string.action_about));
         menu.findItem(R.id.action_Share).setTitle(resources.getString(R.string.shareWith));
+        menu.findItem(R.id.location);
+        menu.findItem(R.id.add_newPlate);
+
         return true;
     }
 
@@ -156,8 +182,11 @@ public class profile_activity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case contactsAction:
-                Intent intent = new Intent(this, contacto.class);
+              Intent intent = new Intent(this, contacto.class);
                 startActivity(intent);
+                return true;
+            case R.id.add_newPlate:
+                adddPlate();
                 return true;
             case aboutAction:
                 intent = new Intent(this, acercade.class);
@@ -317,6 +346,41 @@ public class profile_activity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void adddPlate() {
+        setContentView(R.layout.additional_plate);
+        selectedLanguage = MainActivity.userlanguage;
+        context = LocaleHelper.setLocale(getApplication(), selectedLanguage);
+        resources = context.getResources();
+        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0099CC")));
+        getSupportActionBar().setTitle(resources.getString(R.string.addPlateButton));
+        adview = findViewById(R.id.adViewAdd);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adview.loadAd(adRequest);
+        carSelected = findViewById(R.id.vehiclePlate);
+        carSelected.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_expandable_list_item_1,resources.getStringArray(R.array.Vehiculos)));
+        infoLbl = findViewById(R.id.infoLblAdd);
+        if (selectedLanguage.equals("RU")) {
+            infoLbl.setTextSize(20);
+        }
+        infoLbl.setText(resources.getString(R.string.additionalInfor));
+        addPlateLabel = findViewById(R.id.additionalPlate);
+        addPlateLabel.setText(resources.getString(R.string.addPlate));
+        additionalPlate = findViewById(R.id.addPlateField);
+        brandCarField = findViewById(R.id.carBrandAdd);
+        brandCarField.setHint(resources.getString(R.string.brandHint));
+        modelCarField = findViewById(R.id.carModelAdd);
+        modelCarField.setHint(resources.getString(R.string.modelHint));
+        verifyButton = findViewById(R.id.verify);
+        addPlateButton = findViewById(R.id.addPlateButton);
+        addPlateButton.setHint(resources.getString(R.string.addPlateButton));
+        colorCarField = findViewById(R.id.carColorAdd);
+        colorCarField.setHint(resources.getString(R.string.colorHint));
+        yearCarField = findViewById(R.id.carYearAdd);
+        yearCarField.setHint(resources.getString(R.string.yearHint));
+        cancelButton = findViewById(R.id.cancelButtonAdd);
+        cancelButton.setHint(resources.getString(R.string.cancel));
     }
 
 

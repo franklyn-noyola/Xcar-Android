@@ -48,7 +48,7 @@
     <string name="accept_terms"><b>I\'ve read and accept the</b></string>
     <string name="plateHint"> Plate Number</string>
     <string name="passHint">" Password"</string>
-    <string name="welcomeHomeText">Welcome to XCar"</string>
+    <string name="welcomeHomeText">Welcome to Xcar"</string>
     <string name="forgottenPass"><b> <font color="blue">Have you forgotten your Password</font></b></string>
     <string name="newUser">New User?<b> <font color="blue"> Click here</font></b></string>
     <string name="brandHint">Brand</string>

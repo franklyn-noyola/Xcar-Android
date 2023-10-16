@@ -51,7 +51,7 @@
     <string name="plateHint">" Kennzeichen"</string>
     <string name="passHint">" Passwort"</string>
     <string name="loginLbl">Anmeldung</string>
-    <string name="welcomeHomeText">Willkommen bei XCar"</string>
+    <string name="welcomeHomeText">Willkommen bei Xcar"</string>
     <string name="forgottenPass"><b> <font color="blue">Hast du dein Passwort vergessen?</font></b></string>
     <string name="newUser">Neuer Benutzer?<b> <font color="blue">Klicke hier</font></b></string>
     <string name="brandHint">Marke</string>
