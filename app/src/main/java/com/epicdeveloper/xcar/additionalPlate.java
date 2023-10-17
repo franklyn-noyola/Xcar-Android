@@ -82,8 +82,6 @@ public class additionalPlate extends AppCompatActivity {
             infoLbl.setTextSize(20);
         }
         infoLbl.setText(resources.getString(R.string.additionalInfor));
-        addPlateLabel = findViewById(R.id.additionalPlate);
-        addPlateLabel.setText(resources.getString(R.string.addPlate));
         additionalPlate = findViewById(R.id.addPlateField);
         brandCarField = findViewById(R.id.carBrandAdd);
         brandCarField.setHint(resources.getString(R.string.brandHint));

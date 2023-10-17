@@ -122,6 +122,16 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".additionalPlate"
+            android:theme="@style/AppTheme.contacts"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.CALL_BUTTON" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".profile_activity"
             android:windowSoftInputMode="adjustNothing"
             android:launchMode="singleTask"

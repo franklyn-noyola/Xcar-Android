@@ -51,6 +51,7 @@ public class profile_activity extends AppCompatActivity {
 
     private int noReadCount;
     private int countNoRead;
+    private int notBack = 0;
     public static String selectedLanguage;
     private boolean noReadNoti=false;
     final int homeMenu = R.id.Home_Menu;
@@ -186,7 +187,8 @@ public class profile_activity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.add_newPlate:
-                addPlate();
+                intent = new Intent(this, additionalPlate.class);
+                startActivity(intent);
                 return true;
             case aboutAction:
                 intent = new Intent(this, acercade.class);
@@ -284,16 +286,14 @@ public class profile_activity extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         super.onBackPressed();
-        if (MainActivity.init==1){
-            MainActivity.profileView=1;
-            MainActivity.getInit=1;
-            MainActivity.getProfileView=2;
-        }else{
-            MainActivity.init=0;
+              if (MainActivity.init == 1) {
+                MainActivity.profileView = 1;
+                MainActivity.getInit = 1;
+                MainActivity.getProfileView = 2;
+            } else {
+                MainActivity.init = 0;
+            }
         }
-
-
-    }
 
     public void getInterfaceID() {
         FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
@@ -347,41 +347,5 @@ public class profile_activity extends AppCompatActivity {
         });
 
     }
-
-    public void addPlate() {
-        setContentView(R.layout.additional_plate);
-        selectedLanguage = MainActivity.userlanguage;
-        context = LocaleHelper.setLocale(getApplication(), selectedLanguage);
-        resources = context.getResources();
-        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0099CC")));
-        getSupportActionBar().setTitle(resources.getString(R.string.addPlateButton));
-        adview = findViewById(R.id.adViewAdd);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adview.loadAd(adRequest);
-        carSelected = findViewById(R.id.vehiclePlate);
-        carSelected.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_expandable_list_item_1,resources.getStringArray(R.array.Vehiculos)));
-        infoLbl = findViewById(R.id.infoLblAdd);
-        if (selectedLanguage.equals("RU")) {
-            infoLbl.setTextSize(20);
-        }
-        infoLbl.setText(resources.getString(R.string.additionalInfor));
-        addPlateLabel = findViewById(R.id.additionalPlate);
-        addPlateLabel.setText(resources.getString(R.string.addPlate));
-        additionalPlate = findViewById(R.id.addPlateField);
-        brandCarField = findViewById(R.id.carBrandAdd);
-        brandCarField.setHint(resources.getString(R.string.brandHint));
-        modelCarField = findViewById(R.id.carModelAdd);
-        modelCarField.setHint(resources.getString(R.string.modelHint));
-        verifyButton = findViewById(R.id.verify);
-        addPlateButton = findViewById(R.id.addPlateButton);
-        addPlateButton.setHint(resources.getString(R.string.addPlateButton));
-        colorCarField = findViewById(R.id.carColorAdd);
-        colorCarField.setHint(resources.getString(R.string.colorHint));
-        yearCarField = findViewById(R.id.carYearAdd);
-        yearCarField.setHint(resources.getString(R.string.yearHint));
-        cancelButton = findViewById(R.id.cancelButtonAdd);
-        cancelButton.setHint(resources.getString(R.string.cancel));
-    }
-
 
 }

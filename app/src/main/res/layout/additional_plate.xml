@@ -7,38 +7,6 @@
     android:id="@+id/profile_fragment"
     tools:context=".ui.Perfil.fragment_profile">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addPlate"
-        android:layout_width="48dp"
-        android:layout_height="41dp"
-        android:tint="@android:color/white"
-        app:backgroundTint="@color/design_default_color_primary_dark"
-        app:fabSize="mini"
-        app:srcCompat="@android:drawable/ic_input_add"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.090"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.040" />
-
-    <TextView
-        android:id="@+id/additionalPlate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/addPlate"
-        android:textAlignment="textStart"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.313"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.060"
-        tools:ignore="SmallSp" />
-
     <EditText
         android:id="@+id/addPlateField"
         android:layout_width="190dp"
@@ -56,7 +24,7 @@
         app:layout_constraintHorizontal_bias="0.090"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.150" />
+        app:layout_constraintVertical_bias="0.100" />
 
     <TextView
         android:id="@+id/infoLblAdd"
@@ -70,7 +38,7 @@
         app:layout_constraintHorizontal_bias="0.445"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.250" />
+        app:layout_constraintVertical_bias="0.200" />
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/vehiclePlate"
@@ -89,7 +57,7 @@
         app:layout_constraintHorizontal_bias="0.167"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.322"
+        app:layout_constraintVertical_bias="0.272"
         tools:ignore="DuplicateIds,SmallSp" />
 
     <EditText
@@ -110,7 +78,7 @@
         app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.322"
+        app:layout_constraintVertical_bias="0.272"
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 
     <EditText
@@ -131,7 +99,7 @@
         app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413"
+        app:layout_constraintVertical_bias="0.370"
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 
     <EditText
@@ -152,7 +120,7 @@
         app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.503"
+        app:layout_constraintVertical_bias="0.470"
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 
     <EditText
@@ -173,7 +141,7 @@
         app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.591"
+        app:layout_constraintVertical_bias="0.571"
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 
     <EditText
@@ -194,7 +162,7 @@
         app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.676"
+        app:layout_constraintVertical_bias="0.666"
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 
     <Button
@@ -208,10 +176,10 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintHorizontal_bias="0.835"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.150" />
+        app:layout_constraintVertical_bias="0.100" />
 
     <Button
         android:id="@+id/addPlateButton"
