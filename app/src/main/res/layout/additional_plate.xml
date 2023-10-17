@@ -40,13 +40,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.200" />
 
-    <androidx.appcompat.widget.AppCompatSpinner
+    <Spinner
         android:id="@+id/vehiclePlate"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:background="@drawable/spinner_background"
         android:clickable="false"
         android:enabled="false"
+        android:paddingLeft="0dp"
+        android:padding="0dp"
+        android:gravity="left"
         android:entries="@array/Vehiculos"
         android:spinnerMode="dropdown"
         android:textColor="@android:color/white"

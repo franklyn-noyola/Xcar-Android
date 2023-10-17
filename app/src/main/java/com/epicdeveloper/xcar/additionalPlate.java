@@ -76,7 +76,6 @@ public class additionalPlate extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         adview.loadAd(adRequest);
         carSelected = findViewById(R.id.vehiclePlate);
-        carSelected.setAdapter(new ArrayAdapter<>(additionalPlate.this, android.R.layout.simple_expandable_list_item_1,resources.getStringArray(R.array.Vehiculos)));
         infoLbl = findViewById(R.id.infoLblAdd);
         if (selectedLanguage.equals("RU")) {
             infoLbl.setTextSize(20);
