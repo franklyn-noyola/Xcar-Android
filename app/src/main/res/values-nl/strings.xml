@@ -12,7 +12,7 @@
     <string name="chat_menu">Chat</string>
     <string name="action_location">locatie instellen</string>
     <string name="action_additionalPlate">Extra kenteken</string>
-    <string name="support">XCar-ondersteuning</string>
+    <string name="support">Xcar-ondersteuning</string>
     <string name="logout_menu">Eruit</string>
     <string name="home_menu">Begin</string>
     <string name="action_settings">Instellingen</string>
@@ -61,7 +61,7 @@
     <string name="updateInfo">Update informatie</string>
     <string name="allfieldFilled">Alle velden moeten worden ingevuld</string>
     <string name="wrong_password">Wachtwoord moet minimaal 8 tekens, 1 kleine letter, 1 hoofdletter en 1 cijfer bevatten</string>
-    <string name="welcomeMessage">Welkom bij XCar</string>
+    <string name="welcomeMessage">Welkom bij Xcar</string>
     <string name="noTermsAccepted">De algemene voorwaarden en het privacybeleid zijn niet gecontroleerd</string>
     <string name="backLogin">Terug naar Inloggen</string>
     <string name="noPassMatch">Wachtwoorden komen niet overeen</string>
@@ -167,6 +167,6 @@
     <string name="receiveNotification">Receive Notification</string>
     <string name="aboutText">Door op het hulpmenu te klikken en vervolgens op de optie Over, komt u in de sectie Over, waar u de versie van de applicatie kunt zien, evenals de website van de ontwikkelaars.</string>
     <string name="settingText">Door op het hulpmenu en vervolgens op de optie Instellingen te klikken, gaat u naar het gedeelte Instellingen waar u de taal kunt wijzigen waarin u de toepassing wilt weergeven.</string>
-    <string name="contactText">Door op het hulpmenu te klikken en vervolgens op de optie Contact, komt u in het gedeelte Contact waar u een e-mail kunt sturen naar het hele Connected Support-team met de reden voor uw bericht, zodat u ook in dit gedeelte kunt delen met een vriend of familie. lid in een van de sociale netwerken van uw voorkeur, zodat de app "XCar" wordt geïnstalleerd als dit nog niet eerder is gedaan.</string>
+    <string name="contactText">Door op het hulpmenu te klikken en vervolgens op de optie Contact, komt u in het gedeelte Contact waar u een e-mail kunt sturen naar het hele Connected Support-team met de reden voor uw bericht, zodat u ook in dit gedeelte kunt delen met een vriend of familie. lid in een van de sociale netwerken van uw voorkeur, zodat de app "Xcar" wordt geïnstalleerd als dit nog niet eerder is gedaan.</string>
 
 </resources>

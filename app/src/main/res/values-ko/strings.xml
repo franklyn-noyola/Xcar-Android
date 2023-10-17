@@ -1,5 +1,5 @@
 <resources xmlns:app_name="http://schemas.android.com/apk/res-auto">
-    <string name="app_name" translatable="false">XCar</string>
+    <string name="app_name" translatable="false">Xcar</string>
     <string name = "wrong_plate_format">유효하지 않은 사용자 번호판 형식</string>
     <string name = "wrong_user">잘못된 사용자 이름 및 / 또는 비밀번호</string>
     <string name = "Search">검색</string>
@@ -62,7 +62,7 @@
     <string name ="modifyInfo">정보 수정</string>
     <string name ="updateInfo">업데이트 정보</string>
     <string name ="allfieldFilled">모든 필드를 채워야합니다</string>
-    <string name ="welcomeMessage">XCar에 오신 것을 환영합니다"</string>
+    <string name ="welcomeMessage">Xcar에 오신 것을 환영합니다"</string>
     <string name ="wrong_password">비밀번호는 최소 8 자, 소문자 1 개, 대문자 1 개 및 숫자를 포함해야합니다.</string>
     <string name ="backLogin">로그인으로 돌아 가기</string>
     <string name ="noTermsAccepted">이용 약관 및 개인 정보 보호 정책이 수락되지 않았습니다.</string>
@@ -122,7 +122,7 @@
     <string name ="additionalInfor">추가 정보 </string>
     <string name ="infoUserLbl">정보. 사용자</string>
     <string name ="locked">잠김</string>
-    <string name="support">XCar 지원</string>
+    <string name="support">Xcar 지원</string>
     <string name ="noExists">사용자가 존재하지 않음</string>
     <string name ="deletedChat">삭제 된 채팅</string>
     <string name ="version">버전</string>
@@ -170,5 +170,5 @@
     <string name="receiveNotification">알림 받기</string>
     <string name="aboutText">보조 메뉴를 클릭 한 다음 정보 옵션을 클릭하면 정보 섹션으로 들어가서 애플리케이션 버전과 개발자 웹 사이트를 볼 수 있습니다.</string>
     <string name="settingText">보조 메뉴를 클릭 한 다음 설정 옵션을 클릭하면 응용 프로그램에서 표시 할 언어를 변경할 수있는 설정 섹션으로 들어갑니다.</string>
-    <string name="contactText">보조 메뉴를 클릭 한 다음 연락처 옵션을 클릭하면 XCar 지원 팀에 메시지 이유를 알려주는 이메일을 보낼 수있는 연락처 섹션으로 들어갑니다.이 섹션에서도 친구 나 가족과 공유 할 수 있습니다. XCar 앱이 이전에 설치되지 않은 경우 설치되도록 선호하는 소셜 네트워크 중 하나.</string>
+    <string name="contactText">보조 메뉴를 클릭 한 다음 연락처 옵션을 클릭하면 Xcar 지원 팀에 메시지 이유를 알려주는 이메일을 보낼 수있는 연락처 섹션으로 들어갑니다.이 섹션에서도 친구 나 가족과 공유 할 수 있습니다. XCar 앱이 이전에 설치되지 않은 경우 설치되도록 선호하는 소셜 네트워크 중 하나.</string>
 </resources>

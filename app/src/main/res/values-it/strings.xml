@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <resources xmlns:app_name="http://schemas.android.com/apk/res-auto">
-    <string translatable="false" name="app_name">XCar</string>
+    <string translatable="false" name="app_name">Xcar</string>
     <string name="wrong_plate_format">Formato di registrazione utente non valido</string>
     <string name="wrong_user">Utente e/o password non validi</string>
     <string name="Search">Cercare</string>
@@ -64,7 +64,7 @@
     <string name="modifyInfo">Modifica informazioni</string>
     <string name="updateInfo">Aggiornare le informazioni</string>
     <string name="allfieldFilled">Tutti i campi devono essere compilati</string>
-    <string name="welcomeMessage">Benvenuto in XCar</string>
+    <string name="welcomeMessage">Benvenuto in Xcar</string>
     <string name="wrong_password">"La password deve contenere almeno 8 caratteri, 1 lettera minuscola, 1 lettera maiuscola e un numero"</string>
     <string name="backLogin">Torna al login</string>
     <string name="noTermsAccepted">"I termini e le condizioni e l\'informativa sulla privacy non sono stati accettati"</string>
@@ -170,5 +170,5 @@
     <string name="receiveNotification">Ricevi notifiche</string>
     <string name="aboutText">Cliccando sul menu ausiliario e poi sull\'opzione Informazioni, si entra nella sezione Informazioni, dove è possibile visualizzare la versione dell\'applicazione, nonché il sito web degli sviluppatori.</string>
     <string name="settingText">Facendo clic sul menu ausiliario e poi sull\'opzione Impostazioni, si accede alla sezione Impostazioni dove è possibile modificare la lingua che si desidera venga visualizzata dall\'applicazione.</string>
-    <string name="contactText">Cliccando sul menu ausiliario e poi sull\'opzione Contatto, si entra nella sezione Contatti dove è possibile inviare una mail al team di supporto XCar indicando il motivo del messaggio, quindi anche in questa sezione è possibile condividerlo con un amico o un familiare in uno dei social network di tua preferenza in modo che l\'app XCar sia installata se non l\'hai fatto prima.</string>
+    <string name="contactText">Cliccando sul menu ausiliario e poi sull\'opzione Contatto, si entra nella sezione Contatti dove è possibile inviare una mail al team di supporto Xcar indicando il motivo del messaggio, quindi anche in questa sezione è possibile condividerlo con un amico o un familiare in uno dei social network di tua preferenza in modo che l\'app XCar sia installata se non l\'hai fatto prima.</string>
 </resources>
