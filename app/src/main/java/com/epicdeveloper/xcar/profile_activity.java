@@ -186,7 +186,7 @@ public class profile_activity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.add_newPlate:
-                adddPlate();
+                addPlate();
                 return true;
             case aboutAction:
                 intent = new Intent(this, acercade.class);
@@ -348,7 +348,7 @@ public class profile_activity extends AppCompatActivity {
 
     }
 
-    public void adddPlate() {
+    public void addPlate() {
         setContentView(R.layout.additional_plate);
         selectedLanguage = MainActivity.userlanguage;
         context = LocaleHelper.setLocale(getApplication(), selectedLanguage);
