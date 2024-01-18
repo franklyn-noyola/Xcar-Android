@@ -66,7 +66,7 @@
     <string name="noPassMatch">सांकेतिक शब्द मेल नहीं खाते</string>
     <string name="wrongEmailFormat">अमान्य ईमेल प्रारूप</string>
     <string name="noConexion">नेटवर्क कनेक्शन विफलता</string>
-    <string name="noEmptyFields">उपयोगकर्ता और ईमेल फ़ील्ड खाली नहीं होना चाहिए</string>
+    <string name="noEmptyFields">ईमेल फ़ील्ड खाली नहीं होनी चाहिए</string>
     <string name="passResetLbl">पासवर्ड रीसेट</string>
     <string name="reset">रीसेट</string>
     <string name="passResetMsg">पासवर्ड को नाराज कर दिया गया है और इसे संकेतित ईमेल पर भेज दिया गया है</string>

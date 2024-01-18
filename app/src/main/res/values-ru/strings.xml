@@ -67,7 +67,7 @@
     <string name="noPassMatch">Пароли не соответствуют</string>
     <string name="wrongEmailFormat">Неверный формат электронной почты</string>
     <string name="noConexion">Сбой сетевого подключения</string>
-    <string name="noEmptyFields">Поля пользователя и электронной почты не должны быть пустыми.</string>
+    <string name="noEmptyFields">Поле электронной почты не должно быть пустым.</string>
     <string name="passResetLbl">Сброс пароля</string>
     <string name="reset">Перезагрузить</string>
     <string name="passResetMsg">Пароль был отправлен повторно и отправлен на указанный адрес электронной почты. </string>

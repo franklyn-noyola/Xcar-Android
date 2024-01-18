@@ -69,7 +69,7 @@
     <string name="noPassMatch">Hasła nie pasują do siebie</string>
     <string name="wrongEmailFormat">Niewłaściwy format wiadomości email</string>
     <string name="noConexion">Błąd połączenia internetowego</string>
-    <string name="noEmptyFields">Pola użytkownika i e-mail nie mogą być puste</string>
+    <string name="noEmptyFields">Pole e-mail nie powinno być puste</string>
     <string name="passResetLbl">Zresetuj hasło</string>
     <string name="reset">Zresetować</string>
     <string name="passResetMsg">Hasło zostało zresetowane, a nowe hasło zostało wysłane na wskazany adres e-mail </string>

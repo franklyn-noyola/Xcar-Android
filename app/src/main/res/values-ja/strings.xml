@@ -67,7 +67,7 @@
     <string name="noPassMatch">パスワードが一致していません</string>
     <string name="wrongEmailFormat">無効なメール形式</string>
     <string name="noConexion">ネットワーク接続の失敗</string>
-    <string name="noEmptyFields">ユーザーフィールドと電子メールフィールドは空にしないでください</string>
+    <string name="noEmptyFields">電子メールフィールドを空にすることはできません</string>
     <string name="passResetLbl">パスワードのリセット</string>
     <string name="reset">リセット</string>
     <string name="passResetMsg">パスワードが再送され、指定された電子メールに送信されました </string>

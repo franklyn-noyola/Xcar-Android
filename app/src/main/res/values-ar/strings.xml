@@ -70,7 +70,7 @@
     <string name="noPassMatch">"كلمة المرور غير مطابقة"</string>
     <string name="wrongEmailFormat">تنسيق بريد إلكتروني غير صالح</string>
     <string name="noConexion">خطأ في الاتصال بالإنترنت</string>
-    <string name="noEmptyFields">لا يمكن ترك حقلي المستخدم والبريد الإلكتروني فارغين</string>
+    <string name="noEmptyFields">يجب ألا يكون حقل البريد الإلكتروني فارغًا</string>
     <string name="passResetLbl">إعادة تعيين كلمة المرور</string>
     <string name="reset">لإعادة تعيين</string>
     <string name="passResetMsg">تمت إعادة تعيين كلمة المرور وإرسال كلمة مرور جديدة إلى البريد الإلكتروني المشار إليه </string>

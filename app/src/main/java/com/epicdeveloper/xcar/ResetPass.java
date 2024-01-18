@@ -35,7 +35,7 @@ public class ResetPass extends AppCompatActivity  {
         "y","z","0","1", "2", "3", "4", "5", "6", "7", "8", "9","_","!",".","?","-", "A","B","C","D","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X",
             "Y","Z"};
     private static String passwordGenerated;
-    EditText plate_user;
+    //EditText plate_user;
     TextView resetLabel;
     public static String selectedLanguage;
     Context context;
@@ -56,7 +56,7 @@ public class ResetPass extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resetpassword);
         selectedLanguage = MainActivity.userlanguage;
-        plate_user = findViewById(R.id.plate_reset_user);
+      //plate_user = findViewById(R.id.plate_reset_user);
         resetLabel = findViewById(R.id.resetLabel);
         email_user = findViewById(R.id.email_reset_user);
         btnReset = findViewById(R.id.resetButton);
@@ -75,7 +75,7 @@ public class ResetPass extends AppCompatActivity  {
         context = LocaleHelper.setLocale(ResetPass.this, selectedLanguage);
         resources = context.getResources();
         resetLabel.setText(resources.getString(R.string.passResetLbl));
-        plate_user.setHint(resources.getString(R.string.plate_name));
+        //plate_user.setHint(resources.getString(R.string.plate_name));
         email_user.setHint(resources.getString(R.string.email_name));
         btnReset.setText(resources.getString(R.string.reset));
 
@@ -88,13 +88,14 @@ public class ResetPass extends AppCompatActivity  {
             finish();
             return;
         }
-        if (TextUtils.isEmpty(plate_user.getText().toString()) || TextUtils.isEmpty(email_user.getText().toString()) ){
+        if (TextUtils.isEmpty(email_user.getText().toString()) ){
             Toast.makeText(this,R.string.noEmptyFields, Toast.LENGTH_SHORT).show();
             return;
         }
-
-        resetPass = FirebaseDatabase.getInstance().getReference("Users");
-        resetPass.orderByChild("plate_user").equalTo(plate_user.getText().toString().toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
+        String dot1 = new String (email_user.getText().toString());
+        String dot2 = dot1.replace(".","_");
+        resetPass = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+        resetPass.orderByChild("user_email").equalTo(email_user.getText().toString().toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
@@ -109,7 +110,6 @@ public class ResetPass extends AppCompatActivity  {
                         btnReset.setText(resources.getString(R.string.backLogin));
                         changePass(getPasswordGenerated());
                         email_user.setEnabled(false);
-                        plate_user.setEnabled(false);
                         if (selectedLanguage.equals("ES")){
                             sendEmailMessage(email_user.getText().toString(),resources.getString(R.string.generatedPass), messagetoBeSentES());
                         }
@@ -167,52 +167,52 @@ public class ResetPass extends AppCompatActivity  {
 
                 } else {
                     if (selectedLanguage.equals("ES")){
-                        Toast.makeText(getApplicationContext(),"El email " + email_user.getText().toString() + " no corresponde con el usuario " + plate_user.getText().toString().toUpperCase(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"El usuario con este email " + email_user.getText().toString() + " no existe", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("EN")){
-                        Toast.makeText(getApplicationContext(),"Email " + email_user.getText().toString() + " does not belong to Account " + plate_user.getText().toString().toUpperCase(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"User with this email " + email_user.getText().toString() + " does not exist", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("FR")){
-                        Toast.makeText(getApplicationContext(),"Email " + email_user.getText().toString() + " n'appartient pas à l'utilisateur " + plate_user.getText().toString().toUpperCase(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"L'utilisateur avec cet email " + email_user.getText().toString() + " n'existe pas",  Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("DE")){
-                    Toast.makeText(getApplicationContext(),"Email " + email_user.getText().toString() + " gehört nicht dem Benutzer " + plate_user.getText().toString().toUpperCase(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Der Benutzer mit dieser E-Mail " + email_user.getText().toString() + " Ist nicht vorhanden", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("IT")){
-                            Toast.makeText(getApplicationContext(),"Email " + email_user.getText().toString() + " non appartiene all'utente " + plate_user.getText().toString().toUpperCase(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"L'utente con questa email " + email_user.getText().toString() + " Non esiste",  Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("PT")){
-                        Toast.makeText(getApplicationContext(),"O email" + email_user.getText().toString() + "não corresponde ao usuário" + plate_user.getText().toString().toUpperCase(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"O usuário com este e-mail " + email_user.getText().toString() + " não existe" , Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("RU")){
-                        Toast.makeText(getApplicationContext(),"Электронная почта "+ email_user.getText ().toString() +" не соответствует пользователю "+ plate_user.getText ().toString().toUpperCase(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Пользователь с этим адресом электронной почты "+ email_user.getText ().toString() +" не существует", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("ZH")){
-                        Toast.makeText(getApplicationContext(),"电子邮件 " + email_user.getText().toString()+" 与用户" + plate_user.getText().toString().toUpperCase()+" 不对应", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"使用此电子邮件的用户 " + email_user.getText().toString()+" 不存在" + email_user.getText().toString().toUpperCase(), Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("JA")){
-                        Toast.makeText(getApplicationContext(),"email "+ email_user.getText().toString()+" はユーザーに対応していません "+ plate_user.getText().toString().toUpperCase(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"このメールを受け取ったユーザー "+ email_user.getText().toString()+" 存在しない", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("NL")){
-                        Toast.makeText(getApplicationContext(),"De e-mail" + email_user.getText ().toString() + "komt niet overeen met de gebruiker" + plate_user.getText().toString().toUpperCase(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"De gebruiker met dit e-mailadres " + email_user.getText ().toString() + " bestaat niet", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("PL")){
-                        Toast.makeText(getApplicationContext(),"Adres e-mail "+ email_user.getText().toString() +" nie odpowiada użytkownikowi " + plate_user.getText().toString().toUpperCase(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Użytkownik z tym adresem e-mail "+ email_user.getText().toString() +" nie istnieje", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("KO")){
-                        Toast.makeText(getApplicationContext(),"이메일 "+ email_user.getText().toString()+"이 사용자와 일치하지 않습니다. " + plate_user.getText().toString().toUpperCase(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"이 이메일을 받은 사용자 "+ email_user.getText().toString()+" 존재하지 않는다", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("SV")){
-                        Toast.makeText(getApplicationContext(),"E-postmeddelandet" + email_user.getText().toString () + "motsvarar inte användaren " + plate_user.getText().toString().toUpperCase(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Användaren med denna e-postadress " + email_user.getText().toString () + " existerar inte", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("AR")){
-                        Toast.makeText(getApplicationContext(),"البريد الإلكتروني" + email_user.getText().toString () + "موتسفارار انفاندارين " + plate_user.getText().toString().toUpperCase(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext()," المستخدم مع هذا البريد الإلكتروني" + email_user.getText().toString () + "غير موجود " , Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("HI")){
-                        Toast.makeText(getApplicationContext(),"ईमेल "+ email_user.getText().toString() +" उपयोगकर्ता के अनुरूप नहीं है " + plate_user.getText().toString().toUpperCase(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"इस ईमेल वाला उपयोगकर्ता "+ email_user.getText().toString() +" मौजूद नहीं", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("UR")){
-                        Toast.makeText(getApplicationContext(),"ای میل " + email_user.getText().toString() + " صارف سے مطابقت نہیں رکھتا ہے " + plate_user.getText().toString().toUpperCase(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"اس ای میل کے ساتھ صارف"  + email_user.getText().toString() + "موجود نہیں ہے", Toast.LENGTH_SHORT).show();
                     }
 
 
@@ -220,52 +220,52 @@ public class ResetPass extends AppCompatActivity  {
                 }
             }else{
                     if (selectedLanguage.equals("ES")){
-                        Toast.makeText(getApplicationContext(),"El usuario " + plate_user.getText().toString().toUpperCase() + " no existe o no ha sido registrado.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"El usuario " + email_user.getText().toString().toUpperCase() + " no existe o no ha sido registrado.", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("EN")){
-                        Toast.makeText(getApplicationContext(),"Account " + plate_user.getText().toString().toUpperCase() + " does not exist or hasn't registered yet.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Account " + email_user.getText().toString().toUpperCase() + " does not exist or hasn't registered yet.", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("FR")){
-                        Toast.makeText(getApplicationContext(),"Utilisateur " + plate_user.getText().toString().toUpperCase() + " n'existe pas ou ne s'est pas encore inscrit.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Utilisateur " + email_user.getText().toString().toUpperCase() + " n'existe pas ou ne s'est pas encore inscrit.", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("DE")){
-                        Toast.makeText(getApplicationContext(),"Der Nutzer " + plate_user.getText().toString().toUpperCase() + " existiert nicht oder hat sich noch nicht registriert.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Der Nutzer " + email_user.getText().toString().toUpperCase() + " existiert nicht oder hat sich noch nicht registriert.", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("IT")){
-                        Toast.makeText(getApplicationContext(),"L'utente " + plate_user.getText().toString().toUpperCase() + " non esiste o non si è ancora registrato.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"L'utente " + email_user.getText().toString().toUpperCase() + " non esiste o non si è ancora registrato.", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("PT")){
-                        Toast.makeText(getApplicationContext(),"O usuário "+ plate_user.getText ().toString().toUpperCase() +" não existe ou não foi registrado.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"O usuário "+ email_user.getText ().toString().toUpperCase() +" não existe ou não foi registrado.", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("RU")){
-                        Toast.makeText(getApplicationContext(),"Пользователь "+ plate_user.getText().toString().toUpperCase() +" не существует или не был зарегистрирован.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Пользователь "+ email_user.getText().toString().toUpperCase() +" не существует или не был зарегистрирован.", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("ZH")){
-                        Toast.makeText(getApplicationContext(),"用户 " + plate_user.getText().toString().toUpperCase()+"不存在或尚未注册。", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"用户 " + email_user.getText().toString().toUpperCase()+"不存在或尚未注册。", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("JA")){
-                        Toast.makeText(getApplicationContext(),"ユーザー " + plate_user.getText().toString().toUpperCase()+" が存在しないか、登録されていません。", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"ユーザー " + email_user.getText().toString().toUpperCase()+" が存在しないか、登録されていません。", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("NL")){
-                        Toast.makeText(getApplicationContext(),"De gebruiker "+ plate_user.getText ().toString().toUpperCase () +" bestaat niet of is niet geregistreerd.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"De gebruiker "+ email_user.getText ().toString().toUpperCase () +" bestaat niet of is niet geregistreerd.", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("PL")){
-                        Toast.makeText(getApplicationContext(),"Użytkownik "+ plate_user.getText ().toString().toUpperCase() +" nie istnieje lub nie został zarejestrowany.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Użytkownik "+ email_user.getText ().toString().toUpperCase() +" nie istnieje lub nie został zarejestrowany.", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("KO")){
-                        Toast.makeText(getApplicationContext(),"사용자 "+ plate_user.getText().toString().toUpperCase() +" 가 존재하지 않거나 등록되지 않았습니다.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"사용자 "+ email_user.getText().toString().toUpperCase() +" 가 존재하지 않거나 등록되지 않았습니다.", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("SV")){
-                        Toast.makeText(getApplicationContext(),"Användaren "+ plate_user.getText ().toString().toUpperCase() +" finns inte eller har inte registrerats.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Användaren "+ email_user.getText ().toString().toUpperCase() +" finns inte eller har inte registrerats.", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("HI")) {
-                        Toast.makeText(getApplicationContext(), "उपयोगकर्ता "+ plate_user.getText().toString().toUpperCase() +" मौजूद नहीं है या पंजीकृत नहीं किया गया है।", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "उपयोगकर्ता "+ email_user.getText().toString().toUpperCase() +" मौजूद नहीं है या पंजीकृत नहीं किया गया है।", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("AR")){
-                        Toast.makeText(getApplicationContext(),"المستخدم " + plate_user.getText().toString().toUpperCase() + " غير موجود أو لم يتم تسجيله.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"المستخدم " + email_user.getText().toString().toUpperCase() + " غير موجود أو لم يتم تسجيله.", Toast.LENGTH_SHORT).show();
                     }
                     if (selectedLanguage.equals("UR")) {
-                        Toast.makeText(getApplicationContext(), "صارف "+ plate_user.getText().toString().toUpperCase() +" موجود نہیں ہے یا رجسٹرڈ نہیں کیا گیا ہے۔", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "صارف "+ email_user.getText().toString().toUpperCase() +" موجود نہیں ہے یا رجسٹرڈ نہیں کیا گیا ہے۔", Toast.LENGTH_SHORT).show();
                     }
 
 
@@ -299,8 +299,10 @@ public class ResetPass extends AppCompatActivity  {
     }
 
     private void changePass(final String passchange){
-        resetPass = FirebaseDatabase.getInstance().getReference("Users");
-        Query getData = resetPass.orderByChild("plate_user").equalTo(plate_user.getText().toString().toUpperCase());
+        String dot1 = new String (email_user.getText().toString());
+        String dot2 = dot1.replace(".","_");
+        resetPass = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+        Query getData = resetPass.orderByChild("user_email").equalTo(email_user.getText().toString().toUpperCase());
         ValueEventListener valueEventListener = (new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -461,7 +463,7 @@ public class ResetPass extends AppCompatActivity  {
 
     public static String  messagetoBeSentAR(){
         messageHeader = "عزيزي السيد / السيدة. "+userPlate.toString()+"<br><br>";
-        messabeBody1="كلمة السر خاصتك "+"<strong>"+passwordGen+"</strong>"+" تم إنشاؤه تلقائيًا. انتقل إلى تطبيق XCar ومرة \u200B\u200Bواحدة في البداية أدخل لوحة الترخيص وكلمة المرور التي تم إنشاؤها " +
+        messabeBody1="كلمة السر خاصتك "+"<strong>"+passwordGen+"</strong>"+" تم إنشاؤه تلقائيًا. انتقل إلى تطبيق XCar ومرة واحدة في البداية أدخل لوحة الترخيص وكلمة المرور التي تم إنشاؤها " +
                 "وانقر على زر تسجيل الدخول. ثم ستظهر لك شاشة لإدخال كلمة المرور الجديدة ، لأن كلمة المرور التي تم إنشاؤها مؤقتة. "+"<br>"+" بمجرد ظهور شاشة تغيير كلمة المرور ، " +
                 "قم بالتغيير إلى كلمة مرور من اختيارك وبمجرد تغييرها ، انتقل إلى بدء التطبيق وقم بتسجيل الدخول باستخدام كلمة المرور الجديدة."+"<br><br>"+"لأية أسئلة أو استفسارات ، لا تتردد في الاتصال بنا عبر الدعم<br><br>";
         messageFarawell="بإخلاص"+"<br>"+"فريق XCar";

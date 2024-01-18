@@ -72,7 +72,7 @@
     <string name="noPassMatch">"Passwörter stimmen nicht überein"</string>
     <string name="wrongEmailFormat">Ungültiges Email-Format</string>
     <string name="noConexion">Internetverbindungsfehler</string>
-    <string name="noEmptyFields">Die Felder Benutzer und E-Mail dürfen nicht leer sein</string>
+    <string name="noEmptyFields">Das E-Mail-Feld sollte nicht leer sein</string>
     <string name="passResetLbl">Passwort zurücksetzen</string>
     <string name="reset">Zurücksetzen</string>
     <string name="passResetMsg">Das Passwort wurde zurückgesetzt und ein neues Passwort an die angegebene E-Mail gesendet</string>

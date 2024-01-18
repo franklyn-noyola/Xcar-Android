@@ -65,7 +65,7 @@
     <string name="noPassMatch">Las contraseñas no coinciden</string>
     <string name="wrongEmailFormat">Formato de email inválido</string>
     <string name="noConexion">Error en Conexión de Internet</string>
-    <string name="noEmptyFields">Los campos Usuario y Email no pueden estar vacíos</string>
+    <string name="noEmptyFields">El campo Email no puede estar vacío</string>
     <string name="passResetLbl">Resetear Contraseña</string>
     <string name="reset">Resetear</string>
     <string name="passResetMsg">La contraseña ha sido reseteada y una nueva contraseña ha sido enviada al email indicado </string>

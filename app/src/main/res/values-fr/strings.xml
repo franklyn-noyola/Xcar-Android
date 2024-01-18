@@ -65,7 +65,7 @@
     <string name="noPassMatch">Les mots de passe ne correspondent pas</string>
     <string name="wrongEmailFormat">Format d\'e-mail invalide</string>
     <string name="noConexion">Erreur de connexion Internet</string>
-    <string name="noEmptyFields">Les champs utilisateur et e-mail ne peuvent pas être vides</string>
+    <string name="noEmptyFields">Le champ e-mail ne doit pas être vide</string>
     <string name="passResetLbl">Réinitialiser le mot de passe</string>
     <string name="reset">Réinitialiser</string>
     <string name="passResetMsg">Le mot de passe a été réinitialisé et un nouveau mot de passe a été envoyé à l\'adresse e-mail indiquée </string>

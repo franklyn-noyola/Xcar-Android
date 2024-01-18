@@ -68,7 +68,7 @@
     <string name="noPassMatch">Passwords do not Match</string>
     <string name="wrongEmailFormat">Invalid Email Format</string>
     <string name="noConexion">Network Conexion Failure</string>
-    <string name="noEmptyFields">User and Email fields should not be empty</string>
+    <string name="noEmptyFields">Email field should not be empty</string>
     <string name="passResetLbl">Password Reset</string>
     <string name="reset">Reset</string>
     <string name="passResetMsg">Password has been resent and sent it to the indicated Email </string>

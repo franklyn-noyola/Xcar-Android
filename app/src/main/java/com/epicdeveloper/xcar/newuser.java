@@ -170,10 +170,10 @@ public class newuser extends AppCompatActivity {
                     finish();
                     return;
                 }
-                final UsersConnected user = new UsersConnected(name_user.getText().toString(), plate_user.getText().toString().toUpperCase(),  email_user.getText().toString(),  pass_user.getText().toString(), cartype, carBrand,carColor,carModel,yearCar, resetPass, "M");
+                final headUser mainHeadUser = new headUser(name_user.getText().toString(), email_user.getText().toString(), pass_user.getText().toString(), resetPass);
+                final UsersConnected user = new UsersConnected(plate_user.getText().toString().toUpperCase(), cartype, carBrand,carColor,carModel,yearCar,  "M");
                 final ActivatedUser activated = new ActivatedUser("OFF", plate_user.getText().toString().toUpperCase(), email_user.getText().toString());
                 DatabaseReference userActivated = FirebaseDatabase.getInstance().getReference("Users/ActivatedUser");
-                DatabaseReference  additionalPlate = FirebaseDatabase.getInstance().getReference("Users/AdditionalPlate");
                 Users = FirebaseDatabase.getInstance().getReference("Users");
                 Users.orderByChild("plate_user").equalTo(plate_user.getText().toString().toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -186,11 +186,9 @@ public class newuser extends AppCompatActivity {
                                     if (!dataSnapshot.exists()) {
                                         email_noExist = true;
                                     }
-
                                 }
                                 @Override
                                 public void onCancelled(@NonNull DatabaseError error) {
-
                                 }
                             });
                             if (email_noExist==false ){
@@ -203,12 +201,15 @@ public class newuser extends AppCompatActivity {
                             }
                             if (plate_noExist && email_noExist) {
                                 userPlate = plate_user.getText().toString().toUpperCase();
-                                String id2 = userActivated.push().getKey();
-                                String id3 = additionalPlate.push().getKey();
-                                String id = Users.push().getKey();
-                                Users.child(id).setValue(user);
-                                userActivated.child(id2).setValue(activated);
-
+                                String id3 = userActivated.push().getKey();
+                                String dot1 = new String (email_user.getText().toString());
+                                String dot2 = dot1.replace(".","_");
+                                DatabaseReference userEmail = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+                                String id = userEmail.push().getKey();
+                                String id2 = userEmail.push().getKey();
+                                userEmail.child(id).setValue(mainHeadUser);
+                                userEmail.child(id2).setValue(user);
+                                userActivated.child(id3).setValue(activated);
                                 if (userLanguage.equals("ES")) {
                                     Toast.makeText(getApplicationContext(), "El usuario ha sido registrado, por favor revise su correo electrónico (Bandeja de entrada o SPAM) para activarlo.", Toast.LENGTH_LONG).show();
                                 }

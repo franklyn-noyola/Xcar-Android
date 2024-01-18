@@ -71,7 +71,7 @@
     <string name="noPassMatch">"Le passwords non corrispondono"</string>
     <string name="wrongEmailFormat">Formato email non valido</string>
     <string name="noConexion">Errore di connessione a Internet</string>
-    <string name="noEmptyFields">I campi Utente e Email non possono essere vuoti</string>
+    <string name="noEmptyFields">Il campo e-mail non deve essere vuoto</string>
     <string name="passResetLbl">Resetta la password</string>
     <string name="reset">Resettare</string>
     <string name="passResetMsg">La password è stata reimpostata e una nuova password è stata inviata all\'e-mail indicata </string>
