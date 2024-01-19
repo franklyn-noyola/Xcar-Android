@@ -1,6 +1,8 @@
 package com.epicdeveloper.xcar.ui.home;
 
 
+import static com.epicdeveloper.xcar.MainActivity.email_user;
+import static com.epicdeveloper.xcar.MainActivity.userSelected;
 import static com.epicdeveloper.xcar.R.layout.searchuser_popup;
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -26,6 +28,7 @@ import android.widget.Toast;
 import com.epicdeveloper.xcar.LocaleHelper;
 import com.epicdeveloper.xcar.MainActivity;
 import com.epicdeveloper.xcar.R;
+import com.epicdeveloper.xcar.profile_activity;
 import com.epicdeveloper.xcar.ui.Chat.fragment_chat;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -40,6 +43,10 @@ public class fragment_home extends Fragment {
 
     public View root;
     public TextView user;
+
+    public static String plate_user;
+    public static String UserSel;
+    public static String emailSelected;
     AdView adview;
     Context context;
     Resources resources;
@@ -82,16 +89,8 @@ public class fragment_home extends Fragment {
         //searchViewField.clearFocus();
 
         MainActivity.screens=1;
-        userPlate().setText(MainActivity.userSelected);
-        if (MainActivity.userSelected.length()<=8){
-            userPlate().setTextSize(50);
-        }
-        if (MainActivity.userSelected.length()==9){
-            userPlate().setTextSize(45);
-        }
-        if (MainActivity.userSelected.length()==10){
-            userPlate().setTextSize(40);
-        }
+        getUserData();
+
 
         searchViewField.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,8 +154,43 @@ public class fragment_home extends Fragment {
         super.onDestroy();
     }
 
+    public void getUserData() {
+        String dot1 = new String (email_user);
+        String dot2 = dot1.replace(".","_");
+        DatabaseReference Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+        Users.orderByChild("user_email").equalTo(email_user).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        plate_user = snapshot.child("plate_user").getValue().toString();
+                        UserSel = snapshot.child("user_name").getValue().toString();
+                        emailSelected = snapshot.child("user_email").getValue().toString();
+                    }
+
+                }
+                userPlate().setText(plate_user);
+                if (plate_user.length() <= 8) {
+                    userPlate().setTextSize(50);
+                }
+                if (plate_user.length() == 9) {
+                    userPlate().setTextSize(45);
+                }
+                if (plate_user.length() == 10) {
+                    userPlate().setTextSize(40);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+
+
     protected void getInfoData(String userToSearch) {
-        if (userToSearch.equals(MainActivity.userSelected)) {
+        if (userToSearch.equals(plate_user)) {
             Toast.makeText(context, resources.getString(R.string.sameUserSearch), Toast.LENGTH_SHORT).show();
             return;
         }

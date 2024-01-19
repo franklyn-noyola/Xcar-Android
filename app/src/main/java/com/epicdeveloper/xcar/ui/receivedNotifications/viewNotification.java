@@ -180,7 +180,7 @@ public class viewNotification extends AppCompatActivity {
 
 
     public void returnNotificationList() {
-        viewNotification = FirebaseDatabase.getInstance().getReference("sendMessages/" + MainActivity.plateUser);
+        viewNotification = FirebaseDatabase.getInstance().getReference("sendMessages/" + MainActivity.plate_user);
         Query getData = viewNotification.orderByChild("messageTime").equalTo(receivedNotifications.readMessageTime);
         getData.addChildEventListener(new ChildEventListener() {
             @Override
@@ -226,7 +226,7 @@ public class viewNotification extends AppCompatActivity {
 
     private void confirmDeleteNotificacion(){
         viewNotification = FirebaseDatabase.getInstance().getReference("sendMessages");
-        Query query = viewNotification.child(MainActivity.plateUser).orderByChild("messageTime").equalTo(receivedNotifications.itemgetTime);
+        Query query = viewNotification.child(MainActivity.plate_user).orderByChild("messageTime").equalTo(receivedNotifications.itemgetTime);
                 query.addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {

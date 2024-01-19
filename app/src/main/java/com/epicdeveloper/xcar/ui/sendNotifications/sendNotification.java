@@ -164,7 +164,7 @@ public class sendNotification extends AppCompatActivity {
                     return;
                 }
             }
-        if (TextUtils.equals(MainActivity.plateUser, userToSend)){
+        if (TextUtils.equals(MainActivity.plate_user, userToSend)){
             Toast.makeText(this, resources.getString(R.string.autoSend), Toast.LENGTH_SHORT).show();
             return;
         }
@@ -180,7 +180,7 @@ public class sendNotification extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), resources.getString(R.string.noNotificationSent)+" "+userToSend+". "+resources.getString(R.string.blockedUser), Toast.LENGTH_SHORT).show();
                                 return;
                             }else{
-                                getUserBlocked(MainActivity.plateUser, new FirebaseSuccessListener() {
+                                getUserBlocked(MainActivity.plate_user, new FirebaseSuccessListener() {
                                     @Override
                                     public void onCallBack(boolean isDataFetched) {
                                         if (isDataFetched){
@@ -269,13 +269,13 @@ public class sendNotification extends AppCompatActivity {
             subjectSel = selectSubject.getSelectedItem().toString();
         }
         messageSend=message.getText().toString();
-        receiveMessageUser = FirebaseDatabase.getInstance().getReference("receivedMessage").child(MainActivity.plateUser).child(userTarget.toUpperCase());
+        receiveMessageUser = FirebaseDatabase.getInstance().getReference("receivedMessage").child(MainActivity.plate_user).child(userTarget.toUpperCase());
         sendMessageUser = FirebaseDatabase.getInstance().getReference("sendMessages/"+userTarget.toUpperCase());
         String id = receiveMessageUser.push().getKey();
         id2 = sendMessageUser.push().getKey();
         if (!TextUtils.isEmpty(imageSel.getText().toString())) {
             StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Imagenes");
-            StorageReference filePath = storageReference.child(MainActivity.plateUser + "-" + imageName + "." + "jpg");
+            StorageReference filePath = storageReference.child(MainActivity.plate_user + "-" + imageName + "." + "jpg");
             StorageTask uploadTask = filePath.putFile(imageUri);
             uploadTask.continueWithTask(new Continuation() {
                 @Override
@@ -294,16 +294,16 @@ public class sendNotification extends AppCompatActivity {
                         imageUriName = downloadUrl.toString();
                     }
                     if (imageUriName != null) {
-                        sendMessageUser.child(id2).setValue(new sendNotificationData(MainActivity.plateUser,subjectSel,messageSend,"No",imageName,imageUriName));
-                        receiveMessageUser.child(id).setValue(new sendNotificationData(MainActivity.plateUser,subjectSel,messageSend,"No",imageName,imageUriName));
+                        sendMessageUser.child(id2).setValue(new sendNotificationData(MainActivity.plate_user,subjectSel,messageSend,"No",imageName,imageUriName));
+                        receiveMessageUser.child(id).setValue(new sendNotificationData(MainActivity.plate_user,subjectSel,messageSend,"No",imageName,imageUriName));
                     }
                 }
             });
         }else{
             imageName = "";
             imageUriName = "";
-            sendMessageUser.child(id2).setValue(new sendNotificationData(MainActivity.plateUser,subjectSel,messageSend,"No",imageName,imageUriName));
-            receiveMessageUser.child(id).setValue(new sendNotificationData(MainActivity.plateUser,subjectSel,messageSend,"No",imageName,imageUriName));
+            sendMessageUser.child(id2).setValue(new sendNotificationData(MainActivity.plate_user,subjectSel,messageSend,"No",imageName,imageUriName));
+            receiveMessageUser.child(id).setValue(new sendNotificationData(MainActivity.plate_user,subjectSel,messageSend,"No",imageName,imageUriName));
         }
         targetUser.setText("");
         selectSubject.setSelection(0);
@@ -319,7 +319,7 @@ public class sendNotification extends AppCompatActivity {
     }
 
     public void getblockedUser(final String userBlock,final FirebaseSuccessListener dataFetched){
-        DatabaseReference blockedUser = FirebaseDatabase.getInstance().getReference("BlockUsers").child(MainActivity.plateUser).child(userBlock);
+        DatabaseReference blockedUser = FirebaseDatabase.getInstance().getReference("BlockUsers").child(MainActivity.plate_user).child(userBlock);
         Query query = blockedUser.orderByChild("Blocked").equalTo("Si");
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
@@ -371,7 +371,7 @@ public class sendNotification extends AppCompatActivity {
         try{
             json.put("to", tokenUser);
             JSONObject notification = new JSONObject();
-            notification.put ("titulo", "Notificación: "+MainActivity.plateUser);
+            notification.put ("titulo", "Notificación: "+MainActivity.plate_user);
             notification.put("detalle", subjectSel);
             json.put("data",notification);
             String URL = "https://fcm.googleapis.com/fcm/send";

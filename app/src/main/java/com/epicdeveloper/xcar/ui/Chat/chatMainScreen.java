@@ -1,5 +1,8 @@
 package com.epicdeveloper.xcar.ui.Chat;
 
+import static com.epicdeveloper.xcar.MainActivity.email_user;
+import static com.epicdeveloper.xcar.MainActivity.plate_user;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -138,7 +141,9 @@ public class chatMainScreen extends Fragment {
         }
 
         private void getUserData(final String userData){
-            Users = FirebaseDatabase.getInstance().getReference("Users");
+            String dot1 = new String (email_user);
+            String dot2 = dot1.replace(".","_");
+            Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
             Users.orderByChild("plate_user").equalTo(userData.toUpperCase()).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -147,7 +152,7 @@ public class chatMainScreen extends Fragment {
                         for (DataSnapshot ds : snapshot.getChildren()){
                           getExistUser = ds.child("plate_user").getValue();
                         }
-                        if (getExistUser.toString().equals(MainActivity.plateUser)){
+                        if (getExistUser.toString().equals(plate_user)){
                             if (selectedLanguage.equals("ES")){
                                 Toast.makeText(getActivity(), "El usuario "+userData.toUpperCase()+" no se puede enviar un automensaje.", Toast.LENGTH_SHORT).show();
                             }
@@ -227,7 +232,7 @@ public class chatMainScreen extends Fragment {
         }
 
     public void getUserBlocked(final String userBlock,final FirebaseSuccessListener dataFetched){
-        DatabaseReference blockedUser = FirebaseDatabase.getInstance().getReference("BlockUsers").child(MainActivity.plateUser).child(userBlock);
+        DatabaseReference blockedUser = FirebaseDatabase.getInstance().getReference("BlockUsers").child(plate_user).child(userBlock);
         Query query = blockedUser.orderByChild("Blocked").equalTo("Si");
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
@@ -253,7 +258,7 @@ public class chatMainScreen extends Fragment {
 
       public void getChatUserList() {
             listView = root.findViewById(R.id.messageList);
-            Query query = FirebaseDatabase.getInstance().getReference("Chat/listChatUsers/" + MainActivity.plateUser);
+            Query query = FirebaseDatabase.getInstance().getReference("Chat/listChatUsers/" + plate_user);
             FirebaseListOptions<listUsertoChat> options = new FirebaseListOptions.Builder<listUsertoChat>()
                     .setQuery(query, listUsertoChat.class)
                     .setLayout(R.layout.messageslist)
@@ -313,12 +318,12 @@ public class chatMainScreen extends Fragment {
     }
 
     private void deleteChat(){
-        DatabaseReference Chat = FirebaseDatabase.getInstance().getReference("Chat/"+MainActivity.plateUser);
+        DatabaseReference Chat = FirebaseDatabase.getInstance().getReference("Chat/"+ plate_user);
         Chat.child(userToChat).removeValue();
     }
 
     private void deleteListChat(){
-        DatabaseReference Chat = FirebaseDatabase.getInstance().getReference("Chat/listChatUsers/"+MainActivity.plateUser);
+        DatabaseReference Chat = FirebaseDatabase.getInstance().getReference("Chat/listChatUsers/"+ plate_user);
         Chat.orderByChild("userToChat").equalTo(userToChat).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

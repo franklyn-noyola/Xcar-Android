@@ -43,6 +43,7 @@ public class newuser extends AppCompatActivity {
     String cartype="",carBrand="", carModel="", carColor="", yearCar="", resetPass="0";
     Button btnRegister;
     String welcomeMessage;
+    String userEmail;
     String headerMessage;
     String bodyMessage;
 
@@ -170,8 +171,7 @@ public class newuser extends AppCompatActivity {
                     finish();
                     return;
                 }
-                final headUser mainHeadUser = new headUser(name_user.getText().toString(), email_user.getText().toString(), pass_user.getText().toString(), resetPass);
-                final UsersConnected user = new UsersConnected(plate_user.getText().toString().toUpperCase(), cartype, carBrand,carColor,carModel,yearCar,  "M");
+                final UsersConnected user = new UsersConnected(plate_user.getText().toString().toUpperCase(), cartype, carBrand,carColor,carModel,yearCar,  "M", name_user.getText().toString(), email_user.getText().toString(), pass_user.getText().toString(), resetPass);
                 final ActivatedUser activated = new ActivatedUser("OFF", plate_user.getText().toString().toUpperCase(), email_user.getText().toString());
                 DatabaseReference userActivated = FirebaseDatabase.getInstance().getReference("Users/ActivatedUser");
                 Users = FirebaseDatabase.getInstance().getReference("Users");
@@ -204,13 +204,12 @@ public class newuser extends AppCompatActivity {
                             if (plate_noExist && email_noExist) {
                                 System.out.println("email=" + email_noExist +" plate=" + plate_noExist);
                                 userPlate = plate_user.getText().toString().toUpperCase();
+                                userEmail = email_user.getText().toString();
                                 String id3 = userActivated.push().getKey();
                                 String dot1 = new String (email_user.getText().toString());
                                 String dot2 = dot1.replace(".","_");
                                 DatabaseReference userEmail = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
-                                String id = userEmail.push().getKey();
                                 String id2 = userEmail.push().getKey();
-                                userEmail.child(id).setValue(mainHeadUser);
                                 userEmail.child(id2).setValue(user);
                                 userActivated.child(id3).setValue(activated);
                                 if (userLanguage.equals("ES")) {

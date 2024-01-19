@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     public static String chatUser;
     public TextView welcomeTextView,forgottenPass,newUserLink;
     public Button btnLogin;
-    public static String plateUser;
+    public static String email_user;
     public static int init = 0;
     public static int profileView=0;
     public static String plate_user;
@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
                             welcomeTextView = findViewById(R.id.welcomeText);
                             forgottenPass = findViewById(R.id.forgottenPass);
                             newUserLink = findViewById(R.id.newUser);
-                            plateUser = mUser.getText().toString();
+                            email_user = mUser.getText().toString();
                             btnLogin =  findViewById(R.id.loginButton);
                             //setFieldsLanguage(userlanguage);
                             mPassword.setOnTouchListener(new View.OnTouchListener() {
@@ -260,22 +260,25 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void signIn(final String user_plate, final String password, String mToken, String language) {
-        plateUser = mUser.getText().toString().toUpperCase();
+    private void signIn(final String userEmail, final String password, String mToken, String language) {
+        email_user = mUser.getText().toString();
         context = LocaleHelper.setLocale(getApplication(), userlanguage);
         resources = context.getResources();
-        if (TextUtils.isEmpty(user_plate) || user_plate.length() <5 || user_plate.length() >10 || TextUtils.isEmpty(password) || password.length() < 8) {
+        if (TextUtils.isEmpty(userEmail) || TextUtils.isEmpty(password) || password.length() < 8) {
             Toast.makeText(this,R.string.wrong_user, Toast.LENGTH_SHORT).show();
             return;
         } else {
-            userSelected=plateUser;
-            Users = FirebaseDatabase.getInstance().getReference("Users");
+            userSelected=email_user;
 
-            Users.orderByChild("plate_user").equalTo(plateUser.toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
+            String dot1 = new String (mUser.getText().toString());
+            String dot2 = dot1.replace(".","_");
+            Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+
+            Users.orderByChild("user_email").equalTo(email_user).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if (dataSnapshot.exists()) {
-                        if (!TextUtils.isEmpty(user_plate)) {
+                        if (!TextUtils.isEmpty(userEmail)) {
                             for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                                 passwordFind = snapshot.child("user_password").getValue().toString();
                                 UserSel = snapshot.child("user_name").getValue().toString();
@@ -290,7 +293,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                         Users = FirebaseDatabase.getInstance().getReference("Users/ActivatedUser");
-                        Users.orderByChild("userActivated").equalTo(plateUser.toUpperCase()).addValueEventListener(new ValueEventListener() {
+                        Users.orderByChild("emailActivated").equalTo(email_user).addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 if (snapshot.exists()) {
@@ -300,52 +303,52 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                     if (userActive.equals("OFF")) {
                                         if (userlanguage.toUpperCase().equals("ES")) {
-                                            Toast.makeText(getApplicationContext(), "El usuario " + plateUser.toUpperCase() + " no está activado. Vaya al email (Bandeja de Entrada o Spam) y activelo en el link Activar Usuario", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), "El usuario con el " + email_user + " no está activado. Vaya al email (Bandeja de Entrada o Spam) y activelo en el link Activar Usuario", Toast.LENGTH_LONG).show();
                                         }
                                         if (userlanguage.toUpperCase().equals("EN")){
-                                            Toast.makeText(getApplicationContext(), "Account " + plateUser.toUpperCase() + " is not activated. Go to your email(Inbox or Spam) and activate it in the link Activate Account", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), "Account with " + email_user + " is not activated. Go to your email(Inbox or Spam) and activate it in the link Activate Account", Toast.LENGTH_LONG).show();
                                         }
                                         if (userlanguage.toUpperCase().equals("FR")){
-                                            Toast.makeText(getApplicationContext(), "L'utilisateur " + plateUser.toUpperCase() + " n'est pas activé. Accédez à votre messagerie (Boîte de réception ou Spam) et activez-la dans le lien Activer l'utilisateur", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), "L'utilisateur avec" + email_user.toUpperCase() + " n'est pas activé. Accédez à votre messagerie (Boîte de réception ou Spam) et activez-la dans le lien Activer l'utilisateur", Toast.LENGTH_LONG).show();
                                         }
                                         if (userlanguage.toUpperCase().equals("DE")){
-                                            Toast.makeText(getApplicationContext(), "Benutzer " + plateUser.toUpperCase() + " ist nicht aktiviert. Gehen Sie zu Ihrer E-Mail (Posteingang oder Spam) und aktivieren Sie sie über den Link Benutzer aktivieren", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), "Benutzer " + email_user + " ist nicht aktiviert. Gehen Sie zu Ihrer E-Mail (Posteingang oder Spam) und aktivieren Sie sie über den Link Benutzer aktivieren", Toast.LENGTH_LONG).show();
                                         }
                                         if (userlanguage.toUpperCase().equals("IT")){
-                                            Toast.makeText(getApplicationContext(), "L'utente " + plateUser.toUpperCase() + " non è attivato. Vai alla tua e-mail (Posta in arrivo o Spam) e attivala nel collegamento Attiva utente", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), "L'utente " + email_user + " non è attivato. Vai alla tua e-mail (Posta in arrivo o Spam) e attivala nel collegamento Attiva utente", Toast.LENGTH_LONG).show();
                                         }
                                         if (userlanguage.toUpperCase().equals("PT")){
-                                            Toast.makeText(getApplicationContext(), "O usuário " + plateUser.toUpperCase() + " não está ativado. Acesse o e-mail (Caixa de entrada ou Spam) e ative-o no link Ativar usuário", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), "O usuário " + email_user + " não está ativado. Acesse o e-mail (Caixa de entrada ou Spam) e ative-o no link Ativar usuário", Toast.LENGTH_LONG).show();
                                         }
                                         if (userlanguage.toUpperCase().equals("RU")) {
-                                            Toast.makeText(getApplicationContext(), "Пользователь "+ plateUser.toUpperCase() + " не активирован. Перейдите к письму (Входящие или Спам) и активируйте его по ссылке Активировать пользователя.", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), "Пользователь "+ email_user  + " не активирован. Перейдите к письму (Входящие или Спам) и активируйте его по ссылке Активировать пользователя.", Toast.LENGTH_LONG).show();
                                         }
                                         if (userlanguage.toUpperCase().equals("ZH")) {
-                                            Toast.makeText(getApplicationContext(), "用户 "+ plateUser.toUpperCase() +" 未激活。转到电子邮件（收件箱或垃圾邮件），然后在“激活用户”链接中将其激活。", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), "用户 "+ email_user +" 未激活。转到电子邮件（收件箱或垃圾邮件），然后在“激活用户”链接中将其激活。", Toast.LENGTH_LONG).show();
                                         }
                                         if (userlanguage.toUpperCase().equals("JA")) {
-                                            Toast.makeText(getApplicationContext(), "ユーザー "+ plateUser.toUpperCase()+" はアクティブ化されていません。電子メール（受信トレイまたはスパム）に移動し、[ユーザーのアクティブ化]リンクでアクティブ化します。", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), "ユーザー "+ email_user+" はアクティブ化されていません。電子メール（受信トレイまたはスパム）に移動し、[ユーザーのアクティブ化]リンクでアクティブ化します。", Toast.LENGTH_LONG).show();
                                         }
                                         if (userlanguage.toUpperCase().equals("NL")) {
-                                            Toast.makeText(getApplicationContext(), "De gebruiker "+ plateUser.toUpperCase() +" is niet geactiveerd. Ga naar de e-mail (Inbox of Spam) en activeer deze in de link Gebruiker activeren.", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), "De gebruiker "+ email_user +" is niet geactiveerd. Ga naar de e-mail (Inbox of Spam) en activeer deze in de link Gebruiker activeren.", Toast.LENGTH_LONG).show();
                                         }
                                         if (userlanguage.toUpperCase().equals("PL")) {
-                                            Toast.makeText(getApplicationContext(), "Użytkownik " + plateUser.toUpperCase() +" nie jest aktywowany. Przejdź do e-maila (Skrzynka odbiorcza lub Spam) i aktywuj go w linku Aktywuj użytkownika.", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), "Użytkownik " + email_user +" nie jest aktywowany. Przejdź do e-maila (Skrzynka odbiorcza lub Spam) i aktywuj go w linku Aktywuj użytkownika.", Toast.LENGTH_LONG).show();
                                         }
                                         if (userlanguage.toUpperCase().equals("KO")) {
-                                            Toast.makeText(getApplicationContext(), "사용자 "+ plateUser.toUpperCase() +" 가 활성화되지 않았습니다. 이메일 (받은 편지함 또는 스팸)로 이동하여 사용자 활성화 링크에서 활성화합니다.", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), "사용자 "+ email_user +" 가 활성화되지 않았습니다. 이메일 (받은 편지함 또는 스팸)로 이동하여 사용자 활성화 링크에서 활성화합니다.", Toast.LENGTH_LONG).show();
                                         }
                                         if (userlanguage.toUpperCase().equals("SV")) {
-                                            Toast.makeText(getApplicationContext(), "Användaren "+ plateUser.toUpperCase() +" är inte aktiverad. Gå till e-postmeddelandet (inkorg eller skräppost) och aktivera det i länken Aktivera användare.", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), "Användaren "+ email_user +" är inte aktiverad. Gå till e-postmeddelandet (inkorg eller skräppost) och aktivera det i länken Aktivera användare.", Toast.LENGTH_LONG).show();
                                         }
                                         if (userlanguage.toUpperCase().equals("AR")) {
-                                            Toast.makeText(getApplicationContext(), "المستخدم " + plateUser.toUpperCase() + " لم يتم تفعيله. انتقل إلى البريد الإلكتروني (صندوق الوارد أو البريد العشوائي) وقم بتنشيطه في رابط تنشيط المستخدم.", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), "المستخدم " + email_user + " لم يتم تفعيله. انتقل إلى البريد الإلكتروني (صندوق الوارد أو البريد العشوائي) وقم بتنشيطه في رابط تنشيط المستخدم.", Toast.LENGTH_LONG).show();
                                         }
                                         if (userlanguage.toUpperCase().equals("UR")) {
-                                            Toast.makeText(getApplicationContext(), "صارف " + plateUser.toUpperCase() + " چالو نہیں ہے۔ ای میل پر جائیں (ان باکس یا اسپام) اور اسے چالو کرنے والے صارف کے لنک میں چالو کریں۔", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), "صارف " + email_user + " چالو نہیں ہے۔ ای میل پر جائیں (ان باکس یا اسپام) اور اسے چالو کرنے والے صارف کے لنک میں چالو کریں۔", Toast.LENGTH_LONG).show();
                                         }
                                         if (userlanguage.toUpperCase().equals("HI")) {
-                                            Toast.makeText(getApplicationContext(), "उपयोगकर्ता "+ plateUser.toUpperCase() +" सक्रिय नहीं है। ईमेल (इनबॉक्स या स्पैम) पर जाएं और इसे सक्रिय उपयोगकर्ता लिंक में सक्रिय करें।", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), "उपयोगकर्ता "+ email_user +" सक्रिय नहीं है। ईमेल (इनबॉक्स या स्पैम) पर जाएं और इसे सक्रिय उपयोगकर्ता लिंक में सक्रिय करें।", Toast.LENGTH_LONG).show();
                                         }
 
                                         return;
@@ -359,7 +362,7 @@ public class MainActivity extends AppCompatActivity {
                                                 profileView=0;
                                                 init =1;
                                                 activeSessionCreate(mToken);
-                                                pushCreate(plateUser);
+                                                pushCreate(plate_user);
                                                 progressBar.setVisibility(View.VISIBLE);
                                                 new Thread(new Runnable() {
                                                     @Override
@@ -393,52 +396,52 @@ public class MainActivity extends AppCompatActivity {
                                 }
                                 else {
                                     if (userlanguage.toUpperCase().equals("ES")) {
-                                        Toast.makeText(getApplicationContext(), "El usuario " + plateUser.toUpperCase() + " no está activado. Vaya al email (Bandeja de Entrada o Spam) y activelo en el link Activar Usuario", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "El usuario con el email" + email_user + " no está activado. Vaya al email (Bandeja de Entrada o Spam) y activelo en el link Activar Usuario", Toast.LENGTH_LONG).show();
                                     }
                                     if (userlanguage.toUpperCase().equals("EN")){
-                                        Toast.makeText(getApplicationContext(), "Account " + plateUser.toUpperCase() + " is not activated. Go to your email(Inbox or Spam) and activate it in the link Activate Account", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "Account with email " + email_user + " is not activated. Go to your email(Inbox or Spam) and activate it in the link Activate Account", Toast.LENGTH_LONG).show();
                                     }
                                     if (userlanguage.toUpperCase().equals("FR")){
-                                        Toast.makeText(getApplicationContext(), "L'utilisateur " + plateUser.toUpperCase() + " n'est pas activé. Accédez à votre messagerie (Boîte de réception ou Spam) et activez-la dans le lien Activer l'utilisateur", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "L'utilisateur avec" + email_user + " n'est pas activé. Accédez à votre messagerie (Boîte de réception ou Spam) et activez-la dans le lien Activer l'utilisateur", Toast.LENGTH_LONG).show();
                                     }
                                     if (userlanguage.toUpperCase().equals("DE")){
-                                        Toast.makeText(getApplicationContext(), "Benutzer " + plateUser.toUpperCase() + " ist nicht aktiviert. Gehen Sie zu Ihrer E-Mail (Posteingang oder Spam) und aktivieren Sie sie über den Link Benutzer aktivieren", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "Benutzer " + email_user + " ist nicht aktiviert. Gehen Sie zu Ihrer E-Mail (Posteingang oder Spam) und aktivieren Sie sie über den Link Benutzer aktivieren", Toast.LENGTH_LONG).show();
                                     }
                                     if (userlanguage.toUpperCase().equals("IT")){
-                                        Toast.makeText(getApplicationContext(), "L'utente " + plateUser.toUpperCase() + " non è attivato. Vai alla tua e-mail (Posta in arrivo o Spam) e attivala nel collegamento Attiva utente", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "L'utente " + email_user + " non è attivato. Vai alla tua e-mail (Posta in arrivo o Spam) e attivala nel collegamento Attiva utente", Toast.LENGTH_LONG).show();
                                     }
                                     if (userlanguage.toUpperCase().equals("PT")){
-                                        Toast.makeText(getApplicationContext(), "O usuário" + plateUser.toUpperCase () + "não está ativado. Acesse o e-mail (Caixa de entrada ou Spam) e ative-o no link Ativar usuário", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "O usuário" + email_user + "não está ativado. Acesse o e-mail (Caixa de entrada ou Spam) e ative-o no link Ativar usuário", Toast.LENGTH_LONG).show();
                                     }
                                     if (userlanguage.toUpperCase().equals("RU")) {
-                                        Toast.makeText(getApplicationContext(), "Пользователь "+ plateUser.toUpperCase() + " не активирован. Перейдите к письму (Входящие или Спам) и активируйте его по ссылке Активировать пользователя.", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "Пользователь "+ email_user + " не активирован. Перейдите к письму (Входящие или Спам) и активируйте его по ссылке Активировать пользователя.", Toast.LENGTH_LONG).show();
                                     }
                                     if (userlanguage.toUpperCase().equals("ZH")) {
-                                        Toast.makeText(getApplicationContext(), "用户 "+ plateUser.toUpperCase() +" 未激活。转到电子邮件（收件箱或垃圾邮件），然后在“激活用户”链接中将其激活。", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "用户 "+ email_user +" 未激活。转到电子邮件（收件箱或垃圾邮件），然后在“激活用户”链接中将其激活。", Toast.LENGTH_LONG).show();
                                     }
                                     if (userlanguage.toUpperCase().equals("JA")) {
-                                        Toast.makeText(getApplicationContext(), "ユーザー "+ plateUser.toUpperCase()+" はアクティブ化されていません。電子メール（受信トレイまたはスパム）に移動し、[ユーザーのアクティブ化]リンクでアクティブ化します。", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "ユーザー "+ email_user+" はアクティブ化されていません。電子メール（受信トレイまたはスパム）に移動し、[ユーザーのアクティブ化]リンクでアクティブ化します。", Toast.LENGTH_LONG).show();
                                     }
                                     if (userlanguage.toUpperCase().equals("NL")) {
-                                        Toast.makeText(getApplicationContext(), "De gebruiker "+ plateUser.toUpperCase() +" is niet geactiveerd. Ga naar de e-mail (Inbox of Spam) en activeer deze in de link Gebruiker activeren.", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "De gebruiker "+ email_user +" is niet geactiveerd. Ga naar de e-mail (Inbox of Spam) en activeer deze in de link Gebruiker activeren.", Toast.LENGTH_LONG).show();
                                     }
                                     if (userlanguage.toUpperCase().equals("PL")) {
-                                        Toast.makeText(getApplicationContext(), "Użytkownik " + plateUser.toUpperCase() +" nie jest aktywowany. Przejdź do e-maila (Skrzynka odbiorcza lub Spam) i aktywuj go w linku Aktywuj użytkownika.", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "Użytkownik " + email_user +" nie jest aktywowany. Przejdź do e-maila (Skrzynka odbiorcza lub Spam) i aktywuj go w linku Aktywuj użytkownika.", Toast.LENGTH_LONG).show();
                                     }
                                     if (userlanguage.toUpperCase().equals("KO")) {
-                                        Toast.makeText(getApplicationContext(), "사용자 "+ plateUser.toUpperCase() +" 가 활성화되지 않았습니다. 이메일 (받은 편지함 또는 스팸)로 이동하여 사용자 활성화 링크에서 활성화합니다.", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "사용자 "+ email_user +" 가 활성화되지 않았습니다. 이메일 (받은 편지함 또는 스팸)로 이동하여 사용자 활성화 링크에서 활성화합니다.", Toast.LENGTH_LONG).show();
                                     }
                                     if (userlanguage.toUpperCase().equals("SV")) {
-                                        Toast.makeText(getApplicationContext(), "Användaren "+ plateUser.toUpperCase() +" är inte aktiverad. Gå till e-postmeddelandet (inkorg eller skräppost) och aktivera det i länken Aktivera användare.", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "Användaren "+ email_user +" är inte aktiverad. Gå till e-postmeddelandet (inkorg eller skräppost) och aktivera det i länken Aktivera användare.", Toast.LENGTH_LONG).show();
                                     }
                                     if (userlanguage.toUpperCase().equals("AR")) {
-                                        Toast.makeText(getApplicationContext(), "المستخدم " + plateUser.toUpperCase() + " لم يتم تفعيله. انتقل إلى البريد الإلكتروني (صندوق الوارد أو البريد العشوائي) وقم بتنشيطه في رابط تنشيط المستخدم.", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "المستخدم " + email_user + " لم يتم تفعيله. انتقل إلى البريد الإلكتروني (صندوق الوارد أو البريد العشوائي) وقم بتنشيطه في رابط تنشيط المستخدم.", Toast.LENGTH_LONG).show();
                                     }
                                     if (userlanguage.toUpperCase().equals("UR")) {
-                                        Toast.makeText(getApplicationContext(), "صارف " + plateUser.toUpperCase() + " چالو نہیں ہے۔ ای میل پر جائیں (ان باکس یا اسپام) اور اسے چالو کرنے والے صارف کے لنک میں چالو کریں۔", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "صارف " + email_user + " چالو نہیں ہے۔ ای میل پر جائیں (ان باکس یا اسپام) اور اسے چالو کرنے والے صارف کے لنک میں چالو کریں۔", Toast.LENGTH_LONG).show();
                                     }
                                     if (userlanguage.toUpperCase().equals("HI")) {
-                                        Toast.makeText(getApplicationContext(), "उपयोगकर्ता "+ plateUser.toUpperCase() +" सक्रिय नहीं है। ईमेल (इनबॉक्स या स्पैम) पर जाएं और इसे सक्रिय उपयोगकर्ता लिंक में सक्रिय करें।", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "उपयोगकर्ता "+ email_user +" सक्रिय नहीं है। ईमेल (इनबॉक्स या स्पैम) पर जाएं और इसे सक्रिय उपयोगकर्ता लिंक में सक्रिय करें।", Toast.LENGTH_LONG).show();
                                     }
 
                                 }
@@ -510,7 +513,7 @@ public class MainActivity extends AppCompatActivity {
                             welcomeTextView = findViewById(R.id.welcomeText);
                             forgottenPass = findViewById(R.id.forgottenPass);
                             newUserLink = findViewById(R.id.newUser);
-                            plateUser = mUser.getText().toString();
+                            email_user = mUser.getText().toString();
                             btnLogin = findViewById(R.id.loginButton);
                             setFieldsLanguage(userlanguage);
                             mPassword.setOnTouchListener(new View.OnTouchListener() {
@@ -560,7 +563,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void activeSessionCreate(final String mToken) {
-        final sessionActiveUser activeSessionUser = new sessionActiveUser(plateUser, "ON");
+        final sessionActiveUser activeSessionUser = new sessionActiveUser(email_user, "ON");
         final DatabaseReference sessionActiveDb = FirebaseDatabase.getInstance().getReference("activeSession/"+mToken);
         sessionActiveDb.addValueEventListener(new ValueEventListener() {
             @Override
@@ -692,11 +695,11 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
                     for (DataSnapshot ds: snapshot.getChildren()){
-                        plateUser = ds.child("activeUser").getValue().toString();
+                        email_user = ds.child("activeUser").getValue().toString();
                     }
-                    if (!TextUtils.isEmpty(plateUser)) {
-                        getDataUserSession(plateUser);
-                        userSelected = plateUser.toUpperCase();
+                    if (!TextUtils.isEmpty(email_user)) {
+                        getDataUserSession(email_user);
+                        userSelected = email_user;
                         Intent intent = new Intent(getApplicationContext(), profile_activity.class);
                         startActivity(intent);
                         init = 1;
@@ -711,7 +714,7 @@ public class MainActivity extends AppCompatActivity {
                         welcomeTextView =  findViewById(R.id.welcomeText);
                         forgottenPass =  findViewById(R.id.forgottenPass);
                         newUserLink =  findViewById(R.id.newUser);
-                        plateUser = mUser.getText().toString();
+                        email_user = mUser.getText().toString();
                         btnLogin =  findViewById(R.id.loginButton);
                         mUser.setHint(resources.getString(R.string.plateHint));
                         mPassword.setHint(resources.getString(R.string.passHint));
@@ -764,7 +767,7 @@ public class MainActivity extends AppCompatActivity {
                     welcomeTextView = findViewById(R.id.welcomeText);
                     forgottenPass = findViewById(R.id.forgottenPass);
                     newUserLink = findViewById(R.id.newUser);
-                    plateUser = mUser.getText().toString();
+                    email_user = mUser.getText().toString();
                     btnLogin = findViewById(R.id.loginButton);
                     mPassword.setOnTouchListener(new View.OnTouchListener() {
                         @Override
@@ -852,12 +855,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static void getDataUserSession(String plateUser) {
-        DatabaseReference Users = FirebaseDatabase.getInstance().getReference("Users");
-        Users.orderByChild("plate_user").equalTo(plateUser.toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
+        String dot1 = new String (email_user);
+        String dot2 = dot1.replace(".","_");
+        DatabaseReference Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+        Users.orderByChild("user_email").equalTo(email_user).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        plate_user = snapshot.child("plate_user").getValue().toString();
                         UserSel = snapshot.child("user_name").getValue().toString();
                         emailSelected= snapshot.child("user_email").getValue().toString();
                     }
@@ -948,7 +954,7 @@ public class MainActivity extends AppCompatActivity {
                 Map<String, Object> updates = null;
                 for (DataSnapshot ds:snapshot.getChildren()){
                     updates =  new HashMap<String, Object>();
-                    updates.put("activeUser", plateUser);
+                    updates.put("activeUser", email_user);
                     updates.put("active", "ON");
                 }
                 snapshot.getRef().updateChildren(updates);

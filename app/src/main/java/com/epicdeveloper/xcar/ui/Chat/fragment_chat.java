@@ -151,7 +151,7 @@ public class fragment_chat extends AppCompatActivity {
         inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (MainActivity.chatScreen == 1 || MainActivity.chatScreen == 3) {
             userFragmentToChat = MainActivity.chatUser;
-            DatabaseReference blockedUser = FirebaseDatabase.getInstance().getReference("BlockUsers").child(MainActivity.plateUser).child(MainActivity.chatUser);
+            DatabaseReference blockedUser = FirebaseDatabase.getInstance().getReference("BlockUsers").child(MainActivity.plate_user).child(MainActivity.chatUser);
             Query query = blockedUser.orderByChild("Blocked").equalTo("Si");
 
             query.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -209,24 +209,24 @@ public class fragment_chat extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), resources.getString(string.NoMessageSendLockUser), Toast.LENGTH_SHORT).show();
                 sendMessage.setText("");
             } else {
-                getUserBlocked(MainActivity.plateUser, new FirebaseSuccessListener() {
+                getUserBlocked(MainActivity.plate_user, new FirebaseSuccessListener() {
                     @Override
                     public void onCallBack(boolean isDataFetched) {
                         Chat = FirebaseDatabase.getInstance().getReference("Chat");
-                        Chat2 = FirebaseDatabase.getInstance().getReference("Chat/" + userFragmentToChat + "/" + MainActivity.plateUser);
+                        Chat2 = FirebaseDatabase.getInstance().getReference("Chat/" + userFragmentToChat + "/" + MainActivity.plate_user);
                         messageSent = sendMessage.getText().toString();
                         String id = Chat2.push().getKey();
                         String id2 = Chat.push().getKey();
                         if (isDataFetched) {
                             assert id2 != null;
-                            Chat.child(MainActivity.plateUser).child(userFragmentToChat).child(id2).setValue(new chatMessage(messageSent, MainActivity.plateUser, "text"));
+                            Chat.child(MainActivity.plate_user).child(userFragmentToChat).child(id2).setValue(new chatMessage(messageSent, MainActivity.plate_user, "text"));
                             setListChatUsers(messageSent, "text");
                         } else {
                             if (!TextUtils.isEmpty(messageSent)) {
                                 assert id2 != null;
-                                Chat.child(MainActivity.plateUser).child(userFragmentToChat).child(id2).setValue(new chatMessage(messageSent, MainActivity.plateUser, "text"));
+                                Chat.child(MainActivity.plate_user).child(userFragmentToChat).child(id2).setValue(new chatMessage(messageSent, MainActivity.plate_user, "text"));
                                 assert id != null;
-                                Chat2.child(id).setValue(new chatMessage(messageSent, MainActivity.plateUser, "text"));
+                                Chat2.child(id).setValue(new chatMessage(messageSent, MainActivity.plate_user, "text"));
                                 sendMessagePush(messageSent, null);
                                 setListChatUsers(messageSent, "text");
                                 setListChatUsers2(messageSent, "text");
@@ -250,7 +250,7 @@ public class fragment_chat extends AppCompatActivity {
                                               if (userBlockedTitle.contains(resources.getString(string.locked))) {
                                                   Toast.makeText(getApplicationContext(), resources.getString(string.NoMessageSendLockUser), Toast.LENGTH_SHORT).show();
                                               } else {
-                                                  getUserBlocked(MainActivity.plateUser, isDataFetched -> {
+                                                  getUserBlocked(MainActivity.plate_user, isDataFetched -> {
                                                       Intent intent = new Intent();
                                                       if (isDataFetched) {
                                                           blocked1 = "blocked";
@@ -277,7 +277,7 @@ public class fragment_chat extends AppCompatActivity {
             if (userBlockedTitle.contains(resources.getString(string.locked))) {
                 Toast.makeText(getApplicationContext(), resources.getString(string.NoMessageSendLockUser), Toast.LENGTH_SHORT).show();
             } else {
-                getUserBlocked(MainActivity.plateUser, new FirebaseSuccessListener() {
+                getUserBlocked(MainActivity.plate_user, new FirebaseSuccessListener() {
                     @Override
                     public void onCallBack(boolean isDataFetched) {
 
@@ -308,7 +308,7 @@ public class fragment_chat extends AppCompatActivity {
             }
         });
                 displayChatMessages();
-        DatabaseReference imageSel = FirebaseDatabase.getInstance().getReference("Chat/" + MainActivity.plateUser + "/" + userFragmentToChat);
+        DatabaseReference imageSel = FirebaseDatabase.getInstance().getReference("Chat/" + MainActivity.plate_user + "/" + userFragmentToChat);
         imageSel.orderByChild("messageTimeFrom").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -396,11 +396,11 @@ public class fragment_chat extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),resources.getString(R.string.noImage), Toast.LENGTH_SHORT).show();
             }else if(checker.equals("image")){
                 StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Imagenes");
-                Chat = FirebaseDatabase.getInstance().getReference("Chat/" + MainActivity.plateUser + "/" + userFragmentToChat);
-                Chat2=FirebaseDatabase.getInstance().getReference("Chat/"+userFragmentToChat+"/"+MainActivity.plateUser);
+                Chat = FirebaseDatabase.getInstance().getReference("Chat/" + MainActivity.plate_user + "/" + userFragmentToChat);
+                Chat2=FirebaseDatabase.getInstance().getReference("Chat/"+userFragmentToChat+"/"+MainActivity.plate_user);
                 String id = Chat.push().getKey();
                 String id2 = Chat2.push().getKey();
-                StorageReference filePath = storageReference.child(MainActivity.plateUser+"-"+id+"."+"jpg");
+                StorageReference filePath = storageReference.child(MainActivity.plate_user+"-"+id+"."+"jpg");
                 StorageReference filePath2 = storageReference.child(userFragmentToChat+"-"+id+"."+"jpg");
 
                 StorageTask uploadTask = filePath.putFile(fileUri);
@@ -422,7 +422,7 @@ public class fragment_chat extends AppCompatActivity {
                             Uri downloadUrl = task.getResult();
                             myUri = downloadUrl.toString();
                             Chat = FirebaseDatabase.getInstance().getReference("Chat");
-                            Chat.child(MainActivity.plateUser).child(userFragmentToChat).child(id2).setValue(new chatMessage(myUri, MainActivity.plateUser,"image"));
+                            Chat.child(MainActivity.plate_user).child(userFragmentToChat).child(id2).setValue(new chatMessage(myUri, MainActivity.plate_user,"image"));
                             if (!blocked1.equals("blocked")){
                                 sendMessagePush("$Foto$",myUri);
                             }
@@ -447,7 +447,7 @@ public class fragment_chat extends AppCompatActivity {
                             Uri downloadUrl = task.getResult();
                             myUri2 = downloadUrl.toString();
                             assert id != null;
-                            Chat2.child(id).setValue(new chatMessage(myUri2, MainActivity.plateUser, "image"));
+                            Chat2.child(id).setValue(new chatMessage(myUri2, MainActivity.plate_user, "image"));
                             setListChatUsers2(myUri2, "image");
                         }
                     });
@@ -590,7 +590,7 @@ public class fragment_chat extends AppCompatActivity {
     }
 
     public void getblockedUser(final String userBlock,final  FirebaseSuccessListener dataFetched){
-        DatabaseReference blockedUser = FirebaseDatabase.getInstance().getReference("BlockUsers").child(MainActivity.plateUser).child(userBlock);
+        DatabaseReference blockedUser = FirebaseDatabase.getInstance().getReference("BlockUsers").child(MainActivity.plate_user).child(userBlock);
         Query query = blockedUser.orderByChild("Blocked").equalTo("Si");
                 ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
@@ -637,7 +637,7 @@ public class fragment_chat extends AppCompatActivity {
 
     private void displayChatMessages() {
         messageList= findViewById(id.list_of_messages);
-        Query query = FirebaseDatabase.getInstance().getReference("Chat/" + MainActivity.plateUser + "/" + userFragmentToChat);
+        Query query = FirebaseDatabase.getInstance().getReference("Chat/" + MainActivity.plate_user + "/" + userFragmentToChat);
         FirebaseListOptions<chatMessage> options = new FirebaseListOptions.Builder<chatMessage>()
                 .setQuery(query, chatMessage.class)
                 .setLayout(messages)
@@ -667,7 +667,7 @@ public class fragment_chat extends AppCompatActivity {
                         messageTime.setText(model.getMessageTimeTo());
 
                     }
-                    if (model.getChatFrom().equals(MainActivity.plateUser)) {
+                    if (model.getChatFrom().equals(MainActivity.plate_user)) {
                         lp.gravity = Gravity.RIGHT | Gravity.END;
                         lp.setMargins(10, 10, 10, 10);
                         messageText.setText(model.getMessageText());
@@ -695,7 +695,7 @@ public class fragment_chat extends AppCompatActivity {
                         messageTime.setLayoutParams(lp);
                         messageTime.setText(model.getMessageTimeTo());
                     }
-                    if (model.getChatFrom().equals(MainActivity.plateUser)) {
+                    if (model.getChatFrom().equals(MainActivity.plate_user)) {
                         lp.gravity = Gravity.RIGHT | Gravity.END;
                         lp.setMargins(10, 10, 10, 10);
                         vi.width=500;
@@ -717,7 +717,7 @@ public class fragment_chat extends AppCompatActivity {
 
 
     public void setListChatUsers(final String messageSentout, final String typeMsg){
-        final DatabaseReference Chat3=FirebaseDatabase.getInstance().getReference("Chat/listChatUsers"+"/"+MainActivity.plateUser);
+        final DatabaseReference Chat3=FirebaseDatabase.getInstance().getReference("Chat/listChatUsers"+"/"+MainActivity.plate_user);
         Chat3.orderByChild("userToChat").equalTo(userFragmentToChat).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -746,7 +746,7 @@ public class fragment_chat extends AppCompatActivity {
         }
 
     public void setBlockListChatUsers(final String first, final String second){
-        final DatabaseReference Chat3=FirebaseDatabase.getInstance().getReference("Chat/listChatUsers"+"/"+MainActivity.plateUser);
+        final DatabaseReference Chat3=FirebaseDatabase.getInstance().getReference("Chat/listChatUsers"+"/"+MainActivity.plate_user);
         Chat3.orderByChild("userToChat").equalTo(userFragmentToChat).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -776,7 +776,7 @@ public class fragment_chat extends AppCompatActivity {
 
     public void setListChatUsers2(final String messageSentout, final String typeMsg){
         final DatabaseReference Chat4=FirebaseDatabase.getInstance().getReference("Chat/listChatUsers"+"/"+userFragmentToChat);
-        Chat4.orderByChild("userToChat").equalTo(MainActivity.plateUser).addListenerForSingleValueEvent(new ValueEventListener() {
+        Chat4.orderByChild("userToChat").equalTo(MainActivity.plate_user).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 long currentDate = new Date().getTime();
@@ -792,7 +792,7 @@ public class fragment_chat extends AppCompatActivity {
                     }
 
                 }else{
-                    Chat4.push().setValue(new listUsertoChat(messageSentout, MainActivity.plateUser,"",typeMsg));
+                    Chat4.push().setValue(new listUsertoChat(messageSentout, MainActivity.plate_user,"",typeMsg));
                 }
             }
             @Override
@@ -873,11 +873,11 @@ public class fragment_chat extends AppCompatActivity {
     }
 
     private void confirmDeleteChat(){
-        DatabaseReference Chat = FirebaseDatabase.getInstance().getReference("Chat/"+MainActivity.plateUser);
+        DatabaseReference Chat = FirebaseDatabase.getInstance().getReference("Chat/"+MainActivity.plate_user);
         Chat.child(userFragmentToChat).removeValue();
     }
     private void confirmDeleteListofUsers() {
-        DatabaseReference Chat = FirebaseDatabase.getInstance().getReference("Chat/listChatUsers/"+MainActivity.plateUser);
+        DatabaseReference Chat = FirebaseDatabase.getInstance().getReference("Chat/listChatUsers/"+MainActivity.plate_user);
         Chat.orderByChild("userToChat").equalTo(userFragmentToChat).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -896,7 +896,7 @@ public class fragment_chat extends AppCompatActivity {
     }
 
     public void blockUser(){
-        final DatabaseReference blockUser = FirebaseDatabase.getInstance().getReference("BlockUsers/"+MainActivity.plateUser);
+        final DatabaseReference blockUser = FirebaseDatabase.getInstance().getReference("BlockUsers/"+MainActivity.plate_user);
         Query query = blockUser.child(userFragmentToChat);
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
@@ -921,7 +921,7 @@ public class fragment_chat extends AppCompatActivity {
     }
 
     public void unblockUser(){
-        DatabaseReference blockUser = FirebaseDatabase.getInstance().getReference("BlockUsers/"+MainActivity.plateUser);
+        DatabaseReference blockUser = FirebaseDatabase.getInstance().getReference("BlockUsers/"+MainActivity.plate_user);
         blockUser.child(userFragmentToChat).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -947,7 +947,7 @@ public class fragment_chat extends AppCompatActivity {
         try{
             json.put("to", tokenUser);
             JSONObject notification = new JSONObject();
-            notification.put ("titulo", "Chat: "+MainActivity.plateUser);
+            notification.put ("titulo", "Chat: "+MainActivity.plate_user);
             if (messageOut.equals("$Foto$")){
                 notification.put("detalle","Foto");
                 notification.put("image",uri);

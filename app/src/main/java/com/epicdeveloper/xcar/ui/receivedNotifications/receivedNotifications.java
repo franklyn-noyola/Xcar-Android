@@ -155,7 +155,7 @@ public class receivedNotifications extends Fragment {
 
     private void deleteNotificacion(){
         DatabaseReference delNotification = FirebaseDatabase.getInstance().getReference("sendMessages");
-        Query query = delNotification.child(MainActivity.plateUser).orderByChild("messageTime").equalTo(itemgetTime);
+        Query query = delNotification.child(MainActivity.plate_user).orderByChild("messageTime").equalTo(itemgetTime);
         query.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
@@ -198,7 +198,7 @@ public class receivedNotifications extends Fragment {
         getTime = new ArrayList<>();
         imageViewUri = new ArrayList<>();
         notificationList = (ListView) root.findViewById(R.id.list_of_notifications);
-        Query query = FirebaseDatabase.getInstance().getReference("sendMessages/"+ MainActivity.plateUser);
+        Query query = FirebaseDatabase.getInstance().getReference("sendMessages/"+ MainActivity.plate_user);
         FirebaseListOptions<receivedNotificationsData> options = new FirebaseListOptions.Builder<receivedNotificationsData>()
                 .setQuery(query, receivedNotificationsData.class)
                 .setLayout(R.layout.notifications)

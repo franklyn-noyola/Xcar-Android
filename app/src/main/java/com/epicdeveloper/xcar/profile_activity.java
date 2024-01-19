@@ -1,4 +1,6 @@
 package com.epicdeveloper.xcar;
+import static com.epicdeveloper.xcar.MainActivity.email_user;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -52,6 +54,7 @@ public class profile_activity extends AppCompatActivity {
     private int noReadCount;
     private int countNoRead;
     private int notBack = 0;
+    public String plate;
     public static String selectedLanguage;
     private boolean noReadNoti=false;
     final int homeMenu = R.id.Home_Menu;
@@ -69,9 +72,14 @@ public class profile_activity extends AppCompatActivity {
     final int howitWorksAction = R.id.action_HowitWorks;
     final int shareAction = R.id.action_Share;
     final int logoutAction = R.id.action_logout;
+
+    public static String userPlate;
+
     Context context;
     Resources resources;
     Menu menu;
+
+
     Menu barNavigation;
     public static String mToken;
     BottomNavigationView bottomNavigationView;
@@ -79,6 +87,8 @@ public class profile_activity extends AppCompatActivity {
         EditText brandCarField, modelCarField, colorCarField, yearCarField, additionalPlate;
 
     Spinner carSelected;
+
+    public static String userplate;
 
     TextView addPlateLabel, infoLbl;
 
@@ -99,6 +109,7 @@ public class profile_activity extends AppCompatActivity {
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.setLocale(locale);
+        userplate = MainActivity.plate_user;
         getBaseContext().getResources().updateConfiguration(config,
                 getBaseContext().getResources().getDisplayMetrics());
         MainActivity.getInit = 1;
@@ -109,9 +120,7 @@ public class profile_activity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setTitle(resources.getString(R.string.home_menu));
-        getNotifications();
-
-
+        getUserData();
 
          bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
@@ -217,6 +226,7 @@ public class profile_activity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     private void logout() {
         AlertDialog alert = new AlertDialog.Builder(this).create();
 
@@ -247,8 +257,31 @@ public class profile_activity extends AppCompatActivity {
         alertNos.setLayoutParams(positive);
     }
 
-    public void getNotifications(){
-        final DatabaseReference getNoLeidos = FirebaseDatabase.getInstance().getReference("sendMessages").child(MainActivity.plateUser.toUpperCase());
+    public void getUserData() {
+        String dot1 = new String (email_user);
+        String dot2 = dot1.replace(".","_");
+        DatabaseReference Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+        Users.orderByChild("user_email").equalTo(email_user).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        userPlate = snapshot.child("plate_user").getValue().toString();
+                    }
+                        getNotifications(userPlate);
+                }
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+
+    public void getNotifications(String plateUser){
+        final DatabaseReference getNoLeidos = FirebaseDatabase.getInstance().getReference("sendMessages").child(plateUser.toUpperCase());
         getNoLeidos.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

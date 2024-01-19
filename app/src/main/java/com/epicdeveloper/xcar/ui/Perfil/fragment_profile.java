@@ -46,6 +46,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.epicdeveloper.xcar.MainActivity.email_user;
 import static com.epicdeveloper.xcar.R.layout.changepass;
 
 public class fragment_profile extends Fragment {
@@ -111,7 +112,7 @@ public class fragment_profile extends Fragment {
         btnchangePassButton = Profile.findViewById(R.id.modPass);
         btnchangePassButton.setHint(resources.getString(R.string.changePassHint));
         userSelected.setText(MainActivity.UserSel);
-        plateSelected.setText(MainActivity.userSelected);
+        plateSelected.setText(MainActivity.plate_user);
         emailSelected.setText(MainActivity.emailSelected);
         getInfoData();
 
@@ -242,8 +243,10 @@ public class fragment_profile extends Fragment {
                             Toast.makeText(context, resources.getString(R.string.noPassMatch), Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        Users = FirebaseDatabase.getInstance().getReference("Users");
-                        Query getData = Users.orderByChild("plate_user").equalTo(MainActivity.plateUser.toUpperCase());
+                        String dot1 = new String (email_user);
+                        String dot2 = dot1.replace(".","_");
+                        Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+                        Query getData = Users.orderByChild("user_email").equalTo(email_user);
                         final String changPass = newPassField.getText().toString();
                         ValueEventListener valueEventListener = (new ValueEventListener() {
                             @Override
@@ -292,9 +295,10 @@ public class fragment_profile extends Fragment {
 
        if (btnModiInfoButton.getHint().equals(resources.getString(R.string.updateInfo))){
             btnModiInfoButton.setHint(resources.getString(R.string.modifyInfo));
-
-           Users = FirebaseDatabase.getInstance().getReference("Users");
-           Users.orderByChild("plate_user").equalTo(MainActivity.plateUser.toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
+           String dot1 = new String (email_user);
+           String dot2 = dot1.replace(".","_");
+           Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+           Users.orderByChild("user_email").equalTo(email_user.toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
                @Override
                public void onDataChange(@NonNull DataSnapshot snapshot) {
                    for (DataSnapshot ds: snapshot.getChildren()){
@@ -334,8 +338,10 @@ public class fragment_profile extends Fragment {
     }
 
     private void getInfoData() {
-        Users = FirebaseDatabase.getInstance().getReference("Users");
-        Users.orderByChild("plate_user").equalTo(MainActivity.plateUser.toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
+        String dot1 = new String (email_user);
+        String dot2 = dot1.replace(".","_");
+        Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+        Users.orderByChild("user_email").equalTo(email_user).addListenerForSingleValueEvent(new ValueEventListener() {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {

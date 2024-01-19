@@ -39,8 +39,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Locale;
 
+import static com.epicdeveloper.xcar.MainActivity.email_user;
 import static com.epicdeveloper.xcar.MainActivity.getBackGround;
-import static com.epicdeveloper.xcar.MainActivity.plateUser;
+import static com.epicdeveloper.xcar.MainActivity.plate_user;
 
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
@@ -170,9 +171,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()) {
                             for (DataSnapshot ds : snapshot.getChildren()) {
-                            plateUser = ds.child("activeUser").getValue().toString();
+                            email_user = ds.child("activeUser").getValue().toString();
                         }
-                            if (!TextUtils.isEmpty(plateUser)) {
+                            if (!TextUtils.isEmpty(email_user)) {
                                 if (titulo.contains("Chat")) {
                                     String chat = com.epicdeveloper.xcar.ui.Chat.fragment_chat.class.getCanonicalName();
                                     idNotify=0;
@@ -192,7 +193,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                                     idNotify=1;
                                     try {
                                         notiUser = titulo.substring(14);
-                                        getNotificationData(detalle, plateUser, notiUser, new FirebaseCallBack() {
+                                        getNotificationData(detalle, plate_user, notiUser, new FirebaseCallBack() {
                                             @Override
                                             public void onCallback(String subject, String time, String image, String uri) {
                                                 receivedNotifications.readTargetUser = titulo.substring(14);
@@ -210,8 +211,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                                         e.printStackTrace();
                                     }
                                 }
-                                MainActivity.getDataUserSession(plateUser);
-                                MainActivity.userSelected = plateUser.toUpperCase();
+                                MainActivity.getDataUserSession(email_user);
+                                MainActivity.userSelected = email_user;
                                 MainActivity.init = 1;
                                } else {
                                 String chat = com.epicdeveloper.xcar.MainActivity.class.getCanonicalName();
