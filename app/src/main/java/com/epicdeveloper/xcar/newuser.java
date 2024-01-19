@@ -185,21 +185,24 @@ public class newuser extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if (!dataSnapshot.exists()) {
                                         email_noExist = true;
+                                    }else {
+                                        email_noExist = false;
                                     }
                                 }
                                 @Override
                                 public void onCancelled(@NonNull DatabaseError error) {
                                 }
                             });
-                            if (email_noExist==false ){
+
+                            if (email_noExist == false || plate_noExist == false) {
                                 errorMessage();
+                                email_noExist = false;
+                                plate_noExist = false;
                                 return;
                             }
-                            if (plate_noExist == false) {
-                                errorMessage();
-                                return;
-                            }
+
                             if (plate_noExist && email_noExist) {
+                                System.out.println("email=" + email_noExist +" plate=" + plate_noExist);
                                 userPlate = plate_user.getText().toString().toUpperCase();
                                 String id3 = userActivated.push().getKey();
                                 String dot1 = new String (email_user.getText().toString());
@@ -318,8 +321,6 @@ public class newuser extends AppCompatActivity {
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                 startActivity(intent);
                             }
-                        }else if (plate_noExist == false) {
-                            errorMessage();
                         }
                     }
                     @Override
