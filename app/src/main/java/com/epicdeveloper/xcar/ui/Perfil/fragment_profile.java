@@ -55,6 +55,7 @@ public class fragment_profile extends Fragment {
     EditText brandCarField, modelCarField, colorCarField, yearCarField, newPassField, confirmPassField;
     public List<String> cartypeSelected;
     Spinner carTypeField;
+    Spinner addedPlates;
     TextView carTypeFieldLbl;
     Button btnModiInfoButton, btnchangePassButton, btnCancelPassButton, btnUpdatePass, btnCancelModInfo;
     public  Object typeProfileCarUser;
@@ -246,7 +247,7 @@ public class fragment_profile extends Fragment {
                         String dot1 = new String (email_user);
                         String dot2 = dot1.replace(".","_");
                         Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
-                        Query getData = Users.orderByChild("user_email").equalTo(email_user);
+                        Query getData = Users.orderByChild("user_email").equalTo(MainActivity.emailSelected);
                         final String changPass = newPassField.getText().toString();
                         ValueEventListener valueEventListener = (new ValueEventListener() {
                             @Override
@@ -295,10 +296,11 @@ public class fragment_profile extends Fragment {
 
        if (btnModiInfoButton.getHint().equals(resources.getString(R.string.updateInfo))){
             btnModiInfoButton.setHint(resources.getString(R.string.modifyInfo));
-           String dot1 = new String (email_user);
+           String dot1 = new String (MainActivity.emailSelected);
            String dot2 = dot1.replace(".","_");
            Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
-           Users.orderByChild("user_email").equalTo(email_user.toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
+                ((Spinner)carTypeField).getSelectedView().setEnabled(false);
+           Users.orderByChild("user_email").equalTo(MainActivity.emailSelected).addListenerForSingleValueEvent(new ValueEventListener() {
                @Override
                public void onDataChange(@NonNull DataSnapshot snapshot) {
                    for (DataSnapshot ds: snapshot.getChildren()){
@@ -316,8 +318,7 @@ public class fragment_profile extends Fragment {
 
                }
            });
-                ((Spinner)carTypeField).getSelectedView().setEnabled(false);
-                if (carTypeField.getSelectedItemPosition() == 0) {
+           if (carTypeField.getSelectedItemPosition() == 0) {
                     carTypeFieldLbl.setText("");
                 }else {
                     carTypeFieldLbl.setText(carTypeField.getSelectedItem().toString());

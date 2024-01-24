@@ -843,7 +843,7 @@ public class MainActivity extends AppCompatActivity {
     private void setFieldsLanguage(String language) {
         context = LocaleHelper.setLocale(MainActivity.this, userlanguage);
         resources = context.getResources();
-        mUser.setHint(resources.getString(R.string.plate_name));
+        mUser.setHint(resources.getString(R.string.email_name));
         mPassword.setHint(resources.getString(R.string.passHint));
         welcomeTextView.setText(resources.getString(R.string.welcomeHomeText));
         int colorBlue = getResources().getColor(R.color.purple_700);
