@@ -52,6 +52,8 @@ public class additionalPlate extends AppCompatActivity {
     Resources resources;
     String selectedLanguage;
 
+    String existingPlate;
+
     EditText brandCarField, modelCarField, colorCarField, yearCarField, additionalPlate;
 
     Spinner carSelected;
@@ -96,9 +98,25 @@ public class additionalPlate extends AppCompatActivity {
         cancelButton = findViewById(R.id.cancelButtonAdd);
         cancelButton.setHint(resources.getString(R.string.cancel));
 
+        verifyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                existingPlate = additionalPlate.getText().toString();
+                if (TextUtils.isEmpty(existingPlate)){
+                    Toast.makeText(context, resources.getString(R.string.plateEmpty), Toast.LENGTH_SHORT).show();
+                    return;
+                }else{
+                getPLateInformation(existingPlate);
+            }
+        };
+        });
     }
+        public void getPLateInformation(String plate){
+            if (plate.length() < 5 || plate.length()>10){
+                Toast.makeText(getApplicationContext(),resources.getString(R.string.wrong_format_plate), Toast.LENGTH_SHORT).show();
+                return;
+            }
+                Toast.makeText(context, plate, Toast.LENGTH_SHORT).show();
+            }
 
-
-
-
- }
+    }

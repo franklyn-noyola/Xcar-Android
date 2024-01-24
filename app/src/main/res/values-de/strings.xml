@@ -42,7 +42,9 @@
     <string name="addPlate">Fügen Sie ein zusätzliches Kennzeichen hinzu</string>
     <string name="addPlateButton">Kennzeichen hinzufügen</string>
     <string name="existePlate">Dieses Kennzeichen existiert bereits</string>
+    <string name = "plateEmpty">Das Kennzeichenfeld darf nicht leer sein</string>
     <string name="verify">Verifizieren</string>
+    <string name = "plateAdded">Kennzeichen hinzugefügt</string>
     <string name="password_name">Passwort</string>
     <string name="confirm_password">Kennwort bestätigen</string>
     <string name="register">Einchecken</string>

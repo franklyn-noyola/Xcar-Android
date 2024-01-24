@@ -71,6 +71,8 @@
     <string name="noConexion">Błąd połączenia internetowego</string>
     <string name="noEmptyFields">Pole e-mail nie powinno być puste</string>
     <string name="existePlate">Ten numer rejestracyjny już istnieje</string>
+    <string name = "plateEmpty">Pole numeru rejestracyjnego nie może być puste</string>
+    <string name = "plateAdded">Dodano numer rejestracyjny</string>
     <string name="passResetLbl">Zresetuj hasło</string>
     <string name="reset">Zresetować</string>
     <string name="passResetMsg">Hasło zostało zresetowane, a nowe hasło zostało wysłane na wskazany adres e-mail </string>

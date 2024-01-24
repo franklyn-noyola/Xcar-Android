@@ -70,6 +70,8 @@
     <string name="noEmptyFields">Поле электронной почты не должно быть пустым.</string>
     <string name="existePlate">Этот номерной знак уже существует</string>
     <string name="passResetLbl">Сброс пароля</string>
+    <string name = "plateEmpty">Поле номерного знака не может быть пустым</string>
+    <string name = "plateAdded">Добавлен номерной знак</string>
     <string name="reset">Перезагрузить</string>
     <string name="passResetMsg">Пароль был отправлен повторно и отправлен на указанный адрес электронной почты. </string>
     <string name="generatedPass">Пароль создан</string>

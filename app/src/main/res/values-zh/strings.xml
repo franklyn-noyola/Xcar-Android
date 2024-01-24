@@ -68,6 +68,8 @@
     <string name="wrongEmailFormat">无效的电子邮件格式</string>
     <string name="noConexion">网络连接失败</string>
     <string name="noEmptyFields">电子邮件字段不应为空</string>
+    <string name = "plateEmpty">车牌号字段不能为空</string>
+    <string name = "plateAdded">已添加车牌号</string>
     <string name="passResetLbl">重设密码</string>
     <string name="reset">重启</string>
     <string name="existePlate">该车牌号已存在</string>

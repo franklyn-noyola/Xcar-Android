@@ -69,6 +69,8 @@
     <string name="noConexion">ネットワーク接続の失敗</string>
     <string name="noEmptyFields">電子メールフィールドを空にすることはできません</string>
     <string name="existePlate">このプレート番号はすでに存在します</string>
+    <string name = "plateEmpty">プレート番号フィールドを空にすることはできません</string>
+    <string name = "plateAdded">プレート番号を追加しました</string>
     <string name="passResetLbl">パスワードのリセット</string>
     <string name="reset">リセット</string>
     <string name="passResetMsg">パスワードが再送され、指定された電子メールに送信されました </string>

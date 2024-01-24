@@ -69,6 +69,8 @@
     <string name="noEmptyFields">ای میل فیلڈ خالی نہیں ہونی چاہیے۔</string>
     <string name="passResetLbl">پاس ورڈ دوبارہ ترتیب دیں</string>
     <string name="existePlate">یہ پلیٹ نمبر پہلے سے موجود ہے۔</string>
+    <string name = "plateEmpty">پلیٹ نمبر کی فیلڈ خالی نہیں ہو سکتی</string>
+    <string name = "plateAdded">پلیٹ نمبر شامل کیا گیا۔</string>
     <string name="reset">ری سیٹ کریں</string>
     <string name="passResetMsg">پاس ورڈ دوبارہ بھیج دیا گیا ہے اور اسے اشارہ ای میل پر بھیج دیا گیا ہے </string>
     <string name="generatedPass">پاس ورڈ تیار</string>

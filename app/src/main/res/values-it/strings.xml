@@ -74,6 +74,8 @@
     <string name="noEmptyFields">Il campo e-mail non deve essere vuoto</string>
     <string name="passResetLbl">Resetta la password</string>
     <string name="existePlate">Questo numero di targa esiste già</string>
+    <string name = "plateEmpty">Il campo del numero di targa non può essere vuoto</string>
+    <string name = "plateAdded">Aggiunto numero di targa</string>
     <string name="reset">Resettare</string>
     <string name="passResetMsg">La password è stata reimpostata e una nuova password è stata inviata all\'e-mail indicata </string>
     <string name="generatedPass">Password generata"</string>
