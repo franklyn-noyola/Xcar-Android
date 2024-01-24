@@ -74,6 +74,7 @@
     <string name="noConexion">Error en Conexión de Internet</string>
     <string name="noEmptyFields">El campo Email no puede estar vacío</string>
     <string name="passResetLbl">Resetear Contraseña</string>
+    <string name="existePlate">Esta matrícula ya existe</string>
     <string name="reset">Resetear</string>
     <string name="passResetMsg">La contraseña ha sido reseteada y una nueva contraseña ha sido enviada al email indicado </string>
     <string name="generatedPass">"Contraseña Generada"</string>
@@ -98,6 +99,7 @@
     <string name="deleteChatMsg">¿Seguro deseas borrar el chat?</string>
     <string name="noData">No hay datos disponibles</string>
     <string name="typeVehicle">Tipo</string>
+
     <string name="receivedNotifications">Notificaciones</string>
     <string name="sendNotifications">Enviar Incidencia/Aviso</string>
     <string name="delNotificationMessage">¿Seguro que quieres borrar esta notificación?</string>

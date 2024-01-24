@@ -68,6 +68,7 @@
     <string name="wrongEmailFormat">Ongeldige email formaat</string>
     <string name="noConexion">Netwerkverbinding mislukt</string>
     <string name="noEmptyFields">Het e-mailveld mag niet leeg zijn</string>
+    <string name="existePlate">Dit kenteken bestaat al</string>
     <string name="passResetLbl">Wachtwoord reset</string>
     <string name="reset">Reset</string>
     <string name="passResetMsg">Wachtwoord is opnieuw verzonden en naar het aangegeven e-mailadres gestuurd </string>

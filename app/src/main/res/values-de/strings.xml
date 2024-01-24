@@ -41,6 +41,7 @@
     <string name="email_name">Email</string>
     <string name="addPlate">Fügen Sie ein zusätzliches Kennzeichen hinzu</string>
     <string name="addPlateButton">Kennzeichen hinzufügen</string>
+    <string name="existePlate">Dieses Kennzeichen existiert bereits</string>
     <string name="verify">Verifizieren</string>
     <string name="password_name">Passwort</string>
     <string name="confirm_password">Kennwort bestätigen</string>

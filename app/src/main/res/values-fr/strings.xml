@@ -67,6 +67,7 @@
     <string name="noConexion">Erreur de connexion Internet</string>
     <string name="noEmptyFields">Le champ e-mail ne doit pas être vide</string>
     <string name="passResetLbl">Réinitialiser le mot de passe</string>
+    <string name="existePlate">Ce numéro de plaque existe déjà</string>
     <string name="reset">Réinitialiser</string>
     <string name="passResetMsg">Le mot de passe a été réinitialisé et un nouveau mot de passe a été envoyé à l\'adresse e-mail indiquée </string>
     <string name="generatedPass">Mot de passe généré</string>

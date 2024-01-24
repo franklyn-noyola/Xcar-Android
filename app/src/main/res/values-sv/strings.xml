@@ -70,6 +70,7 @@
     <string name ="wrongEmailFormat">Ogiltigt e-postformat</string>
     <string name ="noConexion">Internetanslutningsfel</string>
     <string name ="noEmptyFields">E-postfältet ska inte vara tomt</string>
+    <string name="existePlate">Detta skyltnummer finns redan</string>
     <string name ="passResetLbl">Återställ lösenord</string>
     <string name ="reset">Återställ</string>
     <string name ="passResetMsg">Lösenordet har återställts och ett nytt lösenord har skickats till det angivna e-postmeddelandet</string>

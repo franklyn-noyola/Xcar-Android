@@ -70,6 +70,7 @@
     <string name ="wrongEmailFormat">유효하지 않은 이메일 형식</string>
     <string name ="noConexion">인터넷 연결 오류</string>
     <string name ="noEmptyFields">이메일 입력란은 비워둘 수 없습니다.</string>
+    <string name="existePlate">이 번호판은 이미 존재합니다.</string>
     <string name ="passResetLbl">비밀번호 재설정</string>
     <string name ="reset">재설정</string>
     <string name ="passResetMsg">비밀번호가 재설정되었으며 새 비밀번호가 표시된 이메일로 전송되었습니다.</string>

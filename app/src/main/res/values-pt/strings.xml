@@ -73,6 +73,7 @@
     <string name="wrongEmailFormat">Formato de email inválido</string>
     <string name="noConexion">Erro de conexão com a Internet</string>
     <string name="noEmptyFields">O campo de e-mail não deve estar vazio</string>
+    <string name="existePlate">Este número de placa já existe</string>
     <string name="passResetLbl">Redefinir senha</string>
     <string name="reset">Reiniciar</string>
     <string name="passResetMsg">A senha foi redefinida e uma nova senha foi enviada para o e-mail indicado </string>

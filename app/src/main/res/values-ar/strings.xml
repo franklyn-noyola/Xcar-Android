@@ -40,6 +40,7 @@
     <string name="password_name" >كلمة المرور</string>
     <string name="addPlate">إضافة رقم لوحة إضافي</string>
     <string name="addPlateButton">إضافة رقم اللوحة</string>
+    <string name="existePlate">رقم اللوحة هذا موجود بالفعل</string>
     <string name="verify">يؤكد</string>
     <string name="confirm_password" >تأكيد كلمة المرور</string>
     <string name="register" >تحقق في</string>
