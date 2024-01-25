@@ -134,6 +134,7 @@
     <string name="noPassEmpty">Los campos contraseñas no pueden estar vacíos</string>
     <string name = "plateEmpty">Campo matrícula no debe estar vacío</string>
     <string name = "plateAdded">Matrícula agregada</string>
+    <string name = "invalidAdditonalPlateFieñds">Se debe seleccionar tipo de vehiculo y/o se deben completar todos los campos</string>
     <string name="sucessfully">exitósamente</string>
     <string name="recently">recientemente</string>
     <string name="cancel">Cancelar</string>

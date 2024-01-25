@@ -51,6 +51,7 @@
     <string name="passHint">" كلمة المرور"</string>
     <string name="loginLbl" >تسجيل الدخول</string>
     <string name = "plateAdded">تم اضافة رقم اللوحة</string>
+    <string name = "invalidAdditonalPlateFieñds">يجب تحديد نوع المركبة و/أو يجب إكمال كافة الحقول</string>
     <string name = "plateEmpty">لا يمكن أن يكون حقل رقم اللوحة فارغًا</string>
     <string name="welcomeHomeText">مرحبًا بك في Xcar"</string>
     <string name="forgottenPass"><b> <font color="blue">هل نسيت كلمة المرور؟</font></b></string>

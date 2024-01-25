@@ -69,6 +69,7 @@
     <string name="noEmptyFields">ईमेल फ़ील्ड खाली नहीं होनी चाहिए</string>
     <string name = "plateEmpty">प्लेट नंबर फ़ील्ड खाली नहीं हो सकती</string>
     <string name = "plateAdded">प्लेट नंबर जोड़ा गया</string>
+    <string name = "invalidAdditonalPlateFieñds">वाहन का प्रकार चुना जाना चाहिए और/या सभी फ़ील्ड भरे जाने चाहिए</string>
     <string name="existePlate">यह प्लेट नंबर पहले से मौजूद है</string>
     <string name="passResetLbl">पासवर्ड रीसेट</string>
     <string name="reset">रीसेट</string>

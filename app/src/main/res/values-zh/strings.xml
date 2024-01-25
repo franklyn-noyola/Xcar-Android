@@ -72,6 +72,7 @@
     <string name = "plateAdded">已添加车牌号</string>
     <string name="passResetLbl">重设密码</string>
     <string name="reset">重启</string>
+    <string name = "invalidAdditonalPlateFieñds">必须选择车辆类型和/或必须填写所有字段</string>
     <string name="existePlate">该车牌号已存在</string>
     <string name="passResetMsg">密码已被重新​​发送并发送到指定的电子邮件</string>
     <string name="generatedPass">密码生成</string>

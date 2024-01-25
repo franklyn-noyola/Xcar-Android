@@ -71,6 +71,7 @@
     <string name="existePlate">Dit kenteken bestaat al</string>
     <string name = "plateEmpty">Het kentekenveld mag niet leeg zijn</string>
     <string name = "plateAdded">Plaatnummer toegevoegd</string>
+    <string name = "invalidAdditonalPlateFieñds">Het voertuigtype moet worden geselecteerd en/of alle velden moeten worden ingevuld</string>
     <string name="passResetLbl">Wachtwoord reset</string>
     <string name="reset">Reset</string>
     <string name="passResetMsg">Wachtwoord is opnieuw verzonden en naar het aangegeven e-mailadres gestuurd </string>

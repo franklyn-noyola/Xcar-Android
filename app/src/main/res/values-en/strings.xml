@@ -72,6 +72,7 @@
     <string name="existePlate">This plate already exists</string>
     <string name = "plateEmpty">Plate number filed cannot be empty</string>
     <string name = "plateAdded">Plate number added</string>
+    <string name = "invalidAdditonalPlateFieñds">Vehicle type must be selected and/or all fields must be completed</string>
     <string name="passResetLbl">Password Reset</string>
     <string name="reset">Reset</string>
     <string name="passResetMsg">Password has been resent and sent it to the indicated Email </string>

@@ -73,6 +73,7 @@
     <string name="existePlate">Detta skyltnummer finns redan</string>
     <string name = "plateEmpty">Skyltnummerfältet får inte vara tomt</string>
     <string name = "plateAdded">Skyltnummer tillagt</string>
+    <string name = "invalidAdditonalPlateFieñds">Fordonstyp måste väljas och/eller alla fält måste fyllas i</string>
     <string name ="passResetLbl">Återställ lösenord</string>
     <string name ="reset">Återställ</string>
     <string name ="passResetMsg">Lösenordet har återställts och ett nytt lösenord har skickats till det angivna e-postmeddelandet</string>

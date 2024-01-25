@@ -182,9 +182,10 @@ public class additionalPlate extends AppCompatActivity {
             }
 
         public void createAdditionalPlate (String username, String password){
-            if (carSelected.getSelectedItemPosition() == 0){
-
-            }
+            if (carSelected.getSelectedItemPosition() == 0 || TextUtils.isEmpty(brandCarField.getText().toString()) || TextUtils.isEmpty(modelCarField.getText().toString() || TextUtils.isEmpty(colorCarField.getText().toString()) || TextUtils.isEmpty(yearCarField.getText().toString()))) {
+                Toast.makeText(getApplicationContext(), username + " "+ password, Toast.LENGTH_SHORT).show();
+                return;
+           }
             Toast.makeText(getApplicationContext(), username + " "+ password, Toast.LENGTH_SHORT).show();
         }
 

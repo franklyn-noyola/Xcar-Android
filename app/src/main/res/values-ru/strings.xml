@@ -72,6 +72,7 @@
     <string name="passResetLbl">Сброс пароля</string>
     <string name = "plateEmpty">Поле номерного знака не может быть пустым</string>
     <string name = "plateAdded">Добавлен номерной знак</string>
+    <string name = "invalidAdditonalPlateFieñds">Необходимо выбрать тип транспортного средства и/или заполнить все поля.</string>
     <string name="reset">Перезагрузить</string>
     <string name="passResetMsg">Пароль был отправлен повторно и отправлен на указанный адрес электронной почты. </string>
     <string name="generatedPass">Пароль создан</string>
