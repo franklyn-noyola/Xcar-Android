@@ -1,5 +1,7 @@
 package com.epicdeveloper.xcar;
 
+import static com.epicdeveloper.xcar.MainActivity.email_user;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
@@ -51,7 +53,10 @@ public class additionalPlate extends AppCompatActivity {
     Context context;
     Resources resources;
     String selectedLanguage;
+    private DatabaseReference Users;
 
+    Object userName;
+    Object password;
     String existingPlate;
 
     EditText brandCarField, modelCarField, colorCarField, yearCarField, additionalPlate;
@@ -110,13 +115,110 @@ public class additionalPlate extends AppCompatActivity {
             }
         };
         });
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setFielDisable();
+            }
+        });
+
     }
         public void getPLateInformation(String plate){
             if (plate.length() < 5 || plate.length()>10){
                 Toast.makeText(getApplicationContext(),resources.getString(R.string.wrong_format_plate), Toast.LENGTH_SHORT).show();
                 return;
+            }else {
+                String dot1 = new String (email_user);
+                String dot2 = dot1.replace(".","_");
+                Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+                Users.orderByChild("plate_user").equalTo(plate.toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            Toast.makeText(getApplicationContext(),resources.getString(R.string.existePlate), Toast.LENGTH_SHORT).show();
+                            return;
+                        }else {
+                            setFieldsEnable();
+                            getDataInfo();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
-                Toast.makeText(context, plate, Toast.LENGTH_SHORT).show();
+
             }
+            public void getDataInfo() {
+
+                String dot1 = new String (email_user);
+                String dot2 = dot1.replace(".","_");
+                Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+                Users.orderByChild("user_email").equalTo(email_user).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                userName = snapshot.child("user_name").getValue();
+                                password = snapshot.child("user_password").getValue();
+                            }
+                        }
+                        addPlateButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                createAdditionalPlate((String) userName, (String) password);
+                            }
+                        });
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+
+        public void createAdditionalPlate (String username, String password){
+            if (carSelected.getSelectedItemPosition() == 0){
+
+            }
+            Toast.makeText(getApplicationContext(), username + " "+ password, Toast.LENGTH_SHORT).show();
+        }
+
+        public void setFieldsEnable(){
+            brandCarField.setEnabled(true);
+            modelCarField.setEnabled(true);
+            addPlateButton.setEnabled(true);
+            colorCarField.setEnabled(true);
+            yearCarField.setEnabled(true);
+            cancelButton.setEnabled(true);
+            cancelButton.setVisibility(View.VISIBLE);
+            verifyButton.setEnabled(false);
+            additionalPlate.setEnabled(false);
+        }
+
+    public void setFielDisable(){
+        brandCarField.setEnabled(false);
+        modelCarField.setEnabled(false);
+        addPlateButton.setEnabled(false);
+        colorCarField.setEnabled(false);
+        yearCarField.setEnabled(false);
+        cancelButton.setEnabled(false);
+        cancelButton.setVisibility(View.INVISIBLE);
+        verifyButton.setEnabled(true);
+        additionalPlate.setEnabled(true);
+        additionalPlate.setText("");
+        brandCarField.setText("");
+        modelCarField.setText("");
+        addPlateButton.setText("");
+        colorCarField.setText("");
+        yearCarField.setText("");
+        carSelected.setSelection(0);
+
+    }
+
 
     }
