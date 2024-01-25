@@ -182,11 +182,19 @@ public class additionalPlate extends AppCompatActivity {
             }
 
         public void createAdditionalPlate (String username, String password){
-            if (carSelected.getSelectedItemPosition() == 0 || TextUtils.isEmpty(brandCarField.getText().toString()) || TextUtils.isEmpty(modelCarField.getText().toString() || TextUtils.isEmpty(colorCarField.getText().toString()) || TextUtils.isEmpty(yearCarField.getText().toString()))) {
-                Toast.makeText(getApplicationContext(), username + " "+ password, Toast.LENGTH_SHORT).show();
+            if (carSelected.getSelectedItemPosition() == 0 || TextUtils.isEmpty(brandCarField.getText().toString()) || TextUtils.isEmpty(modelCarField.getText().toString()) || TextUtils.isEmpty(colorCarField.getText().toString()) || TextUtils.isEmpty(yearCarField.getText().toString())) {
+                Toast.makeText(getApplicationContext(),R.string.invalidAdditonalPlateFieñds, Toast.LENGTH_LONG).show();
                 return;
            }
-            Toast.makeText(getApplicationContext(), username + " "+ password, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), carSelected.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+            final UsersConnected user = new UsersConnected(additionalPlate.getText().toString().toUpperCase(), carSelected.getSelectedItem().toString(), brandCarField.getText().toString(),colorCarField.getText().toString(),modelCarField.getText().toString(),yearCarField.getText().toString(),  "A", username, email_user, password, "0");
+            String dot1 = new String (email_user);
+            String dot2 = dot1.replace(".","_");
+            DatabaseReference userEmail = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+            String id = userEmail.push().getKey();
+            userEmail.child(id).setValue(user);
+            Toast.makeText(getApplicationContext(),R.string.plateAdded, Toast.LENGTH_LONG).show();
+            setFielDisable();
         }
 
         public void setFieldsEnable(){
