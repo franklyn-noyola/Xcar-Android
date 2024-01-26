@@ -261,7 +261,7 @@ public class profile_activity extends AppCompatActivity {
         String dot1 = new String (email_user);
         String dot2 = dot1.replace(".","_");
         DatabaseReference Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
-        Users.orderByChild("user_email").equalTo(email_user).addListenerForSingleValueEvent(new ValueEventListener() {
+        Users.orderByChild("type").equalTo("M").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {

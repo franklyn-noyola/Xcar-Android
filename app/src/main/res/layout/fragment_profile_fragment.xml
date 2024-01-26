@@ -12,8 +12,6 @@
         android:layout_width="180dp"
         android:layout_height="40dp"
         android:layout_marginEnd="12dp"
-
-        android:entries="@array/contactos_asuntos"
         android:spinnerMode="dropdown"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

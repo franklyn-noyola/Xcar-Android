@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupWindow;
@@ -50,19 +51,23 @@ import static com.epicdeveloper.xcar.MainActivity.email_user;
 import static com.epicdeveloper.xcar.R.layout.changepass;
 
 public class fragment_profile extends Fragment {
-    TextView userSelected, plateSelected,  emailSelected, infoLbl;
+    TextView userSelected, plateSelected, emailSelected, infoLbl;
     String selectedLanguage;
+
+    String list_plate;
+
+    public List<String>  listPlate;
     EditText brandCarField, modelCarField, colorCarField, yearCarField, newPassField, confirmPassField;
     public List<String> cartypeSelected;
     Spinner carTypeField;
     Spinner addedPlates;
     TextView carTypeFieldLbl;
     Button btnModiInfoButton, btnchangePassButton, btnCancelPassButton, btnUpdatePass, btnCancelModInfo;
-    public  Object typeProfileCarUser;
-    public  Object brandProfileCarUser;
-    public  Object modelProfileCaruser;
-    public  Object colorProfileCarUser;
-    public  Object yearProfileCarUser;
+    public Object typeProfileCarUser;
+    public Object brandProfileCarUser;
+    public Object modelProfileCaruser;
+    public Object colorProfileCarUser;
+    public Object yearProfileCarUser;
     public View Profile;
     Context context;
     Resources resources;
@@ -94,6 +99,7 @@ public class fragment_profile extends Fragment {
         userSelected = Profile.findViewById(R.id.userDataLbl);
         plateSelected = Profile.findViewById(R.id.plateDataLbl);
         emailSelected = Profile.findViewById(R.id.emailDataLbl);
+        addedPlates = Profile.findViewById(R.id.plate);
         carTypeField = Profile.findViewById(R.id.vehicleType);
         carTypeField.setEnabled(false);
         carTypeField.setVisibility(View.INVISIBLE);
@@ -116,6 +122,7 @@ public class fragment_profile extends Fragment {
         plateSelected.setText(MainActivity.plate_user);
         emailSelected.setText(MainActivity.emailSelected);
         getInfoData();
+        getPlateList();
 
         btnModiInfoButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,6 +156,35 @@ public class fragment_profile extends Fragment {
         });
         return Profile;
     }
+
+    public void getPlateList() {
+        String dot1 = new String(email_user);
+        String dot2 = dot1.replace(".", "_");
+        DatabaseReference plateList = FirebaseDatabase.getInstance().getReference("Users/" + dot2);
+        listPlate = new ArrayList<String>();
+
+        plateList.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listPlate.clear();
+                for (DataSnapshot plateList : snapshot.getChildren()){
+                    list_plate   = plateList.child("plate_user").getValue().toString();
+                    listPlate.add(list_plate);
+                }
+                System.out.println("Lista de placas " + listPlate);
+                ArrayAdapter<String> playlistAdapter = new ArrayAdapter<String>(getContext(), R.layout.support_simple_spinner_dropdown_item, listPlate);
+                addedPlates.setAdapter(playlistAdapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+
+
 
     @SuppressLint("ClickableViewAccessibility")
     private void changePassword() {
@@ -342,7 +378,7 @@ public class fragment_profile extends Fragment {
         String dot1 = new String (email_user);
         String dot2 = dot1.replace(".","_");
         Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
-        Users.orderByChild("user_email").equalTo(email_user).addListenerForSingleValueEvent(new ValueEventListener() {
+        Users.orderByChild("type").equalTo("M").addListenerForSingleValueEvent(new ValueEventListener() {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
