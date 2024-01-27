@@ -59,9 +59,11 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
     TextView userSelected, plateSelected, emailSelected, infoLbl;
     String selectedLanguage;
 
+    Button deletePlate;
+
     String list_plate;
 
-
+    int platesCount = 0;
 
     public List<String>  listPlate;
     EditText brandCarField, modelCarField, colorCarField, yearCarField, newPassField, confirmPassField;
@@ -98,6 +100,7 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
         adview = Profile.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         adview.loadAd(adRequest);
+        deletePlate = Profile.findViewById(R.id.deleteplate);
         cartypeSelected = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.Vehiculos)));
         infoLbl = Profile.findViewById(R.id.infoLbl);
         if (selectedLanguage.equals("RU")) {
@@ -130,6 +133,7 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
         userSelected.setText(MainActivity.UserSel);
         emailSelected.setText(MainActivity.emailSelected);
         getPlateList();
+
         if (TextUtils.isEmpty(getSelectedPlate)) {
             userSelected.setText(MainActivity.UserSel);
             plateSelected.setText(MainActivity.plate_user);
@@ -140,7 +144,6 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
             getSelectedPlate(getSelectedPlate);
             plateSelected.setText(getSelectedPlate);
         }
-
 
         addedPlates.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -168,6 +171,18 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
             @Override
             public void onClick(View v) {
                 changePassword();
+            }
+        });
+
+        deletePlate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = addedPlates.getSelectedItemPosition();
+                if (position == 0) {
+                    System.out.println("Esta es la primera placa "+ addedPlates.getSelectedItem());
+                }else {
+                    System.out.println("Esta es la placa "+ addedPlates.getSelectedItem());
+                }
             }
         });
 
@@ -215,6 +230,13 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
                 }else{
                     addedPlates.setSelection(MainActivity.setSelection);
                 }
+                platesCount = listPlate.size();
+                if ( platesCount > 1){
+                    deletePlate.setVisibility(View.VISIBLE);
+                }else {
+                    deletePlate.setVisibility(View.INVISIBLE);
+                }
+
             }
 
             @Override

@@ -10,8 +10,8 @@ android {
         minSdkVersion 29
         //noinspection OldTargetApi
         targetSdkVersion 33
-        versionCode 16
-        versionName "4.1.0"
+        versionCode 17
+        versionName "5.0.0"
         setProperty("archivesBaseName", "Xcar")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

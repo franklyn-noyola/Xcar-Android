@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Gravity;
@@ -59,6 +60,7 @@ public class receivedNotifications extends Fragment {
     TextView imageView;
     String selectedLanguage;
     Context context;
+    String selectedPlate;
     Resources resources;
     View root;
     public ListView notificationList;
@@ -73,6 +75,12 @@ public class receivedNotifications extends Fragment {
 
         root= inflater.inflate(R.layout.fragment_receivednotifications_fragment, container, false);
         selectedLanguage = MainActivity.userlanguage;
+        if (TextUtils.isEmpty(MainActivity.getSelectedPlate)){
+            selectedPlate = MainActivity.plate_user;
+        }else{
+            selectedPlate = MainActivity.getSelectedPlate;
+        }
+
         setHasOptionsMenu((true));
         context = LocaleHelper.setLocale(getActivity(), selectedLanguage);
         resources = context.getResources();
@@ -155,7 +163,7 @@ public class receivedNotifications extends Fragment {
 
     private void deleteNotificacion(){
         DatabaseReference delNotification = FirebaseDatabase.getInstance().getReference("sendMessages");
-        Query query = delNotification.child(MainActivity.plate_user).orderByChild("messageTime").equalTo(itemgetTime);
+        Query query = delNotification.child(selectedPlate).orderByChild("messageTime").equalTo(itemgetTime);
         query.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
@@ -198,7 +206,7 @@ public class receivedNotifications extends Fragment {
         getTime = new ArrayList<>();
         imageViewUri = new ArrayList<>();
         notificationList = (ListView) root.findViewById(R.id.list_of_notifications);
-        Query query = FirebaseDatabase.getInstance().getReference("sendMessages/"+ MainActivity.plate_user);
+        Query query = FirebaseDatabase.getInstance().getReference("sendMessages/"+ selectedPlate);
         FirebaseListOptions<receivedNotificationsData> options = new FirebaseListOptions.Builder<receivedNotificationsData>()
                 .setQuery(query, receivedNotificationsData.class)
                 .setLayout(R.layout.notifications)

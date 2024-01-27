@@ -1,6 +1,7 @@
 package com.epicdeveloper.xcar.ui.Chat;
 
 import static com.epicdeveloper.xcar.MainActivity.email_user;
+import static com.epicdeveloper.xcar.MainActivity.getSelectedPlate;
 import static com.epicdeveloper.xcar.MainActivity.plate_user;
 
 import android.app.AlertDialog;
@@ -11,6 +12,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.ContextMenu;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -54,6 +56,8 @@ public class chatMainScreen extends Fragment {
     SearchView searchView;
     ListView listView;
     String selectedLanguage;
+
+    String selectedPlate;
     private LayoutInflater inflaterView;
     private DatabaseReference Users;
     public static  String userToChat;
@@ -81,6 +85,12 @@ public class chatMainScreen extends Fragment {
         adview.loadAd(adRequest);
         searchView = root.findViewById(R.id.searchView);
         searchView.setQueryHint(resources.getString((R.string.plate_enter)));
+        System.out.println("Placa es" + getSelectedPlate);
+        if (TextUtils.isEmpty(MainActivity.getSelectedPlate)){
+            selectedPlate = plate_user;
+        }else {
+            selectedPlate = MainActivity.getSelectedPlate;
+        }
          inflaterView = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         searchView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,7 +162,7 @@ public class chatMainScreen extends Fragment {
                         for (DataSnapshot ds : snapshot.getChildren()){
                           getExistUser = ds.child("plate_user").getValue();
                         }
-                        if (getExistUser.toString().equals(plate_user)){
+                        if (getExistUser.toString().equals(selectedPlate)){
                             if (selectedLanguage.equals("ES")){
                                 Toast.makeText(getActivity(), "El usuario "+userData.toUpperCase()+" no se puede enviar un automensaje.", Toast.LENGTH_SHORT).show();
                             }
@@ -232,7 +242,7 @@ public class chatMainScreen extends Fragment {
         }
 
     public void getUserBlocked(final String userBlock,final FirebaseSuccessListener dataFetched){
-        DatabaseReference blockedUser = FirebaseDatabase.getInstance().getReference("BlockUsers").child(plate_user).child(userBlock);
+        DatabaseReference blockedUser = FirebaseDatabase.getInstance().getReference("BlockUsers").child(selectedPlate).child(userBlock);
         Query query = blockedUser.orderByChild("Blocked").equalTo("Si");
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
@@ -258,7 +268,7 @@ public class chatMainScreen extends Fragment {
 
       public void getChatUserList() {
             listView = root.findViewById(R.id.messageList);
-            Query query = FirebaseDatabase.getInstance().getReference("Chat/listChatUsers/" + plate_user);
+            Query query = FirebaseDatabase.getInstance().getReference("Chat/listChatUsers/" + selectedPlate);
             FirebaseListOptions<listUsertoChat> options = new FirebaseListOptions.Builder<listUsertoChat>()
                     .setQuery(query, listUsertoChat.class)
                     .setLayout(R.layout.messageslist)
@@ -318,12 +328,12 @@ public class chatMainScreen extends Fragment {
     }
 
     private void deleteChat(){
-        DatabaseReference Chat = FirebaseDatabase.getInstance().getReference("Chat/"+ plate_user);
+        DatabaseReference Chat = FirebaseDatabase.getInstance().getReference("Chat/"+ selectedPlate);
         Chat.child(userToChat).removeValue();
     }
 
     private void deleteListChat(){
-        DatabaseReference Chat = FirebaseDatabase.getInstance().getReference("Chat/listChatUsers/"+ plate_user);
+        DatabaseReference Chat = FirebaseDatabase.getInstance().getReference("Chat/listChatUsers/"+ selectedPlate);
         Chat.orderByChild("userToChat").equalTo(userToChat).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
