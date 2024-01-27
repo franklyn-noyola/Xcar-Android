@@ -44,7 +44,9 @@
     <string name="existePlate">Dieses Kennzeichen existiert bereits</string>
     <string name = "plateEmpty">Das Kennzeichenfeld darf nicht leer sein</string>
     <string name="verify">Verifizieren</string>
+    <string name="plateDeleted">Kennzeichen gelöscht</string>
     <string name = "plateAdded">Kennzeichen hinzugefügt</string>
+    <string name="deletePlateMsg">Möchten Sie dieses Kennzeichen löschen?</string>
     <string name = "invalidAdditonalPlateFieñds">Der Fahrzeugtyp muss ausgewählt und/oder alle Felder müssen ausgefüllt sein</string>
     <string name="password_name">Passwort</string>
     <string name="confirm_password">Kennwort bestätigen</string>

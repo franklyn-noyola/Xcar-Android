@@ -71,6 +71,8 @@
     <string name="existePlate">یہ پلیٹ نمبر پہلے سے موجود ہے۔</string>
     <string name = "plateEmpty">پلیٹ نمبر کی فیلڈ خالی نہیں ہو سکتی</string>
     <string name = "plateAdded">پلیٹ نمبر شامل کیا گیا۔</string>
+    <string name="plateDeleted">پلیٹ نمبر حذف کر دیا گیا۔</string>
+    <string name="deletePlateMsg">کیا آپ اس پلیٹ نمبر کو حذف کرنا چاہتے ہیں؟</string>
     <string name = "invalidAdditonalPlateFieñds">گاڑی کی قسم منتخب کی جانی چاہیے اور/یا تمام فیلڈز کو مکمل کرنا چاہیے۔</string>
     <string name="reset">ری سیٹ کریں</string>
     <string name="passResetMsg">پاس ورڈ دوبارہ بھیج دیا گیا ہے اور اسے اشارہ ای میل پر بھیج دیا گیا ہے </string>

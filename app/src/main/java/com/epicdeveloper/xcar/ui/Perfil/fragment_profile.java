@@ -3,7 +3,9 @@
 import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
 
@@ -60,6 +62,13 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
     String selectedLanguage;
 
     Button deletePlate;
+
+    String plate_0;
+    String plate_1;
+
+    String plate_2;
+
+    int position;
 
     String list_plate;
 
@@ -126,6 +135,7 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
         colorCarField.setHint(resources.getString(R.string.colorHint));
         yearCarField = Profile.findViewById(R.id.carYear);
         yearCarField.setHint(resources.getString(R.string.yearHint));
+        deletePlate.setHint(R.string.delete);
         btnModiInfoButton = Profile.findViewById(R.id.ModInfo);
         btnModiInfoButton.setHint(resources.getString(R.string.modifyInfo));
         btnchangePassButton = Profile.findViewById(R.id.modPass);
@@ -177,12 +187,26 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
         deletePlate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int position = addedPlates.getSelectedItemPosition();
+                position = addedPlates.getSelectedItemPosition();
                 if (position == 0) {
-                    System.out.println("Esta es la primera placa "+ addedPlates.getSelectedItem());
+                    plate_0 = addedPlates.getSelectedItem().toString();
+                    plate_1 = addedPlates.getItemAtPosition(1).toString();
                 }else {
-                    System.out.println("Esta es la placa "+ addedPlates.getSelectedItem());
+                    plate_2 = addedPlates.getItemAtPosition(addedPlates.getSelectedItemPosition()).toString();;
                 }
+                AlertDialog alert = new AlertDialog.Builder(getActivity()).create();
+                alert.setMessage(resources.getString(R.string.deleteChatMsg));
+                alert.setButton(AlertDialog.BUTTON_POSITIVE,resources.getString(R.string.yes), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        deleteListChat();
+                        Toast.makeText(getActivity(), resources.getString(R.string.deletedChat), Toast.LENGTH_SHORT).show();
+                    }
+                });
+                alert.setButton(AlertDialog.BUTTON_NEGATIVE,resources.getString(R.string.No), (DialogInterface.OnClickListener) null);
+                alert.show();
+
+
             }
         });
 
@@ -206,7 +230,59 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
     }
 
 
+        private void deleteListChat(){
+            String plateToDelete;
+            if (position == 0){
+                plateToDelete = plate_0;
+            } else{
+                plateToDelete = plate_2;
+            }
 
+            String dot1 = new String (email_user);
+            String dot2 = dot1.replace(".","_");
+            DatabaseReference Chat = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+            Chat.orderByChild("plate_user").equalTo(plateToDelete).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    String key = null;
+                    for (DataSnapshot ds: snapshot.getChildren()){
+                        key = ds.getKey();
+                    }
+                    snapshot.child(key).getRef().removeValue();
+                    if (position==0){
+                        updateNextPlate(plate_1);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+
+        public void updateNextPlate(String plate){
+            String dot1 = new String (MainActivity.emailSelected);
+            String dot2 = dot1.replace(".","_");
+            Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+            ((Spinner)carTypeField).getSelectedView().setEnabled(false);
+            Users.orderByChild("plate_user").equalTo(plate).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for (DataSnapshot ds: snapshot.getChildren()){
+                        Map<String, Object> updates = new HashMap<String, Object>();
+                        updates.put("type", "M");
+                        ds.getRef().updateChildren(updates);
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+
+        }
 
 
     public void getPlateList() {

@@ -73,6 +73,8 @@
     <string name="existePlate">Ten numer rejestracyjny już istnieje</string>
     <string name = "plateEmpty">Pole numeru rejestracyjnego nie może być puste</string>
     <string name = "plateAdded">Dodano numer rejestracyjny</string>
+    <string name="deletePlateMsg">Czy chcesz usunąć ten numer rejestracyjny?</string>
+    <string name="plateDeleted">Numer rejestracyjny usunięty</string>
     <string name = "invalidAdditonalPlateFieñds">Należy wybrać typ pojazdu i/lub wypełnić wszystkie pola</string>
     <string name="passResetLbl">Zresetuj hasło</string>
     <string name="reset">Zresetować</string>

@@ -79,6 +79,8 @@
     <string name = "invalidAdditonalPlateFieñds">O tipo de veículo deve ser selecionado e/ou todos os campos devem ser preenchidos</string>
     <string name="passResetLbl">Redefinir senha</string>
     <string name="reset">Reiniciar</string>
+    <string name="plateDeleted">Número da placa excluído</string>
+    <string name="deletePlateMsg">Deseja excluir este número de placa?</string>
     <string name="passResetMsg">A senha foi redefinida e uma nova senha foi enviada para o e-mail indicado </string>
     <string name="generatedPass">Senha gerada</string>
     <string name="passChangeLbl">Mudar senha</string>

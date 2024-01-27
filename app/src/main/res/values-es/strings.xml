@@ -69,6 +69,8 @@
     <string name="existePlate">Esta matrícula ya existe</string>
     <string name = "plateEmpty">Campo matrícula no debe estar vacío</string>
     <string name = "plateAdded">Matrícula agregada</string>
+    <string name="plateDeleted">Matrícula borrada</string>
+    <string name="deletePlateMsg">Deseas borrar esta matrícula</string>
     <string name = "invalidAdditonalPlateFieñds">Se debe seleccionar tipo de vehiculo y/o se deben completar todos los campos</string>
     <string name="passResetLbl">Resetear Contraseña</string>
     <string name="reset">Resetear</string>

@@ -110,6 +110,8 @@
     <string name="emptyTargetUser">Destinatario no debe estar vacío</string>
     <string name="deletedNotification">Notificación borrada</string>
     <string name="delete">Eliminar</string>
+    <string name="plateDeleted">Matrícula borrada</string>
+    <string name="deletePlateMsg">Deseas borrar esta matrícula</string>
     <string name="deleteChatMenu">Eliminar Chat</string>
     <string name="lockUser">Bloquear Usuario</string>
     <string name="userInfo">Info. Usuario</string>

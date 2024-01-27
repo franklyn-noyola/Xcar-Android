@@ -76,6 +76,8 @@
     <string name="existePlate">Questo numero di targa esiste già</string>
     <string name = "plateEmpty">Il campo del numero di targa non può essere vuoto</string>
     <string name = "plateAdded">Aggiunto numero di targa</string>
+    <string name="plateDeleted">Numero di targa cancellato</string>
+    <string name="deletePlateMsg">Vuoi eliminare questo numero di targa?</string>
     <string name = "invalidAdditonalPlateFieñds">È necessario selezionare il tipo di veicolo e/o completare tutti i campi</string>
     <string name="reset">Resettare</string>
     <string name="passResetMsg">La password è stata reimpostata e una nuova password è stata inviata all\'e-mail indicata </string>

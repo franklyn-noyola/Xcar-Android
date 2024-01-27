@@ -73,6 +73,8 @@
     <string name="existePlate">이 번호판은 이미 존재합니다.</string>
     <string name = "plateEmpty">번호판 번호 필드는 비워둘 수 없습니다.</string>
     <string name = "plateAdded">플레이트 번호가 추가되었습니다.</string>
+    <string name="deletePlateMsg">이 번호판을 삭제하시겠습니까?</string>
+    <string name="plateDeleted">번호판이 삭제되었습니다.</string>
     <string name = "invalidAdditonalPlateFieñds">차량 유형을 선택하거나 모든 필드를 작성해야 합니다.</string>
     <string name ="passResetLbl">비밀번호 재설정</string>
     <string name ="reset">재설정</string>

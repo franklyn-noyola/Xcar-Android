@@ -71,6 +71,8 @@
     <string name="existePlate">このプレート番号はすでに存在します</string>
     <string name = "plateEmpty">プレート番号フィールドを空にすることはできません</string>
     <string name = "plateAdded">プレート番号を追加しました</string>
+    <string name="deletePlateMsg">このプレート番号を削除しますか?</string>
+    <string name="plateDeleted">プレート番号が削除されました</string>
     <string name = "invalidAdditonalPlateFieñds">車両タイプを選択するか、すべてのフィールドに入力する必要があります。</string>
     <string name="passResetLbl">パスワードのリセット</string>
     <string name="reset">リセット</string>

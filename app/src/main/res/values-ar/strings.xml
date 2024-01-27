@@ -46,11 +46,13 @@
     <string name="register" >تحقق في</string>
     <string name="accept_terms">لقد قرأت وقبلت</string>
     <string name="welcome">Welcome</string>
+    <string name="plateDeleted">تم حذف رقم اللوحة</string>
     <string name="banner_ad_unit_id">ca-app-pub-7506110687995747/7372926087</string>
     <string name="plateHint">" التسجيل"</string>
     <string name="passHint">" كلمة المرور"</string>
     <string name="loginLbl" >تسجيل الدخول</string>
     <string name = "plateAdded">تم اضافة رقم اللوحة</string>
+    <string name="deletePlateMsg">هل تريد حذف رقم اللوحة هذا؟</string>
     <string name = "invalidAdditonalPlateFieñds">يجب تحديد نوع المركبة و/أو يجب إكمال كافة الحقول</string>
     <string name = "plateEmpty">لا يمكن أن يكون حقل رقم اللوحة فارغًا</string>
     <string name="welcomeHomeText">مرحبًا بك في Xcar"</string>
