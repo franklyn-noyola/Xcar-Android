@@ -1,5 +1,7 @@
 package com.epicdeveloper.xcar.ui.sendNotifications;
 
+import static com.epicdeveloper.xcar.MainActivity.email_user;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -174,7 +176,9 @@ public class sendNotification extends AppCompatActivity {
             Toast.makeText(this, resources.getString(R.string.autoSend), Toast.LENGTH_SHORT).show();
             return;
         }
-        userValidation = FirebaseDatabase.getInstance().getReference("Users");
+        String dot1 = new String (email_user);
+        String dot2 = dot1.replace(".","_");
+        userValidation = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
         userValidation.orderByChild("plate_user").equalTo(userToSend).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
