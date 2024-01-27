@@ -199,6 +199,10 @@ public class profile_activity extends AppCompatActivity {
                 intent = new Intent(this, additionalPlate.class);
                 startActivity(intent);
                 return true;
+            case R.id.location:
+                intent = new Intent(this, locationActivity.class);
+                startActivity(intent);
+                return true;
             case aboutAction:
                 intent = new Intent(this, acercade.class);
                 startActivity(intent);

@@ -267,17 +267,17 @@ public class MainActivity extends AppCompatActivity {
         email_user = mUser.getText().toString();
         context = LocaleHelper.setLocale(getApplication(), userlanguage);
         resources = context.getResources();
-        if (TextUtils.isEmpty(userEmail) || TextUtils.isEmpty(password) || password.length() < 8) {
+        if (TextUtils.isEmpty(email_user) || TextUtils.isEmpty(password) || password.length() < 8) {
             Toast.makeText(this,R.string.wrong_user, Toast.LENGTH_SHORT).show();
             return;
         } else {
             userSelected=email_user;
 
-            String dot1 = new String (mUser.getText().toString());
+            String dot1 = new String (email_user);
             String dot2 = dot1.replace(".","_");
             Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
 
-            Users.orderByChild("typel").equalTo("M").addListenerForSingleValueEvent(new ValueEventListener() {
+            Users.orderByChild("type").equalTo("M").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if (dataSnapshot.exists()) {
@@ -546,7 +546,7 @@ public class MainActivity extends AppCompatActivity {
                             btnLogin.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    signIn(mUser.getText().toString().toUpperCase(), mPassword.getText().toString(), mToken, userlanguage);
+                                    signIn(mUser.getText().toString(), mPassword.getText().toString(), mToken, userlanguage);
                                 }
                             });
                         }

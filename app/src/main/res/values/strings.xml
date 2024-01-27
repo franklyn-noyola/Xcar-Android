@@ -134,9 +134,9 @@
     <string name="noNotifications">No hay notificaciones"</string>
     <string name="infoUpdated">La información se ha actualizado correctamente</string>
     <string name="noPassEmpty">Los campos contraseñas no pueden estar vacíos</string>
-    <string name = "plateEmpty">Campo matrícula no debe estar vacío</string>
-    <string name = "plateAdded">Matrícula agregada</string>
-    <string name = "invalidAdditonalPlateFieñds">Se debe seleccionar tipo de vehiculo y/o se deben completar todos los campos</string>
+    <string name="plateEmpty">Campo matrícula no debe estar vacío</string>
+    <string name="plateAdded">Matrícula agregada</string>
+    <string name="invalidAdditonalPlateFieñds">Se debe seleccionar tipo de vehiculo y/o se deben completar todos los campos</string>
     <string name="sucessfully">exitósamente</string>
     <string name="recently">recientemente</string>
     <string name="cancel">Cancelar</string>
@@ -179,5 +179,6 @@
     <string name="settingText">Haciendo click en el menú auxiliar y luego en la opción Configuración, entras a la sección Configuración donde en ella  puedes cambiar al idioma que deseas que la aplicación se muestre.</string>
     <string name="contactText">Haciendo click en el menú auxiliar y luego en la opción Contacto, entras a la secciónde Contacto donde puedes enviar un email al equipo de Soporte de Xcar indicando el motivo de tu mensaje, así también en esta sección puedes compartir con un amigo o familiar en una de las redes sociales de tu preferencia para que se instale la app de allConnected si no lo ha hecho anteriormente.</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_location">locationActivity</string>
 
 </resources>
