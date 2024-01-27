@@ -61,6 +61,7 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
     TextView userSelected, plateSelected, emailSelected, infoLbl;
     String selectedLanguage;
 
+    ArrayAdapter<String> playlistAdapter;
     Button deletePlate;
 
     String plate_0;
@@ -195,12 +196,12 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
                     plate_2 = addedPlates.getItemAtPosition(addedPlates.getSelectedItemPosition()).toString();;
                 }
                 AlertDialog alert = new AlertDialog.Builder(getActivity()).create();
-                alert.setMessage(resources.getString(R.string.deleteChatMsg));
+                alert.setMessage(resources.getString(R.string.deletePlateMsg));
                 alert.setButton(AlertDialog.BUTTON_POSITIVE,resources.getString(R.string.yes), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        deleteListChat();
-                        Toast.makeText(getActivity(), resources.getString(R.string.deletedChat), Toast.LENGTH_SHORT).show();
+                        deletePlateSelected();
+                        Toast.makeText(getActivity(), resources.getString(R.string.plateDeleted), Toast.LENGTH_SHORT).show();
                     }
                 });
                 alert.setButton(AlertDialog.BUTTON_NEGATIVE,resources.getString(R.string.No), (DialogInterface.OnClickListener) null);
@@ -230,7 +231,7 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
     }
 
 
-        private void deleteListChat(){
+        private void deletePlateSelected(){
             String plateToDelete;
             if (position == 0){
                 plateToDelete = plate_0;
@@ -251,6 +252,13 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
                     snapshot.child(key).getRef().removeValue();
                     if (position==0){
                         updateNextPlate(plate_1);
+                        MainActivity.setSelection = 0;
+                        playlistAdapter.remove((String)addedPlates.getSelectedItem());
+                        playlistAdapter.notifyDataSetChanged();
+                    }else{
+                        MainActivity.setSelection = 0;
+                        playlistAdapter.remove((String)addedPlates.getSelectedItem());
+                        playlistAdapter.notifyDataSetChanged();
                     }
                 }
 
@@ -265,7 +273,6 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
             String dot1 = new String (MainActivity.emailSelected);
             String dot2 = dot1.replace(".","_");
             Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
-            ((Spinner)carTypeField).getSelectedView().setEnabled(false);
             Users.orderByChild("plate_user").equalTo(plate).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -299,7 +306,7 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
                     list_plate   = plateList.child("plate_user").getValue().toString();
                     listPlate.add(list_plate);
                 }
-                ArrayAdapter<String> playlistAdapter = new ArrayAdapter<String>(getContext(), R.layout.support_simple_spinner_dropdown_item, listPlate);
+                playlistAdapter = new ArrayAdapter<String>(getContext(), R.layout.support_simple_spinner_dropdown_item, listPlate);
                 addedPlates.setAdapter(playlistAdapter);
                 if (TextUtils.isEmpty(getSelectedPlate)){
                     addedPlates.setSelection(0);
