@@ -84,10 +84,6 @@ public class fragment_home extends Fragment {
         adview.loadAd(adRequest);
         searchViewField = root.findViewById(R.id.search_View);
         searchViewField.setQueryHint(resources.getString((R.string.plate_enter)));
-
-        //searchViewField.setIconified(false);
-        //searchViewField.clearFocus();
-
         MainActivity.screens=1;
         getUserData();
 
@@ -169,7 +165,12 @@ public class fragment_home extends Fragment {
                     }
 
                 }
-                userPlate().setText(plate_user);
+                if (TextUtils.isEmpty(MainActivity.getSelectedPlate)) {
+                    userPlate().setText(plate_user);
+                }else{
+                    userPlate().setText(MainActivity.getSelectedPlate);
+                }
+
                 if (plate_user.length() <= 8) {
                     userPlate().setTextSize(50);
                 }

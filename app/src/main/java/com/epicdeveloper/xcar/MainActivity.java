@@ -49,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
     public static String userSelected;
     public static String UserSel;
 
+    public static int  setSelection;
+    public static String getSelectedPlate;
+
     SpannableStringBuilder newLinkBlueText;
     SpannableStringBuilder newforgottenPass;
     public static int screens;

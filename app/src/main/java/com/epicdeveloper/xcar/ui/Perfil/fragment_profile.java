@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,6 +33,7 @@ import com.epicdeveloper.xcar.MainActivity;
 import com.epicdeveloper.xcar.R;
 import com.epicdeveloper.xcar.ui.LoginErrorsValidation;
 
+import com.epicdeveloper.xcar.ui.home.fragment_home;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.firebase.database.DataSnapshot;
@@ -47,14 +49,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.epicdeveloper.xcar.MainActivity.chatScreen;
 import static com.epicdeveloper.xcar.MainActivity.email_user;
+import static com.epicdeveloper.xcar.MainActivity.getSelectedPlate;
 import static com.epicdeveloper.xcar.R.layout.changepass;
+import static com.epicdeveloper.xcar.R.layout.fragment_home;
 
-public class fragment_profile extends Fragment {
+    public class fragment_profile extends Fragment {
     TextView userSelected, plateSelected, emailSelected, infoLbl;
     String selectedLanguage;
 
     String list_plate;
+
+
 
     public List<String>  listPlate;
     EditText brandCarField, modelCarField, colorCarField, yearCarField, newPassField, confirmPassField;
@@ -69,6 +76,8 @@ public class fragment_profile extends Fragment {
     public Object colorProfileCarUser;
     public Object yearProfileCarUser;
     public View Profile;
+
+    public String selectedPlate;
     Context context;
     Resources resources;
     View view;
@@ -119,10 +128,34 @@ public class fragment_profile extends Fragment {
         btnchangePassButton = Profile.findViewById(R.id.modPass);
         btnchangePassButton.setHint(resources.getString(R.string.changePassHint));
         userSelected.setText(MainActivity.UserSel);
-        plateSelected.setText(MainActivity.plate_user);
         emailSelected.setText(MainActivity.emailSelected);
-        getInfoData();
         getPlateList();
+        if (TextUtils.isEmpty(getSelectedPlate)) {
+            userSelected.setText(MainActivity.UserSel);
+            plateSelected.setText(MainActivity.plate_user);
+            emailSelected.setText(MainActivity.emailSelected);
+            getInfoData();
+
+       }else {
+            getSelectedPlate(getSelectedPlate);
+            plateSelected.setText(getSelectedPlate);
+        }
+
+
+        addedPlates.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                MainActivity.getSelectedPlate = addedPlates.getSelectedItem().toString();
+                MainActivity.setSelection = addedPlates.getSelectedItemPosition();
+                getSelectedPlate(getSelectedPlate);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         btnModiInfoButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,6 +190,10 @@ public class fragment_profile extends Fragment {
         return Profile;
     }
 
+
+
+
+
     public void getPlateList() {
         String dot1 = new String(email_user);
         String dot2 = dot1.replace(".", "_");
@@ -171,9 +208,13 @@ public class fragment_profile extends Fragment {
                     list_plate   = plateList.child("plate_user").getValue().toString();
                     listPlate.add(list_plate);
                 }
-                System.out.println("Lista de placas " + listPlate);
                 ArrayAdapter<String> playlistAdapter = new ArrayAdapter<String>(getContext(), R.layout.support_simple_spinner_dropdown_item, listPlate);
                 addedPlates.setAdapter(playlistAdapter);
+                if (TextUtils.isEmpty(getSelectedPlate)){
+                    addedPlates.setSelection(0);
+                }else{
+                    addedPlates.setSelection(MainActivity.setSelection);
+                }
             }
 
             @Override
@@ -314,6 +355,10 @@ public class fragment_profile extends Fragment {
     }
 
     private void updateDataInfo() {
+        if (TextUtils.isEmpty(getSelectedPlate)){
+            getSelectedPlate = MainActivity.plate_user;
+        }
+
         if (btnModiInfoButton.getHint().equals(resources.getString(R.string.modifyInfo))){
             btnModiInfoButton.setHint(resources.getString(R.string.updateInfo));
 
@@ -336,7 +381,7 @@ public class fragment_profile extends Fragment {
            String dot2 = dot1.replace(".","_");
            Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
                 ((Spinner)carTypeField).getSelectedView().setEnabled(false);
-           Users.orderByChild("user_email").equalTo(MainActivity.emailSelected).addListenerForSingleValueEvent(new ValueEventListener() {
+           Users.orderByChild("plate_user").equalTo(getSelectedPlate).addListenerForSingleValueEvent(new ValueEventListener() {
                @Override
                public void onDataChange(@NonNull DataSnapshot snapshot) {
                    for (DataSnapshot ds: snapshot.getChildren()){
@@ -372,6 +417,36 @@ public class fragment_profile extends Fragment {
                 Toast.makeText(context, resources.getString(R.string.infoUpdated), Toast.LENGTH_SHORT).show();
                 btnchangePassButton.setEnabled(true);
         }
+    }
+
+    private void getSelectedPlate(String plate) {
+        String dot1 = new String (email_user);
+        String dot2 = dot1.replace(".","_");
+        Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+        Users.orderByChild("plate_user").equalTo(plate).addListenerForSingleValueEvent(new ValueEventListener() {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        typeProfileCarUser = snapshot.child("cartype").getValue();
+                        brandProfileCarUser = snapshot.child("carbrand").getValue();
+                        modelProfileCaruser = snapshot.child("carmodel").getValue();
+                        colorProfileCarUser = snapshot.child("carcolor").getValue();
+                        yearProfileCarUser = snapshot.child("year").getValue();
+                    }
+                    carTypeFieldLbl.setText(typeProfileCarUser.toString());
+                    brandCarField.setText(brandProfileCarUser.toString());
+                    modelCarField.setText(modelProfileCaruser.toString());
+                    colorCarField.setText(colorProfileCarUser.toString());
+                    yearCarField.setText(yearProfileCarUser.toString());
+                    plateSelected.setText(plate);
+                }
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void getInfoData() {
