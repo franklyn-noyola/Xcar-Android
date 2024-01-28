@@ -11,7 +11,12 @@
     <string name="action_additionalPlate">Zusätzliche Registrierung</string>
     <string name="chat_menu">Plaudern</string>
     <string name="addMob">ca-app-pub-7506110687995747~3078457854</string>
-    <string name="support">XCar-Unterstützung</string>
+    <string name="support">Xcar-Unterstützung</string>
+    <string name="curentLocation">AKTUELLER STANDORT</string>
+    <string name="locationHistory">STANDORTGESCHICHTE</string>
+    <string name="saveLocation">Sicherer Ort</string>
+    <string name="goToMap">Gehen Sie zur Karte</string>
+    <string name="locationTitle">Standort speichern/ansehen</string>
     <string name="logout_menu">Verlassen</string>
     <string name="home_menu">Start</string>
     <string name="action_settings">Rahmen</string>

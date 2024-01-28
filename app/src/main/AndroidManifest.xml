@@ -52,7 +52,11 @@
         android:theme="@style/AppTheme.SplashTheme"
         android:windowDisablePreview="true"
         tools:ignore="AllowBackup">
-
+        <activity
+            android:name=".location"
+            android:exported="false"
+            android:label="@string/locationTitle"
+            android:theme="@style/AppTheme.SplashTheme.NoActionBar" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -71,7 +75,7 @@
         <activity
             android:name=".locationActivity"
             android:exported="false"
-            android:label="@string/title_activity_location" />
+            android:label="locationActivity" />
 
         <meta-data
             android:name="com.google.android.actions"

@@ -12,6 +12,11 @@
     <string name="logout_menu">اخرج</string>
     <string name="home_menu">البدء</string>
     <string name="action_settings">جلسة</string>
+    <string name="curentLocation">الموقع الحالي</string>
+    <string name="locationHistory">تاريخ الموقع</string>
+    <string name="saveLocation">حفظ الموقع</string>
+    <string name="goToMap">اذهب إلى الخريطة</string>
+    <string name="locationTitle">إعداد/عرض الموقع</string>
     <string name="action_about">حول</string>
     <string name="action_contacts">اتصال</string>
     <string name="reply">رد</string>

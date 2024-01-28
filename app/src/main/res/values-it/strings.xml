@@ -77,6 +77,11 @@
     <string name = "plateEmpty">Il campo del numero di targa non può essere vuoto</string>
     <string name = "plateAdded">Aggiunto numero di targa</string>
     <string name="plateDeleted">Numero di targa cancellato</string>
+    <string name="curentLocation">वर्तमान स्थान</string>
+    <string name="locationHistory">स्थान इतिहास</string>
+    <string name="saveLocation">स्थान सहेजें</string>
+    <string name="goToMap">मानचित्र पर जाएँ</string>
+    <string name="locationTitle">Salva/Visualizza posizione</string>
     <string name="deletePlateMsg">Vuoi eliminare questo numero di targa?</string>
     <string name = "invalidAdditonalPlateFieñds">È necessario selezionare il tipo di veicolo e/o completare tutti i campi</string>
     <string name="reset">Resettare</string>

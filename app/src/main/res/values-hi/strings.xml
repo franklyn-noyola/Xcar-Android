@@ -15,6 +15,11 @@
     <string name="colorHint">रंग</string>
     <string name="reply">जवाब</string>
     <string name="logout_menu">लॉग आउट करें</string>
+    <string name="curentLocation">वर्तमान स्थान</string>
+    <string name="locationHistory">स्थान इतिहास</string>
+    <string name="saveLocation">स्थान सहेजें</string>
+    <string name="goToMap">मानचित्र पर जाएँ</string>
+    <string name="locationTitle">स्थान सहेजें/देखें</string>
     <string name="home_menu">होम</string>
     <string name="action_settings">सेटिंग्स</string>
     <string name="action_about">के बारे में</string>

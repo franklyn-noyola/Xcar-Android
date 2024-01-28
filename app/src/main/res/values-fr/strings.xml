@@ -34,6 +34,11 @@
     <string name="password_strong">Minimum 8 caractères: 1 minuscule, 1 majuscase et un numéro</string>
     <string name="new_user">Nouvel enregistrement des utilisateurs</string>
     <string name="name">Nombre</string>
+    <string name="curentLocation">LOCALISATION ACTUELLE</string>
+    <string name="locationHistory">HISTORIQUE DE L\'EMPLACEMENT</string>
+    <string name="saveLocation">Enregistrer l\'emplacementn</string>
+    <string name="goToMap">Aller à la carte</string>
+    <string name="locationTitle">Enregistrer/afficher l\'emplacement</string>
     <string name="plate_name" >Email ou numéro de plaque</string>
     <string name="addPlate">Ajouter un numéro de plaque supplémentaire</string>
     <string name="email_name" >Email</string>

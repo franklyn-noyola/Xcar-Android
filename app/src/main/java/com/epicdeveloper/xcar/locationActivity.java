@@ -31,7 +31,7 @@ public class locationActivity extends AppCompatActivity implements OnMapReadyCal
     private GoogleMap mMap;
 
     private final int FINE_PERMISSION_CODE = 1;
-    Location currentLocation;
+    static Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
 
     private ActivityMapsBinding binding;
@@ -75,6 +75,7 @@ public class locationActivity extends AppCompatActivity implements OnMapReadyCal
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         LatLng latLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
+        System.out.println("Latitude "+ currentLocation.getLatitude()+" Longitude "+currentLocation.getLongitude());
         mMap.addMarker(new MarkerOptions().position(latLng).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
     }

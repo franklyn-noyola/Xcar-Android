@@ -85,7 +85,6 @@ public class chatMainScreen extends Fragment {
         adview.loadAd(adRequest);
         searchView = root.findViewById(R.id.searchView);
         searchView.setQueryHint(resources.getString((R.string.plate_enter)));
-        System.out.println("Placa es" + getSelectedPlate);
         if (TextUtils.isEmpty(MainActivity.getSelectedPlate)){
             selectedPlate = plate_user;
         }else {
