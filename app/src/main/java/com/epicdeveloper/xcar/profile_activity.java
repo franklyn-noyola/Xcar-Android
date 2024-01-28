@@ -200,7 +200,7 @@ public class profile_activity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.location:
-                intent = new Intent(this, locationActivity.class);
+                intent = new Intent(this, location.class);
                 startActivity(intent);
                 return true;
             case aboutAction:
