@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -108,12 +109,13 @@ public class currentLocation extends Fragment {
             public void onClick(View v) {
 
                 String lati = latitudLbl.getText().toString();
+                String longi = longitudLbl.getText().toString();
                 int substr = lati.indexOf(":");
                 int viewDataLocation = substr+2;
-                if (lati.equals("No hay Datos") ){
-                    return;
+                if (lati.contains(resources.getString(R.string.noData).toString()) || longi.equals(resources.getString(R.string.noData).toString())){
+                    Toast.makeText(context,resources.getString(R.string.noDataLocation),Toast.LENGTH_SHORT).show();
                 }
-                System.out.println("Substring de " + lati.substring(substr+2));
+
             }
         });
 
@@ -132,9 +134,9 @@ public class currentLocation extends Fragment {
                 if (snapshot.exists()){
                     return;
                 }else{
-                    longitudLbl.setText(resources.getString(R.string.longitudLbl)+ " No hay Datos" );
-                    latitudLbl.setText(resources.getString(R.string.latitudLbl)+ " No hay Datos" );
-                    placeLbl.setText(resources.getString(R.string.placeLabel)+ " No hay Datos");
+                    longitudLbl.setText(resources.getString(R.string.longitudLbl)+" "+ resources.getString(R.string.noData));
+                    latitudLbl.setText(resources.getString(R.string.latitudLbl)+" "+ resources.getString(R.string.noData) );
+                    placeLbl.setText(resources.getString(R.string.placeLabel)+" "+resources.getString(R.string.noData));
                 }
             }
 
