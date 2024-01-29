@@ -21,6 +21,7 @@
     <string name="placeLabel"><b>Lugar:</b></string>
     <string name="viewLocation">Ver Ubicación</string>
     <string name="newLocation">Nueva Ubicación Actual</string>
+    <string name="newCurrent"><b>Nueva Ubicación Actual</b>b</string>
     <string name="noDataLocation">No hay Datos de la Ubicación Actual</string>
     <string name="chat_menu">Chat</string>
     <string name="logout_menu">Salir</string>

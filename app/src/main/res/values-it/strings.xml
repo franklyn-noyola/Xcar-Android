@@ -89,6 +89,7 @@
     <string name="placeLabel"><b>>osto:</b></string>
     <string name="viewLocation">Visualizza posizione</string>
     <string name="newLocation">Nuova posizione attuale</string>
+    <string name="newCurrent"><b>Nuova posizione attuale</b></string>
     <string name="noDataLocation">Nessun dato sulla posizione corrente</string>
     <string name="deletePlateMsg">Vuoi eliminare questo numero di targa?</string>
     <string name = "invalidAdditonalPlateFieñds">È necessario selezionare il tipo di veicolo e/o completare tutti i campi</string>

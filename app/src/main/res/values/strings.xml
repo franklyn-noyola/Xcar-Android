@@ -191,6 +191,7 @@
     <string name="viewLocation">Ver Ubicación</string>
     <string name="newLocation">Nueva Ubicación Actual</string>
     <string name="noDataLocation">No hay Datos de la Ubicación Actual</string>
+    <string name="newCurrent"><b>Nueva Ubicación Actual</b></string>
 
 
 

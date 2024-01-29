@@ -46,6 +46,7 @@
     <string name="placeLabel"><b>Lieu:</b></string>
     <string name="viewLocation">Voir l\'emplacement</string>
     <string name="newLocation">Nouvel emplacement actuel</string>
+    <string name="newCurrent"><b>Nouvel emplacement actuel</b></string>
     <string name="noDataLocation">Aucune donnée de localisation actuelle</string>
     <string name="plate_name" >Email ou numéro de plaque</string>
     <string name="addPlate">Ajouter un numéro de plaque supplémentaire</string>

@@ -25,6 +25,7 @@
     <string name="viewLocation">>عرض الموقع</string>
     <string name="newLocation">>الموقع الحالي الجديد</string>
     <string name="noDataLocation">لا توجد بيانات الموقع الحالي</string>
+    <string name="newCurrent"><b>الموقع الحالي الجديد</b></string>
     <string name="action_about">حول</string>
     <string name="action_contacts">اتصال</string>
     <string name="reply">رد</string>

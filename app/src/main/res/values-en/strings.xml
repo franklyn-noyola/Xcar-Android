@@ -42,6 +42,7 @@
     <string name="placeLabel"><b>Place:</b></string>
     <string name="viewLocation">View Location</string>
     <string name="newLocation">New Current Location</string>
+    <string name="newCurrent"><b>New Current Location</b></string>
     <string name="noDataLocation">No Current Location Data</string>
     <string name="terms_privacy">&#32; Terms and conditions</string>
     <string name="delete_chat" >Delete Chat</string>

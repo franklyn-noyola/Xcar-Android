@@ -28,6 +28,7 @@
     <string name="noDataLocation">कोई वर्तमान स्थान डेटा नहीं</string>
     <string name="viewLocation">स्थान देखें</string>
     <string name="newLocation">नया वर्तमान स्थान</string>
+    <string name="newCurrent"><b>नया वर्तमान स्थान</b></string>
     <string name="home_menu">होम</string>
     <string name="action_settings">सेटिंग्स</string>
     <string name="action_about">के बारे में</string>

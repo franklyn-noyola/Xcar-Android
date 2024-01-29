@@ -48,6 +48,7 @@
     <string name="placeLabel"><b>Plaats:</b></string>
     <string name="viewLocation">Bekijk locatie</string>
     <string name="newLocation">Nieuwe huidige locatie</string>
+    <string name="newCurrent"><b>Nieuwe huidige locatie</b></string>
     <string name="noDataLocation">Geen huidige locatiegegevens</string>
     <string name="plate_name" >E-mail of kenteken</string>
     <string name="email_name" >E-mail</string>
