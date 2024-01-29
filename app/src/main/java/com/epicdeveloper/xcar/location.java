@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import com.epicdeveloper.xcar.ui.main.SectionsPagerAdapter;
 import com.epicdeveloper.xcar.databinding.ActivityLocationBinding;
@@ -19,6 +20,7 @@ import com.epicdeveloper.xcar.databinding.ActivityLocationBinding;
 public class location extends AppCompatActivity {
 
     private ActivityLocationBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +34,7 @@ public class location extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
-        FloatingActionButton fab = binding.fab;
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
     }
 }
