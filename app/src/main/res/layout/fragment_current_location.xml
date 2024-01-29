@@ -5,34 +5,113 @@
     android:layout_height="match_parent"
     tools:context=".currentLocation">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/longitudLbl"
+        android:layout_marginVertical="10dp"
+        android:layout_marginStart="5dp"
+        android:textSize="15dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="top"
-        android:text="Current History Frame" />
+        android:text="@string/longitudLbl"
+        tools:ignore="SpUsage" />
+    <TextView
+        android:id="@+id/latitudLbbl"
+        android:layout_marginVertical="40dp"
+        android:layout_marginStart="5dp"
+        android:textSize="15dp"
+        android:layout_width="match_parent"
+        android:gravity="top"
+        android:layout_height="match_parent"
+        android:text="@string/latitudLbl"
+        tools:ignore="SpUsage" />
+    <TextView
+        android:id="@+id/placeLbl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="15dp"
+        android:layout_marginVertical="70dp"
+        android:layout_marginStart="5dp"
+        android:gravity="top"
+        android:text="@string/placeLabel"
+        tools:ignore="SpUsage" />
+
+    <TextView
+        android:id="@+id/warningLbl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="110dp"
+        android:textSize="10dp"
+        android:layout_marginStart="5dp"
+        android:gravity="top"
+        android:text="@string/warningLocation"
+        tools:ignore="SpUsage" />
+
+    <Button
+        android:id="@+id/viewLocation"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:textSize="8dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginVertical="5dp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/rounded_corners"
+        android:textColorHint="@android:color/white"
+        android:text="@string/viewLocation"
+        tools:ignore="SpUsage" />
+
+    <Button
+        android:id="@+id/newLocation"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:textSize="12dp"
+        android:layout_marginVertical="150dp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/rounded_corners"
+        android:textColorHint="@android:color/white"
+        android:text="@string/newLocation"
+        tools:ignore="SpUsage" />
 
     <Button
         android:id="@+id/gotomap"
         android:layout_width="150dp"
         android:layout_height="40dp"
+        android:textSize="12dp"
         android:layout_marginStart="10dp"
-        android:layout_marginVertical="100dp"
+        android:layout_marginVertical="200dp"
         android:textColor="@android:color/white"
         android:background="@drawable/rounded_corners"
         android:textColorHint="@android:color/white"
-        android:text="@string/goToMap">
-
+        android:text="@string/goToMap"
+        tools:ignore="SpUsage">
     </Button>
     <Button
         android:id="@+id/saveLocation"
         android:layout_width="150dp"
         android:layout_height="40dp"
+        android:textSize="12dp"
+        android:visibility="gone"
         android:textColor="@android:color/white"
         android:layout_marginStart="10dp"
-        android:layout_marginVertical="150dp"
+        android:layout_marginVertical="250dp"
         android:background="@drawable/rounded_corners"
         android:textColorHint="@android:color/white"
-        android:text="@string/saveLocation">
+        android:text="@string/saveLocation"
+        tools:ignore="SpUsage">
+    </Button>
+    <Button
+        android:id="@+id/cancelLocation"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:textSize="12dp"
+        android:textColor="@android:color/white"
+        android:layout_marginStart="10dp"
+        android:layout_marginVertical="300dp"
+        android:background="@drawable/rounded_corners"
+        android:textColorHint="@android:color/white"
+        android:visibility="gone"
+        android:text="@string/cancel"
+        tools:ignore="SpUsage">
     </Button>
 </FrameLayout>
