@@ -6,14 +6,20 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
+import android.content.res.Resources;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
+import android.window.OnBackInvokedDispatcher;
 
+import com.epicdeveloper.xcar.ui.Chat.fragment_chat;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -26,12 +32,24 @@ import com.epicdeveloper.xcar.databinding.ActivityMapsBinding;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
 public class locationActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
 
+    Resources resources;
+
+    String selectedLanguage;
+
+    Context context;
+
     private final int FINE_PERMISSION_CODE = 1;
     static Location currentLocation;
+
+    public static String add;
     FusedLocationProviderClient fusedLocationProviderClient;
 
     private ActivityMapsBinding binding;
@@ -40,6 +58,10 @@ public class locationActivity extends AppCompatActivity implements OnMapReadyCal
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        selectedLanguage= MainActivity.userlanguage;
+        context = LocaleHelper.setLocale(this, selectedLanguage);
+        resources = context.getResources();
 
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -75,7 +97,9 @@ public class locationActivity extends AppCompatActivity implements OnMapReadyCal
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         LatLng latLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
-        System.out.println("Latitude "+ currentLocation.getLatitude()+" Longitude "+currentLocation.getLongitude());
+        getLocation(currentLocation.getLatitude(), currentLocation.getLongitude());
+        com.epicdeveloper.xcar.currentLocation.longitudfield = (float) currentLocation.getLongitude();
+        com.epicdeveloper.xcar.currentLocation.latitudfield = (float) currentLocation.getLatitude();
         mMap.addMarker(new MarkerOptions().position(latLng).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
     }
@@ -92,4 +116,30 @@ public class locationActivity extends AppCompatActivity implements OnMapReadyCal
         }
     }
 
+    public void getLocation(double lat, double lng) {
+        Geocoder geocoder = new Geocoder(locationActivity.this, Locale.getDefault());
+
+        try {
+            List<Address> addresses = geocoder.getFromLocation(lat, lng, 1);
+            Address obj = addresses.get(0);
+            add = obj.getAddressLine(0);
+            com.epicdeveloper.xcar.currentLocation.place = add;
+            Log.e("IGA", "Address" + add);
+
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        com.epicdeveloper.xcar.currentLocation.longitudLbl.setText(resources.getString(R.string.longitudLbl)+" "+ currentLocation.getLongitude());
+        com.epicdeveloper.xcar.currentLocation.latitudLbl.setText(resources.getString(R.string.latitudLbl)+" "+ currentLocation.getLatitude());
+        com.epicdeveloper.xcar.currentLocation.placeLbl.setText((resources.getString(R.string.placeLabel))+" "+ add);
+    }
 }
