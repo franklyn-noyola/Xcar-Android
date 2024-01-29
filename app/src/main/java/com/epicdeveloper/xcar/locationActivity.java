@@ -145,8 +145,13 @@ public class locationActivity extends AppCompatActivity implements OnMapReadyCal
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        com.epicdeveloper.xcar.currentLocation.longitudLbl.setText(resources.getString(R.string.longitudLbl)+" "+ currentLocation.getLongitude());
-        com.epicdeveloper.xcar.currentLocation.latitudLbl.setText(resources.getString(R.string.latitudLbl)+" "+ currentLocation.getLatitude());
-        com.epicdeveloper.xcar.currentLocation.placeLbl.setText((resources.getString(R.string.placeLabel))+" "+ add);
+        com.epicdeveloper.xcar.currentLocation.longitudData = currentLocation.getLongitude();
+        com.epicdeveloper.xcar.currentLocation.latitudData = currentLocation.getLatitude();
+        com.epicdeveloper.xcar.currentLocation.placeData = add;
+        com.epicdeveloper.xcar.currentLocation.setFieldsVisible();
+        com.epicdeveloper.xcar.currentLocation.longiFieldLbl.setText(resources.getString(R.string.longitudLbl)+" "+ currentLocation.getLongitude());
+        com.epicdeveloper.xcar.currentLocation.latiFieldLbl.setText(resources.getString(R.string.latitudLbl)+" "+ currentLocation.getLatitude());
+        com.epicdeveloper.xcar.currentLocation.placeFieldLbl.setText(resources.getString(R.string.placeLabel)+" "+ add);
+
     }
 }

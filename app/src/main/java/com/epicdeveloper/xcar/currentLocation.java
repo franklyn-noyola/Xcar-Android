@@ -38,6 +38,10 @@ public class currentLocation extends Fragment {
     public static float latitudfield;
     static String place;
 
+    public static double longitudData;
+    public static double latitudData;
+    static String placeData;
+
     static TextView longitudLbl;
     static TextView latitudLbl;
     static TextView placeLbl;
@@ -57,6 +61,13 @@ public class currentLocation extends Fragment {
     Context context;
 
     Resources resources;
+
+    static TextView newCurrentLbl;
+
+    static TextView longiFieldLbl;
+    static TextView latiFieldLbl;
+    static TextView placeFieldLbl;
+
 
     private String mParam1;
     private String mParam2;
@@ -97,6 +108,10 @@ public class currentLocation extends Fragment {
         latitudLbl = locationCurrent.findViewById(R.id.latitudLbbl);
         placeLbl = locationCurrent.findViewById(R.id.placeLbl);
         viewLocation = locationCurrent.findViewById(R.id.viewLocation);
+        longiFieldLbl = locationCurrent.findViewById(R.id.longitudLbl2);
+        latiFieldLbl = locationCurrent.findViewById(R.id.latitudLbbl2);
+        placeFieldLbl = locationCurrent.findViewById(R.id.placeLbl2);
+        newCurrentLbl = locationCurrent.findViewById(R.id.newCurrentLbl);
         gotomap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,7 +120,7 @@ public class currentLocation extends Fragment {
                 startActivity(intent);
             }
         });
-
+        setFieldsInvisible();
         getLocationData();
 
         viewLocation.setOnClickListener(new View.OnClickListener() {
@@ -138,7 +153,18 @@ public class currentLocation extends Fragment {
         return  locationCurrent;
     }
 
-
+    public void setFieldsInvisible(){
+        longiFieldLbl.setVisibility(View.INVISIBLE);
+        latiFieldLbl.setVisibility(View.INVISIBLE);
+        placeFieldLbl.setVisibility(View.INVISIBLE);
+        newCurrentLbl.setVisibility(View.INVISIBLE);;
+    }
+    public static void setFieldsVisible(){
+        longiFieldLbl.setVisibility(View.VISIBLE);
+        latiFieldLbl.setVisibility(View.VISIBLE);
+        placeFieldLbl.setVisibility(View.VISIBLE);
+        newCurrentLbl.setVisibility(View.VISIBLE);;
+    }
 
     public void getLocationData(){
         String dot1 = new String (email_user);
