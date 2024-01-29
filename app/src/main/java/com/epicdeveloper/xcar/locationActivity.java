@@ -16,6 +16,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 import android.window.OnBackInvokedDispatcher;
 
@@ -148,10 +149,17 @@ public class locationActivity extends AppCompatActivity implements OnMapReadyCal
         com.epicdeveloper.xcar.currentLocation.longitudData = currentLocation.getLongitude();
         com.epicdeveloper.xcar.currentLocation.latitudData = currentLocation.getLatitude();
         com.epicdeveloper.xcar.currentLocation.placeData = add;
-        com.epicdeveloper.xcar.currentLocation.setFieldsVisible();
+        if (com.epicdeveloper.xcar.currentLocation.type.equals("N")){
+            com.epicdeveloper.xcar.currentLocation.saveButton.setVisibility(View.VISIBLE);
+            com.epicdeveloper.xcar.currentLocation.cancelButton.setVisibility(View.VISIBLE);
+            com.epicdeveloper.xcar.currentLocation.setFieldsVisible();
+        }
+
+
         com.epicdeveloper.xcar.currentLocation.longiFieldLbl.setText(resources.getString(R.string.longitudLbl)+" "+ currentLocation.getLongitude());
         com.epicdeveloper.xcar.currentLocation.latiFieldLbl.setText(resources.getString(R.string.latitudLbl)+" "+ currentLocation.getLatitude());
         com.epicdeveloper.xcar.currentLocation.placeFieldLbl.setText(resources.getString(R.string.placeLabel)+" "+ add);
+
 
     }
 }

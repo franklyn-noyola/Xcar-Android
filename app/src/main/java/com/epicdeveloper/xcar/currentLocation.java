@@ -2,7 +2,9 @@ package com.epicdeveloper.xcar;
 
 import static com.epicdeveloper.xcar.MainActivity.email_user;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -24,11 +26,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link currentLocation#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
 public class currentLocation extends Fragment {
 
     private Button gotomap;
@@ -49,7 +51,7 @@ public class currentLocation extends Fragment {
     public Object latitude;
     public Object placeF;
     public static String type;
-    DatabaseReference Location;
+    private DatabaseReference Location;
     Intent intent;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -68,7 +70,10 @@ public class currentLocation extends Fragment {
     static TextView latiFieldLbl;
     static TextView placeFieldLbl;
 
+    static Button newLocation;
 
+    static Button saveButton;
+    static Button cancelButton;
     private String mParam1;
     private String mParam2;
 
@@ -112,10 +117,22 @@ public class currentLocation extends Fragment {
         latiFieldLbl = locationCurrent.findViewById(R.id.latitudLbbl2);
         placeFieldLbl = locationCurrent.findViewById(R.id.placeLbl2);
         newCurrentLbl = locationCurrent.findViewById(R.id.newCurrentLbl);
+        newLocation = locationCurrent.findViewById(R.id.newLocation);
+        saveButton = locationCurrent.findViewById(R.id.saveLocation);
+        cancelButton = locationCurrent.findViewById(R.id.cancelLocation);
+
+        newLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                type = "N";
+                newLocation.setEnabled(false);
+                gotomap.setVisibility(View.VISIBLE);
+            }
+        });
         gotomap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                type = "M";
+                type = "N";
                 intent = new Intent(getActivity(), locationActivity.class);
                 startActivity(intent);
             }
@@ -149,11 +166,48 @@ public class currentLocation extends Fragment {
             }
         });
 
+        saveButton.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              AlertDialog alert = new AlertDialog.Builder(getActivity()).create();
+                                              alert.setMessage(resources.getString(R.string.locationAlert));
+                                              alert.setButton(AlertDialog.BUTTON_POSITIVE, resources.getString(R.string.yes), new DialogInterface.OnClickListener() {
+                                                  @Override
+                                                  public void onClick(DialogInterface dialogInterface, int i) {
+
+                                                      updateCurrentLocationData();
+                                                      Toast.makeText(getActivity(), resources.getString(R.string.locationAdded), Toast.LENGTH_SHORT).show();
+                                                      setFieldsInvisible();
+                                                      newLocation.setEnabled(true);
+                                                  }
+                                              });
+                                              alert.setButton(AlertDialog.BUTTON_NEGATIVE, resources.getString(R.string.No), new DialogInterface.OnClickListener() {
+                                                  @Override
+                                                  public void onClick(DialogInterface dialog, int which) {
+                                                      setFieldsInvisible();
+                                                      newLocation.setEnabled(true);
+                                                  }
+                                              });
+                                              alert.show();
+                                          }
+                                      });
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setFieldsInvisible();
+                newLocation.setEnabled(true);
+            }
+        });
+
         // Inflate the layout for this fragment
         return  locationCurrent;
     }
 
     public void setFieldsInvisible(){
+        gotomap.setVisibility(View.INVISIBLE);
+        saveButton.setVisibility(View.INVISIBLE);
+        cancelButton.setVisibility(View.INVISIBLE);
         longiFieldLbl.setVisibility(View.INVISIBLE);
         latiFieldLbl.setVisibility(View.INVISIBLE);
         placeFieldLbl.setVisibility(View.INVISIBLE);
@@ -166,28 +220,28 @@ public class currentLocation extends Fragment {
         newCurrentLbl.setVisibility(View.VISIBLE);;
     }
 
-    public void getLocationData(){
-        String dot1 = new String (email_user);
-        String dot2 = dot1.replace(".","_");
-        Location = FirebaseDatabase.getInstance().getReference("Location/"+dot2);
+    public void getLocationData() {
+        String dot1 = new String(email_user);
+        String dot2 = dot1.replace(".", "_");
+        Location = FirebaseDatabase.getInstance().getReference("Location/" + dot2);
 
-        Location.orderByChild("Type").equalTo("C").addListenerForSingleValueEvent(new ValueEventListener() {
+        Location.orderByChild("type").equalTo("C").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
+                if (snapshot.exists()) {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                        longintude = dataSnapshot.child("Longitude").getValue();
-                        latitude = snapshot.child("Latitude").getValue();
-                        placeF = snapshot.child("Place").getValue();
+                        longintude = dataSnapshot.child("longitude").getValue();
+                        latitude = dataSnapshot.child("latitude").getValue();
+                        placeF = dataSnapshot.child("place").getValue();
 
                     }
-                    longitudLbl.setText(resources.getString(R.string.longitudLbl)+" "+longintude.toString());
-                    latitudLbl.setText(resources.getString(R.string.latitudLbl)+" "+latitude.toString());
-                    placeLbl.setText(resources.getString(R.string.placeLabel)+" "+placeF.toString());
-                }else{
-                    longitudLbl.setText(resources.getString(R.string.longitudLbl)+" "+ resources.getString(R.string.noData));
-                    latitudLbl.setText(resources.getString(R.string.latitudLbl)+" "+ resources.getString(R.string.noData) );
-                    placeLbl.setText(resources.getString(R.string.placeLabel)+" "+resources.getString(R.string.noData));
+                    longitudLbl.setText(resources.getString(R.string.longitudLbl) + " " + longintude.toString());
+                    latitudLbl.setText(resources.getString(R.string.latitudLbl) + " " + latitude.toString());
+                    placeLbl.setText(resources.getString(R.string.placeLabel) + " " + placeF.toString());
+                } else {
+                    longitudLbl.setText(resources.getString(R.string.longitudLbl) + " " + resources.getString(R.string.noData));
+                    latitudLbl.setText(resources.getString(R.string.latitudLbl) + " " + resources.getString(R.string.noData));
+                    placeLbl.setText(resources.getString(R.string.placeLabel) + " " + resources.getString(R.string.noData));
                 }
             }
 
@@ -196,6 +250,47 @@ public class currentLocation extends Fragment {
 
             }
         });
+        }
+
+        public void updateCurrentLocationData() {
+            String lati = latitudLbl.getText().toString();
+            String longi = longitudLbl.getText().toString();
+            if (lati.contains(resources.getString(R.string.noData).toString()) || longi.equals(resources.getString(R.string.noData).toString())) {
+                saveLocationData();
+            } else {
+                String dot1 = new String(email_user);
+                String dot2 = dot1.replace(".", "_");
+                Location = FirebaseDatabase.getInstance().getReference("Location/" + dot2);
+                Location.orderByChild("type").equalTo("C").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot ds: snapshot.getChildren()){
+                            Map<String, Object> updates = new HashMap<String, Object>();
+                            updates.put("type", "H");
+                            ds.getRef().updateChildren(updates);
+                        }
+                        saveLocationData();
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+            }
+        }
+        public void saveLocationData(){
+            Date currentDate = new Date();
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss" );
+            String currentDateTime = dateFormat.format(currentDate);
+            String dot1 = new String(email_user);
+            String dot2 = dot1.replace(".", "_");
+            final LocationData locationData = new LocationData(currentDateTime,"C",longitudData,latitudData,placeData);
+            DatabaseReference Location = FirebaseDatabase.getInstance().getReference("Location/"+dot2);
+            String id = Location.push().getKey();
+            Location.child(id).setValue(locationData);
+            getLocationData();
+
+        }
 
     }
-}
