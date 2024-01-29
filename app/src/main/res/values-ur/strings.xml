@@ -67,6 +67,7 @@
     <string name="newLocation">نیا موجودہ مقام</string>
     <string name="newCurrent"><b>نیا موجودہ مقام</b></string>
     <string name="locationAlert">کیا آپ اس نئے مقام کو محفوظ کرنا چاہتے ہیں؟</string>
+    <string name="dateLbl">تاریخ</string>
     <string name="noDataLocation">کوئی موجودہ مقام کا ڈیٹا نہیں ہے۔</string>
     <string name="confirmPassHint">پاس ورڈ کی تصدیق کریں</string>
     <string name="changePassHint">پاس ورڈ تبدیل کریں</string>

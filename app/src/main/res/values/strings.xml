@@ -193,6 +193,7 @@
     <string name="noDataLocation">No hay Datos de la Ubicación Actual</string>
     <string name="newCurrent"><b>Nueva Ubicación Actual</b></string>
     <string name="locationAlert">¿Deseas guardar esta nueva ubicación?</string>
+    <string name="dateLbl">Fecha</string>
 
 
 

@@ -28,6 +28,7 @@
     <string name="newCurrent"><b>الموقع الحالي الجديد</b></string>
     <string name="locationAlert">هل تريد حفظ هذا الموقع الجديد؟</string>
     <string name="action_about">حول</string>
+    <string name="dateLbl">تاريخ</string>
     <string name="action_contacts">اتصال</string>
     <string name="reply">رد</string>
     <string name="profile_subtitle">ملف تعريفي للمستخدم</string>

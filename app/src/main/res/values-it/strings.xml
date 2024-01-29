@@ -92,6 +92,7 @@
     <string name="newCurrent"><b>Nuova posizione attuale</b></string>
     <string name="noDataLocation">Nessun dato sulla posizione corrente</string>
     <string name="locationAlert">Vuoi salvare questa nuova posizione?</string>
+    <string name="dateLbl">Data</string>
     <string name="deletePlateMsg">Vuoi eliminare questo numero di targa?</string>
     <string name = "invalidAdditonalPlateFieñds">È necessario selezionare il tipo di veicolo e/o completare tutti i campi</string>
     <string name="reset">Resettare</string>

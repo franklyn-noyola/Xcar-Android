@@ -45,6 +45,7 @@
     <string name="newLocation">Nowa bieżąca lokalizacja</string>
     <string name="newCurrent"><b>Nowa bieżąca lokalizacja</b></string>
     <string name="locationAlert">Czy chcesz zapisać tę nową lokalizację?</string>
+    <string name="dateLbl">Data</string>
     <string name="noDataLocation">Brak aktualnych danych o lokalizacji</string>
     <string name="password_strong">Co najmniej 8 znaków: 1 mała litera, 1 duża litera i cyfra</string>
     <string name="new_user">Rejestracja nowego użytkownika</string>

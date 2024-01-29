@@ -61,6 +61,7 @@
     <string name="newLocation">Новое текущее местоположение</string>
     <string name="newCurrent"><b>Новое текущее местоположение</b></string>
     <string name="locationAlert">Вы хотите сохранить это новое местоположение?</string>
+    <string name="dateLbl">Дата</string>
     <string name="noDataLocation">Нет данных о текущем местоположении</string>
     <string name="welcomeHomeText">Добро пожаловать в Xcar</string>
     <string name="forgottenPass"><b> <font color="blue">Вы забыли свой пароль?</font></b></string>
