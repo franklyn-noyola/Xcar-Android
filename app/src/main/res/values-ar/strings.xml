@@ -19,6 +19,9 @@
     <string name="locationTitle">إعداد/عرض الموقع</string>
     <string name="locationAdded">تمت إضافة موقع جديد</string>
     <string name="warningLocation">تحذير: انتقل إلى الخريطة أولاً للحصول على الموقع الحالي الجديد</string>
+    <string name="longitudLbl">الطول:</string>
+    <string name="latitudLbl">خط العرض:</string>
+    <string name="placeLabel">لوغار:</string>
     <string name="action_about">حول</string>
     <string name="action_contacts">اتصال</string>
     <string name="reply">رد</string>

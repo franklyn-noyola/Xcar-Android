@@ -16,6 +16,9 @@
     <string name="saveLocation">Guardar Nueva Ubicación</string>
     <string name="goToMap">Ir al Mapa</string>
     <string name="locationTitle">Establecer/Ver Ubicación</string>
+    <string name="longitudLbl">Longitud:</string>
+    <string name="latitudLbl">Latitud:</string>
+    <string name="placeLabel">Lugar:</string>
     <string name="chat_menu">Chat</string>
     <string name="logout_menu">Salir</string>
     <string name="home_menu">Inicio</string>

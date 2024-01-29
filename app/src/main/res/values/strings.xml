@@ -185,6 +185,9 @@
     <string name="locationTitle">Establecer/Ver Ubicación</string>
     <string name="locationAdded">Nueva ubicación agregada</string>
     <string name="warningLocation">Aviso: Vaya primero al Mapa para conseguir la nueva ubicación actual</string>
+    <string name="longitudLbl">Longitud:</string>
+    <string name="latitudLbl">Latitud:</string>
+    <string name="placeLabel">Lugar:</string>
 
 
 

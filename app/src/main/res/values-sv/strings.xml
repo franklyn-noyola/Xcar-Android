@@ -55,6 +55,9 @@
     <string name="locationTitle">Spara/Visa plats</string>
     <string name="locationAdded">Ny plats har lagts till</string>
     <string name="warningLocation">Varning: Gå först till Karta för att få den nya aktuella platsen</string>
+    <string name="longitudLbl">Longitud:</string>
+    <string name="latitudLbl">Latitud:</string>
+    <string name="placeLabel">Plats:</string>
     <string name="welcomeHomeText">Välkommen till Xcar</string>
     <string name="forgottenPass"><b> <font color="blue">Har du glömt ditt lösenord?</font></b></string>
     <string name="newUser">Ny användare? <b> <font color="blue">Klicka här</font></b>b</string>

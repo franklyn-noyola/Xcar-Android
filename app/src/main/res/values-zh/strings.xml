@@ -47,6 +47,9 @@
     <string name="locationTitle">保存/查看位置</string>
     <string name="locationAdded">添加了新位置</string>
     <string name="warningLocation">警告：首先转到地图才能获取新的当前位置</string>
+    <string name="longitudLbl">经度:</string>
+    <string name="latitudLbl">纬度:</string>
+    <string name="placeLabel">地方:</string>
     <string name="register" >登记</string>
     <string name="addPlate">添加额外的车牌号</string>
     <string name="addPlateButton">添加车牌号</string>

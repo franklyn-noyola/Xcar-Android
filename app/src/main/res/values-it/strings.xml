@@ -84,6 +84,9 @@
     <string name="locationTitle">Salva/Visualizza posizione</string>
     <string name="locationAdded">Nuova posizione aggiunta</string>
     <string name="warningLocation">Attenzione: vai prima su Mappa per ottenere la nuova posizione corrente</string>
+    <string name="longitudLbl">Longitudine:</string>
+    <string name="latitudLbl">Latitudine:</string>
+    <string name="placeLabel">Posto:</string>
     <string name="deletePlateMsg">Vuoi eliminare questo numero di targa?</string>
     <string name = "invalidAdditonalPlateFieñds">È necessario selezionare il tipo di veicolo e/o completare tutti i campi</string>
     <string name="reset">Resettare</string>

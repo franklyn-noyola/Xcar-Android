@@ -54,6 +54,9 @@
     <string name="locationTitle">Сохранить/просмотреть местоположение</string>
     <string name="locationAdded">Добавлено новое местоположение</string>
     <string name="warningLocation">Предупреждение: сначала перейдите на карту, чтобы узнать новое текущее местоположение.</string>
+    <string name="longitudLbl">Долгота:</string>
+    <string name="latitudLbl">Широта:</string>
+    <string name="placeLabel">Место:</string>
     <string name="welcomeHomeText">Добро пожаловать в Xcar</string>
     <string name="forgottenPass"><b> <font color="blue">Вы забыли свой пароль?</font></b></string>
     <string name="newUser">Новый пользователь? <b> <font color="blue">кликните сюда</font></b>b</string>

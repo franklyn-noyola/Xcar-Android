@@ -59,6 +59,9 @@
     <string name="locationTitle">محفوظ کریں/مقام دیکھیں</string>
     <string name="locationAdded">نیا مقام شامل کیا گیا۔</string>
     <string name="warningLocation">انتباہ: نیا موجودہ مقام حاصل کرنے کے لیے پہلے نقشہ پر جائیں۔</string>
+    <string name="longitudLbl">طول البلد:</string>
+    <string name="latitudLbl">طول:</string>
+    <string name="placeLabel">جگہ:</string>
     <string name="newPassHint">نیا پاس ورڈ</string>
     <string name="confirmPassHint">پاس ورڈ کی تصدیق کریں</string>
     <string name="changePassHint">پاس ورڈ تبدیل کریں</string>

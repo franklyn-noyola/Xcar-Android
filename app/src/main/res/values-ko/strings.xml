@@ -40,6 +40,9 @@
     <string name="locationTitle">위치 저장/보기</string>
     <string name="locationAdded">새 위치가 추가되었습니다.</string>
     <string name="warningLocation">경고: 새로운 현재 위치를 얻으려면 먼저 지도로 이동하세요.</string>
+    <string name="longitudLbl">경도:</string>
+    <string name="latitudLbl">위도:</string>
+    <string name="placeLabel">장소:</string>
     <string name ="name">이름</string>
     <string name ="plate_name">이메일 또는 번호판 번호</string>
     <string name ="email_name">이메일</string>

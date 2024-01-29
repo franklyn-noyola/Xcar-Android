@@ -19,6 +19,9 @@
     <string name="locationTitle">Standort speichern/ansehen</string>
     <string name="locationAdded">Neuer Standort hinzugefügt</string>
     <string name="warningLocation">Warnung: Gehen Sie zuerst zur Karte, um den neuen aktuellen Standort zu erhalten</string>
+    <string name="longitudLbl">Längengrad:</string>
+    <string name="latitudLbl">Breite:</string>
+    <string name="placeLabel">Ort:</string>
     <string name="logout_menu">Verlassen</string>
     <string name="home_menu">Start</string>
     <string name="action_settings">Rahmen</string>

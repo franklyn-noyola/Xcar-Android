@@ -41,6 +41,9 @@
     <string name="locationTitle">Salvar/Visualizar localização</string>
     <string name="locationAdded">Local adicionado</string>
     <string name="warningLocation">Aviso: vá primeiro ao mapa para obter a nova localização atual</string>
+    <string name="longitudLbl">Longitude:</string>
+    <string name="latitudLbl">Latitude:</string>
+    <string name="placeLabel">Lugar:</string>
     <string name="password_strong">Mínimo 8 caracteres: 1 minúsculo, 1 maiúsculo e um número</string>
     <string name="new_user">Registo de novo utilizador</string>
     <string name="name">Nome</string>

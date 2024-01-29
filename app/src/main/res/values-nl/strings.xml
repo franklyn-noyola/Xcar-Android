@@ -43,6 +43,9 @@
     <string name="locationTitle">Locatie opslaan/bekijken</string>
     <string name="locationAdded">Nieuwe locatie toegevoegd</string>
     <string name="warningLocation">Waarschuwing: Ga eerst naar Kaart om de nieuwe huidige locatie te krijgen</string>
+    <string name="longitudLbl">Lengtegraad:</string>
+    <string name="latitudLbl">Breedtegraad:</string>
+    <string name="placeLabel">Plaats:</string>
     <string name="plate_name" >E-mail of kenteken</string>
     <string name="email_name" >E-mail</string>
     <string name="password_name" >Wachtwoord</string>
