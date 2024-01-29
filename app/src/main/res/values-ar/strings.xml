@@ -17,6 +17,8 @@
     <string name="saveLocation">حفظ الموقع</string>
     <string name="goToMap">اذهب إلى الخريطة</string>
     <string name="locationTitle">إعداد/عرض الموقع</string>
+    <string name="locationAdded">تمت إضافة موقع جديد</string>
+    <string name="warningLocation">تحذير: انتقل إلى الخريطة أولاً للحصول على الموقع الحالي الجديد</string>
     <string name="action_about">حول</string>
     <string name="action_contacts">اتصال</string>
     <string name="reply">رد</string>

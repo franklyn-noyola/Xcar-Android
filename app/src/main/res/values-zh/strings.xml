@@ -40,6 +40,13 @@
     <string name="email_name" >电子邮件</string>
     <string name="password_name" >密码</string>
     <string name="confirm_password" >确认密码</string>
+    <string name="curentLocation">当前位置</string>
+    <string name="locationHistory">地点历史记录</string>
+    <string name="saveLocation">保存位置</string>
+    <string name="goToMap">前往地图</string>
+    <string name="locationTitle">保存/查看位置</string>
+    <string name="locationAdded">添加了新位置</string>
+    <string name="warningLocation">警告：首先转到地图才能获取新的当前位置</string>
     <string name="register" >登记</string>
     <string name="addPlate">添加额外的车牌号</string>
     <string name="addPlateButton">添加车牌号</string>

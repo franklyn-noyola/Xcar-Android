@@ -48,6 +48,13 @@
     <string name="verify">Kontrolleraь</string>
     <string name="passHint"> Lösenord</string>
     <string name="loginLbl">Logga in</string>
+    <string name="curentLocation">NUVARANDE POSITION</string>
+    <string name="locationHistory">PLATSHISTORIA</string>
+    <string name="saveLocation">Spara plats</string>
+    <string name="goToMap">Gå till Karta</string>
+    <string name="locationTitle">Spara/Visa plats</string>
+    <string name="locationAdded">Ny plats har lagts till</string>
+    <string name="warningLocation">Varning: Gå först till Karta för att få den nya aktuella platsen</string>
     <string name="welcomeHomeText">Välkommen till Xcar</string>
     <string name="forgottenPass"><b> <font color="blue">Har du glömt ditt lösenord?</font></b></string>
     <string name="newUser">Ny användare? <b> <font color="blue">Klicka här</font></b>b</string>

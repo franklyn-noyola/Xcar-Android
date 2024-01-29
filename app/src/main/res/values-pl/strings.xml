@@ -31,6 +31,13 @@
     <string name="sendText" >WYSŁAĆ  </string>
     <string name="terms_privacy"> Regulamin</string>
     <string name="delete_chat" >Usuń czat</string>
+    <string name="curentLocation">AKTUALNA LOKALIZACJA</string>
+    <string name="locationHistory">HISTORIA LOKALIZACJI</string>
+    <string name="saveLocation">Zapisz lokalizację</string>
+    <string name="goToMap">Przejdź do mapy</string>
+    <string name="locationTitle">Zapisz/wyświetl lokalizację</string>
+    <string name="locationAdded">Dodano nową lokalizację</string>
+    <string name="warningLocation">Ostrzeżenie: najpierw przejdź do mapy, aby uzyskać nową, aktualną lokalizację</string>
     <string name="password_strong">Co najmniej 8 znaków: 1 mała litera, 1 duża litera i cyfra</string>
     <string name="new_user">Rejestracja nowego użytkownika</string>
     <string name="name">Nazwa</string>

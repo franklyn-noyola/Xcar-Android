@@ -36,6 +36,13 @@
     <string name="password_strong">Minimaal 8 karakters: 1 kleine letter, 1 hoofdletter en 1 cijfer</string>
     <string name="new_user">Nieuwe gebruikersregistratie</string>
     <string name="name">Yam</string>
+    <string name="curentLocation">HUIDIGE LOCATIE</string>
+    <string name="locationHistory">LOCATIE GESCHIEDENIS</string>
+    <string name="saveLocation">Locatie opslaan</string>
+    <string name="goToMap">Ga naar Kaart</string>
+    <string name="locationTitle">Locatie opslaan/bekijken</string>
+    <string name="locationAdded">Nieuwe locatie toegevoegd</string>
+    <string name="warningLocation">Waarschuwing: Ga eerst naar Kaart om de nieuwe huidige locatie te krijgen</string>
     <string name="plate_name" >E-mail of kenteken</string>
     <string name="email_name" >E-mail</string>
     <string name="password_name" >Wachtwoord</string>

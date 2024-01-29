@@ -22,6 +22,13 @@
     <string name="addMob">ca-app-pub-7506110687995747~3078457854</string>
     <string name="action_about">約</string>
     <string name="reply">返事</string>
+    <string name="curentLocation">現在位置</string>
+    <string name="locationHistory">ロケーション履歴</string>
+    <string name="saveLocation">位置を保存</string>
+    <string name="goToMap">地図へ</string>
+    <string name="locationTitle">場所の保存/表示</string>
+    <string name="locationAdded">新しい場所が追加されました</string>
+    <string name="warningLocation">警告: 新しい現在位置を取得するには、まずマップに移動してください</string>
     <string name="action_contacts">連絡先</string>
     <string name="profile_subtitle">ユーザープロファイル</string>
     <string name="profile_header">プロフィール</string>
