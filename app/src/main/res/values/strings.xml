@@ -180,9 +180,12 @@
     <string name="contactText">Haciendo click en el menú auxiliar y luego en la opción Contacto, entras a la secciónde Contacto donde puedes enviar un email al equipo de Soporte de Xcar indicando el motivo de tu mensaje, así también en esta sección puedes compartir con un amigo o familiar en una de las redes sociales de tu preferencia para que se instale la app de allConnected si no lo ha hecho anteriormente.</string>
     <string name="curentLocation">Ubicación Actual</string>
     <string name="locationHistory">Historial de Ubicación</string>
-    <string name="saveLocation">Establecer Nueva Ubicación</string>
+    <string name="saveLocation">Guardar Nueva Ubicación</string>
     <string name="goToMap">Ir al Mapa</string>
     <string name="locationTitle">Establecer/Ver Ubicación</string>
+    <string name="locationAdded">Nueva ubicación agregada</string>
+    <string name="warningLocation">Aviso: Vaya primero al Mapa para conseguir la nueva ubicación actual</string>
+
 
 
 </resources>

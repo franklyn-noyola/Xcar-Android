@@ -13,7 +13,7 @@
     <string name="profile_menu">Perfil</string>
     <string name="curentLocation">Ubicación Actual</string>
     <string name="locationHistory">Historial de Ubicación</string>
-    <string name="saveLocation">Establecer Nueva Ubicación</string>
+    <string name="saveLocation">Guardar Nueva Ubicación</string>
     <string name="goToMap">Ir al Mapa</string>
     <string name="locationTitle">Establecer/Ver Ubicación</string>
     <string name="chat_menu">Chat</string>
