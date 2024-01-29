@@ -96,12 +96,19 @@ public class locationActivity extends AppCompatActivity implements OnMapReadyCal
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        LatLng latLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
-        getLocation(currentLocation.getLatitude(), currentLocation.getLongitude());
-        com.epicdeveloper.xcar.currentLocation.longitudfield = (float) currentLocation.getLongitude();
-        com.epicdeveloper.xcar.currentLocation.latitudfield = (float) currentLocation.getLatitude();
-        mMap.addMarker(new MarkerOptions().position(latLng).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+
+        if (com.epicdeveloper.xcar.currentLocation.type.equals("C")){
+            LatLng latLng = new LatLng(com.epicdeveloper.xcar.currentLocation.latitudfield, com.epicdeveloper.xcar.currentLocation.longitudfield);
+            getLocation(com.epicdeveloper.xcar.currentLocation.latitudfield, com.epicdeveloper.xcar.currentLocation.longitudfield);
+            mMap.addMarker(new MarkerOptions().position(latLng).title("Marker in Sydney"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+        }else {
+            LatLng latLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
+            getLocation(currentLocation.getLatitude(), currentLocation.getLongitude());
+            mMap.addMarker(new MarkerOptions().position(latLng).title("Marker in Sydney"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+        }
+
     }
 
     @Override

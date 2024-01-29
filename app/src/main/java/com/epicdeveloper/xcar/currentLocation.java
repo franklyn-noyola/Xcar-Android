@@ -41,7 +41,10 @@ public class currentLocation extends Fragment {
     static TextView longitudLbl;
     static TextView latitudLbl;
     static TextView placeLbl;
-
+    public  Object longintude;
+    public Object latitude;
+    public Object placeF;
+    public static String type;
     DatabaseReference Location;
     Intent intent;
     private static final String ARG_PARAM1 = "param1";
@@ -97,6 +100,7 @@ public class currentLocation extends Fragment {
         gotomap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                type = "M";
                 intent = new Intent(getActivity(), locationActivity.class);
                 startActivity(intent);
             }
@@ -110,10 +114,21 @@ public class currentLocation extends Fragment {
 
                 String lati = latitudLbl.getText().toString();
                 String longi = longitudLbl.getText().toString();
-                int substr = lati.indexOf(":");
-                int viewDataLocation = substr+2;
+                int latiSubstr = lati.indexOf(":");
+                int longiSubstr = longi.indexOf(":");
+                int latiCoordinate = latiSubstr+2;
+                int longiCoordinate = longiSubstr+2;
                 if (lati.contains(resources.getString(R.string.noData).toString()) || longi.equals(resources.getString(R.string.noData).toString())){
                     Toast.makeText(context,resources.getString(R.string.noDataLocation),Toast.LENGTH_SHORT).show();
+                }else{
+                    String getLongi = longi.substring(longiCoordinate);
+                    String getlati = lati.substring(latiCoordinate);
+                    longitudfield = new Float(getLongi);
+                    latitudfield = new Float(getlati);
+                    type = "C";
+                    intent = new Intent(getActivity(), locationActivity.class);
+                    startActivity(intent);
+                    System.out.println("Longitud: "+longitudfield+" Latitud: "+latitudfield);
                 }
 
             }
@@ -122,6 +137,8 @@ public class currentLocation extends Fragment {
         // Inflate the layout for this fragment
         return  locationCurrent;
     }
+
+
 
     public void getLocationData(){
         String dot1 = new String (email_user);
@@ -132,7 +149,15 @@ public class currentLocation extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
-                    return;
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                        longintude = dataSnapshot.child("Longitude").getValue();
+                        latitude = snapshot.child("Latitude").getValue();
+                        placeF = snapshot.child("Place").getValue();
+
+                    }
+                    longitudLbl.setText(resources.getString(R.string.longitudLbl)+" "+longintude.toString());
+                    latitudLbl.setText(resources.getString(R.string.latitudLbl)+" "+latitude.toString());
+                    placeLbl.setText(resources.getString(R.string.placeLabel)+" "+placeF.toString());
                 }else{
                     longitudLbl.setText(resources.getString(R.string.longitudLbl)+" "+ resources.getString(R.string.noData));
                     latitudLbl.setText(resources.getString(R.string.latitudLbl)+" "+ resources.getString(R.string.noData) );
