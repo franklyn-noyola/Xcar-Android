@@ -73,4 +73,5 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-database:8.0.0'
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
     implementation  "com.android.support:support-emoji-bundled:$version"
+    implementation "de.codecrafters.tableview:tableview:2.0.0"
 }
