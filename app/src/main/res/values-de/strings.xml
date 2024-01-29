@@ -26,6 +26,7 @@
     <string name="newLocation">Neuer aktueller Standort</string>
     <string name="noDataLocation">Keine aktuellen Standortdaten</string>
     <string name="newCurrent"><b>Neuer aktueller Standort</b></string>
+    <string name="locationAlert">Möchten Sie diesen neuen Standort speichern?</string>
     <string name="logout_menu">Verlassen</string>
     <string name="home_menu">Start</string>
     <string name="action_settings">Rahmen</string>

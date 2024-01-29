@@ -53,6 +53,7 @@
     <string name="viewLocation">查看位置</string>
     <string name="newLocation">新的当前位置</string>
     <string name="newCurrent"><b>新的当前位置</b></string>
+    <string name="locationAlert">您想保存这个新位置吗？</string>
     <string name="noDataLocation">没有当前位置数据</string>
     <string name="register" >登记</string>
     <string name="addPlate">添加额外的车牌号</string>

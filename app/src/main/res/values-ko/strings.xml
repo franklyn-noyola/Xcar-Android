@@ -46,6 +46,7 @@
     <string name="viewLocation">場所を見る</string>
     <string name="newLocation">新しい現在地</string>
     <string name="newCurrent"><b>新しい現在地</b></string>
+    <string name="locationAlert">이 새 위치를 저장하시겠습니까?</string>
     <string name="noDataLocation">현재 위치 데이터 없음</string>
     <string name ="name">이름</string>
     <string name ="plate_name">이메일 또는 번호판 번호</string>

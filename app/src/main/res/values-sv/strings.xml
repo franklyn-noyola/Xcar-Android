@@ -62,6 +62,7 @@
     <string name="newLocation">Ny aktuell plats</string>
     <string name="newCurrent"><b>Ny aktuell plats</b></string>
     <string name="noDataLocation">Inga aktuella platsdata</string>
+    <string name="locationAlert">Vill du spara den här nya platsen?</string>
     <string name="welcomeHomeText">Välkommen till Xcar</string>
     <string name="forgottenPass"><b> <font color="blue">Har du glömt ditt lösenord?</font></b></string>
     <string name="newUser">Ny användare? <b> <font color="blue">Klicka här</font></b>b</string>

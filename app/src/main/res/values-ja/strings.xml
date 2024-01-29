@@ -32,6 +32,7 @@
     <string name="viewLocation"><b>場所を見る</b></string>
     <string name="newLocation">新しい現在地</string>
     <string name="newCurrent"><b>新しい現在地</b></string>
+    <string name="locationAlert">この新しい場所を保存しますか?</string>
     <string name="noDataLocation">現在位置データがありません</string>
     <string name="longitudLbl"><b>経度:</b>b</string>
     <string name="latitudLbl"><b>緯度:</b></string>
