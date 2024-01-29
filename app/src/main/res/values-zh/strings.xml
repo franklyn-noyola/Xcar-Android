@@ -46,10 +46,13 @@
     <string name="goToMap">前往地图</string>
     <string name="locationTitle">保存/查看位置</string>
     <string name="locationAdded">添加了新位置</string>
-    <string name="warningLocation">警告：首先转到地图才能获取新的当前位置</string>
-    <string name="longitudLbl">经度:</string>
-    <string name="latitudLbl">纬度:</string>
-    <string name="placeLabel">地方:</string>
+    <string name="warningLocation"><b>警告：</b>单击“新当前位置”按钮，然后单击“转到地图”按钮以获取新的当前位置。</string>
+    <string name="longitudLbl"><b>经度:</b></string>
+    <string name="latitudLbl"><b>纬度:</b></string>
+    <string name="placeLabel"><b>地方:</b></string>
+    <string name="viewLocation">查看位置</string>
+    <string name="newLocation">新的当前位置</string>
+    <string name="noDataLocation">没有当前位置数据</string>
     <string name="register" >登记</string>
     <string name="addPlate">添加额外的车牌号</string>
     <string name="addPlateButton">添加车牌号</string>

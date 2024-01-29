@@ -40,10 +40,13 @@
     <string name="goToMap">Aller à la carte</string>
     <string name="locationTitle">Enregistrer/afficher l\'emplacement</string>
     <string name="locationAdded">Nouvel emplacement ajouté</string>
-    <string name="warningLocation">Attention: accédez d\'abord à la carte afin d\'obtenir le nouvel emplacement actuel.</string>
-    <string name="longitudLbl">Longitude:</string>
-    <string name="latitudLbl">Latitude:</string>
-    <string name="placeLabel">Lieu:</string>
+    <string name="warningLocation"><b>Avertissement:</b> Cliquez sur le bouton Nouvel emplacement actuel, puis cliquez sur le bouton Aller à la carte pour obtenir le nouvel emplacement actuel.</string>
+    <string name="longitudLbl"><b>Longitude:</b></string>
+    <string name="latitudLbl"><b>Latitude:</b></string>
+    <string name="placeLabel"><b>Lieu:</b></string>
+    <string name="viewLocation">Voir l\'emplacement</string>
+    <string name="newLocation">Nouvel emplacement actuel</string>
+    <string name="noDataLocation">Aucune donnée de localisation actuelle</string>
     <string name="plate_name" >Email ou numéro de plaque</string>
     <string name="addPlate">Ajouter un numéro de plaque supplémentaire</string>
     <string name="email_name" >Email</string>

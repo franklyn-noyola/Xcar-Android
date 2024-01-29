@@ -18,10 +18,13 @@
     <string name="goToMap">اذهب إلى الخريطة</string>
     <string name="locationTitle">إعداد/عرض الموقع</string>
     <string name="locationAdded">تمت إضافة موقع جديد</string>
-    <string name="warningLocation">تحذير: انتقل إلى الخريطة أولاً للحصول على الموقع الحالي الجديد</string>
-    <string name="longitudLbl">الطول:</string>
-    <string name="latitudLbl">خط العرض:</string>
-    <string name="placeLabel">لوغار:</string>
+    <string name="warningLocation"><b>تحذير:</b> انقر على زر الموقع الحالي الجديد ثم انقر على زر الانتقال إلى الخريطة للحصول على الموقع الحالي الجديد.</string>
+    <string name="longitudLbl"><b>خط الطول:</b></string>
+    <string name="latitudLbl"><b>خط العرض:</b></string>
+    <string name="placeLabel"><b>المكان:</b></string>
+    <string name="viewLocation">>عرض الموقع</string>
+    <string name="newLocation">>الموقع الحالي الجديد</string>
+    <string name="noDataLocation">لا توجد بيانات الموقع الحالي</string>
     <string name="action_about">حول</string>
     <string name="action_contacts">اتصال</string>
     <string name="reply">رد</string>

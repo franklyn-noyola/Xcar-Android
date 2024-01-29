@@ -54,10 +54,13 @@
     <string name="goToMap">Gå till Karta</string>
     <string name="locationTitle">Spara/Visa plats</string>
     <string name="locationAdded">Ny plats har lagts till</string>
-    <string name="warningLocation">Varning: Gå först till Karta för att få den nya aktuella platsen</string>
-    <string name="longitudLbl">Longitud:</string>
-    <string name="latitudLbl">Latitud:</string>
-    <string name="placeLabel">Plats:</string>
+    <string name="warningLocation"><b>Varning:</b> Klicka på knappen Ny aktuell plats och klicka sedan på knappen Gå till karta för att få den nya aktuella platsen.</string>
+    <string name="longitudLbl"><b>Longitud:</b></string>
+    <string name="latitudLbl"><b>Latitud:</b></string>
+    <string name="placeLabel"><b>Plats:</b></string>
+    <string name="viewLocation">Visa plats</string>
+    <string name="newLocation">Ny aktuell plats</string>
+    <string name="noDataLocation">Inga aktuella platsdata</string>
     <string name="welcomeHomeText">Välkommen till Xcar</string>
     <string name="forgottenPass"><b> <font color="blue">Har du glömt ditt lösenord?</font></b></string>
     <string name="newUser">Ny användare? <b> <font color="blue">Klicka här</font></b>b</string>

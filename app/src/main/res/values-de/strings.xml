@@ -18,10 +18,13 @@
     <string name="goToMap">Gehen Sie zur Karte</string>
     <string name="locationTitle">Standort speichern/ansehen</string>
     <string name="locationAdded">Neuer Standort hinzugefügt</string>
-    <string name="warningLocation">Warnung: Gehen Sie zuerst zur Karte, um den neuen aktuellen Standort zu erhalten</string>
-    <string name="longitudLbl">Längengrad:</string>
-    <string name="latitudLbl">Breite:</string>
-    <string name="placeLabel">Ort:</string>
+    <string name="warningLocation"><b>Warnung:</b> Klicken Sie auf die Schaltfläche „Neuer aktueller Standort“ und dann auf die Schaltfläche „Zur Karte gehen“, um den neuen aktuellen Standort abzurufen.</string>
+    <string name="longitudLbl"><b>Längengrad:</b></string>
+    <string name="latitudLbl"><b>Breite:</b></string>
+    <string name="placeLabel"><b>Ort:</b></string>
+    <string name="viewLocation">Standort anzeigen</string>
+    <string name="newLocation">Neuer aktueller Standort</string>
+    <string name="noDataLocation">Keine aktuellen Standortdaten</string>
     <string name="logout_menu">Verlassen</string>
     <string name="home_menu">Start</string>
     <string name="action_settings">Rahmen</string>

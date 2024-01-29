@@ -42,10 +42,13 @@
     <string name="goToMap">Ga naar Kaart</string>
     <string name="locationTitle">Locatie opslaan/bekijken</string>
     <string name="locationAdded">Nieuwe locatie toegevoegd</string>
-    <string name="warningLocation">Waarschuwing: Ga eerst naar Kaart om de nieuwe huidige locatie te krijgen</string>
-    <string name="longitudLbl">Lengtegraad:</string>
-    <string name="latitudLbl">Breedtegraad:</string>
-    <string name="placeLabel">Plaats:</string>
+    <string name="warningLocation"><b>Waarschuwing:</b> klik op de knop Nieuwe huidige locatie en klik vervolgens op de knop Ga naar kaart om de nieuwe huidige locatie op te halen.</string>
+    <string name="longitudLbl"><b>Lengtegraad:</b></string>
+    <string name="latitudLbl"><b>Breedtegraad:</b></string>
+    <string name="placeLabel"><b>Plaats:</b></string>
+    <string name="viewLocation">Bekijk locatie</string>
+    <string name="newLocation">Nieuwe huidige locatie</string>
+    <string name="noDataLocation">Geen huidige locatiegegevens</string>
     <string name="plate_name" >E-mail of kenteken</string>
     <string name="email_name" >E-mail</string>
     <string name="password_name" >Wachtwoord</string>

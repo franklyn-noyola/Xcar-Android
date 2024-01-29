@@ -53,10 +53,13 @@
     <string name="goToMap">Ир аль-Мапа</string>
     <string name="locationTitle">Сохранить/просмотреть местоположение</string>
     <string name="locationAdded">Добавлено новое местоположение</string>
-    <string name="warningLocation">Предупреждение: сначала перейдите на карту, чтобы узнать новое текущее местоположение.</string>
-    <string name="longitudLbl">Долгота:</string>
-    <string name="latitudLbl">Широта:</string>
-    <string name="placeLabel">Место:</string>
+    <string name="warningLocation"><b>Внимание!</b> Нажмите кнопку «Новое текущее местоположение», а затем нажмите кнопку «Перейти к карте», чтобы получить новое текущее местоположение.</string>
+    <string name="longitudLbl"><b>Долгота:</b></string>
+    <string name="latitudLbl"><b>Широта:</b></string>
+    <string name="placeLabel"><b>Место:</b></string>
+    <string name="viewLocation">Посмотреть местоположение</string>
+    <string name="newLocation">Новое текущее местоположение</string>
+    <string name="noDataLocation">Нет данных о текущем местоположении</string>
     <string name="welcomeHomeText">Добро пожаловать в Xcar</string>
     <string name="forgottenPass"><b> <font color="blue">Вы забыли свой пароль?</font></b></string>
     <string name="newUser">Новый пользователь? <b> <font color="blue">кликните сюда</font></b>b</string>

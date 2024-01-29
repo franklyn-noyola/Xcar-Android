@@ -28,10 +28,13 @@
     <string name="goToMap">地図へ</string>
     <string name="locationTitle">場所の保存/表示</string>
     <string name="locationAdded">新しい場所が追加されました</string>
-    <string name="warningLocation">警告: 新しい現在位置を取得するには、まずマップに移動してください</string>
-    <string name="longitudLbl">経度:</string>
-    <string name="latitudLbl">緯度:</string>
-    <string name="placeLabel">場所:</string>
+    <string name="warningLocation"><b>警告:</b> 新しい現在地を取得するには、[新しい現在地] ボタンをクリックし、次に [地図に移動] ボタンをクリックします。</string>
+    <string name="viewLocation"><b>場所を見る</b></string>
+    <string name="newLocation"><b>新しい現在地</b></string>
+    <string name="noDataLocation">現在位置データがありません</string>
+    <string name="longitudLbl"><b>経度:</b>b</string>
+    <string name="latitudLbl"><b>緯度:</b></string>
+    <string name="placeLabel"><b>場所:</b></string>
     <string name="action_contacts">連絡先</string>
     <string name="profile_subtitle">ユーザープロファイル</string>
     <string name="profile_header">プロフィール</string>

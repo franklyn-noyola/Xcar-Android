@@ -21,10 +21,13 @@
     <string name="goToMap">मानचित्र पर जाएँ</string>
     <string name="locationTitle">स्थान सहेजें/देखें</string>
     <string name="locationAdded">नया स्थान जोड़ा गया</string>
-    <string name="warningLocation">चेतावनी: नया वर्तमान स्थान प्राप्त करने के लिए पहले मानचित्र पर जाएँ</string>
-    <string name="longitudLbl">देशान्तर:</string>
-    <string name="latitudLbl">अक्षांश:</string>
-    <string name="placeLabel">जगह:</string>
+    <string name="warningLocation"><b>चेतावनी:</b> नए वर्तमान स्थान बटन पर क्लिक करें और फिर नया वर्तमान स्थान प्राप्त करने के लिए मानचित्र पर जाएं बटन पर क्लिक करें।</string>
+    <string name="longitudLbl"><b>देशान्तर:</b></string>
+    <string name="latitudLbl"><b>अक्षांश:</b></string>
+    <string name="placeLabel"><b>जगह:</b>b</string>
+    <string name="noDataLocation">कोई वर्तमान स्थान डेटा नहीं</string>
+    <string name="viewLocation">स्थान देखें</string>
+    <string name="newLocation">नया वर्तमान स्थान</string>
     <string name="home_menu">होम</string>
     <string name="action_settings">सेटिंग्स</string>
     <string name="action_about">के बारे में</string>

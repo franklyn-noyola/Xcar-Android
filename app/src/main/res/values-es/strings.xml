@@ -16,9 +16,12 @@
     <string name="saveLocation">Guardar Nueva Ubicación</string>
     <string name="goToMap">Ir al Mapa</string>
     <string name="locationTitle">Establecer/Ver Ubicación</string>
-    <string name="longitudLbl">Longitud:</string>
-    <string name="latitudLbl">Latitud:</string>
-    <string name="placeLabel">Lugar:</string>
+    <string name="longitudLbl"><b>Longitud:</b></string>
+    <string name="latitudLbl"><b>Latitud:</b></string>
+    <string name="placeLabel"><b>Lugar:</b></string>
+    <string name="viewLocation">Ver Ubicación</string>
+    <string name="newLocation">Nueva Ubicación Actual</string>
+    <string name="noDataLocation">No hay Datos de la Ubicación Actual</string>
     <string name="chat_menu">Chat</string>
     <string name="logout_menu">Salir</string>
     <string name="home_menu">Inicio</string>
@@ -72,7 +75,7 @@
     <string name="noTermsAccepted">No se ha aceptado los terminos y condiciones y poítica de privacidad</string>
     <string name="noPassMatch">Las contraseñas no coinciden</string>
     <string name="locationAdded">Nueva ubicación agregada</string>
-    <string name="warningLocation">Aviso: Vaya primero al Mapa para conseguir la nueva ubicación actual</string>
+    <string name="warningLocation"><b>Aviso:</b> Hacer click en el botón Nueva Ubicación actual y luego darle al boton Ir al Mapa para conseguir la nueva ubicación actual</string>
     <string name="wrongEmailFormat">Formato de email inválido</string>
     <string name="noConexion">Error en Conexión de Internet</string>
     <string name="noEmptyFields">El campo Email no puede estar vacío</string>

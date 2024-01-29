@@ -40,10 +40,13 @@
     <string name="goToMap">Ir para o mapa</string>
     <string name="locationTitle">Salvar/Visualizar localização</string>
     <string name="locationAdded">Local adicionado</string>
-    <string name="warningLocation">Aviso: vá primeiro ao mapa para obter a nova localização atual</string>
-    <string name="longitudLbl">Longitude:</string>
-    <string name="latitudLbl">Latitude:</string>
-    <string name="placeLabel">Lugar:</string>
+    <string name="warningLocation"><b>Aviso:</b> Clique no botão Novo local atual e depois clique no botão Ir para o mapa para obter o novo local atual.</string>
+    <string name="longitudLbl"><b>Longitude:</b></string>
+    <string name="latitudLbl"><b>Latitude:</b></string>
+    <string name="placeLabel"><b>Lugar:</b></string>
+    <string name="viewLocation">Ver localização</string>
+    <string name="newLocation">Novo local atual</string>
+    <string name="noDataLocation">Nenhum dado de localização atual</string>
     <string name="password_strong">Mínimo 8 caracteres: 1 minúsculo, 1 maiúsculo e um número</string>
     <string name="new_user">Registo de novo utilizador</string>
     <string name="name">Nome</string>

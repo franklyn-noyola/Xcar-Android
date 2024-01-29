@@ -36,10 +36,13 @@
     <string name="goToMap">Go to Map</string>
     <string name="locationTitle">Save/View Location</string>
     <string name="locationAdded">New location added</string>
-    <string name="warningLocation">Warning: Go to Map first in order to get the new current location</string>
-    <string name="longitudLbl">Longitude:</string>
-    <string name="latitudLbl">Latitude:</string>
-    <string name="placeLabel">Place:</string>
+    <string name="warningLocation"><b>Warning:</b> Click on the New Current Location button and then click the Go to Map button to get the new current location.</string>
+    <string name="longitudLbl"><b>Longitude:</b></string>
+    <string name="latitudLbl"><b>Latitude:</b></string>
+    <string name="placeLabel"><b>Place:</b></string>
+    <string name="viewLocation">View Location</string>
+    <string name="newLocation">New Current Location</string>
+    <string name="noDataLocation">No Current Location Data</string>
     <string name="terms_privacy">&#32; Terms and conditions</string>
     <string name="delete_chat" >Delete Chat</string>
     <string name="password_strong">Minimum 8 characters: 1 small letter, 1 capital letter and 1 number</string>
