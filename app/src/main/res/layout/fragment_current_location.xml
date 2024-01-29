@@ -9,6 +9,30 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:gravity="top"
+        android:text="Current History Frame" />
 
+    <Button
+        android:id="@+id/gotomap"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginVertical="100dp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/rounded_corners"
+        android:textColorHint="@android:color/white"
+        android:text="@string/goToMap">
+
+    </Button>
+    <Button
+        android:id="@+id/saveLocation"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:textColor="@android:color/white"
+        android:layout_marginStart="10dp"
+        android:layout_marginVertical="150dp"
+        android:background="@drawable/rounded_corners"
+        android:textColorHint="@android:color/white"
+        android:text="@string/saveLocation">
+    </Button>
 </FrameLayout>
