@@ -49,6 +49,7 @@
     <string name="newCurrent"><b>Novo local atual</b></string>
     <string name="locationAlert">Deseja salvar este novo local?</string>
     <string name="dateLbl">Data</string>
+    <string name="lastLocationHistory">Últimos 5 registros do histórico de localização</string>>
     <string name="noDataLocation">Nenhum dado de localização atual</string>
     <string name="password_strong">Mínimo 8 caracteres: 1 minúsculo, 1 maiúsculo e um número</string>
     <string name="new_user">Registo de novo utilizador</string>

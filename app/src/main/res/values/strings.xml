@@ -194,6 +194,8 @@
     <string name="newCurrent"><b>Nueva Ubicación Actual</b></string>
     <string name="locationAlert">¿Deseas guardar esta nueva ubicación?</string>
     <string name="dateLbl">Fecha</string>
+    <string name="lastLocationHistory">Ultimos 5 Records del Historial de Ubicación</string>>
+
 
 
 
