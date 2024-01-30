@@ -285,7 +285,9 @@ public class currentLocation extends Fragment {
             String currentDateTime = dateFormat.format(currentDate);
             String dot1 = new String(email_user);
             String dot2 = dot1.replace(".", "_");
-            final LocationData locationData = new LocationData(currentDateTime,"C",longitudData,latitudData,placeData);
+            String longiData = String.valueOf(longitudData);
+            String latiData = String.valueOf(latitudData);
+            final LocationData locationData = new LocationData(currentDateTime,"C",longiData,latiData,placeData);
             DatabaseReference Location = FirebaseDatabase.getInstance().getReference("Location/"+dot2);
             String id = Location.push().getKey();
             Location.child(id).setValue(locationData);
