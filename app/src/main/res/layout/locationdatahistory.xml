@@ -6,35 +6,34 @@
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:textStyle="normal|bold"
-        android:text="Hola"
-        android:id="@+id/longitudlbl"
+        android:textSize="12sp"
+        android:id="@+id/longituLocationdlbl"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"/>
 
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:id="@+id/latitudlbl"
+        android:id="@+id/latitudLocationlbl"
+        android:textSize="12dp"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/longitudlbl"/>
+        android:layout_below="@+id/longituLocationdlbl"/>
 
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:id="@+id/placeslbl"
+        android:id="@+id/placeslblLocation"
+        android:gravity="left"
         android:layout_alignParentStart="true"
-        android:textSize="18sp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:layout_below="@+id/latitudlbl"/>
+        android:textSize="12sp"
+        android:layout_below="@+id/latitudLocationlbl"/>
 
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:id="@+id/datelbl"
         android:layout_alignParentStart="true"
-        android:textSize="18sp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:layout_below="@+id/placeslbl"/>
+        android:textSize="12sp"
+        android:layout_below="@+id/placeslblLocation"/>
 
 </RelativeLayout>
