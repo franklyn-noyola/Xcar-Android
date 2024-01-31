@@ -31,7 +31,8 @@
     <string name="newCurrent"><b>नया वर्तमान स्थान</b></string>
     <string name="locationAlert">क्या आप इस नये स्थान को सहेजना चाहते हैं?</string>
     <string name="dateLbl">तारीख</string>
-    <string name="lastLocationHistory">पिछले 5 स्थान इतिहास रिकॉर्ड</string>>
+    <string name="lastLocationHistory">पिछले 5 स्थान इतिहास रिकॉर्ड</string>
+    <string name="activateGPS">जीपीएस अक्षम, मानचित्र पर जाने से पहले अपना जीजीपीएस सक्रिय करें</string>
     <string name="home_menu">होम</string>
     <string name="action_settings">सेटिंग्स</string>
     <string name="action_about">के बारे में</string>

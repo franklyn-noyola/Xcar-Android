@@ -46,6 +46,7 @@
     <string name="noDataLocation">No Current Location Data</string>
     <string name="locationAlert">Do you want to save this new location?</string>
     <string name="dateLbl">Date</string>
+    <string name="activateGPS">GPS disabled, Activate your GPS before going to the Map</string>
     <string name="lastLocationHistory">Last 5 Location History Records</string>>
     <string name="terms_privacy">&#32; Terms and conditions</string>
     <string name="delete_chat" >Delete Chat</string>

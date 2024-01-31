@@ -49,6 +49,7 @@
     <string name="locationAlert">이 새 위치를 저장하시겠습니까?</string>
     <string name="dateLbl">날짜</string>
     <string name="lastLocationHistory">최근 5개의 위치 기록 기록</string>>
+    <string name="activateGPS">GPS가 비활성화되었습니다. 지도로 이동하기 전에 GPS를 활성화하세요.</string>
     <string name="noDataLocation">현재 위치 데이터 없음</string>
     <string name ="name">이름</string>
     <string name ="plate_name">이메일 또는 번호판 번호</string>

@@ -50,7 +50,8 @@
     <string name="noDataLocation">Aucune donnée de localisation actuelle</string>
     <string name="locationAlert">Voulez-vous enregistrer ce nouvel emplacement?</string>
     <string name="dateLbl">Date</string>
-    <string name="lastLocationHistory">5 derniers enregistrements de l\'historique de localisation</string>>
+    <string name="lastLocationHistory">5 derniers enregistrements de l\'historique de localisation</string>
+    <string name="activateGPS">GPS désactivé, activez votre GPS avant d\'aller sur la Carte</string>
     <string name="plate_name" >Email ou numéro de plaque</string>
     <string name="addPlate">Ajouter un numéro de plaque supplémentaire</string>
     <string name="email_name" >Email</string>

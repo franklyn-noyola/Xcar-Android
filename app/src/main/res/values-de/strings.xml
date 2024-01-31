@@ -29,6 +29,7 @@
     <string name="locationAlert">Möchten Sie diesen neuen Standort speichern?</string>
     <string name="dateLbl">Datum</string>
     <string name="lastLocationHistory">Die letzten 5 Standortverlaufsdatensätze</string>>
+    <string name="activateGPS">GPS deaktiviert. Aktivieren Sie Ihr GPS, bevor Sie zur Karte gehen</string>
     <string name="logout_menu">Verlassen</string>
     <string name="home_menu">Start</string>
     <string name="action_settings">Rahmen</string>

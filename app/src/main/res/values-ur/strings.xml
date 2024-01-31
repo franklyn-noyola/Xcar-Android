@@ -68,6 +68,7 @@
     <string name="newCurrent"><b>نیا موجودہ مقام</b></string>
     <string name="locationAlert">کیا آپ اس نئے مقام کو محفوظ کرنا چاہتے ہیں؟</string>
     <string name="dateLbl">تاریخ</string>
+    <string name="activateGPS">GPS غیر فعال، نقشے پر جانے سے پہلے اپنے GPS کو فعال کریں۔</string>
     <string name="lastLocationHistory">آخری 5 مقام کی تاریخ کے ریکارڈز</string>>
     <string name="noDataLocation">کوئی موجودہ مقام کا ڈیٹا نہیں ہے۔</string>
     <string name="confirmPassHint">پاس ورڈ کی تصدیق کریں</string>

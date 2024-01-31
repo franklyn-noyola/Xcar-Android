@@ -57,6 +57,7 @@
     <string name="noDataLocation">没有当前位置数据</string>
     <string name="dateLbl">日期</string>
     <string name="lastLocationHistory">最近 5 条位置历史记录</string>>
+    <string name="activateGPS">GPS 已禁用，请在前往地图之前激活您的 GPS</string>
     <string name="register" >登记</string>
     <string name="addPlate">添加额外的车牌号</string>
     <string name="addPlateButton">添加车牌号</string>

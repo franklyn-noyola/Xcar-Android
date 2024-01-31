@@ -35,6 +35,7 @@
     <string name="locationAlert">この新しい場所を保存しますか?</string>
     <string name="dateLbl">日付</string>
     <string name="lastLocationHistory">過去 5 件の位置履歴レコード</string>>
+    <string name="activateGPS">GPS が無効になっています。マップに移動する前に GPS をアクティブにしてください。</string>
     <string name="noDataLocation">現在位置データがありません</string>
     <string name="longitudLbl"><b>経度:</b>b</string>
     <string name="latitudLbl"><b>緯度:</b></string>

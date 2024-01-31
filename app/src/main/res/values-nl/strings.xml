@@ -51,7 +51,8 @@
     <string name="newCurrent"><b>Nieuwe huidige locatie</b></string>
     <string name="locationAlert">Wilt u deze nieuwe locatie opslaan?</string>
     <string name="dateLbl">Datum</string>
-    <string name="lastLocationHistory">Laatste 5 locatiegeschiedenisrecords</string>>
+    <string name="lastLocationHistory">Laatste 5 locatiegeschiedenisrecords</string>
+    <string name="activateGPS">GPS uitgeschakeld. Activeer uw GPS voordat u naar de kaart gaat</string>
     <string name="noDataLocation">Geen huidige locatiegegevens</string>
     <string name="plate_name" >E-mail of kenteken</string>
     <string name="email_name" >E-mail</string>
