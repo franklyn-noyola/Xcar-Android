@@ -7,11 +7,13 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.location.LocationManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -132,9 +134,13 @@ public class currentLocation extends Fragment {
         gotomap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                type = "N";
-                intent = new Intent(getActivity(), locationActivity.class);
-                startActivity(intent);
+                if (isGPSProvider(context)==false || isNetowrkProvider(context)==false){
+                    Toast.makeText(context, resources.getString(R.string.activateGPS), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                    type = "N";
+                    intent = new Intent(getActivity(), locationActivity.class);
+                    startActivity(intent);
             }
         });
         setFieldsInvisible();
@@ -279,6 +285,19 @@ public class currentLocation extends Fragment {
 
             }
         }
+
+    public static boolean isGPSProvider(Context context) {
+        LocationManager lm = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
+        return lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+    }
+
+    public static boolean isNetowrkProvider(Context context) {
+        LocationManager lm = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
+        return lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+    }
+
+
+
         public void saveLocationData(){
             Date currentDate = new Date();
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss" );
