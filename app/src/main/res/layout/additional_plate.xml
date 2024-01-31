@@ -9,6 +9,7 @@
 
     <EditText
         android:id="@+id/addPlateField"
+        android:paddingLeft="5sp"
         android:layout_width="190dp"
         android:layout_height="30dp"
         android:background="@drawable/rounded2"
