@@ -1,4 +1,8 @@
-package com.epicdeveloper.allconnected.ui.Chat;
+package com.epicdeveloper.xcar.ui.Chat;
+
+import static com.epicdeveloper.xcar.MainActivity.email_user;
+import static com.epicdeveloper.xcar.MainActivity.getSelectedPlate;
+import static com.epicdeveloper.xcar.MainActivity.plate_user;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -6,11 +10,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.text.format.DateFormat;
 import android.view.ContextMenu;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -25,17 +27,15 @@ import android.widget.ListView;
 
 import androidx.appcompat.widget.SearchView;
 
-import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.epicdeveloper.allconnected.LocaleHelper;
-import com.epicdeveloper.allconnected.MainActivity;
-import com.epicdeveloper.allconnected.R;
+import com.epicdeveloper.xcar.LocaleHelper;
+import com.epicdeveloper.xcar.MainActivity;
+import com.epicdeveloper.xcar.R;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseListOptions;
 import com.google.android.gms.ads.AdRequest;
@@ -56,6 +56,8 @@ public class chatMainScreen extends Fragment {
     SearchView searchView;
     ListView listView;
     String selectedLanguage;
+
+    String selectedPlate;
     private LayoutInflater inflaterView;
     private DatabaseReference Users;
     public static  String userToChat;
@@ -83,6 +85,11 @@ public class chatMainScreen extends Fragment {
         adview.loadAd(adRequest);
         searchView = root.findViewById(R.id.searchView);
         searchView.setQueryHint(resources.getString((R.string.plate_enter)));
+        if (TextUtils.isEmpty(MainActivity.getSelectedPlate)){
+            selectedPlate = plate_user;
+        }else {
+            selectedPlate = MainActivity.getSelectedPlate;
+        }
          inflaterView = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         searchView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,7 +125,7 @@ public class chatMainScreen extends Fragment {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView getUser = (TextView) view.findViewById(R.id.message_user);
+                TextView getUser = view.findViewById(R.id.message_user);
                 userToChat = getUser.getText().toString();
                 return false;
             }
@@ -143,16 +150,18 @@ public class chatMainScreen extends Fragment {
         }
 
         private void getUserData(final String userData){
-            Users = FirebaseDatabase.getInstance().getReference("Users");
-            Users.orderByChild("plate_user").equalTo(userData.toUpperCase()).addValueEventListener(new ValueEventListener() {
+            String dot1 = new String (email_user);
+            String dot2 = dot1.replace(".","_");
+            Users = FirebaseDatabase.getInstance().getReference("singlePlates/platesCreated");
+            Users.orderByChild("plate_id").equalTo(userData.toUpperCase()).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     Object getExistUser = null;
                     if (snapshot.exists()) {
                         for (DataSnapshot ds : snapshot.getChildren()){
-                          getExistUser = ds.child("plate_user").getValue();
+                          getExistUser = ds.child("plate_id").getValue();
                         }
-                        if (getExistUser.toString().equals(MainActivity.plateUser)){
+                        if (getExistUser.toString().equals(selectedPlate)){
                             if (selectedLanguage.equals("ES")){
                                 Toast.makeText(getActivity(), "El usuario "+userData.toUpperCase()+" no se puede enviar un automensaje.", Toast.LENGTH_SHORT).show();
                             }
@@ -232,7 +241,7 @@ public class chatMainScreen extends Fragment {
         }
 
     public void getUserBlocked(final String userBlock,final FirebaseSuccessListener dataFetched){
-        DatabaseReference blockedUser = FirebaseDatabase.getInstance().getReference("BlockUsers").child(MainActivity.plateUser).child(userBlock);
+        DatabaseReference blockedUser = FirebaseDatabase.getInstance().getReference("BlockUsers").child(selectedPlate).child(userBlock);
         Query query = blockedUser.orderByChild("Blocked").equalTo("Si");
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
@@ -258,7 +267,7 @@ public class chatMainScreen extends Fragment {
 
       public void getChatUserList() {
             listView = root.findViewById(R.id.messageList);
-            Query query = FirebaseDatabase.getInstance().getReference("Chat/listChatUsers/" + MainActivity.plateUser);
+            Query query = FirebaseDatabase.getInstance().getReference("Chat/listChatUsers/" + selectedPlate);
             FirebaseListOptions<listUsertoChat> options = new FirebaseListOptions.Builder<listUsertoChat>()
                     .setQuery(query, listUsertoChat.class)
                     .setLayout(R.layout.messageslist)
@@ -269,9 +278,9 @@ public class chatMainScreen extends Fragment {
                 protected void populateView(View v, listUsertoChat model, int position) {
 
                     // Get references to the views of message.xml
-                    TextView messageText = (TextView) v.findViewById(R.id.message_text);
-                    messageUser = (TextView) v.findViewById(R.id.message_user);
-                    TextView messageTime = (TextView) v.findViewById(R.id.message_time);
+                    TextView messageText = v.findViewById(R.id.message_text);
+                    messageUser = v.findViewById(R.id.message_user);
+                    TextView messageTime = v.findViewById(R.id.message_time);
                     Drawable image = getActivity().getResources().getDrawable(R.drawable.imageicon);
                     int h = image.getIntrinsicHeight();
                     int w = image.getIntrinsicWidth();
@@ -318,12 +327,12 @@ public class chatMainScreen extends Fragment {
     }
 
     private void deleteChat(){
-        DatabaseReference Chat = FirebaseDatabase.getInstance().getReference("Chat/"+MainActivity.plateUser);
+        DatabaseReference Chat = FirebaseDatabase.getInstance().getReference("Chat/"+ selectedPlate);
         Chat.child(userToChat).removeValue();
     }
 
     private void deleteListChat(){
-        DatabaseReference Chat = FirebaseDatabase.getInstance().getReference("Chat/listChatUsers/"+MainActivity.plateUser);
+        DatabaseReference Chat = FirebaseDatabase.getInstance().getReference("Chat/listChatUsers/"+ selectedPlate);
         Chat.orderByChild("userToChat").equalTo(userToChat).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
