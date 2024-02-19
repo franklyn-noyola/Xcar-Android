@@ -512,6 +512,7 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
                        updates.put("year", yearCarField.getText().toString());
                        ds.getRef().updateChildren(updates);
                    }
+                   singlePlates();
                }
                @Override
                public void onCancelled(@NonNull DatabaseError error) {
@@ -537,6 +538,29 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
                 btnchangePassButton.setEnabled(true);
         }
     }
+
+        private void singlePlates() {
+                Users = FirebaseDatabase.getInstance().getReference("singlePlates/createdPlates");
+                Users.orderByChild("plate_id").equalTo(getSelectedPlate).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot ds: snapshot.getChildren()){
+                            Map<String, Object> updates = new HashMap<String, Object>();
+                            updates.put("cartype", carTypeField.getSelectedItem().toString());
+                            updates.put("carbrand", brandCarField.getText().toString());
+                            updates.put("carmodel", modelCarField.getText().toString());
+                            updates.put("carcolor", colorCarField.getText().toString());
+                            updates.put("year", yearCarField.getText().toString());
+                            ds.getRef().updateChildren(updates);
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                
+        }
 
     private void getSelectedPlate(String plate) {
         String dot1 = new String (email_user);
