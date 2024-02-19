@@ -1,4 +1,6 @@
-package com.epicdeveloper.allconnected;
+package com.epicdeveloper.xcar;
+import static com.epicdeveloper.xcar.MainActivity.email_user;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,20 +14,27 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.epicdeveloper.allconnected.ui.Chat.chatMainScreen;
-import com.epicdeveloper.allconnected.ui.Perfil.fragment_profile;
-import com.epicdeveloper.allconnected.ui.home.fragment_home;
-import com.epicdeveloper.allconnected.ui.receivedNotifications.receivedNotifications;
+import com.epicdeveloper.xcar.ui.Chat.chatMainScreen;
+import com.epicdeveloper.xcar.ui.Perfil.fragment_profile;
+import com.epicdeveloper.xcar.ui.home.fragment_home;
+import com.epicdeveloper.xcar.ui.receivedNotifications.receivedNotifications;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -44,6 +53,8 @@ public class profile_activity extends AppCompatActivity {
 
     private int noReadCount;
     private int countNoRead;
+    private int notBack = 0;
+    public String plate;
     public static String selectedLanguage;
     private boolean noReadNoti=false;
     final int homeMenu = R.id.Home_Menu;
@@ -51,17 +62,38 @@ public class profile_activity extends AppCompatActivity {
     final int profileMenu = R.id.Profile_Menu;
     final int notificationsMenu = R.id.Notifications_Menu;
     final int contactsAction = R.id.action_Contacts;
+
+    final int location = R.id.location;
     final int aboutAction = R.id.action_About;
+
     final int settingsAction = R.id.action_Settings;
     final int howitWorksAction = R.id.action_HowitWorks;
     final int shareAction = R.id.action_Share;
     final int logoutAction = R.id.action_logout;
+
+    public static String userPlate;
+
     Context context;
     Resources resources;
     Menu menu;
+
+
     Menu barNavigation;
     public static String mToken;
     BottomNavigationView bottomNavigationView;
+
+        EditText brandCarField, modelCarField, colorCarField, yearCarField, additionalPlate;
+
+    Spinner carSelected;
+
+    public static String userplate;
+
+    TextView addPlateLabel, infoLbl;
+
+    AdView adview;
+
+    private DatabaseReference addPlateDB;
+    Button verifyButton, addPlateButton, cancelButton;
 
 
     @Override
@@ -75,6 +107,7 @@ public class profile_activity extends AppCompatActivity {
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.setLocale(locale);
+        userplate = MainActivity.plate_user;
         getBaseContext().getResources().updateConfiguration(config,
                 getBaseContext().getResources().getDisplayMetrics());
         MainActivity.getInit = 1;
@@ -85,9 +118,7 @@ public class profile_activity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setTitle(resources.getString(R.string.home_menu));
-        getNotifications();
-
-
+        getUserData();
 
          bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
@@ -148,6 +179,8 @@ public class profile_activity extends AppCompatActivity {
         menu.findItem(R.id.action_HowitWorks).setTitle(resources.getString(R.string.action_howItWorks));
         menu.findItem(R.id.action_About).setTitle(resources.getString(R.string.action_about));
         menu.findItem(R.id.action_Share).setTitle(resources.getString(R.string.shareWith));
+        menu.findItem(R.id.location);
+
         return true;
     }
 
@@ -156,7 +189,11 @@ public class profile_activity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case contactsAction:
-                Intent intent = new Intent(this, contacto.class);
+              Intent intent = new Intent(this, contacto.class);
+                startActivity(intent);
+                return true;
+            case R.id.location:
+                intent = new Intent(this, location.class);
                 startActivity(intent);
                 return true;
             case aboutAction:
@@ -185,6 +222,7 @@ public class profile_activity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 
     private void logout() {
         AlertDialog alert = new AlertDialog.Builder(this).create();
@@ -216,8 +254,31 @@ public class profile_activity extends AppCompatActivity {
         alertNos.setLayoutParams(positive);
     }
 
-    public void getNotifications(){
-        final DatabaseReference getNoLeidos = FirebaseDatabase.getInstance().getReference("sendMessages").child(MainActivity.plateUser.toUpperCase());
+    public void getUserData() {
+        String dot1 = new String (email_user);
+        String dot2 = dot1.replace(".","_");
+        DatabaseReference Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+        Users.orderByChild("type").equalTo("M").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        userPlate = snapshot.child("plate_user").getValue().toString();
+                    }
+                        getNotifications(userPlate);
+                }
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+
+    public void getNotifications(String plateUser){
+        final DatabaseReference getNoLeidos = FirebaseDatabase.getInstance().getReference("sendMessages").child(plateUser.toUpperCase());
         getNoLeidos.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -255,16 +316,14 @@ public class profile_activity extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         super.onBackPressed();
-        if (MainActivity.init==1){
-            MainActivity.profileView=1;
-            MainActivity.getInit=1;
-            MainActivity.getProfileView=2;
-        }else{
-            MainActivity.init=0;
+              if (MainActivity.init == 1) {
+                MainActivity.profileView = 1;
+                MainActivity.getInit = 1;
+                MainActivity.getProfileView = 2;
+            } else {
+                MainActivity.init = 0;
+            }
         }
-
-
-    }
 
     public void getInterfaceID() {
         FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
@@ -318,6 +377,5 @@ public class profile_activity extends AppCompatActivity {
         });
 
     }
-
 
 }
