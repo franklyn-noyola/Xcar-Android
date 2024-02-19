@@ -150,8 +150,6 @@ public class chatMainScreen extends Fragment {
         }
 
         private void getUserData(final String userData){
-            String dot1 = new String (email_user);
-            String dot2 = dot1.replace(".","_");
             Users = FirebaseDatabase.getInstance().getReference("singlePlates/platesCreated");
             Users.orderByChild("plate_id").equalTo(userData.toUpperCase()).addValueEventListener(new ValueEventListener() {
                 @Override
