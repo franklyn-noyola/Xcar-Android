@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu2"
+    tools:showIn="navigation_view">
 
     <item
         android:id="@+id/action_Settings"
@@ -23,22 +25,23 @@
         android:title="@string/action_contacts"/>
 
     <item
+        android:id="@+id/location"
+        android:icon="@drawable/ic_location"
+        android:orderInCategory="102"
+        app:showAsAction="always"
+        android:title=""/>
+
+    <item
         android:id="@+id/action_Share"
         android:orderInCategory="100"
         app:showAsAction="never"
         android:title="@string/shareWith"/>
-
-
 
     <item
         android:id="@+id/action_About"
         android:orderInCategory="100"
         app:showAsAction="never"
         android:title="@string/action_about"/>
-
-
-
-
 
     <item
         android:id="@+id/action_logout"
