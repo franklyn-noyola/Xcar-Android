@@ -1,4 +1,6 @@
-package com.epicdeveloper.allconnected.ui.sendNotifications;
+package com.epicdeveloper.xcar.ui.sendNotifications;
+
+import static com.epicdeveloper.xcar.MainActivity.email_user;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -26,10 +28,10 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.epicdeveloper.allconnected.LocaleHelper;
-import com.epicdeveloper.allconnected.MainActivity;
-import com.epicdeveloper.allconnected.R;
-import com.epicdeveloper.allconnected.ui.receivedNotifications.receivedNotifications;
+import com.epicdeveloper.xcar.LocaleHelper;
+import com.epicdeveloper.xcar.MainActivity;
+import com.epicdeveloper.xcar.R;
+import com.epicdeveloper.xcar.ui.receivedNotifications.receivedNotifications;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -58,6 +60,7 @@ public class sendNotification extends AppCompatActivity {
     Spinner selectSubject;
     EditText message;
     String subjectSel;
+    String selectedPlate;
     TextView imageSel, sendButton, selectedSubject;
     public static String imageUriName;
     public static String id2;
@@ -77,6 +80,11 @@ public class sendNotification extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_sendnotifications_fragment);
+        if (TextUtils.isEmpty(MainActivity.getSelectedPlate)){
+            selectedPlate = MainActivity.plate_user;
+        }else{
+            selectedPlate = MainActivity.getSelectedPlate;
+        }
         selectedLanguage = MainActivity.userlanguage;
         context = LocaleHelper.setLocale(getApplication(), selectedLanguage);
         resources = context.getResources();
@@ -164,12 +172,12 @@ public class sendNotification extends AppCompatActivity {
                     return;
                 }
             }
-        if (TextUtils.equals(MainActivity.plateUser, userToSend)){
+        if (TextUtils.equals(selectedPlate, userToSend)){
             Toast.makeText(this, resources.getString(R.string.autoSend), Toast.LENGTH_SHORT).show();
             return;
         }
-        userValidation = FirebaseDatabase.getInstance().getReference("Users");
-        userValidation.orderByChild("plate_user").equalTo(userToSend).addValueEventListener(new ValueEventListener() {
+        userValidation = FirebaseDatabase.getInstance().getReference("singlePlates/platesCreated");
+        userValidation.orderByChild("plate_id").equalTo(userToSend).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
@@ -180,7 +188,7 @@ public class sendNotification extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), resources.getString(R.string.noNotificationSent)+" "+userToSend+". "+resources.getString(R.string.blockedUser), Toast.LENGTH_SHORT).show();
                                 return;
                             }else{
-                                getUserBlocked(MainActivity.plateUser, new FirebaseSuccessListener() {
+                                getUserBlocked(selectedPlate, new FirebaseSuccessListener() {
                                     @Override
                                     public void onCallBack(boolean isDataFetched) {
                                         if (isDataFetched){
@@ -269,13 +277,13 @@ public class sendNotification extends AppCompatActivity {
             subjectSel = selectSubject.getSelectedItem().toString();
         }
         messageSend=message.getText().toString();
-        receiveMessageUser = FirebaseDatabase.getInstance().getReference("receivedMessage").child(MainActivity.plateUser).child(userTarget.toUpperCase());
+        receiveMessageUser = FirebaseDatabase.getInstance().getReference("receivedMessage").child(selectedPlate).child(userTarget.toUpperCase());
         sendMessageUser = FirebaseDatabase.getInstance().getReference("sendMessages/"+userTarget.toUpperCase());
         String id = receiveMessageUser.push().getKey();
         id2 = sendMessageUser.push().getKey();
         if (!TextUtils.isEmpty(imageSel.getText().toString())) {
             StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Imagenes");
-            StorageReference filePath = storageReference.child(MainActivity.plateUser + "-" + imageName + "." + "jpg");
+            StorageReference filePath = storageReference.child(selectedPlate + "-" + imageName + "." + "jpg");
             StorageTask uploadTask = filePath.putFile(imageUri);
             uploadTask.continueWithTask(new Continuation() {
                 @Override
@@ -294,16 +302,16 @@ public class sendNotification extends AppCompatActivity {
                         imageUriName = downloadUrl.toString();
                     }
                     if (imageUriName != null) {
-                        sendMessageUser.child(id2).setValue(new sendNotificationData(MainActivity.plateUser,subjectSel,messageSend,"No",imageName,imageUriName));
-                        receiveMessageUser.child(id).setValue(new sendNotificationData(MainActivity.plateUser,subjectSel,messageSend,"No",imageName,imageUriName));
+                        sendMessageUser.child(id2).setValue(new sendNotificationData(selectedPlate,subjectSel,messageSend,"No",imageName,imageUriName));
+                        receiveMessageUser.child(id).setValue(new sendNotificationData(selectedPlate,subjectSel,messageSend,"No",imageName,imageUriName));
                     }
                 }
             });
         }else{
             imageName = "";
             imageUriName = "";
-            sendMessageUser.child(id2).setValue(new sendNotificationData(MainActivity.plateUser,subjectSel,messageSend,"No",imageName,imageUriName));
-            receiveMessageUser.child(id).setValue(new sendNotificationData(MainActivity.plateUser,subjectSel,messageSend,"No",imageName,imageUriName));
+            sendMessageUser.child(id2).setValue(new sendNotificationData(selectedPlate,subjectSel,messageSend,"No",imageName,imageUriName));
+            receiveMessageUser.child(id).setValue(new sendNotificationData(selectedPlate,subjectSel,messageSend,"No",imageName,imageUriName));
         }
         targetUser.setText("");
         selectSubject.setSelection(0);
@@ -319,7 +327,7 @@ public class sendNotification extends AppCompatActivity {
     }
 
     public void getblockedUser(final String userBlock,final FirebaseSuccessListener dataFetched){
-        DatabaseReference blockedUser = FirebaseDatabase.getInstance().getReference("BlockUsers").child(MainActivity.plateUser).child(userBlock);
+        DatabaseReference blockedUser = FirebaseDatabase.getInstance().getReference("BlockUsers").child(selectedPlate).child(userBlock);
         Query query = blockedUser.orderByChild("Blocked").equalTo("Si");
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
@@ -371,7 +379,7 @@ public class sendNotification extends AppCompatActivity {
         try{
             json.put("to", tokenUser);
             JSONObject notification = new JSONObject();
-            notification.put ("titulo", "Notificación: "+MainActivity.plateUser);
+            notification.put ("titulo", "Notificación: "+selectedPlate);
             notification.put("detalle", subjectSel);
             json.put("data",notification);
             String URL = "https://fcm.googleapis.com/fcm/send";
