@@ -66,8 +66,6 @@ public class profile_activity extends AppCompatActivity {
     final int location = R.id.location;
     final int aboutAction = R.id.action_About;
 
-    final int addPlate = R.id.add_newPlate;
-    final int addPlateAction = R.id.add_newPlate;
     final int settingsAction = R.id.action_Settings;
     final int howitWorksAction = R.id.action_HowitWorks;
     final int shareAction = R.id.action_Share;
@@ -182,7 +180,6 @@ public class profile_activity extends AppCompatActivity {
         menu.findItem(R.id.action_About).setTitle(resources.getString(R.string.action_about));
         menu.findItem(R.id.action_Share).setTitle(resources.getString(R.string.shareWith));
         menu.findItem(R.id.location);
-        menu.findItem(R.id.add_newPlate);
 
         return true;
     }
@@ -193,10 +190,6 @@ public class profile_activity extends AppCompatActivity {
         switch (item.getItemId()){
             case contactsAction:
               Intent intent = new Intent(this, contacto.class);
-                startActivity(intent);
-                return true;
-            case R.id.add_newPlate:
-                intent = new Intent(this, additionalPlate.class);
                 startActivity(intent);
                 return true;
             case R.id.location:

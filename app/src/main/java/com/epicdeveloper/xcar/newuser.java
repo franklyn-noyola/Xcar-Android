@@ -172,8 +172,10 @@ public class newuser extends AppCompatActivity {
                     return;
                 }
                 final UsersConnected user = new UsersConnected(plate_user.getText().toString().toUpperCase(), cartype, carBrand,carColor,carModel,yearCar,  "M", name_user.getText().toString(), email_user.getText().toString(), pass_user.getText().toString(), resetPass);
+                final singlePlates singlePlates = new singlePlates(plate_user.getText().toString().toUpperCase(), cartype, carBrand,carColor,carModel,yearCar);
                 final ActivatedUser activated = new ActivatedUser("OFF", plate_user.getText().toString().toUpperCase(), email_user.getText().toString());
                 DatabaseReference userActivated = FirebaseDatabase.getInstance().getReference("Users/ActivatedUser");
+                DatabaseReference single = FirebaseDatabase.getInstance().getReference("singlePlates/createdPlates");
                 Users = FirebaseDatabase.getInstance().getReference("Users");
                 Users.orderByChild("plate_user").equalTo(plate_user.getText().toString().toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -206,11 +208,13 @@ public class newuser extends AppCompatActivity {
                                 userPlate = plate_user.getText().toString().toUpperCase();
                                 userEmail = email_user.getText().toString();
                                 String id3 = userActivated.push().getKey();
+                                String id4 = single.push().getKey();
                                 String dot1 = new String (email_user.getText().toString());
                                 String dot2 = dot1.replace(".","_");
                                 DatabaseReference userEmail = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
                                 String id2 = userEmail.push().getKey();
                                 userEmail.child(id2).setValue(user);
+                                single.child(id4).setValue(singlePlates);
                                 userActivated.child(id3).setValue(activated);
                                 if (userLanguage.equals("ES")) {
                                     Toast.makeText(getApplicationContext(), "El usuario ha sido registrado, por favor revise su correo electrónico (Bandeja de entrada o SPAM) para activarlo.", Toast.LENGTH_LONG).show();
@@ -329,6 +333,7 @@ public class newuser extends AppCompatActivity {
             }
         });
     }
+
 public void errorMessage() {
     if (userLanguage.equals("ES")) {
         Toast.makeText(getApplicationContext(), "El usuario ya está registrado", Toast.LENGTH_LONG).show();
