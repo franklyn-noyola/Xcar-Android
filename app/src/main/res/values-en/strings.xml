@@ -36,7 +36,7 @@
     <string name="goToMap">Go to Map</string>
     <string name="locationTitle">Save/View Location</string>
     <string name="locationAdded">New location added</string>
-    <string name="warningLocation"><b>Warning:</b> Click on the New Current Location button and then click the Go to Map button to get the new current location.</string>
+    <string name="warningLocation"><b>Warning:</b> Click on the New Location button and then click the Go to Map button to get the new current location.</string>
     <string name="longitudLbl"><b>Longitude:</b></string>
     <string name="latitudLbl"><b>Latitude:</b></string>
     <string name="placeLabel"><b>Place:</b></string>

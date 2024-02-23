@@ -20,8 +20,8 @@
     <string name="latitudLbl"><b>Latitud:</b></string>
     <string name="placeLabel"><b>Lugar:</b></string>
     <string name="viewLocation">Ver Ubicación</string>
-    <string name="newLocation">Nueva Ubicación Actual</string>
-    <string name="newCurrent"><b>Nueva Ubicación Actual</b></string>
+    <string name="newLocation">Nueva Ubicación</string>
+    <string name="newCurrent"><b>Nueva Ubicación</b></string>
     <string name="dateLbl">Fecha</string>
     <string name="activateGPS">GPS desactivado, Active su GPS antes de ir al Mapa</string>
     <string name="lastLocationHistory">Ultimos 5 Records del Historial de Ubicación</string>>
@@ -80,7 +80,7 @@
     <string name="noTermsAccepted">No se ha aceptado los terminos y condiciones y poítica de privacidad</string>
     <string name="noPassMatch">Las contraseñas no coinciden</string>
     <string name="locationAdded">Nueva ubicación agregada</string>
-    <string name="warningLocation"><b>Aviso:</b> Hacer click en el botón Nueva Ubicación actual y luego darle al boton Ir al Mapa para conseguir la nueva ubicación actual</string>
+    <string name="warningLocation"><b>Aviso:</b> Hacer click en el botón Nueva Ubicación y luego darle al boton Ir al Mapa para conseguir la nueva ubicación actual</string>
     <string name="wrongEmailFormat">Formato de email inválido</string>
     <string name="noConexion">Error en Conexión de Internet</string>
     <string name="noEmptyFields">El campo Email no puede estar vacío</string>

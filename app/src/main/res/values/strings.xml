@@ -189,7 +189,7 @@
     <string name="latitudLbl"><b>Latitud:</b></string>
     <string name="placeLabel"><b>Lugar:</b></string>
     <string name="viewLocation">Ver Ubicación</string>
-    <string name="newLocation">Nueva Ubicación Actual</string>
+    <string name="newLocation">Nueva Ubicación</string>
     <string name="noDataLocation">No hay Datos de la Ubicación Actual</string>
     <string name="newCurrent"><b>Nueva Ubicación Actual</b></string>
     <string name="locationAlert">¿Deseas guardar esta nueva ubicación?</string>
