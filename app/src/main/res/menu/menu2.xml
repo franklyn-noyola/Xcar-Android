@@ -25,13 +25,6 @@
         android:title="@string/action_contacts"/>
 
     <item
-        android:id="@+id/add_newPlate"
-        android:icon="@drawable/ic_add"
-        android:orderInCategory="101"
-        app:showAsAction="always"
-        android:title="New Plate"/>
-
-    <item
         android:id="@+id/location"
         android:icon="@drawable/ic_location"
         android:orderInCategory="102"

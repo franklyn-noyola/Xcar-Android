@@ -9,23 +9,23 @@
 
     <EditText
         android:id="@+id/addPlateField"
-        android:paddingLeft="5sp"
         android:layout_width="190dp"
         android:layout_height="30dp"
         android:background="@drawable/rounded2"
-        android:hint="@string/plateHint"
         android:enabled="true"
+        android:hint="@string/plateHint"
         android:inputType="text"
+        android:paddingLeft="5sp"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/black"
         android:textSize="13sp"
-        tools:ignore="Autofill,MissingConstraints"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.090"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.100" />
+        app:layout_constraintVertical_bias="0.100"
+        tools:ignore="Autofill,MissingConstraints,RtlHardcoded,RtlSymmetry,TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/infoLblAdd"
@@ -39,7 +39,8 @@
         app:layout_constraintHorizontal_bias="0.445"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.200" />
+        app:layout_constraintVertical_bias="0.200"
+        tools:ignore="TextSizeCheck" />
 
     <Spinner
         android:id="@+id/vehiclePlate"
@@ -48,10 +49,10 @@
         android:background="@drawable/spinner_background"
         android:clickable="false"
         android:enabled="false"
-        android:paddingLeft="0dp"
-        android:padding="0dp"
-        android:gravity="left"
         android:entries="@array/Vehiculos"
+        android:gravity="left"
+        android:padding="0dp"
+        android:paddingLeft="0dp"
         android:spinnerMode="dropdown"
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/white"
@@ -62,7 +63,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.272"
-        tools:ignore="DuplicateIds,SmallSp" />
+        tools:ignore="DuplicateIds,RtlHardcoded,RtlSymmetry,SmallSp,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/carBrandAdd"
@@ -83,7 +84,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.370"
-        tools:ignore="RtlHardcoded,RtlSymmetry" />
+        tools:ignore="RtlHardcoded,RtlSymmetry,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/carModelAdd"
@@ -104,7 +105,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.470"
-        tools:ignore="RtlHardcoded,RtlSymmetry" />
+        tools:ignore="RtlHardcoded,RtlSymmetry,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/carColorAdd"
@@ -125,7 +126,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.571"
-        tools:ignore="RtlHardcoded,RtlSymmetry" />
+        tools:ignore="RtlHardcoded,RtlSymmetry,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/carYearAdd"
@@ -146,14 +147,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.666"
-        tools:ignore="RtlHardcoded,RtlSymmetry" />
+        tools:ignore="RtlHardcoded,RtlSymmetry,TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/verify"
-        android:enabled="true"
         android:layout_width="111dp"
         android:layout_height="30dp"
         android:background="@drawable/rounded_corners"
+        android:enabled="true"
         android:hint="@string/verify"
         android:textColorHint="@android:color/white"
         android:textSize="12sp"
@@ -162,7 +163,8 @@
         app:layout_constraintHorizontal_bias="0.835"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.100" />
+        app:layout_constraintVertical_bias="0.100"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/addPlateButton"
@@ -178,7 +180,8 @@
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.780" />
+        app:layout_constraintVertical_bias="0.780"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/cancelButtonAdd"
