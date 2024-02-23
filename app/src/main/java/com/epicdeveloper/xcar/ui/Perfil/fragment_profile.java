@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 
@@ -33,6 +34,8 @@ import android.widget.Toast;
 import com.epicdeveloper.xcar.LocaleHelper;
 import com.epicdeveloper.xcar.MainActivity;
 import com.epicdeveloper.xcar.R;
+import com.epicdeveloper.xcar.additionalPlate;
+import com.epicdeveloper.xcar.contacto;
 import com.epicdeveloper.xcar.ui.LoginErrorsValidation;
 
 import com.epicdeveloper.xcar.ui.home.fragment_home;
@@ -63,6 +66,8 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
 
     ArrayAdapter<String> playlistAdapter;
     Button deletePlate;
+
+    Button addNewPlate;
 
     String plate_0;
     String plate_1;
@@ -108,6 +113,7 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
         Profile = inflater.inflate(R.layout.fragment_profile_fragment, container, false);
         inflaterView = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         adview = Profile.findViewById(R.id.adView);
+        addNewPlate = Profile.findViewById(R.id.addnewplatebcn);
         AdRequest adRequest = new AdRequest.Builder().build();
         adview.loadAd(adRequest);
         deletePlate = Profile.findViewById(R.id.deleteplate);
@@ -168,6 +174,14 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+
+        addNewPlate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), additionalPlate.class);
+                startActivity(intent);
             }
         });
 
@@ -498,6 +512,7 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
                        updates.put("year", yearCarField.getText().toString());
                        ds.getRef().updateChildren(updates);
                    }
+                   singlePlates();
                }
                @Override
                public void onCancelled(@NonNull DatabaseError error) {
@@ -523,6 +538,29 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
                 btnchangePassButton.setEnabled(true);
         }
     }
+
+        private void singlePlates() {
+                Users = FirebaseDatabase.getInstance().getReference("singlePlates/createdPlates");
+                Users.orderByChild("plate_id").equalTo(getSelectedPlate).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot ds: snapshot.getChildren()){
+                            Map<String, Object> updates = new HashMap<String, Object>();
+                            updates.put("cartype", carTypeField.getSelectedItem().toString());
+                            updates.put("carbrand", brandCarField.getText().toString());
+                            updates.put("carmodel", modelCarField.getText().toString());
+                            updates.put("carcolor", colorCarField.getText().toString());
+                            updates.put("year", yearCarField.getText().toString());
+                            ds.getRef().updateChildren(updates);
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+        }
 
     private void getSelectedPlate(String plate) {
         String dot1 = new String (email_user);

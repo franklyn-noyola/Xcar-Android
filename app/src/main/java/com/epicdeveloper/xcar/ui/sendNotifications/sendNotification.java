@@ -176,10 +176,8 @@ public class sendNotification extends AppCompatActivity {
             Toast.makeText(this, resources.getString(R.string.autoSend), Toast.LENGTH_SHORT).show();
             return;
         }
-        String dot1 = new String (email_user);
-        String dot2 = dot1.replace(".","_");
-        userValidation = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
-        userValidation.orderByChild("plate_user").equalTo(userToSend).addValueEventListener(new ValueEventListener() {
+        userValidation = FirebaseDatabase.getInstance().getReference("singlePlates/platesCreated");
+        userValidation.orderByChild("plate_id").equalTo(userToSend).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){

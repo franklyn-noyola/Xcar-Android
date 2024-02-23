@@ -125,7 +125,7 @@ public class chatMainScreen extends Fragment {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView getUser = (TextView) view.findViewById(R.id.message_user);
+                TextView getUser = view.findViewById(R.id.message_user);
                 userToChat = getUser.getText().toString();
                 return false;
             }
@@ -150,16 +150,14 @@ public class chatMainScreen extends Fragment {
         }
 
         private void getUserData(final String userData){
-            String dot1 = new String (email_user);
-            String dot2 = dot1.replace(".","_");
-            Users = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
-            Users.orderByChild("plate_user").equalTo(userData.toUpperCase()).addValueEventListener(new ValueEventListener() {
+            Users = FirebaseDatabase.getInstance().getReference("singlePlates/platesCreated");
+            Users.orderByChild("plate_id").equalTo(userData.toUpperCase()).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     Object getExistUser = null;
                     if (snapshot.exists()) {
                         for (DataSnapshot ds : snapshot.getChildren()){
-                          getExistUser = ds.child("plate_user").getValue();
+                          getExistUser = ds.child("plate_id").getValue();
                         }
                         if (getExistUser.toString().equals(selectedPlate)){
                             if (selectedLanguage.equals("ES")){
@@ -278,9 +276,9 @@ public class chatMainScreen extends Fragment {
                 protected void populateView(View v, listUsertoChat model, int position) {
 
                     // Get references to the views of message.xml
-                    TextView messageText = (TextView) v.findViewById(R.id.message_text);
-                    messageUser = (TextView) v.findViewById(R.id.message_user);
-                    TextView messageTime = (TextView) v.findViewById(R.id.message_time);
+                    TextView messageText = v.findViewById(R.id.message_text);
+                    messageUser = v.findViewById(R.id.message_user);
+                    TextView messageTime = v.findViewById(R.id.message_time);
                     Drawable image = getActivity().getResources().getDrawable(R.drawable.imageicon);
                     int h = image.getIntrinsicHeight();
                     int w = image.getIntrinsicWidth();

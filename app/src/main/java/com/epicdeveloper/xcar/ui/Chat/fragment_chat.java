@@ -998,8 +998,8 @@ public class fragment_chat extends AppCompatActivity {
         closeButton = view.findViewById(id.closebutton);
         closeButton.setText(resources.getString(string.closeButton));
         final PopupWindow pw = new PopupWindow(view, 800 , 550, true);
-        DatabaseReference Users = FirebaseDatabase.getInstance().getReference("Users");
-        Users.orderByChild("plate_user").equalTo(userFragmentToChat).addListenerForSingleValueEvent(new ValueEventListener() {
+        DatabaseReference Users = FirebaseDatabase.getInstance().getReference("singlePlates/platesCreated");
+        Users.orderByChild("plate_id").equalTo(userFragmentToChat).addListenerForSingleValueEvent(new ValueEventListener() {
             @SuppressLint("SetTextI18n")
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
