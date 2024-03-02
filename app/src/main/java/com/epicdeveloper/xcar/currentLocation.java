@@ -149,7 +149,10 @@ public class currentLocation extends Fragment {
         viewLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if (isGPSProvider(context)==false || isNetowrkProvider(context)==false){
+                    Toast.makeText(context, resources.getString(R.string.activateGPS), Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 String lati = latitudLbl.getText().toString();
                 String longi = longitudLbl.getText().toString();
                 int latiSubstr = lati.indexOf(":");
