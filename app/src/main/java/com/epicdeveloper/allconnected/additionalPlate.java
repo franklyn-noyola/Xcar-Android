@@ -1,8 +1,6 @@
 package com.epicdeveloper.xcar;
 
 import static com.epicdeveloper.xcar.MainActivity.email_user;
-
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -13,26 +11,13 @@ import androidx.annotation.NonNull;
 
 
 import android.text.TextUtils;
-import android.text.method.HideReturnsTransformationMethod;
-import android.text.method.PasswordTransformationMethod;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.epicdeveloper.xcar.LocaleHelper;
-import com.epicdeveloper.xcar.MainActivity;
-import com.epicdeveloper.xcar.R;
-import com.epicdeveloper.xcar.ui.LoginErrorsValidation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -42,8 +27,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 
 import java.util.Objects;
@@ -51,6 +36,8 @@ import java.util.Objects;
 public class additionalPlate extends AppCompatActivity {
 
     Context context;
+
+    String mToken;
     Resources resources;
     String selectedLanguage;
     private DatabaseReference Users;
@@ -63,12 +50,22 @@ public class additionalPlate extends AppCompatActivity {
 
     Spinner carSelected;
 
-    TextView addPlateLabel, infoLbl;
+    TextView infoLbl;
 
     AdView adview;
 
     private DatabaseReference addPlateDB;
     Button verifyButton, addPlateButton, cancelButton;
+
+    public void getInterfaceID() {
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
+            if (!task.isSuccessful()){
+                Log.w("TAG", "Not able to get token", task.getException());
+                return;
+            }
+            mToken = task.getResult();
+        });
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +77,7 @@ public class additionalPlate extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0099CC")));
         getSupportActionBar().setTitle(resources.getString(R.string.addPlateButton));
         adview = findViewById(R.id.adViewAdd);
+        getInterfaceID();
         AdRequest adRequest = new AdRequest.Builder().build();
         adview.loadAd(adRequest);
         carSelected = findViewById(R.id.vehiclePlate);
@@ -186,7 +184,6 @@ public class additionalPlate extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),R.string.invalidAdditonalPlateFieñds, Toast.LENGTH_LONG).show();
                 return;
            }
-            //Toast.makeText(getApplicationContext(), carSelected.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
             final UsersConnected user = new UsersConnected(additionalPlate.getText().toString().toUpperCase(), carSelected.getSelectedItem().toString(), brandCarField.getText().toString(),colorCarField.getText().toString(),modelCarField.getText().toString(),yearCarField.getText().toString(),  "A", username, email_user, password, "0");
             final singlePlates createdPlates = new singlePlates(additionalPlate.getText().toString().toUpperCase(), carSelected.getSelectedItem().toString(), brandCarField.getText().toString(),colorCarField.getText().toString(),modelCarField.getText().toString(),yearCarField.getText().toString());
             String dot1 = new String (email_user);
@@ -197,9 +194,30 @@ public class additionalPlate extends AppCompatActivity {
             String id2 = singlePlates.push().getKey();
             userEmail.child(id).setValue(user);
             singlePlates.child(id2).setValue(createdPlates);
+            System.out.println("token "+ mToken);
             Toast.makeText(getApplicationContext(),R.string.plateAdded, Toast.LENGTH_LONG).show();
+            pushCreate(additionalPlate.getText().toString().toUpperCase());
             setFielDisable();
         }
+
+    private void pushCreate(final String plateUser) {
+        final pushNotification pushNotification = new pushNotification("ON",mToken);
+        final DatabaseReference pushdb = FirebaseDatabase.getInstance().getReference("pushNotification/"+plateUser);
+        pushdb.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (!snapshot.exists()){
+                    String id = pushdb.push().getKey();
+                    assert id != null;
+                    pushdb.child(id).setValue(pushNotification);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 
         public void setFieldsEnable(){
             brandCarField.setEnabled(true);
