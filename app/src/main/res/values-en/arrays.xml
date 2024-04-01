@@ -14,6 +14,7 @@
         <item>Scratched Vehicle</item>
         <item>Painted Vehicle</item>
         <item>Tree over Vehicle</item>
+        <item>The tow truck takes your vehicle</item>
         <item>Other issues</item>
     </string-array>
     <string-array name="contactos_asuntos">
