@@ -14,6 +14,7 @@
         <item>Verkratztes Fahrzeug</item>
         <item>Lackiertes Fahrzeug</item>
         <item>Baum über Fahrzeug</item>
+        <item>Der Abschleppwagen übernimmt Ihr Fahrzeug</item>
         <item>Andere</item>
     </string-array>
     <string-array name="contactos_asuntos">
