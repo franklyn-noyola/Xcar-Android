@@ -215,6 +215,14 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         deletePlateSelected();
+                        createdPlates();
+                        singlePlates();
+                        delChat();
+                        delBlockUser();
+                        delsendMessages();
+                        delreceivedMessages();
+                        deluserLanguagePush();
+                        delpushNotification();
                         Toast.makeText(getActivity(), resources.getString(R.string.plateDeleted), Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -620,6 +628,174 @@ import static com.epicdeveloper.xcar.R.layout.fragment_home;
             }
         });
     }
+
+    private void createdPlates() {
+        DatabaseReference createdPlate = FirebaseDatabase.getInstance().getReference("singlePlates/createdPlates");
+        createdPlate.orderByChild("plate_id").equalTo(plate_0).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    String key = null;
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        key = ds.getKey();
+                    }
+                    snapshot.child(key).getRef().removeValue();
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+        private void platesCreated() {
+            DatabaseReference platesCreated = FirebaseDatabase.getInstance().getReference("singlePlates/platesCreated");
+            platesCreated.orderByChild("plate_id").equalTo(plate_0).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    String key = null;
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        key = ds.getKey();
+                    }
+
+                    snapshot.child(key).getRef().removeValue();
+                }
+            }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+
+        private void delChat(){
+            DatabaseReference delChat = FirebaseDatabase.getInstance().getReference("Chat/"+plate_0);
+            delChat.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        snapshot.getRef().removeValue();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+
+        private void delBlockUser(){
+            DatabaseReference delChat = FirebaseDatabase.getInstance().getReference("BlockUsers/"+plate_0);
+            delChat.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        snapshot.getRef().removeValue();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+        private void delreceivedMessages(){
+            DatabaseReference receivedMessages = FirebaseDatabase.getInstance().getReference("receivedMessage/"+plate_0);
+            receivedMessages.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        snapshot.getRef().removeValue();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+
+        private void delsendMessages(){
+            DatabaseReference sendMessages = FirebaseDatabase.getInstance().getReference("sendMessage/"+plate_0);
+            sendMessages.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        snapshot.getRef().removeValue();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+
+        private void deluserLanguagePush() {
+
+            DatabaseReference userLanguagePush = FirebaseDatabase.getInstance().getReference("pushNotification/"+plate_0);
+            userLanguagePush.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    String tocken = "";
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        tocken = ds.child("tockenUser").getValue().toString();
+                    }
+                    delUserLanguage(tocken);
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+
+        private void delUserLanguage(String tocken){
+            DatabaseReference Chat = FirebaseDatabase.getInstance().getReference("Users/userLanguage");
+            Chat.orderByChild("users").equalTo(tocken).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        String key = null;
+                        for (DataSnapshot ds : snapshot.getChildren()) {
+                            key = ds.getKey();
+                        }
+                        snapshot.child(key).getRef().removeValue();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+        }
+        private void delpushNotification(){
+            DatabaseReference sendMessages = FirebaseDatabase.getInstance().getReference("pushNotification/"+plate_0);
+            sendMessages.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        snapshot.getRef().removeValue();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
 
 
 }
