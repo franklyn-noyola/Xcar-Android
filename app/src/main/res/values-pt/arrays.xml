@@ -14,6 +14,7 @@
         <item>Veículo arranhado</item>
         <item>Veículo pintado</item>
         <item>Árvore sobre veículo</item>
+        <item>O caminhão de reboque leva seu veículo</item>
         <item>Outros</item>
     </string-array>
     <string-array name="contactos_asuntos">
