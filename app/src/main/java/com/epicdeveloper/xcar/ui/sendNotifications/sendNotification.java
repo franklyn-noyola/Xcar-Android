@@ -176,7 +176,7 @@ public class sendNotification extends AppCompatActivity {
             Toast.makeText(this, resources.getString(R.string.autoSend), Toast.LENGTH_SHORT).show();
             return;
         }
-        userValidation = FirebaseDatabase.getInstance().getReference("singlePlates/platesCreated");
+        userValidation = FirebaseDatabase.getInstance().getReference("singlePlates/createdPlates");
         userValidation.orderByChild("plate_id").equalTo(userToSend).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
