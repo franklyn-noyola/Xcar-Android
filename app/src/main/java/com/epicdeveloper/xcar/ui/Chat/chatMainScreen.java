@@ -150,7 +150,7 @@ public class chatMainScreen extends Fragment {
         }
 
         private void getUserData(final String userData){
-            Users = FirebaseDatabase.getInstance().getReference("singlePlates/platesCreated");
+            Users = FirebaseDatabase.getInstance().getReference("singlePlates/createdPlates");
             Users.orderByChild("plate_id").equalTo(userData.toUpperCase()).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
