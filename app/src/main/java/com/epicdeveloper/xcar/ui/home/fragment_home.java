@@ -199,7 +199,7 @@ public class fragment_home extends Fragment {
             Toast.makeText(context, resources.getString(R.string.sameUserSearch), Toast.LENGTH_SHORT).show();
             return;
         }
-        DatabaseReference Users = FirebaseDatabase.getInstance().getReference("singlePlates/platesCreated");
+        DatabaseReference Users = FirebaseDatabase.getInstance().getReference("singlePlates/createdPlates");
         Users.orderByChild("plate_id").equalTo(userToSearch.toUpperCase()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
