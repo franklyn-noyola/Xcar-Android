@@ -208,7 +208,6 @@ public class fragment_home extends Fragment {
                     for (DataSnapshot ds : snapshot.getChildren()) {
                         getExistUser = ds.child("plate_id").getValue();
                     }
-                    System.out.println("Matricula "+getExistUser.toString());
                     if (getExistUser.toString().equals(userToSearch.toUpperCase())) {
                         view = inflaterView.inflate(searchuser_popup, null);
                         relative = new RelativeLayout(getActivity());
@@ -258,93 +257,97 @@ public class fragment_home extends Fragment {
                                 startActivity(intent);
                             }
                         });
-
-                        DatabaseReference Users = FirebaseDatabase.getInstance().getReference("singlePlates/platesCreated");
-                        Users.orderByChild("plate_id").equalTo(userToSearch).addListenerForSingleValueEvent(new ValueEventListener() {
-                            @SuppressLint("SetTextI18n")
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                if (dataSnapshot.exists()) {
-                                    String typeProfileCarUser = "";
-                                    String brandProfileCarUser = "";
-                                    String modelProfileCaruser = "";
-                                    String colorProfileCarUser = "";
-                                    String yearProfileCarUser = "";
-                                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                                        typeProfileCarUser = snapshot.child("cartype").getValue().toString();
-                                        brandProfileCarUser = snapshot.child("carbrand").getValue().toString();
-                                        modelProfileCaruser = snapshot.child("carmodel").getValue().toString();
-                                        colorProfileCarUser = snapshot.child("carcolor").getValue().toString();
-                                        yearProfileCarUser = snapshot.child("year").getValue().toString();
-                                    }
-                                    final PopupWindow pw = new PopupWindow(view, 1200, 1000, true);
-                                    if (TextUtils.isEmpty(typeProfileCarUser)) {
-                                        carType.setText(resources.getString(R.string.typeVehicle) + ": ");
-                                        carTypeTextField.setText(resources.getString(R.string.noData));
-                                    } else {
-
-                                        carType.setText(resources.getString(R.string.typeVehicle) + ": ");
-                                        carTypeTextField.setText(typeProfileCarUser);
-
-                                    }
-                                    if (TextUtils.isEmpty(brandProfileCarUser)) {
-                                        carBrand.setText(resources.getString(R.string.brandHint) + ":");
-                                        carBrandTextField.setText(resources.getString(R.string.noData));
-                                    } else {
-                                        carBrand.setText(resources.getString(R.string.brandHint) + ":");
-                                        carBrandTextField.setText(brandProfileCarUser);
-                                    }
-                                    if (TextUtils.isEmpty(modelProfileCaruser)) {
-                                        carModel.setText(resources.getString(R.string.modelHint) + ":");
-                                        carModelTextField.setText(resources.getString(R.string.noData));
-                                    } else {
-                                        carModel.setText(resources.getString(R.string.modelHint) + ":");
-                                        carModelTextField.setText(modelProfileCaruser);
-                                    }
-                                    if (TextUtils.isEmpty(colorProfileCarUser)) {
-                                        carColor.setText(resources.getString(R.string.colorHint) + ":");
-                                        carColorTextField.setText(resources.getString(R.string.noData));
-                                    } else {
-                                        carColor.setText(resources.getString(R.string.colorHint) + ":");
-                                        carColorTextField.setText(colorProfileCarUser);
-                                    }
-                                    if (TextUtils.isEmpty(yearProfileCarUser)) {
-                                        carYear.setText(resources.getString(R.string.yearHint) + ":");
-                                        carYearTextField.setText(resources.getString(R.string.noData));
-                                    } else {
-                                        carYear.setText(resources.getString(R.string.yearHint) + ":");
-                                        carYearTextField.setText(yearProfileCarUser);
-                                    }
-                                    pw.showAtLocation(relative, Gravity.NO_GRAVITY, 150, 300);
-                                    pw.setOutsideTouchable(false);
-                                    pw.setFocusable(true);
-                                    closeButton.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View v) {
-                                            pw.setFocusable(false);
-                                            pw.dismiss();
-                                            searchViewField.clearFocus();
-                                            searchViewField.setQuery("", false);
-                                        }
-                                    });
-
-                                } else {
-                                    Toast.makeText(getActivity(), resources.getString(R.string.noExists), Toast.LENGTH_SHORT).show();
-                                }
-
-
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError error) {
-
-                            }
-                        });
+                        getUsertoSeach(userToSearch.toUpperCase());
 
                     } else {
                         Toast.makeText(getActivity(), resources.getString(R.string.noExists), Toast.LENGTH_SHORT).show();
                         return;
                     }
+                    }
                 }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public void getUsertoSeach(String userToSearch){
+        DatabaseReference Users = FirebaseDatabase.getInstance().getReference("singlePlates/createdPlates");
+        Users.orderByChild("plate_id").equalTo(userToSearch.toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    String typeProfileCarUser = "";
+                    String brandProfileCarUser = "";
+                    String modelProfileCaruser = "";
+                    String colorProfileCarUser = "";
+                    String yearProfileCarUser = "";
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        typeProfileCarUser = snapshot.child("cartype").getValue().toString();
+                        brandProfileCarUser = snapshot.child("carbrand").getValue().toString();
+                        modelProfileCaruser = snapshot.child("carmodel").getValue().toString();
+                        colorProfileCarUser = snapshot.child("carcolor").getValue().toString();
+                        yearProfileCarUser = snapshot.child("year").getValue().toString();
+                    }
+                    final PopupWindow pw = new PopupWindow(view, 1200, 1000, true);
+                    if (TextUtils.isEmpty(typeProfileCarUser)) {
+                        carType.setText(resources.getString(R.string.typeVehicle) + ": ");
+                        carTypeTextField.setText(resources.getString(R.string.noData));
+                    } else {
+
+                        carType.setText(resources.getString(R.string.typeVehicle) + ": ");
+                        carTypeTextField.setText(typeProfileCarUser);
+
+                    }
+                    if (TextUtils.isEmpty(brandProfileCarUser)) {
+                        carBrand.setText(resources.getString(R.string.brandHint) + ":");
+                        carBrandTextField.setText(resources.getString(R.string.noData));
+                    } else {
+                        carBrand.setText(resources.getString(R.string.brandHint) + ":");
+                        carBrandTextField.setText(brandProfileCarUser);
+                    }
+                    if (TextUtils.isEmpty(modelProfileCaruser)) {
+                        carModel.setText(resources.getString(R.string.modelHint) + ":");
+                        carModelTextField.setText(resources.getString(R.string.noData));
+                    } else {
+                        carModel.setText(resources.getString(R.string.modelHint) + ":");
+                        carModelTextField.setText(modelProfileCaruser);
+                    }
+                    if (TextUtils.isEmpty(colorProfileCarUser)) {
+                        carColor.setText(resources.getString(R.string.colorHint) + ":");
+                        carColorTextField.setText(resources.getString(R.string.noData));
+                    } else {
+                        carColor.setText(resources.getString(R.string.colorHint) + ":");
+                        carColorTextField.setText(colorProfileCarUser);
+                    }
+                    if (TextUtils.isEmpty(yearProfileCarUser)) {
+                        carYear.setText(resources.getString(R.string.yearHint) + ":");
+                        carYearTextField.setText(resources.getString(R.string.noData));
+                    } else {
+                        carYear.setText(resources.getString(R.string.yearHint) + ":");
+                        carYearTextField.setText(yearProfileCarUser);
+                    }
+                    pw.showAtLocation(relative, Gravity.NO_GRAVITY, 150, 300);
+                    pw.setOutsideTouchable(false);
+                    pw.setFocusable(true);
+                    closeButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            pw.setFocusable(false);
+                            pw.dismiss();
+                            searchViewField.clearFocus();
+                            searchViewField.setQuery("", false);
+                        }
+                    });
+
+                } else {
+                    Toast.makeText(getActivity(), resources.getString(R.string.noExists), Toast.LENGTH_SHORT).show();
+                }
+
+
             }
 
             @Override
@@ -352,5 +355,6 @@ public class fragment_home extends Fragment {
 
             }
         });
+
     }
 }
