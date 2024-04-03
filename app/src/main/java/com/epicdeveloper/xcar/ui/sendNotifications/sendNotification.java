@@ -154,9 +154,9 @@ public class sendNotification extends AppCompatActivity {
         }
     }
 
-    public void sendNotification(View view){
+    public void sendNotification(View view) {
         userToSend = targetUser.getText().toString().toUpperCase();
-        if (TextUtils.isEmpty(userToSend)){
+        if (TextUtils.isEmpty(userToSend)) {
             Toast.makeText(this, resources.getString(R.string.emptyTargetUser), Toast.LENGTH_SHORT).show();
             return;
         }
@@ -166,16 +166,38 @@ public class sendNotification extends AppCompatActivity {
                 return;
             }
         }
-            if (MainActivity.chatScreen != 3) {
-                if (TextUtils.equals(resources.getString(R.string.issueSelect), selectSubject.getSelectedItem().toString())) {
-                    Toast.makeText(this, resources.getString(R.string.issueEmpty), Toast.LENGTH_SHORT).show();
-                    return;
-                }
+        if (MainActivity.chatScreen != 3) {
+            if (TextUtils.equals(resources.getString(R.string.issueSelect), selectSubject.getSelectedItem().toString())) {
+                Toast.makeText(this, resources.getString(R.string.issueEmpty), Toast.LENGTH_SHORT).show();
+                return;
             }
-        if (TextUtils.equals(selectedPlate, userToSend)){
+        }
+        if (TextUtils.equals(selectedPlate, userToSend)) {
             Toast.makeText(this, resources.getString(R.string.autoSend), Toast.LENGTH_SHORT).show();
             return;
         }
+        String dot1 = new String(email_user);
+        String dot2 = dot1.replace(".", "_");
+        DatabaseReference Users = FirebaseDatabase.getInstance().getReference("Users/" + dot2);
+        Users.orderByChild("plate_user").equalTo(userToSend.toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String exist;
+                if (dataSnapshot.exists()) {
+                    Toast.makeText(context, resources.getString(R.string.autoSend), Toast.LENGTH_SHORT).show();
+                }else {
+                    getUserToSend(userToSend);
+                }
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+        public void getUserToSend(String userToSend){
+
         userValidation = FirebaseDatabase.getInstance().getReference("singlePlates/createdPlates");
         userValidation.orderByChild("plate_id").equalTo(userToSend).addValueEventListener(new ValueEventListener() {
             @Override
@@ -266,6 +288,7 @@ public class sendNotification extends AppCompatActivity {
         });
 
     }
+
 
 
 
