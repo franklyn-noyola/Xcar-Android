@@ -109,7 +109,8 @@ public class fragment_home extends Fragment {
                 if (TextUtils.isEmpty(searchViewField.getQuery())) {
                     Toast.makeText(context, resources.getString(R.string.noExists), Toast.LENGTH_SHORT).show();
                 } else {
-                    getInfoData(searchViewField.getQuery().toString().toUpperCase());
+                    existingUser(searchViewField.getQuery().toString().toUpperCase());
+
                 }
                 return true;
             }
@@ -192,6 +193,31 @@ public class fragment_home extends Fragment {
         });
     }
 
+    public void existingUser(String userToSearch) {
+        String dot1 = new String(email_user);
+        String dot2 = dot1.replace(".", "_");
+        DatabaseReference Users = FirebaseDatabase.getInstance().getReference("Users/" + dot2);
+        Users.orderByChild("plate_user").equalTo(userToSearch.toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String exist;
+                if (dataSnapshot.exists()) {
+                    Toast.makeText(context, resources.getString(R.string.sameUserSearch), Toast.LENGTH_SHORT).show();
+                }else {
+                    getInfoData(userToSearch);
+                }
+
+                }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+
 
     protected void getInfoData(String userToSearch) {
 
@@ -199,6 +225,7 @@ public class fragment_home extends Fragment {
             Toast.makeText(context, resources.getString(R.string.sameUserSearch), Toast.LENGTH_SHORT).show();
             return;
         }
+
         DatabaseReference Users = FirebaseDatabase.getInstance().getReference("singlePlates/createdPlates");
         Users.orderByChild("plate_id").equalTo(userToSearch.toUpperCase()).addValueEventListener(new ValueEventListener() {
             @Override
@@ -273,6 +300,8 @@ public class fragment_home extends Fragment {
             }
         });
     }
+
+
 
     public void getUsertoSeach(String userToSearch){
         DatabaseReference Users = FirebaseDatabase.getInstance().getReference("singlePlates/createdPlates");
@@ -357,4 +386,6 @@ public class fragment_home extends Fragment {
         });
 
     }
+
+
 }
