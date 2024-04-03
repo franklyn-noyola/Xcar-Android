@@ -110,7 +110,7 @@ public class chatMainScreen extends Fragment {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                 @Override
                 public boolean onQueryTextSubmit(final String query) {
-                    getUserData(query);
+                    existingUser(query);
                     return true;
                 }
 
@@ -147,6 +147,80 @@ public class chatMainScreen extends Fragment {
         public void onStart(){
             adapterFirst.startListening();
             super.onStart();
+        }
+
+        public void existingUser(String existUser){
+            String dot1 = new String(email_user);
+            String dot2 = dot1.replace(".", "_");
+            DatabaseReference Users = FirebaseDatabase.getInstance().getReference("Users/" + dot2);
+            Users.orderByChild("plate_user").equalTo(existUser.toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    String exist;
+                    if (dataSnapshot.exists()) {
+                        if (selectedLanguage.equals("ES")){
+                            Toast.makeText(getActivity(), "El usuario "+existUser.toUpperCase()+" no se puede enviar un automensaje.", Toast.LENGTH_SHORT).show();
+                        }
+                        if (selectedLanguage.equals("EN")){
+                            Toast.makeText(getActivity(), "User "+existUser.toUpperCase()+" cannot send message to himself/herself.", Toast.LENGTH_SHORT).show();
+                        }
+                        if (selectedLanguage.equals("FR")){
+                            Toast.makeText(getActivity(), "L'utilisateur "+existUser.toUpperCase()+" ne peut pas s'envoyer de message.", Toast.LENGTH_SHORT).show();
+
+                        }
+                        if (selectedLanguage.equals("DE")){
+                            Toast.makeText(getActivity(), "Der Benutzer "+existUser.toUpperCase()+" kann keine Nachricht an sich selbst senden.", Toast.LENGTH_SHORT).show();
+                        }
+                        if (selectedLanguage.equals("IT")){
+                            Toast.makeText(getActivity(), "L'utente  "+existUser.toUpperCase()+"  non può inviare messaggi a se stesso.", Toast.LENGTH_SHORT).show();
+                        }
+                        if (selectedLanguage.equals("PT")){
+                            Toast.makeText(getActivity(), "O usuário "+ existUser.toUpperCase() +" não pode enviar mensagem para si mesmo.", Toast.LENGTH_SHORT).show();
+                        }
+                        if (selectedLanguage.equals("RU")){
+                            Toast.makeText(getActivity(), "Пользователь "+ existUser.toUpperCase() +" не может отправлять автоматическое сообщение.", Toast.LENGTH_SHORT).show();
+                        }
+                        if (selectedLanguage.equals("ZH")){
+                            Toast.makeText(getActivity(), "用户" + existUser.toUpperCase()+" 无法发送自动消息。", Toast.LENGTH_SHORT).show();
+                        }
+                        if (selectedLanguage.equals("JA")){
+                            Toast.makeText(getActivity(), "ユーザー "+ existUser.toUpperCase()+" は自動メッセージを送信できません。", Toast.LENGTH_SHORT).show();
+                        }
+                        if (selectedLanguage.equals("NL")){
+                            Toast.makeText(getActivity(), "De gebruiker "+ existUser.toUpperCase() +" kan geen automatisch bericht verzenden.", Toast.LENGTH_SHORT).show();
+                        }
+                        if (selectedLanguage.equals("PL")){
+                            Toast.makeText(getActivity(), "Użytkownik "+ existUser.toUpperCase() +" nie może wysłać automatycznej wiadomości.", Toast.LENGTH_SHORT).show();
+                        }
+                        if (selectedLanguage.equals("KO")){
+                            Toast.makeText(getActivity(), "사용자 "+ existUser.toUpperCase() +" 는 자동 메시지를 보낼 수 없습니다.", Toast.LENGTH_SHORT).show();
+                        }
+
+                        if (selectedLanguage.equals("SV")){
+                            Toast.makeText(getActivity(), "Användaren "+ existUser.toUpperCase() +" kan inte skicka ett automatiskt meddelande.", Toast.LENGTH_SHORT).show();
+                        }
+                        if (selectedLanguage.equals("AR")){
+                            Toast.makeText(getActivity(), "المستخدم "+existUser.toUpperCase()+" لا يمكن إرسال رسالة تلقائية.", Toast.LENGTH_SHORT).show();
+                        }
+                        if (selectedLanguage.equals("HI")){
+                            Toast.makeText(getActivity(), "उपयोगकर्ता "+ existUser.toUpperCase() +" एक ऑटो संदेश नहीं भेज सकता है।", Toast.LENGTH_SHORT).show();
+                        }
+                        if (selectedLanguage.equals("UR")){
+                            Toast.makeText(getActivity(), "صارف "+existUser.toUpperCase()+" خودکار پیغام نہیں بھیجا جاسکتا۔", Toast.LENGTH_SHORT).show();
+                        }
+                    }else {
+                        getUserData(existUser);
+                    }
+
+                }
+
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
         }
 
         private void getUserData(final String userData){
