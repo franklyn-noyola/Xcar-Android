@@ -555,71 +555,72 @@ public void errorMessage() {
             linkButton.setTextSize(10);
         //    linkButton.setY(1670);
          //   linkButton.setX(450);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/spanish?authuser=0";
+
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/terminos-y-condicones/xcar/spanish?authuser=0";
         }
         if (userLanguage.equals("EN")){
             acceptButton.setTextSize(9);
             linkButton.setTextSize(12);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/english?authuser=0";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/terminos-y-condicones/xcar/english?authuser=0";
         }
         if (userLanguage.equals("FR")){
             acceptButton.setTextSize(9);
             linkButton.setTextSize(9);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/frances?authuser=0";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/terminos-y-condicones/xcar/frances?authuser=0";
         }
         if (userLanguage.equals("DE")){
             acceptButton.setTextSize(7);
             linkButton.setTextSize(7);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/aleman?authuser=0";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/terminos-y-condicones/xcar/aleman?authuser=0";
         }
         if (userLanguage.equals("IT")){
             acceptButton.setTextSize(12);
             linkButton.setTextSize(10);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/italiano?authuser=0";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/terminos-y-condicones/xcar/italiano?authuser=0";
         }
         if (userLanguage.equals("PT")){
             acceptButton.setTextSize(12);
             linkButton.setTextSize(9);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/portugues?authuser=0";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/terminos-y-condicones/xcar/portugues?authuser=0";
         }
         if (userLanguage.equals("RU")){
             acceptButton.setTextSize(13);
             linkButton.setTextSize(9);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/ruso?authuser=0";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/terminos-y-condicones/xcar/ruso?authuser=0";
         }
         if (userLanguage.equals("ZH")){
             acceptButton.setTextSize(13);
             linkButton.setTextSize(14);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/chino?authuser=0";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/terminos-y-condicones/xcar/chino?authuser=0";
         }
         if (userLanguage.equals("JA")){
             acceptButton.setTextSize(14);
             linkButton.setTextSize(12);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/japones?authuser=0";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/terminos-y-condicones/xcar/japones?authuser=0";
         }
         if (userLanguage.equals("NL")){
             acceptButton.setTextSize(19);
             linkButton.setTextSize(11);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/holandes?authuser=0";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/terminos-y-condicones/xcar/holandes?authuser=0";
         }
 
         if (userLanguage.equals("KO")) {
-            termsLink= "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/coreano?authuser=0";
+            termsLink= "https://sites.google.com/view/epicdevelopersapp/terminos-y-condicones/xcar/coreano?authuser=0";
         }
         if (userLanguage.equals("PL")) {
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/polaco?authuser=0";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/terminos-y-condicones/xcar/polaco?authuser=0";
         }
         if (userLanguage.equals("SV")) {
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/sueco?authuser=0";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/terminos-y-condicones/xcar/sueco?authuser=0";
         }
         if (userLanguage.equals("AR")) {
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/arabe?authuser=0";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/terminos-y-condicones/xcar/arabe?authuser=0";
         }
         if (userLanguage.equals("UR")) {
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/urdu?authuser=0";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/terminos-y-condicones/xcar/urdu?authuser=0";
         }
         if (userLanguage.equals("HI")) {
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/hindi";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/terminos-y-condicones/xcar/hindi";
         }
     }
 
