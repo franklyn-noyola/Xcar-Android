@@ -1,5 +1,5 @@
 <resources xmlns:app_name="http://schemas.android.com/apk/res-auto">
-    <string name="app_name" translatable="false">Xcar</string>
+    <string name="app_name" translatable="false">XcarTest</string>
     <string name="wrong_plate_format">Formato de Matrícula del Usuario inválida</string>
     <string name="wrong_user">Usuario y/o Password Inválido</string>
     <string name="plate_enter"><font size="8">Introduzca Matricula</font></string>
