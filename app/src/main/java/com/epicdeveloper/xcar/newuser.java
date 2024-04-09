@@ -409,7 +409,7 @@ public void errorMessage() {
     public String sendWelcomeMessageES(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">Bienvenido/a a XCar!!!</font></b><br><br>";
         headerMessage="Estimado Sr./Sra "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Gracias por registrarse en el mundo de XCar. Para activar el usuario, haga click en este link: <a href=epicdevelopers.app?ES"+plate_user.getText().toString().toUpperCase()+">Activar usuario</a> <br><br>";
+        bodyMessage="Gracias por registrarse en el mundo de XCar. Para activar el usuario, haga click en este link: <a href=https://allconnected-e6e70.web.app/p?ES"+plate_user.getText().toString().toUpperCase()+">Activar usuario</a> <br><br>";
         farewellMessage="Un saludo cordial,<br>El equipo de XCar.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
@@ -417,7 +417,7 @@ public void errorMessage() {
     public String sendWelcomeMessageEN(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">Welcome to XCar!!!</font></b><br><br>";
         headerMessage="Dear Mr/Mrs. "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Thanks for regisgtering to XCar world. To activate your account, click on this link: <a href=epicdevelopers.app?EN"+plate_user.getText().toString().toUpperCase()+">Activate account</a> <br><br>";
+        bodyMessage="Thanks for regisgtering to XCar world. To activate your account, click on this link: <a href=https://allconnected-e6e70.web.app/?EN"+plate_user.getText().toString().toUpperCase()+">Activate account</a> <br><br>";
         farewellMessage="Truly yours,<br>XCar Team.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
@@ -425,7 +425,7 @@ public void errorMessage() {
     public String sendWelcomeMessageFR(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">Bienvenue à XCar!!!</font></b><br><br>";
         headerMessage="Cher Monsieur / Madame. "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Merci de vous enregistrer dans le monde XCar. Pour activer votre utilisateur, cliquez sur ce lien: <a href=epicdevelopers.app?FR"+plate_user.getText().toString().toUpperCase()+">Activer l'utilisateur</a> <br><br>";
+        bodyMessage="Merci de vous enregistrer dans le monde XCar. Pour activer votre utilisateur, cliquez sur ce lien: <a href=https://allconnected-e6e70.web.app/?FR"+plate_user.getText().toString().toUpperCase()+">Activer l'utilisateur</a> <br><br>";
         farewellMessage="Cordialement,<br>L'équipe XCar.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
@@ -433,7 +433,7 @@ public void errorMessage() {
     public String sendWelcomeMessageIT(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">Benvenuto in XCar!!!</font></b><br><br>";
         headerMessage="Caro signor/signora "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Grazie per esserti registrato a XCar world. Per attivare il tuo utente, fare clic su questo collegamento: <a href=epicdevelopers.app?IT"+plate_user.getText().toString().toUpperCase()+">Attiva utente</a> <br><br>";
+        bodyMessage="Grazie per esserti registrato a XCar world. Per attivare il tuo utente, fare clic su questo collegamento: <a href=https://allconnected-e6e70.web.app/?IT"+plate_user.getText().toString().toUpperCase()+">Attiva utente</a> <br><br>";
         farewellMessage="Cordiali saluti,<br>Il team XCar.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
@@ -441,7 +441,7 @@ public void errorMessage() {
     public String sendWelcomeMessageDE(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">Willkommen bei XCar!!!</font></b><br><br>";
         headerMessage="Sehr geehrter Herr/Frau "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Vielen Dank, dass Sie sich bei XCar world registriert haben. Kopieren Sie diesen Aktivierungscode, klicken Sie auf diesen Link: <a href=epicdevelopers.app?DE"+plate_user.getText().toString().toUpperCase()+">Benutzer aktivieren</a> <br><br>";
+        bodyMessage="Vielen Dank, dass Sie sich bei XCar world registriert haben. Kopieren Sie diesen Aktivierungscode, klicken Sie auf diesen Link: <a href=https://allconnected-e6e70.web.app/DE"+plate_user.getText().toString().toUpperCase()+">Benutzer aktivieren</a> <br><br>";
         farewellMessage="Mit freundlichen Grüßen,<br>Das XCar-Team.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
@@ -449,7 +449,7 @@ public void errorMessage() {
     public String sendWelcomeMessagePT(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">Bem-vindo a XCar!!!</font></b><br><br>";
         headerMessage="Prezado Sr./Sra. "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Obrigado por se registrar no mundo de XCar. Para ativar o usuário, clique neste link: <a href=epicdevelopers.app?PT"+plate_user.getText().toString().toUpperCase()+">Ativar usuário</a> <br><br>";
+        bodyMessage="Obrigado por se registrar no mundo de XCar. Para ativar o usuário, clique neste link: <a href=https://allconnected-e6e70.web.app/PT"+plate_user.getText().toString().toUpperCase()+">Ativar usuário</a> <br><br>";
         farewellMessage="Sinceramente,<br>A equipe XCar.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
@@ -457,7 +457,7 @@ public void errorMessage() {
     public String sendWelcomeMessageRU(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">Добро пожаловать в XCar!!!</font></b><br><br>";
         headerMessage="Уважаемый господин/госпожа "+ name_user.getText (). toString ()+"<br><br>";
-        bodyMessage="Спасибо за регистрацию в мире XCar. Чтобы активировать свою учетную запись, нажмите на эту ссылку: <a href=epicdevelopers.app?RU"+plate_user.getText().toString().toUpperCase()+">Активировать пользователя</a> <br><br>";
+        bodyMessage="Спасибо за регистрацию в мире XCar. Чтобы активировать свою учетную запись, нажмите на эту ссылку: <a href=https://allconnected-e6e70.web.app/?RU"+plate_user.getText().toString().toUpperCase()+">Активировать пользователя</a> <br><br>";
         farewellMessage="Искренне,<br>Команда XCar.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
@@ -465,7 +465,7 @@ public void errorMessage() {
     public String sendWelcomeMessageZH(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">欢迎来到XCar!!!</font></b><br><br>";
         headerMessage="亲爱的先生/夫人： " + name_user.getText().toString()+"<br><br>";
-        bodyMessage="感谢您注册到所有连接的世界。要激活您的帐户，点击此链接:<a href=epicdevelopers.app?ZH"+plate_user.getText().toString().toUpperCase()+">激活帐户</a> <br><br>";
+        bodyMessage="感谢您注册到所有连接的世界。要激活您的帐户，点击此链接:<a href=https://allconnected-e6e70.web.app/?ZH"+plate_user.getText().toString().toUpperCase()+">激活帐户</a> <br><br>";
         farewellMessage="亲切的问候,<br>该团队的 XCar。";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
@@ -473,7 +473,7 @@ public void errorMessage() {
     public String sendWelcomeMessageJA(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">XCarへようこそ!!!</font></b><br><br>";
         headerMessage="親愛なるミスター/ミセス"+ name_user.getText().toString()+"<br><br>";
-        bodyMessage="XCarworldに登録していただきありがとうございます。アカウントをアクティブ化するには、このリンクをクリックしてください：<a href=epicdevelopers.app/?JA"+plate_user.getText().toString().toUpperCase()+">ユーザーのアクティブ化</a> <br><br>";
+        bodyMessage="XCarworldに登録していただきありがとうございます。アカウントをアクティブ化するには、このリンクをクリックしてください：<a href=https://allconnected-e6e70.web.app//?JA"+plate_user.getText().toString().toUpperCase()+">ユーザーのアクティブ化</a> <br><br>";
         farewellMessage="心から,<br>XCarチーム。";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
@@ -481,14 +481,14 @@ public void errorMessage() {
     public String sendWelcomeMessageNL(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">Welkom bij XCar!!!</font></b><br><br>";
         headerMessage="Beste meneer/mevrouw. "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Bedankt voor uw aanmelding bij XCar world. Om uw account te activeren, klikt u op deze link: <a href=epicdevelopers.app?NL"+plate_user.getText().toString().toUpperCase()+"> Activeer gebruiker</a> <br><br>";
+        bodyMessage="Bedankt voor uw aanmelding bij XCar world. Om uw account te activeren, klikt u op deze link: <a href=https://allconnected-e6e70.web.app/?NL"+plate_user.getText().toString().toUpperCase()+"> Activeer gebruiker</a> <br><br>";
         farewellMessage="Oprecht,<br>Het XCar -team.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
     public String sendWelcomeMessagePL(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">Witamy w XCar!!!</font></b><br><br>";
         headerMessage="Szanowny Panie/Pani.. "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Bedankt voor uw aanmelding bij XCar world. Om uw account te activren, kliknij ten link: <a href=epicdevelopers.app?PL"+plate_user.getText().toString().toUpperCase()+">Activeer gebruiker</a> <br><br>";
+        bodyMessage="Bedankt voor uw aanmelding bij XCar world. Om uw account te activren, kliknij ten link: <a href=https://allconnected-e6e70.web.app/?PL"+plate_user.getText().toString().toUpperCase()+">Activeer gebruiker</a> <br><br>";
         farewellMessage="Z poważaniem,<br>Zespół XCar.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
@@ -496,7 +496,7 @@ public void errorMessage() {
     public String sendWelcomeMessageKO(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">XCar에 오신 것을 환영합니다!!!</font></b><br><br>";
         headerMessage="친애하는 Mr./Ms. "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="XCar의 세계에 등록 해 주셔서 감사합니다. 계정을 활성화하려면이 링크를 클릭하십시오.: <a href=epicdevelopers.app?KO"+plate_user.getText().toString().toUpperCase()+"> 사용자 활성화</a> <br><br>";
+        bodyMessage="XCar의 세계에 등록 해 주셔서 감사합니다. 계정을 활성화하려면이 링크를 클릭하십시오.: <a href=https://allconnected-e6e70.web.app/?KO"+plate_user.getText().toString().toUpperCase()+"> 사용자 활성화</a> <br><br>";
         farewellMessage="진정으로,<br>XCar 팀.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
@@ -504,7 +504,7 @@ public void errorMessage() {
     public String sendWelcomeMessageSV(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">Välkommen till XCar!!!</font></b><br><br>";
         headerMessage="Kära herr/fru. "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="Tack för att du registrerade dig i XCar-världen. För att aktivera användaren, klicka på den här länken: <a href=epicdevelopers.app?SV"+plate_user.getText().toString().toUpperCase()+"> Aktivera användare</a> <br><br>";
+        bodyMessage="Tack för att du registrerade dig i XCar-världen. För att aktivera användaren, klicka på den här länken: <a href=https://allconnected-e6e70.web.app/?SV"+plate_user.getText().toString().toUpperCase()+"> Aktivera användare</a> <br><br>";
         farewellMessage="vänliga hälsningar,<br>XCar-teamet.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
@@ -512,7 +512,7 @@ public void errorMessage() {
     public String sendWelcomeMessageHI(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">XCar में आपका स्वागत है!!!</font></b><br><br>";
         headerMessage="प्रिय श्री / एम। एस। "+name_user.getText().toString()+"<br><br>";
-        bodyMessage="XCar दुनिया के लिए regisgtering के लिए धन्यवाद। अपने खाते को सक्रिय करने के लिए, इस लिंक पर क्लिक करें: <a href=epicdevelopers.app?HI"+plate_user.getText().toString().toUpperCase()+"> उपयोगकर्ता को सक्रिय करें</a> <br><br>";
+        bodyMessage="XCar दुनिया के लिए regisgtering के लिए धन्यवाद। अपने खाते को सक्रिय करने के लिए, इस लिंक पर क्लिक करें: <a href=https://allconnected-e6e70.web.app/?HI"+plate_user.getText().toString().toUpperCase()+"> उपयोगकर्ता को सक्रिय करें</a> <br><br>";
         farewellMessage="ईमानदारी से,<br>XCar टीम.";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
@@ -523,14 +523,14 @@ public void errorMessage() {
                 "عزيزي السيد / السيدة."
                 +name_user.getText().toString()+"<br><br>";
         bodyMessage= "نشكرك على التسجيل في XCar world. لتنشيط حسابك ، انقر فوق هذا الارتباط"+
-                "<a href=epicdevelopers.app?AR"+plate_user.toString().toUpperCase()+">"+  "تنشيط المستخدم" +"</a> <br><br>" ;
+                "<a href=https://allconnected-e6e70.web.app/?AR"+plate_user.toString().toUpperCase()+">"+  "تنشيط المستخدم" +"</a> <br><br>" ;
         farewellMessage="بإخلاص"+"<br"+"فريق XCar";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
     public String sendWelcomeMessageUR(){
         welcomeMessage="<b><font size=\"20\" color=\"blue\">"+"allCnnected میں خوش آمدید"+"</font></b><br><br>";
         headerMessage=" محترم جناب / محترمہ "+name_user.getText().toString()+"<br><br>";
-        bodyMessage = "XCar دنیا میں اندراج کرنے کا شکریہ۔ اپنے اکاؤنٹ کو چالو کرنے کے لئے ، اس لنک پر کلک کریں"+"<a href=epicdevelopers.app?UR"+plate_user.toString().toUpperCase()+">"+"صارف کو چالو کریں"+"</a> <br><br>";
+        bodyMessage = "XCar دنیا میں اندراج کرنے کا شکریہ۔ اپنے اکاؤنٹ کو چالو کرنے کے لئے ، اس لنک پر کلک کریں"+"<a href=https://allconnected-e6e70.web.app/?UR"+plate_user.toString().toUpperCase()+">"+"صارف کو چالو کریں"+"</a> <br><br>";
         farewellMessage="مخلص,"+"<br>"+"آل سے منسلک ٹیم۔";
         return allMessage=welcomeMessage+headerMessage+bodyMessage+farewellMessage;
     }
@@ -555,71 +555,71 @@ public void errorMessage() {
             linkButton.setTextSize(10);
         //    linkButton.setY(1670);
          //   linkButton.setX(450);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/spanish";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/terminos-y-condicones/xcar/spanish?authuser=0";
         }
         if (userLanguage.equals("EN")){
             acceptButton.setTextSize(9);
             linkButton.setTextSize(12);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/english";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/english?authuser=0";
         }
         if (userLanguage.equals("FR")){
             acceptButton.setTextSize(9);
             linkButton.setTextSize(9);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/frances";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/frances?authuser=0";
         }
         if (userLanguage.equals("DE")){
             acceptButton.setTextSize(7);
             linkButton.setTextSize(7);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/aleman";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/aleman?authuser=0";
         }
         if (userLanguage.equals("IT")){
             acceptButton.setTextSize(12);
             linkButton.setTextSize(10);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/italiano";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/italiano?authuser=0";
         }
         if (userLanguage.equals("PT")){
             acceptButton.setTextSize(12);
             linkButton.setTextSize(9);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/portugues";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/portugues?authuser=0";
         }
         if (userLanguage.equals("RU")){
             acceptButton.setTextSize(13);
             linkButton.setTextSize(9);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/ruso";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/ruso?authuser=0";
         }
         if (userLanguage.equals("ZH")){
             acceptButton.setTextSize(13);
             linkButton.setTextSize(14);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/chino";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/chino?authuser=0";
         }
         if (userLanguage.equals("JA")){
             acceptButton.setTextSize(14);
             linkButton.setTextSize(12);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/japones";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/japones?authuser=0";
         }
         if (userLanguage.equals("NL")){
             acceptButton.setTextSize(19);
             linkButton.setTextSize(11);
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/holandes";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/holandes?authuser=0";
         }
 
         if (userLanguage.equals("KO")) {
-            termsLink= "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/coreano";
+            termsLink= "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/coreano?authuser=0";
         }
         if (userLanguage.equals("PL")) {
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/polaco";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/polaco?authuser=0";
         }
         if (userLanguage.equals("SV")) {
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/sueco";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/sueco?authuser=0";
         }
         if (userLanguage.equals("AR")) {
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/arabe";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/arabe?authuser=0";
         }
         if (userLanguage.equals("UR")) {
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/urdu";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/urdu?authuser=0";
         }
         if (userLanguage.equals("HI")) {
-            termsLink = "https://sites.google.com/view/epicdevelopersapp/allconneted/terminos-y-condicones/hindi";
+            termsLink = "https://sites.google.com/view/epicdevelopersapp/xcar/terminos-y-condicones/hindi?authuser=0";
         }
     }
 
