@@ -1,5 +1,5 @@
 <resources xmlns:app_name="http://schemas.android.com/apk/res-auto">
-    <string name="app_name" translatable="false">Xcar</string>
+    <string name="app_name" translatable="false">XcarTest</string>
     <string name ="wrong_plate_format">Ogiltigt format för användarlicensskylt</string>
     <string name ="wrong_user">Ogiltigt användarnamn och/eller lösenord</string>
     <string name="Search">Sök</string>
