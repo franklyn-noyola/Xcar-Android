@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string translatable="false" name="app_name">Xcar</string>
+    <string translatable="false" name="app_name">XcarTest</string>
     <string name="wrong_plate_format">Formato de registro de usuário inválido</string>
     <string name="wrong_user">Usuário e/ou senha inválidos</string>
     <string name="Search">Procurar</string>
