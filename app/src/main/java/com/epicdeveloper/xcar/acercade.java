@@ -54,7 +54,7 @@ public class acercade extends AppCompatActivity {
         linkButton.setMovementMethod(LinkMovementMethod.getInstance());
         linkButton.setLinkTextColor(Color.BLUE);
         linkButton.setOnClickListener(v -> {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.epicdevelopers.app"));
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://sites.google.com/view/epicdevelopersapp/inicio?authuser=0"));
             startActivity(intent);
         });
 
