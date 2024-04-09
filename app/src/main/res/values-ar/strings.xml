@@ -1,5 +1,5 @@
 <resources xmlns:app_name="http://schemas.android.com/apk/res-auto">
-    <string name="app_name" translatable="false">Xcar</string>
+    <string name="app_name" translatable="false">XcarTest</string>
     <string name="wrong_plate_format">تنسيق تسجيل المستخدم غير صالح</string>
     <string name="wrong_user">مستخدم و / أو كلمة مرور غير صالحة</string>
     <string name="Search">بحث</string>
