@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <resources xmlns:app_name="http://schemas.android.com/apk/res-auto">
-    <string translatable="false" name="app_name">Xcar</string>
+    <string translatable="false" name="app_name">XcarTest</string>
     <string name="wrong_plate_format">Formato di registrazione utente non valido</string>
     <string name="wrong_user">Utente e/o password non validi</string>
     <string name="Search">Cercare</string>
