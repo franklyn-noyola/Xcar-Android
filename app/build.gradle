@@ -1,77 +1,36 @@
-apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'https://maven.preemptive.com/' }
+        maven { url 'https://jitpack.io' }
+        maven {url "https://maven.java.net/content/groups/public/"}
 
-android {
-    compileSdk 33
-
-    defaultConfig {
-        applicationId "com.epicdeveloper.allconnected"
-        minSdkVersion 29
-        //noinspection OldTargetApi
-        targetSdkVersion 33
-        versionCode 18
-        versionName "5.1.1"
-        setProperty("archivesBaseName", "Xcar")
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        google()
+        //noinspection JcenterRepositoryObsolete
+        jcenter()
     }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.2'
+        classpath 'com.google.gms:google-services:4.4.1'
+        classpath 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:2.0.1'
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            applicationVariants.all { variant ->
-                variant.outputs.all {
-                    outputFileName = "xcar.apk"
-                }
-            }
-        }
-
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
     }
-    buildFeatures {
-        viewBinding true
-    }
-    namespace 'com.epicdeveloper.xcar'
-}
-ext{
-    version = '28.0.0'
 }
 
-dependencies {
+allprojects {
+    repositories {
+       mavenCentral()
+        maven { url 'https://maven.preemptive.com/' }
+        maven { url 'https://jitpack.io' }
+        google()
+        //noinspection JcenterRepositoryObsolete
+        jcenter()
+    }
+}
 
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
-    implementation 'com.google.firebase:firebase-database:20.3.1'
-    implementation 'com.google.firebase:firebase-analytics:21.5.1'
-    implementation 'com.google.firebase:firebase-firestore:24.10.3'
-    implementation 'com.google.firebase:firebase-storage:20.3.0'
-    implementation 'com.google.firebase:firebase-messaging:23.4.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.google.firebase:firebase-inappmessaging-display:20.4.0'
-    implementation 'com.android.car.ui:car-ui-lib:2.5.1'
-    implementation 'com.google.android.gms:play-services-ads-lite:22.3.0'
-    implementation 'com.google.android.gms:play-services-maps:18.1.0'
-    implementation 'com.google.android.gms:play-services-location:21.1.0'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation "androidx.core:core-splashscreen:1.0.1"
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    implementation 'com.google.firebase:firebase-ads:23.0.0'
-    implementation 'com.android.volley:volley:1.2.1'
-    implementation 'com.squareup.picasso:picasso:2.71828'
-    implementation 'com.commit451:PhotoView:1.2.4'
-    implementation 'com.google.android.gms:play-services-basement:18.2.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.3.1'
-    implementation files('libs/mail.jar')
-    implementation files('libs/activation.jar')
-    implementation files('libs/additionnal.jar')
-    implementation fileTree(include: ['*.jar','*.aar'], dir: 'libs')
-    implementation 'androidx.work:work-runtime:2.8.1'
-    implementation 'com.firebaseui:firebase-ui-database:8.0.0'
-    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
-    implementation  "com.android.support:support-emoji-bundled:$version"
-    implementation "de.codecrafters.tableview:tableview:2.0.0"
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
