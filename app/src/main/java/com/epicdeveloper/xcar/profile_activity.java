@@ -332,6 +332,7 @@ public class profile_activity extends AppCompatActivity {
                 return;
             }
             mToken = task.getResult();
+            System.out.println("My token: "+mToken);
             upDateSessionActive(mToken);
         });
     }
@@ -346,8 +347,13 @@ public class profile_activity extends AppCompatActivity {
                     for (DataSnapshot ignored :snapshot.getChildren()){
                         updates.put("active", "OFF");
                     }
-
                     snapshot.getRef().updateChildren(updates);
+                }else {
+                    String Key = sessionActiveDb.push().getKey();
+                    Map<String, Object> createActive = new HashMap<>();
+                    createActive.put("active", "OFF");
+                    createActive.put("activeUser", email_user);
+                    sessionActiveDb.child(Key).setValue(createActive);
                 }
 
 

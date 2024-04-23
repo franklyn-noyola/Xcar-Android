@@ -481,6 +481,7 @@ public class MainActivity extends AppCompatActivity {
                         return;
                     }
                     mToken = task.getResult();
+                    Log.w("TAG", "My Token: " + mToken);
                 DatabaseReference getLanguage = FirebaseDatabase.getInstance().getReference("Users/userLanguage");
                 getLanguage.orderByChild("Users").equalTo(mToken).addListenerForSingleValueEvent(new ValueEventListener() {
                     @SuppressLint("ClickableViewAccessibility")
@@ -575,6 +576,7 @@ public class MainActivity extends AppCompatActivity {
                     upDateSessionActive(mToken);
                 }else{
                     String id = sessionActiveDb.push().getKey();
+                    System.out.println("My token: "+mToken);
                     assert id != null;
                     sessionActiveDb.child(id).setValue(activeSessionUser);
                 }
