@@ -176,156 +176,138 @@ public class newuser extends AppCompatActivity {
                 final ActivatedUser activated = new ActivatedUser("OFF", plate_user.getText().toString().toUpperCase(), email_user.getText().toString());
                 DatabaseReference userActivated = FirebaseDatabase.getInstance().getReference("Users/ActivatedUser");
                 DatabaseReference single = FirebaseDatabase.getInstance().getReference("singlePlates/createdPlates");
-                Users = FirebaseDatabase.getInstance().getReference("Users");
-                Users.orderByChild("plate_user").equalTo(plate_user.getText().toString().toUpperCase()).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(!dataSnapshot.exists()){
-                            plate_noExist = true;
-                            Users.orderByChild("user_email").equalTo(email_user.getText().toString()).addValueEventListener(new ValueEventListener() {
+                String dot1 = new String (email_user.getText().toString());
+                String dot2 = dot1.replace(".","_");
+                Users=FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+                Users.addValueEventListener(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    if (!dataSnapshot.exists()) {
-                                        email_noExist = true;
+                                    if (snapshot.exists()) {
+                                        errorMessage();
+                                        return;
                                     }else {
-                                        email_noExist = false;
+                                        System.out.println("email=" + email_noExist +" plate=" + plate_noExist);
+                                        userPlate = plate_user.getText().toString().toUpperCase();
+                                        userEmail = email_user.getText().toString();
+                                        String id3 = userActivated.push().getKey();
+                                        String id4 = single.push().getKey();
+                                        String dot1 = new String (email_user.getText().toString());
+                                        String dot2 = dot1.replace(".","_");
+                                        DatabaseReference userEmail = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
+                                        String id2 = userEmail.push().getKey();
+                                        userEmail.child(id2).setValue(user);
+                                        single.child(id4).setValue(singlePlates);
+                                        userActivated.child(id3).setValue(activated);
+                                        if (userLanguage.equals("ES")) {
+                                            Toast.makeText(getApplicationContext(), "El usuario ha sido registrado, por favor revise su correo electrónico (Bandeja de entrada o SPAM) para activarlo.", Toast.LENGTH_LONG).show();
+                                        }
+                                        if (userLanguage.equals("EN")) {
+                                            Toast.makeText(getApplicationContext(), "Account has been registered, pleasae check your email (Inbox or SPAM) to activate it.", Toast.LENGTH_LONG).show();
+                                        }
+                                        if (userLanguage.equals("FR")) {
+                                            Toast.makeText(getApplicationContext(), "L'utilisateur a été enregistré, vérifiez votre Email (Boîte de réception ou SPAM) pour l'activer.", Toast.LENGTH_LONG).show();
+                                        }
+                                        if (userLanguage.equals("DE")) {
+                                            Toast.makeText(getApplicationContext(), "Der Benutzer wurde registriert. Überprüfen Sie Ihre E-Mails (Posteingang oder SPAM), um sie zu aktivieren.", Toast.LENGTH_LONG).show();
+                                        }
+                                        if (userLanguage.equals("IT")) {
+                                            Toast.makeText(getApplicationContext(), "L'utente è stato registrato, controlla la tua Email (Posta in arrivo o SPAM) per attivarlo.", Toast.LENGTH_LONG).show();
+                                        }
+                                        if (userLanguage.equals("PT")) {
+                                            Toast.makeText(getApplicationContext(), "O usuário foi registrado, por favor, revisar seu correio eletrônico (Bandeja de entrada o SPAM) para ativar.", Toast.LENGTH_LONG).show();
+                                        }
+                                        if (userLanguage.equals("RU")) {
+                                            Toast.makeText(getApplicationContext(), "Пользователь был зарегистрирован, пожалуйста, проверьте свою электронную почту (Входящие или СПАМ), чтобы активировать его.", Toast.LENGTH_LONG).show();
+                                        }
+                                        if (userLanguage.equals("ZH")) {
+                                            Toast.makeText(getApplicationContext(), "用户 已注册，请检查您的电子邮件（收件箱或垃圾邮件）以将其激活.", Toast.LENGTH_LONG).show();
+                                        }
+                                        if (userLanguage.equals("JA")) {
+                                            Toast.makeText(getApplicationContext(), "ユーザー が登録されました。メール（受信トレイまたはスパム）をチェックしてアクティブにしてください。", Toast.LENGTH_LONG).show();
+                                        }
+                                        if (userLanguage.equals("NL")) {
+                                            Toast.makeText(getApplicationContext(), "Gebruiker is geregistreerd, controleer uw e-mail (Inbox of SPAM) om deze te activeren.", Toast.LENGTH_LONG).show();
+                                        }
+                                        if (userLanguage.equals("PL")) {
+                                            Toast.makeText(getApplicationContext(), "Użytkownik został zarejestrowany, sprawdź swój adres e-mail (skrzynkę odbiorczą lub SPAM), aby go aktywować.", Toast.LENGTH_LONG).show();
+                                        }
+                                        if (userLanguage.equals("KO")) {
+                                            Toast.makeText(getApplicationContext(), "사용자 가 등록되었습니다. 활성화하려면 이메일 (받은 편지함 또는 스팸)을 확인하십시오.", Toast.LENGTH_LONG).show();
+                                        }
+                                        if (userLanguage.equals("SV")) {
+                                            Toast.makeText(getApplicationContext(), "Användaren har registrerats, kontrollera din e-post (Inkorgen eller SPAM) för att aktivera den.", Toast.LENGTH_LONG).show();
+                                        }
+                                        if (userLanguage.equals("AR")) {
+                                            Toast.makeText(getApplicationContext(),  " ، يرجى التحقق من بريدك الإلكتروني (صندوق الوارد أو الرسائل الاقتحامية) لتنشيطه.", Toast.LENGTH_LONG).show();
+                                        }
+                                        if (userLanguage.equals("HI")) {
+                                            Toast.makeText(getApplicationContext(), "उपयोगकर्ता पंजीकृत किया गया है, कृपया इसे सक्रिय करने के लिए अपना ईमेल (इनबॉक्स या स्पैम) देखें।", Toast.LENGTH_LONG).show();
+                                        }
+                                        if (userLanguage.equals("UR")) {
+                                            Toast.makeText(getApplicationContext(),  " رجسٹرڈ ہوچکا ہے ، براہ کرم اسے فعال کرنے کے لئے اپنا ای میل (ان باکس یا اسپیم) چیک کریں۔", Toast.LENGTH_LONG).show();
+                                        }
+                                        btnRegister.setHint(resources.getString(R.string.backLogin));
+                                        email_user.setEnabled(false);
+                                        plate_user.setEnabled(false);
+                                        pass_user.setEnabled(false);
+                                        confirm_pass.setEnabled(false);
+                                        name_user.setEnabled(false);
+                                        acceptButton.setEnabled(false);
+                                        if (userLanguage.equals("ES")) {
+                                            sendEmail.sendEmailMessage(email_user.getText().toString(), "Bienvenido/a a XCar", sendWelcomeMessageES());
+                                        }
+                                        if (userLanguage.equals("EN")) {
+                                            sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageEN());
+                                        }
+                                        if (userLanguage.equals("FR")) {
+                                            sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageFR());
+                                        }
+                                        if (userLanguage.equals("DE")) {
+                                            sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageDE());
+                                        }
+                                        if (userLanguage.equals("IT")) {
+                                            sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageIT());
+                                        }
+                                        if (userLanguage.equals("PT")) {
+                                            sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessagePT());
+                                        }
+                                        if (userLanguage.equals("RU")) {
+                                            sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageRU());
+                                        }
+                                        if (userLanguage.equals("ZH")) {
+                                            sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageZH());
+                                        }
+                                        if (userLanguage.equals("JA")) {
+                                            sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageJA());
+                                        }
+                                        if (userLanguage.equals("NL")) {
+                                            sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageNL());
+                                        }
+                                        if (userLanguage.equals("PL")) {
+                                            sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessagePL());
+                                        }
+                                        if (userLanguage.equals("KO")) {
+                                            sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageKO());
+                                        }
+                                        if (userLanguage.equals("SV")) {
+                                            sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageSV());
+                                        }
+                                        if (userLanguage.equals("AR")) {
+                                            sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageAR());
+                                        }
+                                        if (userLanguage.equals("HI")) {
+                                            sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageHI());
+                                        }
+                                        if (userLanguage.equals("UR")) {
+                                            sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageUR());
+                                        }
+                                        createLanguageUser();
+                                        finish();
+                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                        startActivity(intent);
                                     }
                                 }
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError error) {
-                                }
-                            });
 
-                            if (email_noExist == false || plate_noExist == false) {
-                                errorMessage();
-                                email_noExist = false;
-                                plate_noExist = false;
-                                return;
-                            }
-
-                            if (plate_noExist && email_noExist) {
-                                System.out.println("email=" + email_noExist +" plate=" + plate_noExist);
-                                userPlate = plate_user.getText().toString().toUpperCase();
-                                userEmail = email_user.getText().toString();
-                                String id3 = userActivated.push().getKey();
-                                String id4 = single.push().getKey();
-                                String dot1 = new String (email_user.getText().toString());
-                                String dot2 = dot1.replace(".","_");
-                                DatabaseReference userEmail = FirebaseDatabase.getInstance().getReference("Users/"+dot2);
-                                String id2 = userEmail.push().getKey();
-                                userEmail.child(id2).setValue(user);
-                                single.child(id4).setValue(singlePlates);
-                                userActivated.child(id3).setValue(activated);
-                                if (userLanguage.equals("ES")) {
-                                    Toast.makeText(getApplicationContext(), "El usuario ha sido registrado, por favor revise su correo electrónico (Bandeja de entrada o SPAM) para activarlo.", Toast.LENGTH_LONG).show();
-                                }
-                                if (userLanguage.equals("EN")) {
-                                    Toast.makeText(getApplicationContext(), "Account has been registered, pleasae check your email (Inbox or SPAM) to activate it.", Toast.LENGTH_LONG).show();
-                                }
-                                if (userLanguage.equals("FR")) {
-                                    Toast.makeText(getApplicationContext(), "L'utilisateur a été enregistré, vérifiez votre Email (Boîte de réception ou SPAM) pour l'activer.", Toast.LENGTH_LONG).show();
-                                }
-                                if (userLanguage.equals("DE")) {
-                                    Toast.makeText(getApplicationContext(), "Der Benutzer wurde registriert. Überprüfen Sie Ihre E-Mails (Posteingang oder SPAM), um sie zu aktivieren.", Toast.LENGTH_LONG).show();
-                                }
-                                if (userLanguage.equals("IT")) {
-                                    Toast.makeText(getApplicationContext(), "L'utente è stato registrato, controlla la tua Email (Posta in arrivo o SPAM) per attivarlo.", Toast.LENGTH_LONG).show();
-                                }
-                                if (userLanguage.equals("PT")) {
-                                    Toast.makeText(getApplicationContext(), "O usuário foi registrado, por favor, revisar seu correio eletrônico (Bandeja de entrada o SPAM) para ativar.", Toast.LENGTH_LONG).show();
-                                }
-                                if (userLanguage.equals("RU")) {
-                                    Toast.makeText(getApplicationContext(), "Пользователь был зарегистрирован, пожалуйста, проверьте свою электронную почту (Входящие или СПАМ), чтобы активировать его.", Toast.LENGTH_LONG).show();
-                                }
-                                if (userLanguage.equals("ZH")) {
-                                    Toast.makeText(getApplicationContext(), "用户 已注册，请检查您的电子邮件（收件箱或垃圾邮件）以将其激活.", Toast.LENGTH_LONG).show();
-                                }
-                                if (userLanguage.equals("JA")) {
-                                    Toast.makeText(getApplicationContext(), "ユーザー が登録されました。メール（受信トレイまたはスパム）をチェックしてアクティブにしてください。", Toast.LENGTH_LONG).show();
-                                }
-                                if (userLanguage.equals("NL")) {
-                                    Toast.makeText(getApplicationContext(), "Gebruiker is geregistreerd, controleer uw e-mail (Inbox of SPAM) om deze te activeren.", Toast.LENGTH_LONG).show();
-                                }
-                                if (userLanguage.equals("PL")) {
-                                    Toast.makeText(getApplicationContext(), "Użytkownik został zarejestrowany, sprawdź swój adres e-mail (skrzynkę odbiorczą lub SPAM), aby go aktywować.", Toast.LENGTH_LONG).show();
-                                }
-                                if (userLanguage.equals("KO")) {
-                                    Toast.makeText(getApplicationContext(), "사용자 가 등록되었습니다. 활성화하려면 이메일 (받은 편지함 또는 스팸)을 확인하십시오.", Toast.LENGTH_LONG).show();
-                                }
-                                if (userLanguage.equals("SV")) {
-                                    Toast.makeText(getApplicationContext(), "Användaren har registrerats, kontrollera din e-post (Inkorgen eller SPAM) för att aktivera den.", Toast.LENGTH_LONG).show();
-                                }
-                                if (userLanguage.equals("AR")) {
-                                    Toast.makeText(getApplicationContext(),  " ، يرجى التحقق من بريدك الإلكتروني (صندوق الوارد أو الرسائل الاقتحامية) لتنشيطه.", Toast.LENGTH_LONG).show();
-                                }
-                                if (userLanguage.equals("HI")) {
-                                    Toast.makeText(getApplicationContext(), "उपयोगकर्ता पंजीकृत किया गया है, कृपया इसे सक्रिय करने के लिए अपना ईमेल (इनबॉक्स या स्पैम) देखें।", Toast.LENGTH_LONG).show();
-                                }
-                                if (userLanguage.equals("UR")) {
-                                    Toast.makeText(getApplicationContext(),  " رجسٹرڈ ہوچکا ہے ، براہ کرم اسے فعال کرنے کے لئے اپنا ای میل (ان باکس یا اسپیم) چیک کریں۔", Toast.LENGTH_LONG).show();
-                                }
-                                btnRegister.setHint(resources.getString(R.string.backLogin));
-                                email_user.setEnabled(false);
-                                plate_user.setEnabled(false);
-                                pass_user.setEnabled(false);
-                                confirm_pass.setEnabled(false);
-                                name_user.setEnabled(false);
-                                acceptButton.setEnabled(false);
-                                if (userLanguage.equals("ES")) {
-                                    sendEmail.sendEmailMessage(email_user.getText().toString(), "Bienvenido/a a XCar", sendWelcomeMessageES());
-                                }
-                                if (userLanguage.equals("EN")) {
-                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageEN());
-                                }
-                                if (userLanguage.equals("FR")) {
-                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageFR());
-                                }
-                                if (userLanguage.equals("DE")) {
-                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageDE());
-                                }
-                                if (userLanguage.equals("IT")) {
-                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageIT());
-                                }
-                                if (userLanguage.equals("PT")) {
-                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessagePT());
-                                }
-                                if (userLanguage.equals("RU")) {
-                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageRU());
-                                }
-                                if (userLanguage.equals("ZH")) {
-                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageZH());
-                                }
-                                if (userLanguage.equals("JA")) {
-                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageJA());
-                                }
-                                if (userLanguage.equals("NL")) {
-                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageNL());
-                                }
-                                if (userLanguage.equals("PL")) {
-                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessagePL());
-                                }
-                                if (userLanguage.equals("KO")) {
-                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageKO());
-                                }
-                                if (userLanguage.equals("SV")) {
-                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageSV());
-                                }
-                                if (userLanguage.equals("AR")) {
-                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageAR());
-                                }
-                                if (userLanguage.equals("HI")) {
-                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageHI());
-                                }
-                                if (userLanguage.equals("UR")) {
-                                    sendEmail.sendEmailMessage(email_user.getText().toString(), resources.getString(R.string.welcomeHomeText), sendWelcomeMessageUR());
-                                }
-                                createLanguageUser();
-                                finish();
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                startActivity(intent);
-                            }
-                        }
-                    }
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
                     }
