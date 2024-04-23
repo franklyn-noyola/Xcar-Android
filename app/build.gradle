@@ -10,8 +10,8 @@ android {
         minSdkVersion 29
         //noinspection OldTargetApi
         targetSdkVersion 33
-        versionCode 18
-        versionName "5.1.1"
+        versionCode 19
+        versionName "5.1.2"
         setProperty("archivesBaseName", "XcarTest")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -39,7 +39,7 @@ ext{
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'com.google.firebase:firebase-database:20.3.1'
     implementation 'com.google.firebase:firebase-analytics:21.6.2'
