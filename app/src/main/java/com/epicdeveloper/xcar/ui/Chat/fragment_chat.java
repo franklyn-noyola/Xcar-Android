@@ -130,6 +130,7 @@ public class fragment_chat extends AppCompatActivity {
         }else{
             userFragmentToChat = chatMainScreen.userToChat;
         }
+
     }
 
     @SuppressLint({"ClickableViewAccessibility", "ObsoleteSdkInt"})
@@ -472,7 +473,6 @@ public class fragment_chat extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (!snapshot.exists()) {
-                    System.out.println("Listo para enviar");
                     DatabaseReference pushNoti = FirebaseDatabase.getInstance().getReference("pushNotification/"+userFragmentToChat);
                     pushNoti.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -949,6 +949,7 @@ public class fragment_chat extends AppCompatActivity {
     }
 
     private void sendPushNotification(String tokenUser, String messageOut, String uri){
+        System.out.println("El Tocken es: "+tokenUser);
         RequestQueue myRequest = Volley.newRequestQueue(getApplicationContext());
         JSONObject json = new JSONObject();
         try{
@@ -969,8 +970,9 @@ public class fragment_chat extends AppCompatActivity {
                 public Map<String, String> getHeaders() {
                     Map<String,String> header = new HashMap<>();
                     header.put ("content-type", "application/json");
-                    header.put("authorization", "key=AAAA_uhTPWk:APA91bHXUuG1mB3KRvxx4DX-BZr5LTVhTbkAU9JY_4kv0QLrvzD-oQPxVsKOf9y9ExcPsKMyS24K7Z_VtYmcULC98RH9dVn9NSMYJqd6I4b6zXBxqdTfnjzlEkekqd4vr8ot1XU0I6sY");
+                    header.put("authorization", "key=AAAAPMtC5jA:APA91bFLcu8bueJvWvkuvBwuPNzAsw00vE7oiJAaHsK-bpziy2GhvMqckA03AQKOrB4CktJpq1sQBEP6uhGR6jkKWQX8k2ceu8KXM7EQBarso9HcV-qfbobu-Dnfeblj8Repdm_LEwBW");
                     return header;
+
                 }
             };
             myRequest.add(request);
